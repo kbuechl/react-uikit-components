@@ -1,0 +1,66 @@
+{
+  "name": "react-uikit-base",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": ["javascript", "react", "uikit", "component"],
+  "repository": "git@github.com:otissv/react-uikit-blank.git",
+  "author": "Otis Virginie",
+  "license": "MIT",
+  "main": "./lib/uikit.js",
+  "scripts": {
+    "doc": "babel-node reactToHtml.js docs/base-doc.jsx README.md",
+    "lint": "eslint --quiet ./src/**  || true",
+    "lint:watch": "watch 'npm run lint' ./",
+    "prebuild": "npm run test",
+    "prepublish": "npm run build" ,
+    "test": "babel-node test-runner.js | tap-min || true",
+    "test:spec": "babel-node test-runner.js | tap-difflet || true",
+    "test:watch": "watch 'npm run test' ./"
+  },
+  "devDependencies": {
+    "babel-core": "~6.2.1",
+    "babel-eslint": "~4.1.5",
+    "babel-loader": "~6.2.0",
+    "babel-plugin-transform-runtime": "~6.1.18",
+    "babel-preset-es2015": "~6.1.18",
+    "babel-preset-react": "~6.1.18",
+    "babel-preset-stage-0": "~6.1.18",
+    "babel-runtime": "~6.2.0",
+    "blue-tape": "~0.1.10",
+    "cheerio": "~0.19.0",
+    "eslint": "~1.10.1",
+    "eslint-config-standard": "~4.4.0",
+    "eslint-loader": "~1.1.1",
+    "eslint-plugin-react": "~3.11.2",
+    "eslint-plugin-smells": "~1.0.1",
+    "eslint-plugin-standard": "~1.3.1",
+    "faucet": "~0.0.1",
+    "glob": "~6.0.1",
+    "history": "~1.13.1",
+    "react-addons-test-utils": "~0.14.3",
+    "react-hot-loader": "~1.3.0",
+    "tap-difflet": "~0.4.0",
+    "tap-min": "~1.0.0",
+    "watch": "~0.16.0",
+    "webpack": "~1.12.8",
+    "webpack-dev-server": "~1.14.0"
+  },
+  "dependencies": {
+    "react": "~0.14.3",
+    "react-dnd": "~2.0.2",
+    "react-dom": "~0.14.3",
+    "react-router": "~1.0.0",
+    "slug": "~0.9.1",
+    "ufunc": "latest"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ]
+  },
+  "engines": {
+    "node": "^4.2.3"
+  }
+}
