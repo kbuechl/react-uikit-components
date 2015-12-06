@@ -1,18 +1,18 @@
 {
   "name": "react-uikit-base",
   "version": "0.0.1",
-  "description": "",
+  "description": "React base HOC with uikit utilities",
   "keywords": ["javascript", "react", "uikit", "component"],
-  "repository": "git@github.com:otissv/react-uikit-blank.git",
+  "repository": "git@github.com:otissv/react-uikit-base.git",
   "author": "Otis Virginie",
   "license": "MIT",
-  "main": "./lib/uikit.js",
+  "main": "./src/uikit.js",
   "scripts": {
     "doc": "babel-node reactToHtml.js docs/base-doc.jsx README.md",
     "lint": "eslint --quiet ./src/**  || true",
     "lint:watch": "watch 'npm run lint' ./",
     "prebuild": "npm run test",
-    "prepublish": "npm run build" ,
+    "prepublish": "npm run build",
     "test": "babel-node test-runner.js | tap-min || true",
     "test:spec": "babel-node test-runner.js | tap-difflet || true",
     "test:watch": "watch 'npm run test' ./"

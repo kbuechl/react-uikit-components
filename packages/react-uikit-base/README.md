@@ -1,6 +1,6 @@
 # React UIKit component base
 
-Base component class with uikit utilities.
+React base HOC with uikit utilities.
 
 
 ### License
