@@ -255,6 +255,7 @@ const base = (Cmpt) => {
       hidden      : React.PropTypes.string,
       itemtype    : React.PropTypes.string,
       itemprop    : React.PropTypes.string,
+      kitid       : React.PropTypes.string,
       margin      : React.PropTypes.string,
       padding     : React.PropTypes.oneOf(utilityKeys('padding')),
       position    : React.PropTypes.oneOf(utilityKeys('position')),
