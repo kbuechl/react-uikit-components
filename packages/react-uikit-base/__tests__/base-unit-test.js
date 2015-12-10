@@ -28,7 +28,7 @@ class Component extends React.Component {
 test('UIkit Component', nested => {
   nested.test('Component tag renders.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
       const element = <TestComponent />;
       const $ = dom.load(renderMarkup(element));
 
@@ -43,7 +43,7 @@ test('UIkit Component', nested => {
 
   nested.test('Children renders',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
       const element = <TestComponent>
         Hello, world
       </TestComponent>;
@@ -62,7 +62,7 @@ test('UIkit Component', nested => {
   // align
   nested.test('align prop = left.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent align='left'/>;
       const $ = dom.load(renderMarkup(element));
@@ -77,7 +77,7 @@ test('UIkit Component', nested => {
 
   nested.test('align prop = right.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent align='right'/>;
       const $ = dom.load(renderMarkup(element));
@@ -92,7 +92,7 @@ test('UIkit Component', nested => {
 
   nested.test('align prop = middle left.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent align='middleLeft'/>;
       const $ = dom.load(renderMarkup(element));
@@ -107,7 +107,7 @@ test('UIkit Component', nested => {
 
   nested.test('align prop = middle right.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent align='middleRight'/>;
       const $ = dom.load(renderMarkup(element));
@@ -122,7 +122,7 @@ test('UIkit Component', nested => {
 
   nested.test('align prop = center.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent align='center'/>;
       const $ = dom.load(renderMarkup(element));
@@ -138,7 +138,7 @@ test('UIkit Component', nested => {
   // borderRadius
   nested.test('borderRadius prop = rounded.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent borderRadius='rounded'/>;
       const $ = dom.load(renderMarkup(element));
@@ -153,7 +153,7 @@ test('UIkit Component', nested => {
 
   nested.test('borderRadius prop = circle.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent borderRadius='circle'/>;
       const $ = dom.load(renderMarkup(element));
@@ -169,7 +169,7 @@ test('UIkit Component', nested => {
   // Clear
   nested.test('clear prop = fix.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent clear='fix'/>;
       const $ = dom.load(renderMarkup(element));
@@ -184,7 +184,7 @@ test('UIkit Component', nested => {
 
   nested.test('clear prop = nbfc.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent clear='nbfc'/>;
       const $ = dom.load(renderMarkup(element));
@@ -199,7 +199,7 @@ test('UIkit Component', nested => {
 
   nested.test('clear prop = alt.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent clear='alt'/>;
       const $ = dom.load(renderMarkup(element));
@@ -215,7 +215,7 @@ test('UIkit Component', nested => {
   // center
   nested.test('center prop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent center/>;
       const $ = dom.load(renderMarkup(element));
@@ -231,7 +231,7 @@ test('UIkit Component', nested => {
   // close
   nested.test('close prop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent close/>;
       const $ = dom.load(renderMarkup(element));
@@ -247,7 +247,7 @@ test('UIkit Component', nested => {
   // col
   nested.test('col prop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent col='1-6'/>;
       const $ = dom.load(renderMarkup(element));
@@ -263,7 +263,7 @@ test('UIkit Component', nested => {
   // col small
   nested.test('colsSmall prop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent colsSmall='1-6'/>;
       const $ = dom.load(renderMarkup(element));
@@ -279,7 +279,7 @@ test('UIkit Component', nested => {
   // col medium
   nested.test('colsMedium prop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent colsMedium='1-6'/>;
       const $ = dom.load(renderMarkup(element));
@@ -295,7 +295,7 @@ test('UIkit Component', nested => {
   // col large
   nested.test('colsLarge prop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent colsLarge='1-6'/>;
       const $ = dom.load(renderMarkup(element));
@@ -311,7 +311,7 @@ test('UIkit Component', nested => {
   // contrast
   nested.test('contrast prop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent contrast/>;
       const $ = dom.load(renderMarkup(element));
@@ -327,7 +327,7 @@ test('UIkit Component', nested => {
   // display
   nested.test('display prop = block.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent display='block'/>;
       const $ = dom.load(renderMarkup(element));
@@ -342,7 +342,7 @@ test('UIkit Component', nested => {
 
   nested.test('display prop = inline.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent display='inline'/>;
       const $ = dom.load(renderMarkup(element));
@@ -357,7 +357,7 @@ test('UIkit Component', nested => {
 
   nested.test('display prop = inlineBlock.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent display='inlineBlock'/>;
       const $ = dom.load(renderMarkup(element));
@@ -373,7 +373,7 @@ test('UIkit Component', nested => {
   // float
   nested.test('float prop = left.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent float='left'/>;
       const $ = dom.load(renderMarkup(element));
@@ -388,7 +388,7 @@ test('UIkit Component', nested => {
 
   nested.test('float prop = right.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent float='right'/>;
       const $ = dom.load(renderMarkup(element));
@@ -403,7 +403,7 @@ test('UIkit Component', nested => {
 
   nested.test('float prop = clear.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent float='clear'/>;
       const $ = dom.load(renderMarkup(element));
@@ -419,7 +419,7 @@ test('UIkit Component', nested => {
   // hidden
   nested.test('hidden prop = all.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent hidden='all'/>;
       const $ = dom.load(renderMarkup(element));
@@ -434,7 +434,7 @@ test('UIkit Component', nested => {
 
   nested.test('hidden prop = invisible.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent hidden='invisible'/>;
       const $ = dom.load(renderMarkup(element));
@@ -449,7 +449,7 @@ test('UIkit Component', nested => {
 
   nested.test('hidden prop = small.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent hidden='small'/>;
       const $ = dom.load(renderMarkup(element));
@@ -464,7 +464,7 @@ test('UIkit Component', nested => {
 
   nested.test('hidden prop = large.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent hidden='large'/>;
       const $ = dom.load(renderMarkup(element));
@@ -479,7 +479,7 @@ test('UIkit Component', nested => {
 
   nested.test('hidden prop = medium.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent hidden='medium'/>;
       const $ = dom.load(renderMarkup(element));
@@ -494,7 +494,7 @@ test('UIkit Component', nested => {
 
   nested.test('hidden prop = touch.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent hidden='touch'/>;
       const $ = dom.load(renderMarkup(element));
@@ -510,7 +510,7 @@ test('UIkit Component', nested => {
   // margin
   nested.test('margin prop = top.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='top'/>;
       const $ = dom.load(renderMarkup(element));
@@ -525,7 +525,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = top.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='top'/>;
       const $ = dom.load(renderMarkup(element));
@@ -540,7 +540,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = left.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='left'/>;
       const $ = dom.load(renderMarkup(element));
@@ -555,7 +555,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = bottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='bottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -570,7 +570,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = right.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='right'/>;
       const $ = dom.load(renderMarkup(element));
@@ -585,7 +585,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = smallTop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='smallTop'/>;
       const $ = dom.load(renderMarkup(element));
@@ -600,7 +600,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = smallLeft.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='smallLeft'/>;
       const $ = dom.load(renderMarkup(element));
@@ -615,7 +615,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = smallBottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='smallBottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -630,7 +630,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = smallRight.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='smallRight'/>;
       const $ = dom.load(renderMarkup(element));
@@ -645,7 +645,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = largeTop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='largeTop'/>;
       const $ = dom.load(renderMarkup(element));
@@ -660,7 +660,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = largeLeft.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='largeLeft'/>;
       const $ = dom.load(renderMarkup(element));
@@ -675,7 +675,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = largeBottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='largeBottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -690,7 +690,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = largeRight.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='largeRight'/>;
       const $ = dom.load(renderMarkup(element));
@@ -705,7 +705,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = remove.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='remove'/>;
       const $ = dom.load(renderMarkup(element));
@@ -720,7 +720,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = removeTop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='removeTop'/>;
       const $ = dom.load(renderMarkup(element));
@@ -735,7 +735,7 @@ test('UIkit Component', nested => {
 
   nested.test('margin prop = removeBottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent margin='removeBottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -751,7 +751,7 @@ test('UIkit Component', nested => {
   // padding
   nested.test('padding prop = top.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='top'/>;
       const $ = dom.load(renderMarkup(element));
@@ -766,7 +766,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = top.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='top'/>;
       const $ = dom.load(renderMarkup(element));
@@ -781,7 +781,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = left.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='left'/>;
       const $ = dom.load(renderMarkup(element));
@@ -796,7 +796,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = bottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='bottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -811,7 +811,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = right.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='right'/>;
       const $ = dom.load(renderMarkup(element));
@@ -826,7 +826,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = smallTop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='smallTop'/>;
       const $ = dom.load(renderMarkup(element));
@@ -841,7 +841,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = smallLeft.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='smallLeft'/>;
       const $ = dom.load(renderMarkup(element));
@@ -856,7 +856,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = smallBottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='smallBottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -871,7 +871,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = smallRight.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='smallRight'/>;
       const $ = dom.load(renderMarkup(element));
@@ -886,7 +886,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = largeTop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='largeTop'/>;
       const $ = dom.load(renderMarkup(element));
@@ -901,7 +901,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = largeLeft.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='largeLeft'/>;
       const $ = dom.load(renderMarkup(element));
@@ -916,7 +916,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = largeBottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='largeBottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -931,7 +931,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = largeRight.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='largeRight'/>;
       const $ = dom.load(renderMarkup(element));
@@ -946,7 +946,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = remove.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='remove'/>;
       const $ = dom.load(renderMarkup(element));
@@ -961,7 +961,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = removeTop.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='removeTop'/>;
       const $ = dom.load(renderMarkup(element));
@@ -976,7 +976,7 @@ test('UIkit Component', nested => {
 
   nested.test('padding prop = removeBottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent padding='removeBottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -992,7 +992,7 @@ test('UIkit Component', nested => {
   // position
   nested.test('position prop = top.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='top'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1007,7 +1007,7 @@ test('UIkit Component', nested => {
 
   nested.test('position prop = topLeft.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='topLeft'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1022,7 +1022,7 @@ test('UIkit Component', nested => {
 
   nested.test('position prop = topRight.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='topRight'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1037,7 +1037,7 @@ test('UIkit Component', nested => {
 
   nested.test('position prop = bottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='bottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1052,7 +1052,7 @@ test('UIkit Component', nested => {
 
   nested.test('position prop = bottomLeft.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='bottomLeft'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1067,7 +1067,7 @@ test('UIkit Component', nested => {
 
   nested.test('position prop = bottom right.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='bottomRight'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1082,7 +1082,7 @@ test('UIkit Component', nested => {
 
   nested.test('position prop = cover.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='cover'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1097,7 +1097,7 @@ test('UIkit Component', nested => {
 
   nested.test('position prop = relative.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='relative'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1112,7 +1112,7 @@ test('UIkit Component', nested => {
 
   nested.test('position prop = zIndex.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent position='zIndex'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1128,7 +1128,7 @@ test('UIkit Component', nested => {
   // responsive
   nested.test('scroll prop = auto.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent scroll='auto'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1143,7 +1143,7 @@ test('UIkit Component', nested => {
 
   nested.test('scroll prop = box.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent scroll='box'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1157,7 +1157,7 @@ test('UIkit Component', nested => {
 
   nested.test('scroll prop = text.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent scroll='text'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1173,7 +1173,7 @@ test('UIkit Component', nested => {
   // textAlign
   nested.test('textAlign prop = center.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textAlign='center'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1188,7 +1188,7 @@ test('UIkit Component', nested => {
 
   nested.test('textAlign prop = centerSmall.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textAlign='centerSmall'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1203,7 +1203,7 @@ test('UIkit Component', nested => {
 
   nested.test('textAlign prop = centerMedium.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textAlign='centerMedium'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1218,7 +1218,7 @@ test('UIkit Component', nested => {
 
   nested.test('textAlign prop = left.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textAlign='left'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1233,7 +1233,7 @@ test('UIkit Component', nested => {
 
   nested.test('textAlign prop = leftSmall.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textAlign='leftSmall'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1248,7 +1248,7 @@ test('UIkit Component', nested => {
 
   nested.test('textAlign prop = leftMedium.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textAlign='leftMedium'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1263,7 +1263,7 @@ test('UIkit Component', nested => {
 
   nested.test('textAlign prop = justify.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textAlign='justify'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1279,7 +1279,7 @@ test('UIkit Component', nested => {
   // textVerticle
   nested.test('textVerticle prop = top.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textVerticle='top'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1294,7 +1294,7 @@ test('UIkit Component', nested => {
 
   nested.test('textVerticle prop = middle.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textVerticle='middle'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1309,7 +1309,7 @@ test('UIkit Component', nested => {
 
   nested.test('textVerticle prop = bottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textVerticle='bottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1325,7 +1325,7 @@ test('UIkit Component', nested => {
   // textWrap
   nested.test('textWrap prop = truncate.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textWrap='truncate'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1340,7 +1340,7 @@ test('UIkit Component', nested => {
 
   nested.test('textWraptextWrap prop = break.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textWrap='break'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1355,7 +1355,7 @@ test('UIkit Component', nested => {
 
   nested.test('textWrap prop = nowrap.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent textWrap='nowrap'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1371,7 +1371,7 @@ test('UIkit Component', nested => {
   // vertical
   nested.test('vertical prop = parent.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent vertical='parent'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1386,7 +1386,7 @@ test('UIkit Component', nested => {
 
   nested.test('vertical prop = break.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent vertical='middle'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1401,7 +1401,7 @@ test('UIkit Component', nested => {
 
   nested.test('vertical prop = bottom.',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent vertical='bottom'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1417,7 +1417,7 @@ test('UIkit Component', nested => {
   // viewport
   nested.test('visible prop',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent visible='hover'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1432,7 +1432,7 @@ test('UIkit Component', nested => {
 
   nested.test('visible prop = hoverInline',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent visible='hoverInline'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1447,7 +1447,7 @@ test('UIkit Component', nested => {
 
   nested.test('visible prop = large',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent visible='large'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1462,7 +1462,7 @@ test('UIkit Component', nested => {
 
   nested.test('visible prop = small',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent visible='small'/>;
       const $ = dom.load(renderMarkup(element));
@@ -1477,7 +1477,7 @@ test('UIkit Component', nested => {
 
   nested.test('visible prop = touch',
     assert => {
-      const TestComponent = uikit(Component);
+      const TestComponent = uikit.base(Component);
 
       const element = <TestComponent visible='touch'/>;
       const $ = dom.load(renderMarkup(element));

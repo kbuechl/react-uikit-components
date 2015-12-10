@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-base",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "React base HOC with uikit utility classes",
   "keywords": [
     "javascript",
@@ -17,6 +17,8 @@
     "prepublish": "babel -d lib/ src/",
     "doc": "babel-node reactToHtml.js docs/base-doc.jsx README.md",
     "lint": "eslint --quiet ./src/**  || true",
+    "build": "babel -d lib/ src/",
+    "build:watch": "watch 'npm run build' ./src",
     "lint:watch": "watch 'npm run lint' ./",
     "test": "babel-node test-runner.js | tap-min || true",
     "test:spec": "babel-node test-runner.js | tap-difflet || true",

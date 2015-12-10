@@ -307,4 +307,7 @@ const base = (Cmpt) => {
 };
 
 
-export default base;
+export default {
+  base,
+  helpers
+};
