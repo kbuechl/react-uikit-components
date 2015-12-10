@@ -5,18 +5,11 @@ const filename = 'uikit.jsx';
 
 
 module.exports = {
-  devtool: 'eval',
+  // devtool: 'eval',
   entry: `./src/${filename}`,
-  externals: {
-    'react': 'react',
-    'react-dom': 'react-dom'
-  },
-  resolve: {
-    alias: {
-      'react': 'react',
-      'react-dom': 'react-dom'
-    }
-  },
+  // externals: {
+  //   react: 'React'
+  // },
   node: {
     fs  : 'empty'
   },
@@ -24,7 +17,7 @@ module.exports = {
     loaders: [
       { test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel-loader']
+        loader: 'babel-loader'
       },
       {
         test: /\.js$/,
@@ -38,10 +31,6 @@ module.exports = {
     filename  : `${filename}`,
     publicPath: '/'
   },
-  plugins: [
-    new webpack.IgnorePlugin(/vertx/),
-    new webpack.NoErrorsPlugin()
-  ],
   eslint: {
     configFile: './.eslintrc'
   }

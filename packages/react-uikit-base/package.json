@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-base",
-  "version": "0.0.1",
+  "version": "0.0.33",
   "description": "React base HOC with uikit utility classes",
   "keywords": [
     "javascript",
@@ -14,7 +14,7 @@
   "main": "./lib/uikit.js",
   "scripts": {
     "start": "webpack --config webpack.config.js --watch",
-    "build": "webpack --config webpack.config.js",
+    "prepublish": "babel -d lib/ src/",
     "doc": "babel-node reactToHtml.js docs/base-doc.jsx README.md",
     "lint": "eslint --quiet ./src/**  || true",
     "lint:watch": "watch 'npm run lint' ./",

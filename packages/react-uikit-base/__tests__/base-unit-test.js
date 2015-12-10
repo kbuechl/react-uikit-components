@@ -2,7 +2,7 @@
 import test from 'tape';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import uikit from '../src/uikit.jsx';
+import uikit from '../lib/uikit';
 import dom from 'cheerio';
 import ufunc from 'ufunc';
 
