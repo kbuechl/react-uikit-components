@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ufunc from 'ufunc';
-import helpers from '../helpers/helpers';
+import helpers from './helpers';
 
 
 const utilityKeys = (attr) => {
