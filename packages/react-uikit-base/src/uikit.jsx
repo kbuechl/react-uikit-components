@@ -50,6 +50,11 @@ const closeClass = (alt) => {
   return alt ? 'uk-close-alt' : ' uk-close';
 };
 
+const cleanClasses = (c) => {
+  const str = ufunc.cleanAll(c).join(' ').trim();
+  return ufunc.maybeIf(str)(str !== '');
+};
+
 
 const colSpan = [
   '1-1',
@@ -67,7 +72,8 @@ const helpers = {
   getClasses,
   getClass,
   closeClass,
-  colSpan
+  colSpan,
+  cleanClasses
 };
 
 
