@@ -25,7 +25,7 @@ const breakpoints = () => {
 
 
 const cleanClasses = (c) => {
-  const str = ufunc.cleanAll(c).join(' ').trim();
+  const str = ufunc.cleanAll(c).join(' ').trim().replace(/,/gi, ' ');
   return ufunc.maybeIf(str)(str !== '');
 };
 
