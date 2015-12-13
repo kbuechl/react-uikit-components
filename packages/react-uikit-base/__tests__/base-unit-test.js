@@ -228,22 +228,6 @@ test('UIkit Component', nested => {
     });
 
 
-  // close
-  nested.test('close prop.',
-    assert => {
-      const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent close/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-close');
-
-      assert.ok(actual, 'Adds close class.');
-
-      assert.end();
-    });
-
-
   // col
   nested.test('col prop.',
     assert => {
