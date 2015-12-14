@@ -232,13 +232,10 @@ test('UIkit Component', nested => {
   nested.test('col prop.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent col='1-6'/>).dom('div');
+      const actual = element.hasClass('uk-width-1-6');
 
-      const element = <TestComponent col='1-6'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-width-1-6');
-
-      assert.ok(actual, 'Adds correct width class.');
+      assert.ok(actual, 'Adds order last xlarge class to grid element');
 
       assert.end();
     });
@@ -248,11 +245,8 @@ test('UIkit Component', nested => {
   nested.test('colsSmall prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent colsSmall='1-6'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-width-small-1-6');
+      const element = renderElement(<TestComponent colsSmall='1-6'/>).dom('div');
+      const actual = element.hasClass('uk-width-small-1-6');
 
       assert.ok(actual, 'Adds correct small width class.');
 
@@ -264,11 +258,8 @@ test('UIkit Component', nested => {
   nested.test('colsMedium prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent colsMedium='1-6'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-width-medium-1-6');
+      const element = renderElement(<TestComponent colsMedium='1-6'/>).dom('div');
+      const actual = element.hasClass('uk-width-medium-1-6');
 
       assert.ok(actual, 'Adds correct medium width class.');
 
@@ -280,11 +271,8 @@ test('UIkit Component', nested => {
   nested.test('colsLarge prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent colsLarge='1-6'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-width-large-1-6');
+      const element = renderElement(<TestComponent colsLarge='1-6'/>).dom('div');
+      const actual = element.hasClass('uk-width-large-1-6');
 
       assert.ok(actual, 'Adds correct large width class.');
 
@@ -296,11 +284,8 @@ test('UIkit Component', nested => {
   nested.test('contrast prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent contrast/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-contrast');
+      const element = renderElement(<TestComponent contrast/>).dom('div');
+      const actual = element.hasClass('uk-contrast');
 
       assert.ok(actual, 'Adds contrast class.');
 
@@ -312,11 +297,8 @@ test('UIkit Component', nested => {
   nested.test('display prop = block.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent display='block'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-display-block');
+      const element = renderElement(<TestComponent display='block'/>).dom('div');
+      const actual = element.hasClass('uk-display-block');
 
       assert.ok(actual, 'Adds block display class.');
 
@@ -327,11 +309,8 @@ test('UIkit Component', nested => {
   nested.test('display prop = inline.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent display='inline'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-display-inline');
+      const element = renderElement(<TestComponent display='inline'/>).dom('div');
+      const actual = element.hasClass('uk-display-inline');
 
       assert.ok(actual, 'Adds inline display class.');
 
@@ -486,6 +465,23 @@ test('UIkit Component', nested => {
       const actual = $('div').hasClass('uk-hidden-touch');
 
       assert.ok(actual, 'Adds touch hidden class.');
+
+      assert.end();
+    });
+
+
+  // list
+  nested.test('list prop.',
+    assert => {
+      const TestComponent = uikit.base(Component);
+
+      const element = renderElement(<TestComponent list col='1-6'/>).dom();
+
+      const actual = element.html();
+      const expect = '<li class="uk-width-1-6"><div class=""></div></li>';
+
+      assert.equals(actual, expect,
+        'Wraps element in a li element');
 
       assert.end();
     });
@@ -1474,13 +1470,14 @@ test('UIkit Component', nested => {
     });
 
 
+  // order
   nested.test('order = first',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='first'/>).dom('div');
+      const element = renderElement(<TestComponent order='first'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-first');
-      assert.ok(actual, 'Adds order first flex class to col element');
+      const actual = element.hasClass('uk-flex-order-first');
+      assert.ok(actual, 'Adds order first flex class to grid element');
 
       assert.end();
     });
@@ -1489,9 +1486,9 @@ test('UIkit Component', nested => {
   nested.test('order = firstSmall',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='firstSmall'/>).dom('div');
+      const element = renderElement(<TestComponent order='firstSmall'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-first-small');
+      const actual = element.hasClass('uk-flex-order-first-small');
       assert.ok(actual, 'Adds order first small flex class to grid element');
 
       assert.end();
@@ -1501,9 +1498,9 @@ test('UIkit Component', nested => {
   nested.test('order = firstMedium',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='firstMedium'/>).dom('div');
+      const element = renderElement(<TestComponent order='firstMedium'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-first-medium');
+      const actual = element.hasClass('uk-flex-order-first-medium');
       assert.ok(actual, 'Adds order first medium flex class to grid element');
 
       assert.end();
@@ -1513,9 +1510,9 @@ test('UIkit Component', nested => {
   nested.test('order = firstLarge',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='firstLarge'/>).dom('div');
+      const element = renderElement(<TestComponent order='firstLarge'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-first-large');
+      const actual = element.hasClass('uk-flex-order-first-large');
       assert.ok(actual, 'Adds order first large flex class to grid element');
 
       assert.end();
@@ -1525,9 +1522,9 @@ test('UIkit Component', nested => {
   nested.test('order = firstXlarge',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='firstXlarge'/>).dom('div');
+      const element = renderElement(<TestComponent order='firstXlarge'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-first-xlarge');
+      const actual = element.hasClass('uk-flex-order-first-xlarge');
       assert.ok(actual, 'Adds order first first large class to grid element');
 
       assert.end();
@@ -1537,9 +1534,9 @@ test('UIkit Component', nested => {
   nested.test('order = last',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='last'/>).dom('div');
+      const element = renderElement(<TestComponent order='last'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-last');
+      const actual = element.hasClass('uk-flex-order-last');
       assert.ok(actual, 'Adds order last class to grid element');
 
       assert.end();
@@ -1549,9 +1546,9 @@ test('UIkit Component', nested => {
   nested.test('order = lastSmall',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='lastSmall'/>).dom('div');
+      const element = renderElement(<TestComponent order='lastSmall'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-last-small');
+      const actual = element.hasClass('uk-flex-order-last-small');
       assert.ok(actual, 'Adds order last small class to grid element');
 
       assert.end();
@@ -1561,9 +1558,9 @@ test('UIkit Component', nested => {
   nested.test('order = lastMedium',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='lastMedium'/>).dom('div');
+      const element = renderElement(<TestComponent order='lastMedium'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-last-medium');
+      const actual = element.hasClass('uk-flex-order-last-medium');
       assert.ok(actual, 'Adds order last medium class to grid element');
 
       assert.end();
@@ -1573,9 +1570,9 @@ test('UIkit Component', nested => {
   nested.test('order = lastLarge',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='lastLarge'/>).dom('div');
+      const element = renderElement(<TestComponent order='lastLarge'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-last-large');
+      const actual = element.hasClass('uk-flex-order-last-large');
       assert.ok(actual, 'Adds order last large class to grid element');
 
       assert.end();
@@ -1585,11 +1582,14 @@ test('UIkit Component', nested => {
   nested.test('order = lastXlarge',
     assert => {
       const TestComponent = uikit.base(Component);
-      const col = renderElement(<TestComponent order='lastXlarge'/>).dom('div');
+      const element = renderElement(<TestComponent order='lastXlarge'/>).dom('div');
 
-      const actual = col.hasClass('uk-flex-order-last-xlarge');
+      const actual = element.hasClass('uk-flex-order-last-xlarge');
       assert.ok(actual, 'Adds order last xlarge class to grid element');
 
       assert.end();
     });
+
+
+
 });

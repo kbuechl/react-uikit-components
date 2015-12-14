@@ -224,10 +224,6 @@ const base = (Cmpt) => {
         $props.borderRadius ? helpers.getClass($props.borderRadius, utilityCss.borderRadius) : null,
         $props.center ? 'uk-container-center' : null,
         $props.clear ? helpers.getClass($props.clear, utilityCss.clear) : null,
-        $props.col ? `uk-width-${$props.col}` : null,
-        $props.colsSmall ? `uk-width-small-${$props.colsSmall}` : null,
-        $props.colsMedium ? `uk-width-medium-${$props.colsMedium}` : null,
-        $props.colsLarge ? `uk-width-large-${$props.colsLarge}` : null,
         $props.contrast ? 'uk-contrast' : null,
         $props.display ? helpers.getClass($props.display, utilityCss.display) : null,
         $props.float ? helpers.getClass($props.float, utilityCss.float) : null,
@@ -246,16 +242,27 @@ const base = (Cmpt) => {
         $props.visible ? helpers.getClasses($props.visible, utilityCss.visible) : null
       ];
 
-      // Element
+      const colClasses = helpers.cleanClasses([
+        $props.col ? `uk-width-${$props.col}` : null,
+        $props.colsSmall ? `uk-width-small-${$props.colsSmall}` : null,
+        $props.colsMedium ? `uk-width-medium-${$props.colsMedium}` : null,
+        $props.colsLarge ? `uk-width-large-${$props.colsLarge}` : null
+      ]);
+
+      // Elementd
       const component = <Cmpt {...this.props} helpers={{...helpers}} classes={ufunc.cleanAll(classes)}/>;
 
-      const list = <li>
-          {component}
-        </li>;
+
+      const list = ufunc.maybeIf(<li className={colClasses}>{component}</li>)($props.list);
+
+
+      const column = ufunc.maybeIf(<div className={colClasses}>
+        otis{component}
+      </div>)($props.col || $props.colsSmall || $props.colsMedium || $props.colsLarge);
+
 
       // return component
-      const islist = ufunc.either(list, component);
-      return islist($props.list);
+      return list || column || component;
     }
   }
 
