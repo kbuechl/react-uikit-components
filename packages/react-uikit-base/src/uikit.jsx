@@ -246,7 +246,16 @@ const base = (Cmpt) => {
         $props.visible ? helpers.getClasses($props.visible, utilityCss.visible) : null
       ];
 
-      return <Cmpt {...this.props} helpers={{...helpers}} classes={ufunc.cleanAll(classes)}/>;
+      // Element
+      const component = <Cmpt {...this.props} helpers={{...helpers}} classes={ufunc.cleanAll(classes)}/>;
+
+      const list = <li>
+          {component}
+        </li>;
+
+      // return component
+      const islist = ufunc.either(list, component);
+      return islist($props.list);
     }
   }
 
