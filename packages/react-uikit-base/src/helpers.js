@@ -81,6 +81,7 @@ export default {
   cleanClasses,
   getClasses,
   getClass,
+  stringToClasses,
   queryData,
   queryDataAll
 };

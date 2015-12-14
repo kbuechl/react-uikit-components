@@ -256,5 +256,6 @@ const base = (Cmpt) => {
 
 export default {
   base,
+  element: (props) => base(<div {...props}></div>),
   helpers
 };
