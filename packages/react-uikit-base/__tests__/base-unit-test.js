@@ -5,7 +5,7 @@ import ReactDOMServer from 'react-dom/server';
 import uikit from '../lib/uikit';
 import dom from 'cheerio';
 import ufunc from 'ufunc';
-
+import renderElement from './helpers/renderElement';
 
 const renderMarkup = ReactDOMServer.renderToStaticMarkup;
 
@@ -1469,6 +1469,126 @@ test('UIkit Component', nested => {
       const actual = $('div').hasClass('uk-visible-touch');
 
       assert.ok(actual, 'Adds hover visible class.');
+
+      assert.end();
+    });
+
+
+  nested.test('order = first',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='first'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-first');
+      assert.ok(actual, 'Adds order first flex class to col element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = firstSmall',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='firstSmall'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-first-small');
+      assert.ok(actual, 'Adds order first small flex class to grid element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = firstMedium',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='firstMedium'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-first-medium');
+      assert.ok(actual, 'Adds order first medium flex class to grid element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = firstLarge',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='firstLarge'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-first-large');
+      assert.ok(actual, 'Adds order first large flex class to grid element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = firstXlarge',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='firstXlarge'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-first-xlarge');
+      assert.ok(actual, 'Adds order first first large class to grid element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = last',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='last'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-last');
+      assert.ok(actual, 'Adds order last class to grid element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = lastSmall',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='lastSmall'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-last-small');
+      assert.ok(actual, 'Adds order last small class to grid element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = lastMedium',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='lastMedium'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-last-medium');
+      assert.ok(actual, 'Adds order last medium class to grid element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = lastLarge',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='lastLarge'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-last-large');
+      assert.ok(actual, 'Adds order last large class to grid element');
+
+      assert.end();
+    });
+
+
+  nested.test('order = lastXlarge',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const col = renderElement(<TestComponent order='lastXlarge'/>).dom('div');
+
+      const actual = col.hasClass('uk-flex-order-last-xlarge');
+      assert.ok(actual, 'Adds order last xlarge class to grid element');
 
       assert.end();
     });

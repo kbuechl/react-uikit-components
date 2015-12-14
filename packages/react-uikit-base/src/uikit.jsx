@@ -79,6 +79,19 @@ const utilityCss = {
     removeBottom : 'uk-margin-bottom-remove'
   },
 
+  order: {
+    first      : 'uk-flex-order-first',
+    firstSmall : 'uk-flex-order-first-small',
+    firstMedium: 'uk-flex-order-first-medium',
+    firstLarge : 'uk-flex-order-first-large',
+    firstXlarge: 'uk-flex-order-first-xlarge',
+    last       : 'uk-flex-order-last',
+    lastSmall  : 'uk-flex-order-last-small',
+    lastMedium : 'uk-flex-order-last-medium',
+    lastLarge  : 'uk-flex-order-last-large',
+    lastXlarge : 'uk-flex-order-last-xlarge'
+  },
+
 
   padding: {
     top           : 'uk-padding-top',
@@ -190,6 +203,7 @@ const base = (Cmpt) => {
       itemprop    : React.PropTypes.string,
       kitid       : React.PropTypes.string,
       margin      : React.PropTypes.string,
+      order       : React.PropTypes.oneOf(utilityKeys('order')),
       padding     : React.PropTypes.oneOf(utilityKeys('padding')),
       position    : React.PropTypes.oneOf(utilityKeys('position')),
       responsive  : React.PropTypes.oneOf(utilityKeys('responsive')),
@@ -219,6 +233,7 @@ const base = (Cmpt) => {
         $props.float ? helpers.getClass($props.float, utilityCss.float) : null,
         $props.hidden ? helpers.getClasses($props.hidden, utilityCss.hidden) : null,
         $props.margin ? helpers.getClasses($props.margin, utilityCss.margin) : null,
+        $props.order ? helpers.getClass($props.order, utilityCss.order) : null,
         $props.padding ? helpers.getClasses($props.padding, utilityCss.padding) : null,
         $props.position ? helpers.getClasses($props.position, utilityCss.position) : null,
         $props.responsive ? helpers.getClasses($props.responsive, utilityCss.responsive) : null,
