@@ -30,6 +30,17 @@ const cleanClasses = (c) => {
 };
 
 
+const cleanProps = function (props, ignoreProps) {
+  const newProps = {};
+
+  Object.keys(props).forEach(k => {
+    ufunc.either(null, () => newProps[k] = props[k])(ignoreProps);
+  });
+
+  return newProps;
+};
+
+
 const closeClass = (alt) => {
   return alt ? 'uk-close-alt' : ' uk-close';
 };
@@ -79,6 +90,7 @@ export default {
   closeClass,
   colSpan,
   cleanClasses,
+  cleanProps,
   getClasses,
   getClass,
   stringToClasses,
