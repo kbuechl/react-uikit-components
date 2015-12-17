@@ -61,7 +61,7 @@ const stringToClasses = (str, cssClasses) => {
     return cssClasses[item];
   });
 
-  return classes.join('');
+  return classes.join(' ');
 };
 
 
