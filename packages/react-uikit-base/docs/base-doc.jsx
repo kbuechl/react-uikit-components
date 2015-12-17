@@ -82,55 +82,55 @@ uikit.base(Component);
           </thead>
           <tbody>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>align</code>
               </td>
-              <td>oneOf<br /> left, right, center, middleLeft or middleRight</td>
-              <td>Aligns elements with spacing between the text and the element.</td>
+              <td className='uk-text-left>oneOf<br /> left, right, center, middleLeft or middleRight</td>
+              <td className='uk-text-left>Aligns elements with spacing between the text and the element.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>children</code>
               </td>
-              <td>any</td>
-              <td>Childern elements.</td>
+              <td className='uk-text-left>any</td>
+              <td className='uk-text-left>Childern elements.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>className</code>
               </td>
-              <td>string</td>
-              <td>CSS class names.</td>
+              <td className='uk-text-left>string</td>
+              <td className='uk-text-left>CSS class names.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>borderRadius</code>
               </td>
-              <td>oneOf<br /> rounded or circle</td>
-              <td>Add rounded corners to an element.</td>
+              <td className='uk-text-left>oneOf<br /> rounded or circle</td>
+              <td className='uk-text-left>Add rounded corners to an element.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>clear</code>
               </td>
-              <td>oneOf<br />
+              <td className='uk-text-left>oneOf<br />
               fix,
               nbfc
               and alt</td>
-              <td>Clear floats.</td>
+              <td className='uk-text-left>Clear floats.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>center</code>
               </td>
-              <td>bool</td>
-              <td>Center a container. For any other block element, you additionally need to apply a width.</td>
+              <td className='uk-text-left>bool</td>
+              <td className='uk-text-left>Center a container. For any other block element, you additionally need to apply a width.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>col</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 '1-1'<br />
                 '1-2'<br />
@@ -140,13 +140,13 @@ uikit.base(Component);
                 '1-6', '2-6', ' 3-6', '4-6', '5-6'<br />
                 '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
             </td>
-              <td>Adds width base on fraction.</td>
+              <td className='uk-text-left>Adds width base on fraction.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>colsSmall</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 '1-1'<br />
                 '1-2'<br />
@@ -156,13 +156,13 @@ uikit.base(Component);
                 '1-6', '2-6', ' 3-6', '4-6', '5-6'<br />
                 '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
               </td>
-              <td>Adds width base on fraction if device widths is 480px or higher</td>
+              <td className='uk-text-left>Adds width base on fraction if device widths is 480px or higher</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>colsMedium</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 '1-1'<br />
                 '1-2'<br />
@@ -172,13 +172,13 @@ uikit.base(Component);
                 '1-6', '2-6', ' 3-6', '4-6', '5-6'<br />
                 '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
               </td>
-              <td>Adds width base on fraction if device widths is 768px or higher</td>
+              <td className='uk-text-left>Adds width base on fraction if device widths is 768px or higher</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>colsLarge</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 '1-1'<br />
                 '1-2'<br />
@@ -188,42 +188,42 @@ uikit.base(Component);
                 '1-6', '2-6', ' 3-6', '4-6', '5-6'<br />
                 '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
               </td>
-              <td>Adds width base on fraction if device widths is 960px or higher</td>
+              <td className='uk-text-left>Adds width base on fraction if device widths is 960px or higher</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>contrast</code>
               </td>
-              <td>bool</td>
-              <td>Changes the color of the element.</td>
+              <td className='uk-text-left>bool</td>
+              <td className='uk-text-left>Changes the color of the element.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>display</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 block,
                 inline
                 or inlineblock.
               </td>
-              <td>Changes property of an element</td>
+              <td className='uk-text-left>Changes property of an element</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>float</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 left or right.
               </td>
-              <td>Floats an element left or right.</td>
+              <td className='uk-text-left>Floats an element left or right.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>hidden</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 string<br />
                 all,
                 invisible,
@@ -233,20 +233,20 @@ uikit.base(Component);
                 touch
                 and notouch.
               </td>
-              <td>Hides element on differnt devices.</td>
+              <td className='uk-text-left>Hides element on differnt devices.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>kitid</code>
               </td>
-              <td>string</td>
-              <td>Adds a data attribute to be used as an idetifier.</td>
+              <td className='uk-text-left>string</td>
+              <td className='uk-text-left>Adds a data attribute to be used as an idetifier.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>margin</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 string<br />
                 top,
                 left,
@@ -264,13 +264,13 @@ uikit.base(Component);
                 removeTop
                 and removeBottom.
               </td>
-              <td>Adds spacing to block elements</td>
+              <td className='uk-text-left>Adds spacing to block elements</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>order</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 firast,
                 firstSmall,
@@ -283,13 +283,13 @@ uikit.base(Component);
                 lastLarge,
                 lastXlarge
               </td>
-              <td>Changes the order of an item if it is a child of a flexbox.</td>
+              <td className='uk-text-left>Changes the order of an item if it is a child of a flexbox.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>padding</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 string<br />
                 top,
                 left,
@@ -308,13 +308,13 @@ uikit.base(Component);
                 removeBottom
                 and removeVertical
               </td>
-              <td>Adds or removes the padding from an element.</td>
+              <td className='uk-text-left>Adds or removes the padding from an element.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>position</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 top,
                 topLeft,
@@ -326,35 +326,35 @@ uikit.base(Component);
                 relative,
                 or zIndex.
               </td>
-              <td>Positions element.</td>
+              <td className='uk-text-left>Positions element.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>responsive</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 string<br />
                 width and height
               </td>
-              <td>Makes max width and/or height 100%</td>
+              <td className='uk-text-left>Makes max width and/or height 100%</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>scroll</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 auto,
                 box,
                 or text.
               </td>
-              <td></td>
+              <td className='uk-text-left></td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>textAlign</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 center,
                 centerSmall,
@@ -365,55 +365,55 @@ uikit.base(Component);
                 justify,
                 or right.
               </td>
-              <td>Aligns text horizontaly.</td>
+              <td className='uk-text-left>Aligns text horizontaly.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>textVerticle</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 top,
                 middle,
                 or bottom.
               </td>
-              <td>Aligns text verticaly</td>
+              <td className='uk-text-left>Aligns text verticaly</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>textWrap</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 oneOf<br />
                 truncate,
                 break,
                 or nowrap.
               </td>
-              <td>Wraps or prevents wrapping of text.</td>
+              <td className='uk-text-left>Wraps or prevents wrapping of text.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>vertical</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 parent,
                 middle,
                 bottom
               </td>
-              <td>Verticaly align element.</td>
+              <td className='uk-text-left>Verticaly align element.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>viewport</code>
               </td>
-              <td>bool</td>
-              <td>Fills the height of the entire viewport.</td>
+              <td className='uk-text-left>bool</td>
+              <td className='uk-text-left>Fills the height of the entire viewport.</td>
             </tr>
             <tr>
-              <td>
+              <td className='uk-text-left>
                 <code>visible</code>
               </td>
-              <td>
+              <td className='uk-text-left>
                 string<br />
                 hover,
                 hoverInline,
@@ -421,7 +421,7 @@ uikit.base(Component);
                 small,
                 medium
               </td>
-              <td>Shows element on differnt devices.</td>
+              <td className='uk-text-left>Shows element on differnt devices.</td>
             </tr>
           </tbody>
         </Table>
