@@ -14,9 +14,9 @@ class Component extends React.Component {
   render () {
     const $props = this.props;
 
-    const cssClassNames = ufunc.cleanAll([
+    const cssClassNames = uikit.helpers.cleanClasses([
       $props.classes
-    ]).join(' ');
+    ]);
 
     return <div className={ufunc.maybe(null)(cssClassNames)}>
       {$props.children}
@@ -26,48 +26,27 @@ class Component extends React.Component {
 
 
 test('UIkit Component', nested => {
-  nested.test('Component tag renders.',
+  nested.test('Renders component:',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = <TestComponent />;
-      const $ = dom.load(renderMarkup(element));
+      const element = renderElement(<TestComponent>Hello, world</TestComponent>).dom('div');
 
-      const actual = $('div').get(0).tagName;
-      const expect = 'div';
-
-      assert.equals(actual, expect, 'Components Root tag is rendered correctly.');
-
-      assert.end();
-    });
-
-
-  nested.test('Children renders',
-    assert => {
-      const TestComponent = uikit.base(Component);
-      const element = <TestComponent>
-        Hello, world
-      </TestComponent>;
-
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').text();
+      const actual = element.text();
       const expect = 'Hello, world';
 
-      assert.equals(actual, expect, 'Childern is rendered correctly.');
+      assert.equals(actual, expect, 'Correctly renders base component.');
 
       assert.end();
     });
 
 
   // align
-  nested.test('align prop = left.',
+  nested.test('align prop = left:',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent align='left'/>).dom('div');
 
-      const element = <TestComponent align='left'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-align-left');
+      const actual = element.hasClass('uk-align-left');
 
       assert.ok(actual, 'Adds left align class.');
 
@@ -75,14 +54,12 @@ test('UIkit Component', nested => {
     });
 
 
-  nested.test('align prop = right.',
+  nested.test('align prop = right:',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent align='right'/>).dom('div');
 
-      const element = <TestComponent align='right'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-align-right');
+      const actual = element.hasClass('uk-align-right');
 
       assert.ok(actual, 'Adds right align class.');
 
@@ -93,11 +70,9 @@ test('UIkit Component', nested => {
   nested.test('align prop = middle left.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent align='middleLeft'/>).dom('div');
 
-      const element = <TestComponent align='middleLeft'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-align-medium-left');
+      const actual = element.hasClass('uk-align-medium-left');
 
       assert.ok(actual, 'Adds middle left align class.');
 
@@ -108,11 +83,9 @@ test('UIkit Component', nested => {
   nested.test('align prop = middle right.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent align='middleRight'/>).dom('div');
 
-      const element = <TestComponent align='middleRight'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-align-medium-right');
+      const actual = element.hasClass('uk-align-medium-right');
 
       assert.ok(actual, 'Adds middle right align class.');
 
@@ -123,11 +96,9 @@ test('UIkit Component', nested => {
   nested.test('align prop = center.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent align='center'/>).dom('div');
 
-      const element = <TestComponent align='center'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-align-center');
+      const actual = element.hasClass('uk-align-center');
 
       assert.ok(actual, 'Adds center align class.');
 
@@ -139,11 +110,9 @@ test('UIkit Component', nested => {
   nested.test('borderRadius prop = rounded.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent borderRadius='rounded'/>).dom('div');
 
-      const element = <TestComponent borderRadius='rounded'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-border-rounded');
+      const actual = element.hasClass('uk-border-rounded');
 
       assert.ok(actual, 'Adds rounded border radius class.');
 
@@ -154,11 +123,9 @@ test('UIkit Component', nested => {
   nested.test('borderRadius prop = circle.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent borderRadius='circle'/>).dom('div');
 
-      const element = <TestComponent borderRadius='circle'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-border-circle');
+      const actual = element.hasClass('uk-border-circle');
 
       assert.ok(actual, 'Adds circle border radius class.');
 
@@ -170,11 +137,9 @@ test('UIkit Component', nested => {
   nested.test('clear prop = fix.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent clear='fix'/>).dom('div');
 
-      const element = <TestComponent clear='fix'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-clearfix');
+      const actual = element.hasClass('uk-clearfix');
 
       assert.ok(actual, 'Adds clearfix class.');
 
@@ -185,11 +150,9 @@ test('UIkit Component', nested => {
   nested.test('clear prop = nbfc.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent clear='nbfc'/>).dom('div');
 
-      const element = <TestComponent clear='nbfc'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-nbfc');
+      const actual = element.hasClass('uk-nbfc');
 
       assert.ok(actual, 'Adds nbfc class.');
 
@@ -200,11 +163,9 @@ test('UIkit Component', nested => {
   nested.test('clear prop = alt.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent clear='alt'/>).dom('div');
 
-      const element = <TestComponent clear='alt'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-nbfc-alt');
+      const actual = element.hasClass('uk-nbfc-alt');
 
       assert.ok(actual, 'Adds nbfc alt class.');
 
@@ -216,11 +177,9 @@ test('UIkit Component', nested => {
   nested.test('center prop.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent center/>).dom('div');
 
-      const element = <TestComponent center/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-container-center');
+      const actual = element.hasClass('uk-container-center');
 
       assert.ok(actual, 'Adds center container class.');
 
@@ -233,6 +192,7 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent col='1-6'/>).dom('div');
+
       const actual = element.hasClass('uk-width-1-6');
 
       assert.ok(actual, 'Adds order last xlarge class to grid element');
@@ -246,6 +206,7 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent colsSmall='1-6'/>).dom('div');
+
       const actual = element.hasClass('uk-width-small-1-6');
 
       assert.ok(actual, 'Adds correct small width class.');
@@ -259,6 +220,7 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent colsMedium='1-6'/>).dom('div');
+
       const actual = element.hasClass('uk-width-medium-1-6');
 
       assert.ok(actual, 'Adds correct medium width class.');
@@ -272,6 +234,7 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent colsLarge='1-6'/>).dom('div');
+
       const actual = element.hasClass('uk-width-large-1-6');
 
       assert.ok(actual, 'Adds correct large width class.');
@@ -285,6 +248,7 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent contrast/>).dom('div');
+
       const actual = element.hasClass('uk-contrast');
 
       assert.ok(actual, 'Adds contrast class.');
@@ -298,6 +262,7 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent display='block'/>).dom('div');
+
       const actual = element.hasClass('uk-display-block');
 
       assert.ok(actual, 'Adds block display class.');
@@ -310,6 +275,7 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent display='inline'/>).dom('div');
+
       const actual = element.hasClass('uk-display-inline');
 
       assert.ok(actual, 'Adds inline display class.');
@@ -321,11 +287,9 @@ test('UIkit Component', nested => {
   nested.test('display prop = inlineBlock.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent display='inlineBlock'/>).dom('div');
 
-      const element = <TestComponent display='inlineBlock'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-display-inline-block');
+      const actual = element.hasClass('uk-display-inline-block');
 
       assert.ok(actual, 'Adds inlineBlock display class.');
 
@@ -337,11 +301,9 @@ test('UIkit Component', nested => {
   nested.test('float prop = left.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent float='left'/>).dom('div');
 
-      const element = <TestComponent float='left'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-float-left');
+      const actual = element.hasClass('uk-float-left');
 
       assert.ok(actual, 'Adds left float class.');
 
@@ -352,11 +314,9 @@ test('UIkit Component', nested => {
   nested.test('float prop = right.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent float='right'/>).dom('div');
 
-      const element = <TestComponent float='right'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-float-right');
+      const actual = element.hasClass('uk-float-right');
 
       assert.ok(actual, 'Adds right float class.');
 
@@ -367,11 +327,9 @@ test('UIkit Component', nested => {
   nested.test('float prop = clear.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent float='clear'/>).dom('div');
 
-      const element = <TestComponent float='clear'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-clearfix');
+      const actual = element.hasClass('uk-clearfix');
 
       assert.ok(actual, 'Adds clearfix class.');
 
@@ -383,14 +341,11 @@ test('UIkit Component', nested => {
   nested.test('hidden prop = all.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent hidden='all'/>).dom('div');
 
-      const element = <TestComponent hidden='all'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-hidden');
+      const actual = element.hasClass('uk-hidden');
 
       assert.ok(actual, 'Adds hidden class.');
-
       assert.end();
     });
 
@@ -398,11 +353,9 @@ test('UIkit Component', nested => {
   nested.test('hidden prop = invisible.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent hidden='invisible'/>).dom('div');
 
-      const element = <TestComponent hidden='invisible'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-invisible');
+      const actual = element.hasClass('uk-invisible');
 
       assert.ok(actual, 'Adds invisible class.');
 
@@ -413,11 +366,8 @@ test('UIkit Component', nested => {
   nested.test('hidden prop = small.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent hidden='small'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-hidden-small');
+      const element = renderElement(<TestComponent hidden='small'/>).dom('div');
+      const actual = element.hasClass('uk-hidden-small');
 
       assert.ok(actual, 'Adds small hidden class.');
 
@@ -428,11 +378,8 @@ test('UIkit Component', nested => {
   nested.test('hidden prop = large.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent hidden='large'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-hidden-large');
+      const element = renderElement(<TestComponent hidden='large'/>).dom('div');
+      const actual = element.hasClass('uk-hidden-large');
 
       assert.ok(actual, 'Adds large hidden class.');
 
@@ -443,11 +390,8 @@ test('UIkit Component', nested => {
   nested.test('hidden prop = medium.',
     assert => {
       const TestComponent = uikit.base(Component);
-
-      const element = <TestComponent hidden='medium'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-hidden-medium');
+      const element = renderElement(<TestComponent hidden='medium'/>).dom('div');
+      const actual = element.hasClass('uk-hidden-medium');
 
       assert.ok(actual, 'Adds medium hidden class.');
 
@@ -458,11 +402,9 @@ test('UIkit Component', nested => {
   nested.test('hidden prop = touch.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent hidden='touch'/>).dom('div');
 
-      const element = <TestComponent hidden='touch'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-hidden-touch');
+      const actual = element.hasClass('uk-hidden-touch');
 
       assert.ok(actual, 'Adds touch hidden class.');
 
@@ -474,11 +416,10 @@ test('UIkit Component', nested => {
   nested.test('list prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-
       const element = renderElement(<TestComponent list col='1-6'/>).dom();
 
       const actual = element.html();
-      const expect = '<li class="uk-width-1-6"><div class=""></div></li>';
+      const expect = '<li class="uk-width-1-6"><div></div></li>';
 
       assert.equals(actual, expect,
         'Wraps element in a li element');
@@ -491,11 +432,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = top.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='top'/>).dom('div');
 
-      const element = <TestComponent margin='top'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-top');
+      const actual = element.hasClass('uk-margin-top');
 
       assert.ok(actual, 'Adds top margin class.');
 
@@ -506,11 +445,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = top.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='top'/>).dom('div');
 
-      const element = <TestComponent margin='top'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-top');
+      const actual = element.hasClass('uk-margin-top');
 
       assert.ok(actual, 'Adds top margin class.');
 
@@ -521,11 +458,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = left.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='left'/>).dom('div');
 
-      const element = <TestComponent margin='left'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-left');
+      const actual = element.hasClass('uk-margin-left');
 
       assert.ok(actual, 'Adds left margin class.');
 
@@ -536,11 +471,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = bottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='bottom'/>).dom('div');
 
-      const element = <TestComponent margin='bottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-bottom');
+      const actual = element.hasClass('uk-margin-bottom');
 
       assert.ok(actual, 'Adds bottom margin class.');
 
@@ -551,11 +484,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = right.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='right'/>).dom('div');
 
-      const element = <TestComponent margin='right'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-right');
+      const actual = element.hasClass('uk-margin-right');
 
       assert.ok(actual, 'Adds right margin class.');
 
@@ -566,11 +497,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = smallTop.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='smallTop'/>).dom('div');
 
-      const element = <TestComponent margin='smallTop'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-small-top');
+      const actual = element.hasClass('uk-margin-small-top');
 
       assert.ok(actual, 'Adds small top margin class.');
 
@@ -581,11 +510,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = smallLeft.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='smallLeft'/>).dom('div');
 
-      const element = <TestComponent margin='smallLeft'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-small-left');
+      const actual = element.hasClass('uk-margin-small-left');
 
       assert.ok(actual, 'Adds small left margin class.');
 
@@ -596,11 +523,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = smallBottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='smallBottom'/>).dom('div');
 
-      const element = <TestComponent margin='smallBottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-small-bottom');
+      const actual = element.hasClass('uk-margin-small-bottom');
 
       assert.ok(actual, 'Adds small bottom margin class.');
 
@@ -611,11 +536,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = smallRight.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='smallRight'/>).dom('div');
 
-      const element = <TestComponent margin='smallRight'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-small-right');
+      const actual = element.hasClass('uk-margin-small-right');
 
       assert.ok(actual, 'Adds small right margin class.');
 
@@ -626,11 +549,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = largeTop.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='largeTop'/>).dom('div');
 
-      const element = <TestComponent margin='largeTop'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-large-top');
+      const actual = element.hasClass('uk-margin-large-top');
 
       assert.ok(actual, 'Adds large top margin class.');
 
@@ -641,11 +562,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = largeLeft.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='largeLeft'/>).dom('div');
 
-      const element = <TestComponent margin='largeLeft'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-large-left');
+      const actual = element.hasClass('uk-margin-large-left');
 
       assert.ok(actual, 'Adds large left margin class.');
 
@@ -656,11 +575,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = largeBottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='largeBottom'/>).dom('div');
 
-      const element = <TestComponent margin='largeBottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-large-bottom');
+      const actual = element.hasClass('uk-margin-large-bottom');
 
       assert.ok(actual, 'Adds large bottom margin class.');
 
@@ -671,11 +588,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = largeRight.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='largeRight'/>).dom('div');
 
-      const element = <TestComponent margin='largeRight'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-large-right');
+      const actual = element.hasClass('uk-margin-large-right');
 
       assert.ok(actual, 'Adds large right margin class.');
 
@@ -686,11 +601,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = remove.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='remove'/>).dom('div');
 
-      const element = <TestComponent margin='remove'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-remove');
+      const actual = element.hasClass('uk-margin-remove');
 
       assert.ok(actual, 'Adds remove margin class.');
 
@@ -701,11 +614,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = removeTop.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='removeTop'/>).dom('div');
 
-      const element = <TestComponent margin='removeTop'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-top-remove');
+      const actual = element.hasClass('uk-margin-top-remove');
 
       assert.ok(actual, 'Adds removeTop margin class.');
 
@@ -716,11 +627,9 @@ test('UIkit Component', nested => {
   nested.test('margin prop = removeBottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent margin='removeBottom'/>).dom('div');
 
-      const element = <TestComponent margin='removeBottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-margin-bottom-remove');
+      const actual = element.hasClass('uk-margin-bottom-remove');
 
       assert.ok(actual, 'Adds remove bottom margin class.');
 
@@ -732,11 +641,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = top.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='top'/>).dom('div');
 
-      const element = <TestComponent padding='top'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-top');
+      const actual = element.hasClass('uk-padding-top');
 
       assert.ok(actual, 'Adds top padding class.');
 
@@ -747,11 +654,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = top.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='top'/>).dom('div');
 
-      const element = <TestComponent padding='top'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-top');
+      const actual = element.hasClass('uk-padding-top');
 
       assert.ok(actual, 'Adds top padding class.');
 
@@ -762,11 +667,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = left.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='left'/>).dom('div');
 
-      const element = <TestComponent padding='left'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-left');
+      const actual = element.hasClass('uk-padding-left');
 
       assert.ok(actual, 'Adds left padding class.');
 
@@ -777,11 +680,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = bottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='bottom'/>).dom('div');
 
-      const element = <TestComponent padding='bottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-bottom');
+      const actual = element.hasClass('uk-padding-bottom');
 
       assert.ok(actual, 'Adds bottom padding class.');
 
@@ -792,11 +693,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = right.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='right'/>).dom('div');
 
-      const element = <TestComponent padding='right'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-right');
+      const actual = element.hasClass('uk-padding-right');
 
       assert.ok(actual, 'Adds right padding class.');
 
@@ -807,11 +706,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = smallTop.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='smallTop'/>).dom('div');
 
-      const element = <TestComponent padding='smallTop'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-small-top');
+      const actual = element.hasClass('uk-padding-small-top');
 
       assert.ok(actual, 'Adds small top padding class.');
 
@@ -822,11 +719,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = smallLeft.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='smallLeft'/>).dom('div');
 
-      const element = <TestComponent padding='smallLeft'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-small-left');
+      const actual = element.hasClass('uk-padding-small-left');
 
       assert.ok(actual, 'Adds small left padding class.');
 
@@ -837,11 +732,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = smallBottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='smallBottom'/>).dom('div');
 
-      const element = <TestComponent padding='smallBottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-small-bottom');
+      const actual = element.hasClass('uk-padding-small-bottom');
 
       assert.ok(actual, 'Adds small bottom padding class.');
 
@@ -852,11 +745,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = smallRight.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='smallRight'/>).dom('div');
 
-      const element = <TestComponent padding='smallRight'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-small-right');
+      const actual = element.hasClass('uk-padding-small-right');
 
       assert.ok(actual, 'Adds small right padding class.');
 
@@ -867,11 +758,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = largeTop.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='largeTop'/>).dom('div');
 
-      const element = <TestComponent padding='largeTop'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-large-top');
+      const actual = element.hasClass('uk-padding-large-top');
 
       assert.ok(actual, 'Adds large top padding class.');
 
@@ -882,11 +771,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = largeLeft.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='largeLeft'/>).dom('div');
 
-      const element = <TestComponent padding='largeLeft'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-large-left');
+      const actual = element.hasClass('uk-padding-large-left');
 
       assert.ok(actual, 'Adds large left padding class.');
 
@@ -897,11 +784,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = largeBottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='largeBottom'/>).dom('div');
 
-      const element = <TestComponent padding='largeBottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-large-bottom');
+      const actual = element.hasClass('uk-padding-large-bottom');
 
       assert.ok(actual, 'Adds large bottom padding class.');
 
@@ -912,11 +797,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = largeRight.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='largeRight'/>).dom('div');
 
-      const element = <TestComponent padding='largeRight'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-large-right');
+      const actual = element.hasClass('uk-padding-large-right');
 
       assert.ok(actual, 'Adds large right padding class.');
 
@@ -927,11 +810,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = remove.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='remove'/>).dom('div');
 
-      const element = <TestComponent padding='remove'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-remove');
+      const actual = element.hasClass('uk-padding-remove');
 
       assert.ok(actual, 'Adds remove padding class.');
 
@@ -942,11 +823,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = removeTop.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='removeTop'/>).dom('div');
 
-      const element = <TestComponent padding='removeTop'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-top-remove');
+      const actual = element.hasClass('uk-padding-top-remove');
 
       assert.ok(actual, 'Adds top remove padding class.');
 
@@ -957,11 +836,9 @@ test('UIkit Component', nested => {
   nested.test('padding prop = removeBottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent padding='removeBottom'/>).dom('div');
 
-      const element = <TestComponent padding='removeBottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-padding-bottom-remove');
+      const actual = element.hasClass('uk-padding-bottom-remove');
 
       assert.ok(actual, 'Adds remove bottom padding class.');
 
@@ -973,11 +850,9 @@ test('UIkit Component', nested => {
   nested.test('position prop = top.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='top ADD STRINGTOCLASS'/>).dom('div');
 
-      const element = <TestComponent position='top'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-top');
+      const actual = element.hasClass('uk-position-top');
 
       assert.ok(actual, 'Adds top position class.');
 
@@ -988,11 +863,9 @@ test('UIkit Component', nested => {
   nested.test('position prop = topLeft.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='topLeft'/>).dom('div');
 
-      const element = <TestComponent position='topLeft'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-top-left');
+      const actual = element.hasClass('uk-position-top-left');
 
       assert.ok(actual, 'Adds top left position class.');
 
@@ -1003,11 +876,9 @@ test('UIkit Component', nested => {
   nested.test('position prop = topRight.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='topRight'/>).dom('div');
 
-      const element = <TestComponent position='topRight'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-top-right');
+      const actual = element.hasClass('uk-position-top-right');
 
       assert.ok(actual, 'Adds top right position class.');
 
@@ -1018,11 +889,9 @@ test('UIkit Component', nested => {
   nested.test('position prop = bottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='bottom'/>).dom('div');
 
-      const element = <TestComponent position='bottom'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-bottom');
+      const actual = element.hasClass('uk-position-bottom');
 
       assert.ok(actual, 'Adds bottom position class.');
 
@@ -1033,11 +902,9 @@ test('UIkit Component', nested => {
   nested.test('position prop = bottomLeft.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='bottomLeft'/>).dom('div');
 
-      const element = <TestComponent position='bottomLeft'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-bottom-left');
+      const actual = element.hasClass('uk-position-bottom-left');
 
       assert.ok(actual, 'Adds bottom left position class.');
 
@@ -1048,11 +915,9 @@ test('UIkit Component', nested => {
   nested.test('position prop = bottom right.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='bottomRight'/>).dom('div');
 
-      const element = <TestComponent position='bottomRight'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-bottom-right');
+      const actual = element.hasClass('uk-position-bottom-right');
 
       assert.ok(actual, 'Adds bottom right position class.');
 
@@ -1063,11 +928,9 @@ test('UIkit Component', nested => {
   nested.test('position prop = cover.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='cover'/>).dom('div');
 
-      const element = <TestComponent position='cover'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-cover');
+      const actual = element.hasClass('uk-position-cover');
 
       assert.ok(actual, 'Adds cover position class.');
 
@@ -1078,11 +941,9 @@ test('UIkit Component', nested => {
   nested.test('position prop = relative.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='relative'/>).dom('div');
 
-      const element = <TestComponent position='relative'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-relative');
+      const actual = element.hasClass('uk-position-relative');
 
       assert.ok(actual, 'Adds relative position class.');
 
@@ -1093,13 +954,24 @@ test('UIkit Component', nested => {
   nested.test('position prop = zIndex.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent position='zIndex'/>).dom('div');
 
-      const element = <TestComponent position='zIndex'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-position-z-index');
+      const actual = element.hasClass('uk-position-z-index');
 
       assert.ok(actual, 'Adds z index position class.');
+
+      assert.end();
+    });
+
+
+  nested.test('responsive prop.',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent responsive='width height'/>).dom('div');
+
+      const actual = element.hasClass('uk-responsive-width uk-responsive-height');
+
+      assert.ok(actual, 'Adds responsive classes to base component.');
 
       assert.end();
     });
@@ -1109,13 +981,11 @@ test('UIkit Component', nested => {
   nested.test('scroll prop = auto.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent scroll='auto'/>).dom('div');
 
-      const element = <TestComponent scroll='auto'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-overflow-container');
 
-      const actual = $('div').hasClass('uk-overflow-container');
-
-      assert.ok(actual, 'Adds overflow container class.');
+      assert.ok(actual, 'Adds overflow container class to base component.');
 
       assert.end();
     });
@@ -1124,13 +994,11 @@ test('UIkit Component', nested => {
   nested.test('scroll prop = box.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent scroll='box'/>).dom('div');
 
-      const element = <TestComponent scroll='box'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-scrollable-box');
 
-      const actual = $('div').hasClass('uk-scrollable-box');
-
-      assert.ok(actual, 'Adds box scrollable class.');
+      assert.ok(actual, 'Adds box scrollable class to base component.');
 
       assert.end();
     });
@@ -1138,13 +1006,11 @@ test('UIkit Component', nested => {
   nested.test('scroll prop = text.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent scroll='text'/>).dom('div');
 
-      const element = <TestComponent scroll='text'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-scrollable-text');
 
-      const actual = $('div').hasClass('uk-scrollable-text');
-
-      assert.ok(actual, 'Adds text scrollable class.');
+      assert.ok(actual, 'Adds text scrollable class to base component.');
 
       assert.end();
     });
@@ -1154,13 +1020,11 @@ test('UIkit Component', nested => {
   nested.test('textAlign prop = center.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textAlign='center'/>).dom('div');
 
-      const element = <TestComponent textAlign='center'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-center');
 
-      const actual = $('div').hasClass('uk-text-center');
-
-      assert.ok(actual, 'Adds center text class.');
+      assert.ok(actual, 'Adds center text class to base component.');
 
       assert.end();
     });
@@ -1169,13 +1033,11 @@ test('UIkit Component', nested => {
   nested.test('textAlign prop = centerSmall.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textAlign='centerSmall'/>).dom('div');
 
-      const element = <TestComponent textAlign='centerSmall'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-center-small');
 
-      const actual = $('div').hasClass('uk-text-center-small');
-
-      assert.ok(actual, 'Adds small center text class.');
+      assert.ok(actual, 'Adds small center text class to base component.');
 
       assert.end();
     });
@@ -1184,13 +1046,11 @@ test('UIkit Component', nested => {
   nested.test('textAlign prop = centerMedium.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textAlign='centerMedium'/>).dom('div');
 
-      const element = <TestComponent textAlign='centerMedium'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-center-medium');
 
-      const actual = $('div').hasClass('uk-text-center-medium');
-
-      assert.ok(actual, 'Adds medium center text class.');
+      assert.ok(actual, 'Adds medium center text class to base component.');
 
       assert.end();
     });
@@ -1199,13 +1059,11 @@ test('UIkit Component', nested => {
   nested.test('textAlign prop = left.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textAlign='left'/>).dom('div');
 
-      const element = <TestComponent textAlign='left'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-left');
 
-      const actual = $('div').hasClass('uk-text-left');
-
-      assert.ok(actual, 'Adds center text class.');
+      assert.ok(actual, 'Adds center text class to base component.');
 
       assert.end();
     });
@@ -1214,13 +1072,11 @@ test('UIkit Component', nested => {
   nested.test('textAlign prop = leftSmall.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textAlign='leftSmall'/>).dom('div');
 
-      const element = <TestComponent textAlign='leftSmall'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-left-small');
 
-      const actual = $('div').hasClass('uk-text-left-small');
-
-      assert.ok(actual, 'Adds small left text class.');
+      assert.ok(actual, 'Adds small left text class to base component.');
 
       assert.end();
     });
@@ -1229,13 +1085,11 @@ test('UIkit Component', nested => {
   nested.test('textAlign prop = leftMedium.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textAlign='leftMedium'/>).dom('div');
 
-      const element = <TestComponent textAlign='leftMedium'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-left-medium');
 
-      const actual = $('div').hasClass('uk-text-left-medium');
-
-      assert.ok(actual, 'Adds medium left text class.');
+      assert.ok(actual, 'Adds medium left text class to base component.');
 
       assert.end();
     });
@@ -1244,13 +1098,11 @@ test('UIkit Component', nested => {
   nested.test('textAlign prop = justify.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textAlign='justify'/>).dom('div');
 
-      const element = <TestComponent textAlign='justify'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-justify');
 
-      const actual = $('div').hasClass('uk-text-justify');
-
-      assert.ok(actual, 'Adds justify text class.');
+      assert.ok(actual, 'Adds justify text class to base component.');
 
       assert.end();
     });
@@ -1260,13 +1112,11 @@ test('UIkit Component', nested => {
   nested.test('textVerticle prop = top.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textVerticle='top'/>).dom('div');
 
-      const element = <TestComponent textVerticle='top'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-top');
 
-      const actual = $('div').hasClass('uk-text-top');
-
-      assert.ok(actual, 'Adds top text class.');
+      assert.ok(actual, 'Adds top text class to base component.');
 
       assert.end();
     });
@@ -1275,13 +1125,11 @@ test('UIkit Component', nested => {
   nested.test('textVerticle prop = middle.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textVerticle='middle'/>).dom('div');
 
-      const element = <TestComponent textVerticle='middle'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-middle');
 
-      const actual = $('div').hasClass('uk-text-middle');
-
-      assert.ok(actual, 'Adds middle text class.');
+      assert.ok(actual, 'Adds middle text class to base component.');
 
       assert.end();
     });
@@ -1290,13 +1138,11 @@ test('UIkit Component', nested => {
   nested.test('textVerticle prop = bottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textVerticle='bottom'/>).dom('div');
 
-      const element = <TestComponent textVerticle='bottom'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-bottom');
 
-      const actual = $('div').hasClass('uk-text-bottom');
-
-      assert.ok(actual, 'Adds bottom text class.');
+      assert.ok(actual, 'Adds bottom text class to base component.');
 
       assert.end();
     });
@@ -1306,13 +1152,11 @@ test('UIkit Component', nested => {
   nested.test('textWrap prop = truncate.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textWrap='truncate'/>).dom('div');
 
-      const element = <TestComponent textWrap='truncate'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-truncate');
 
-      const actual = $('div').hasClass('uk-text-truncate');
-
-      assert.ok(actual, 'Adds truncate text class.');
+      assert.ok(actual, 'Adds truncate text class to base component.');
 
       assert.end();
     });
@@ -1321,13 +1165,11 @@ test('UIkit Component', nested => {
   nested.test('textWraptextWrap prop = break.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent textWrap='break'/>).dom('div');
 
-      const element = <TestComponent textWrap='break'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-text-break');
 
-      const actual = $('div').hasClass('uk-text-break');
-
-      assert.ok(actual, 'Adds break text class.');
+      assert.ok(actual, 'Adds break text class to base component.');
 
       assert.end();
     });
@@ -1337,12 +1179,12 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
 
-      const element = <TestComponent textWrap='nowrap'/>;
-      const $ = dom.load(renderMarkup(element));
+      const element = renderElement(<TestComponent textWrap='nowrap'/>).dom('div');
 
-      const actual = $('div').hasClass('uk-text-nowrap');
 
-      assert.ok(actual, 'Adds nowrap text class.');
+      const actual = element.hasClass('uk-text-nowrap');
+
+      assert.ok(actual, 'Adds nowrap text class to base component.');
 
       assert.end();
     });
@@ -1352,13 +1194,11 @@ test('UIkit Component', nested => {
   nested.test('vertical prop = parent.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent vertical='parent'/>).dom('div');
 
-      const element = <TestComponent vertical='parent'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-vertical-align');
 
-      const actual = $('div').hasClass('uk-vertical-align');
-
-      assert.ok(actual, 'Adds align vertical to parent class.');
+      assert.ok(actual, 'Adds align vertical to parent class to base component.');
 
       assert.end();
     });
@@ -1367,13 +1207,11 @@ test('UIkit Component', nested => {
   nested.test('vertical prop = break.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent vertical='middle'/>).dom('div');
 
-      const element = <TestComponent vertical='middle'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-vertical-align-middle');
 
-      const actual = $('div').hasClass('uk-vertical-align-middle');
-
-      assert.ok(actual, 'Adds middle vertical class.');
+      assert.ok(actual, 'Adds middle vertical class to base component.');
 
       assert.end();
     });
@@ -1382,13 +1220,11 @@ test('UIkit Component', nested => {
   nested.test('vertical prop = bottom.',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent vertical='bottom'/>).dom('div');
 
-      const element = <TestComponent vertical='bottom'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-vertical-align-bottom');
 
-      const actual = $('div').hasClass('uk-vertical-align-bottom');
-
-      assert.ok(actual, 'Adds bottom vertical class.');
+      assert.ok(actual, 'Adds bottom vertical class to base component.');
 
       assert.end();
     });
@@ -1398,13 +1234,11 @@ test('UIkit Component', nested => {
   nested.test('visible prop',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent visible='hover'/>).dom('div');
 
-      const element = <TestComponent visible='hover'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-visible-hover');
 
-      const actual = $('div').hasClass('uk-visible-hover');
-
-      assert.ok(actual, 'Adds hover visible class.');
+      assert.ok(actual, 'Adds hover visible class to base component.');
 
       assert.end();
     });
@@ -1413,13 +1247,11 @@ test('UIkit Component', nested => {
   nested.test('visible prop = hoverInline',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent visible='hoverInline'/>).dom('div');
 
-      const element = <TestComponent visible='hoverInline'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-visible-hover-inline');
 
-      const actual = $('div').hasClass('uk-visible-hover-inline');
-
-      assert.ok(actual, 'Adds inline hover visible class.');
+      assert.ok(actual, 'Adds inline hover visible class to base component.');
 
       assert.end();
     });
@@ -1428,28 +1260,24 @@ test('UIkit Component', nested => {
   nested.test('visible prop = large',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent visible='large'/>).dom('div');
 
-      const element = <TestComponent visible='large'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-visible-large');
 
-      const actual = $('div').hasClass('uk-visible-large');
-
-      assert.ok(actual, 'Adds inline hover visible class.');
+      assert.ok(actual, 'Adds inline large visible class to base component.');
 
       assert.end();
     });
 
 
-  nested.test('visible prop = small',
+  nested.test('visible prop = small:',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent visible='small'/>).dom('div');
 
-      const element = <TestComponent visible='small'/>;
-      const $ = dom.load(renderMarkup(element));
+      const actual = element.hasClass('uk-visible-small');
 
-      const actual = $('div').hasClass('uk-visible-small');
-
-      assert.ok(actual, 'Adds inline hover visible class.');
+      assert.ok(actual, 'Adds inline small visible class to base component.');
 
       assert.end();
     });
@@ -1458,14 +1286,10 @@ test('UIkit Component', nested => {
   nested.test('visible prop = touch',
     assert => {
       const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent visible='touch'/>).dom('div');
 
-      const element = <TestComponent visible='touch'/>;
-      const $ = dom.load(renderMarkup(element));
-
-      const actual = $('div').hasClass('uk-visible-touch');
-
-      assert.ok(actual, 'Adds hover visible class.');
-
+      const actual = element.hasClass('uk-visible-touch');
+      assert.ok(actual, 'Adds hover visible touch class to base component.');
       assert.end();
     });
 
@@ -1477,7 +1301,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='first'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-first');
-      assert.ok(actual, 'Adds order first flex class to grid element');
+      assert.ok(actual, 'Adds order first flex class to base component');
 
       assert.end();
     });
@@ -1487,9 +1311,8 @@ test('UIkit Component', nested => {
     assert => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent order='firstSmall'/>).dom('div');
-
       const actual = element.hasClass('uk-flex-order-first-small');
-      assert.ok(actual, 'Adds order first small flex class to grid element');
+      assert.ok(actual, 'Adds order first small flex class to base component');
 
       assert.end();
     });
@@ -1501,7 +1324,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='firstMedium'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-first-medium');
-      assert.ok(actual, 'Adds order first medium flex class to grid element');
+      assert.ok(actual, 'Adds order first medium flex class to base component');
 
       assert.end();
     });
@@ -1513,7 +1336,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='firstLarge'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-first-large');
-      assert.ok(actual, 'Adds order first large flex class to grid element');
+      assert.ok(actual, 'Adds order first large flex class to base component');
 
       assert.end();
     });
@@ -1525,7 +1348,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='firstXlarge'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-first-xlarge');
-      assert.ok(actual, 'Adds order first first large class to grid element');
+      assert.ok(actual, 'Adds order first first large class to base component');
 
       assert.end();
     });
@@ -1537,7 +1360,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='last'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-last');
-      assert.ok(actual, 'Adds order last class to grid element');
+      assert.ok(actual, 'Adds order last class to base component');
 
       assert.end();
     });
@@ -1549,7 +1372,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='lastSmall'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-last-small');
-      assert.ok(actual, 'Adds order last small class to grid element');
+      assert.ok(actual, 'Adds order last small class to base component');
 
       assert.end();
     });
@@ -1561,7 +1384,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='lastMedium'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-last-medium');
-      assert.ok(actual, 'Adds order last medium class to grid element');
+      assert.ok(actual, 'Adds order last medium class to base component');
 
       assert.end();
     });
@@ -1573,7 +1396,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='lastLarge'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-last-large');
-      assert.ok(actual, 'Adds order last large class to grid element');
+      assert.ok(actual, 'Adds order last large class to base component');
 
       assert.end();
     });
@@ -1585,11 +1408,23 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent order='lastXlarge'/>).dom('div');
 
       const actual = element.hasClass('uk-flex-order-last-xlarge');
-      assert.ok(actual, 'Adds order last xlarge class to grid element');
+      assert.ok(actual, 'Adds order last xlarge class to base component');
 
       assert.end();
     });
 
 
+  nested.test('Takes muiliple props:',
+    assert => {
+      const TestComponent = uikit.base(Component);
+      const element = renderElement(<TestComponent visible='touch small' margin='top left' padding='bottom right'/>).dom();
+
+      const actual = element.html();
+      const expect = '<div class="uk-margin-top uk-margin-left uk-padding-bottom uk-padding-right uk-visible-touch uk-visible-small"></div>';
+
+      assert.equals(actual, expect, 'Adds mulitiple classes to base component.');
+
+      assert.end();
+    });
 
 });
