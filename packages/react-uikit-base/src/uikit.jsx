@@ -201,7 +201,6 @@ const base = (Cmpt) => {
       display     : React.PropTypes.oneOf(utilityKeys('display')),
       float       : React.PropTypes.oneOf(utilityKeys('float')),
       hidden      : React.PropTypes.string,
-      itemProp    : React.PropTypes.string,
       kitid       : React.PropTypes.string,
       margin      : React.PropTypes.string,
       order       : React.PropTypes.oneOf(utilityKeys('order')),
