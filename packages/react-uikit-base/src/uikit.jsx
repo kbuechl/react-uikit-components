@@ -54,10 +54,11 @@ const utilityCss = {
   hidden: {
     all      : 'uk-hidden',
     invisible: 'uk-invisible',
-    large  : 'uk-hidden-large',
-    small  : 'uk-hidden-small',
-    medium : 'uk-hidden-medium',
-    touch  : 'uk-hidden-touch'
+    large    : 'uk-hidden-large',
+    small    : 'uk-hidden-small',
+    medium   : 'uk-hidden-medium',
+    touch    : 'uk-hidden-touch',
+    notouch  : 'uk-hidden-notouch'
   },
 
 
@@ -176,6 +177,7 @@ const utilityCss = {
     hover      : 'uk-visible-hover',
     hoverInline: 'uk-visible-hover-inline',
     large      : 'uk-visible-large',
+    medium     : 'uk-visible-medium',
     small      : 'uk-visible-small',
     touch      : 'uk-visible-touch'
   }
@@ -204,9 +206,9 @@ const base = (Cmpt) => {
       kitid       : React.PropTypes.string,
       margin      : React.PropTypes.string,
       order       : React.PropTypes.oneOf(utilityKeys('order')),
-      padding     : React.PropTypes.oneOf(utilityKeys('padding')),
+      padding     : React.PropTypes.string,
       position    : React.PropTypes.oneOf(utilityKeys('position')),
-      responsive  : React.PropTypes.oneOf(utilityKeys('responsive')),
+      responsive  : React.PropTypes.string,
       scroll      : React.PropTypes.oneOf(utilityKeys('scroll')),
       textAlign   : React.PropTypes.oneOf(utilityKeys('textAlign')),
       textVerticle: React.PropTypes.oneOf(utilityKeys('textVerticle')),
@@ -238,7 +240,7 @@ const base = (Cmpt) => {
         $props.textVerticle ? helpers.getClasses($props.textVerticle, utilityCss.textVerticle) : null,
         $props.textWrap ? helpers.getClasses($props.textWrap, utilityCss.textWrap) : null,
         $props.vertical ? helpers.getClass($props.vertical, utilityCss.vertical) : null,
-        $props.viewport ? ' uk-height-viewport' : null,
+        $props.viewport ? 'uk-height-viewport' : null,
         $props.visible ? helpers.getClasses($props.visible, utilityCss.visible) : null
       ];
 
@@ -257,7 +259,7 @@ const base = (Cmpt) => {
 
 
       const column = ufunc.maybeIf(<div className={colClasses}>
-        {component}
+        otis{component}
       </div>)($props.col || $props.colsSmall || $props.colsMedium || $props.colsLarge);
 
 
