@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-base",
-  "version": "0.0.48",
+  "version": "0.0.49",
   "description": "React base HOC with uikit utility classes",
   "keywords": [
     "javascript",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "main": "./lib/uikit.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/base-doc > README.md && date",
+    "docs": "babel-node ./reactToHtml.js ./docs/base-doc > README.md && date || true",
     "docs:watch": "watch 'npm run docs' ./docs",
     "build": "babel -d lib/ src/ && date",
     "build:watch": "watch 'npm run build' ./src",
