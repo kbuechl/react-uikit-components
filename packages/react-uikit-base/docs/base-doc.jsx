@@ -454,6 +454,11 @@ uikit.base(Component);
         </p>
       </section>
 
+      <section>
+        <h2>License</h2>
+          <p>MIT</p>
+      </section>
+
     </div>;
   }
 }
