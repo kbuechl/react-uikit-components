@@ -1,0 +1,38 @@
+{
+  "parser": "babel-eslint",
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+  },
+
+  "ecmaFeatures": {
+    "modules": true,
+  },
+
+  "globals": {
+    "process.env": true
+  },
+
+  "plugins": [
+    "smells"
+  ],
+
+  "extends": "standard",
+
+  "rules": {
+    "key-spacing": 0,
+    "no-trailing-spaces": 0,
+    "no-multiple-empty-lines": [2, {"max": 2}],
+    "padded-blocks": 0,
+    "semi": [2, "always"],
+
+    "smells/no-switch": 1,
+    "smells/no-complex-switch-case": 1,
+    "smells/no-setinterval": 1,
+    "smells/no-this-assign": 1,
+    "smells/no-complex-string-concat": 1,
+    "smells/no-complex-chaining": 0
+  }
+}
