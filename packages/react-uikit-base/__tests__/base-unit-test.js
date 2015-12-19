@@ -850,7 +850,7 @@ test('UIkit Component', nested => {
   nested.test('position prop = top.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent position='top ADD STRINGTOCLASS'/>).dom('div');
+      const element = renderElement(<TestComponent position='top'/>).dom('div');
 
       const actual = element.hasClass('uk-position-top');
 

@@ -1,12 +1,12 @@
 {
   "name": "react-uikit-base",
-  "version": "0.0.49",
+  "version": "0.1.0",
   "description": "React UIkit base HOC with uikit utility classes",
   "keywords": [
     "javascript",
     "react",
     "uikit",
-    "component"
+    "react-component"
   ],
   "repository": "git@github.com:otissv/react-uikit-base.git",
   "author": "Otis Virginie",
@@ -32,10 +32,9 @@
     "babel-preset-react": "~6.1.18",
     "babel-preset-stage-0": "~6.1.18",
     "babel-runtime": "~6.2.0",
-    "blue-tape": "~0.1.10",
+    "tape": "~4.2.2",
     "cheerio": "~0.19.0",
     "eslint-config-standard": "~4.4.0",
-    "eslint-loader": "^1.1.1",
     "eslint-plugin-react": "~3.11.2",
     "eslint-plugin-smells": "~1.0.1",
     "eslint-plugin-standard": "~1.3.1",
@@ -44,7 +43,6 @@
     "history": "~1.13.1",
     "react-addons-test-utils": "~0.14.3",
     "react-dom": "~0.14.3",
-    "react-hot-loader": "~1.3.0",
     "tap-difflet": "~0.4.0",
     "tap-min": "~1.0.0",
     "watch": "~0.16.0"
