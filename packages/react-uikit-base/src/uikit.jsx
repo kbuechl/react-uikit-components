@@ -257,7 +257,7 @@ const base = (Cmpt) => {
 
 
       const column = ufunc.maybeIf(<div className={colClasses}>
-        otis{component}
+        {component}
       </div>)($props.col || $props.colsSmall || $props.colsMedium || $props.colsLarge);
 
 
