@@ -289,7 +289,8 @@ export default class BlockHandler extends React.Component {
               <td className='uk-text-left'>
                 <code>container</code>
               </td>
-              <td colSpan='2'>oneOf ["default", "muted", "primary", "secondary"]</td>
+              <td colSpan='2'>oneOf <br />
+              default, muted, primary, secondary</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
