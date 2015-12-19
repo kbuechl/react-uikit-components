@@ -36,6 +36,10 @@ export default class BlockHandler extends React.Component {
         <code>var uikit = require&#40;'react-uikit-base'&#41;;</code>
         </p>
 
+        <p>
+          UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
+        </p>
+
         <hr className="uk-article-divider" />
 
           <p>
