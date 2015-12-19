@@ -108,7 +108,7 @@ items={[
 
 
     <section>
-      <h2>Img galery props</h2>
+      <h2>Img gallery props</h2>
       <p>
         <code>&lt;Img&gt;</code> props and their types.
       </p>
