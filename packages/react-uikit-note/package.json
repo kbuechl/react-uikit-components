@@ -1,7 +1,7 @@
 {
   "name": "react-uikit-note",
   "version": "0.1.0",
-  "description": "React uikit note component.",
+  "description": "React uikit note component to add notes to text.",
   "keywords": [
     "javascript",
     "react",
