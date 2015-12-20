@@ -12,7 +12,7 @@ const CodeblockDoc = (props) => (
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Codeblock</h1>
-      <p className='uk-article-lead'>
+      <p>
         Displays code inside of a block.
       </p>
       </section>
@@ -32,10 +32,14 @@ const CodeblockDoc = (props) => (
         <code>var Codeblock = require&#40;'react-uikit-codeblock'&#41;;</code>
         </p>
 
-        <Note badge={{context: 'danger', body: 'Note'}}>
+        <Note badge={{context: 'danger', body: 'Note:'}}>
           UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
           This has been tested with UIKit version 2.24.2.
         </Note>
+
+        <p>
+          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+        </p>
 
         <hr className="uk-article-divider" />
       <p>
@@ -47,14 +51,10 @@ const CodeblockDoc = (props) => (
         For inline code use the html element <code>&lt;code&gt;</code>.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Codeblock >{
-          `<div>...<div>`
-        }</Codeblock>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-{`<Codeblock syntax='xml'>
+      <Codeblock>
+{`<Codeblock>
 {\`<div>...<div>\`};
 </Codeblock>`}
       </Codeblock>
@@ -69,7 +69,7 @@ const CodeblockDoc = (props) => (
         highlighting by specifying a language.
       </p>
 
-      <Note badge='Note'>highlight.js is not included</Note>
+      <Note badge='Note:'>highlight.js is not included</Note>
     </section>
 
 
@@ -86,16 +86,16 @@ const CodeblockDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>syntax</code>
             </td>
-            <td className='uk-text-left'>string</td>
+            <td>string</td>
           </tr>
         </tbody>
       </Table>

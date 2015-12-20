@@ -1,13 +1,15 @@
 {
   "name": "react-uikit-codeblock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React uikit codeblock component.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
     "react-component",
-    "codeblock"
+    "codeblock",
+    "react-uikit",
+    "uikit-react"
   ],
   "repository": "git@github.com:otissv/react-uikit-codeblock.git",
   "author": "Otis Virginie",
@@ -51,7 +53,7 @@
   },
   "dependencies": {
     "react": "~0.14.3",
-    "react-uikit-base": "~0.1.0",
+    "react-uikit-base": "~0.1.1",
     "ufunc": "~0.2.1"
   },
   "babel": {
