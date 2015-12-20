@@ -1,12 +1,14 @@
 {
   "name": "react-uikit-panel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React uikit panel component for creating layout boxes.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
     "react-component",
+    "react-uikit",
+    "uikit-react",
     "panel"
   ],
   "repository": "git@github.com:otissv/react-uikit-panel.git",
