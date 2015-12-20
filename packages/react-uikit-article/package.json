@@ -7,6 +7,8 @@
     "react",
     "uikit",
     "react-component",
+    "react-uikit",
+    "uikit-react",
     "alert"
   ],
   "repository": "git@github.com:otissv/react-uikit-article.git",
