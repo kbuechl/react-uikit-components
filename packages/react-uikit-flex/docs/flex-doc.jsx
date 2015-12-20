@@ -9,7 +9,6 @@ import Note from '../../react-uikit-note/lib/note';
 
 const FlexDoc = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Flex</h1>
       <p>
