@@ -10,10 +10,9 @@ import Note from '../../react-uikit-note/lib/note';
 
 const ImgGalleryDoc = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Img Gallery</h1>
-      <p className='uk-article-lead'>
+      <p>
         Create galery of imiages.
       </p>
     </section>
@@ -38,22 +37,14 @@ const ImgGalleryDoc = (props) => (
       This has been tested with UIKit version 2.24.2.
     </Note>
 
-    <hr className="uk-article-divider" />
+    <p>
+      See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+    </p>
 
-    <h3 className='example'>Example</h3>
-    <ImgGroup
-      items={[
-        {src: 'docs/images/placeholder_200x150_2.svg'},
-        {src: 'docs/images/placeholder_200x150_2.svg'},
-        {src: 'docs/images/placeholder_200x150_2.svg'},
-        {src: 'docs/images/placeholder_200x150_2.svg'},
-        {src: 'docs/images/placeholder_200x150_2.svg'},
-        {src: 'docs/images/placeholder_200x150_2.svg'}
-      ]}
-    />
+    <hr />
 
+    <h3>Example</h3>
 
-    <h4 className='code'>Code</h4>
     <Codeblock syntax='xml'>
 {
 `<ImgGroup
@@ -76,20 +67,8 @@ items={[
     <p>
       props can be passed to the image by adding <code>props</code> property to to an item.
     </p>
-    <h3 className='example'>Example</h3>
-    <ImgGroup
-      items={[
-        {src: 'docs/images/placeholder_200x150_2.svg', props: {margin: 'bottom right'}},
-        {src: 'docs/images/placeholder_200x150_2.svg', props: {margin: 'bottom right'}},
-        {src: 'docs/images/placeholder_200x150_2.svg', props: {margin: 'bottom right'}},
-        {src: 'docs/images/placeholder_200x150_2.svg', props: {margin: 'bottom right'}},
-        {src: 'docs/images/placeholder_200x150_2.svg', props: {margin: 'bottom right'}},
-        {src: 'docs/images/placeholder_200x150_2.svg', props: {margin: 'bottom right'}}
-      ]}
-    />
+    <h3>Example</h3>
 
-
-    <h4 className='code'>Code</h4>
     <Codeblock syntax='xml'>
 {
 `<ImgGroup
@@ -120,28 +99,17 @@ items={[
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>items</code>
             </td>
-            <td className='uk-text-left'>
-              array of objects.<br/>
-              {`{
-                alt,
-                src,
-                height,
-                large,
-                medium,
-                props,
-                small,
-                width,
-                xlarge
-              }`}
+            <td>
+              array of objects
             </td>
           </tr>
         </tbody>

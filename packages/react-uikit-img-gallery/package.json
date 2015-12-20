@@ -1,12 +1,14 @@
 {
   "name": "react-uikit-img-gallery",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React uikit image gallery component.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
     "react-component",
+    "react-uikit",
+    "uikit-react",
     "img-group"
   ],
   "repository": "git@github.com:otissv/react-uikit-img-gallery.git",
