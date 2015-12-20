@@ -10,10 +10,9 @@ import Note from '../../react-uikit-note/lib/note';
 
 const ButtonDoc = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Button</h1>
-      <p className='uk-article-lead'>
+      <p>
         Easily create nicely looking buttons, which come in different styles.
       </p>
     </section>
@@ -38,7 +37,11 @@ const ButtonDoc = (props) => (
         This has been tested with UIKit version 2.24.2.
       </Note>
 
-      <hr className='uk-article-divider' />
+      <p>
+        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+      </p>
+
+      <hr/>
 
       <p>
         The Button component creates either a <code>button</code>,
@@ -49,15 +52,9 @@ const ButtonDoc = (props) => (
         By defualt the Button component will create a button if no type is provided.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Panel>
-        <Button body='Button' margin='right'/>
-        <Button body='Link' type='link' margin='right'/>
-        <Button body='Disabled' disabled margin='right'/>
-        <Button type='close'/>
-      </Panel>
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <h3>Example</h3>
+
+      <Codeblock>
 {`<Button body='Button' margin='right' margin='right'/>
 <Button body='Disabled' disabled  margin='right'/>
 <Button type='close'/>
@@ -75,61 +72,48 @@ const ButtonDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Example</th>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Description</th>
+            <th>Prop</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
-              <Button context='primary' body='Primary' />
-            </td>
-            <td className='uk-text-left'>
+            <td>
               <code>context='primary'</code>
             </td>
-            <td className='uk-text-left'>
+            <td>
               Emphasizes to identify the primary action in a set of buttons.
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
-              <Button context='success' body='Success' />
-            </td>
-            <td className='uk-text-left'>
+            <td>
               <code>context='success'</code>
             </td>
-            <td className='uk-text-left'>
+            <td>
               Indicates a successful or positive action.
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
-              <Button context='danger' body='Danger' />
-            </td>
-            <td className='uk-text-left'>
+            <td>
               <code>context='danger'</code>
             </td>
-            <td className='uk-text-left'>
+            <td>
                 Indicates a dangerous or negative action.
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
-              <Button context='link' body='Link'type='link' />
-            </td>
-            <td className='uk-text-left'>
+            <td>
               <code>context='link'</code>
             </td>
-            <td className='uk-text-left'>
+            <td>
               Deemphasizes to look like a link while maintaining button behavior.
             </td>
           </tr>
         </tbody>
       </Table>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <h4>Code</h4>
+      <Codeblock>
 {`<Button context='primary' body='Primary' />
 <Button context='success' body='Success' />
 <Button context='danger'  body='Danger' />
@@ -145,27 +129,9 @@ const ButtonDoc = (props) => (
         to <code>mini</code>, <code>small</code> or <code>large</code>.
       </p>
 
-      <h3 className='example'>Example</h3>
+      <h3>Example</h3>
 
-      <Panel>
-        <Button size='mini' body='Mini button' margin='right'/>
-        <Button size='mini' body='Mini button' context='primary'/><br />
-      </Panel>
-      <Panel>
-          <Button size='small' body='Small button' margin='right'/>
-          <Button size='small' body='Small button' context='primary'/><br />
-      </Panel>
-      <Panel>
-        <Button body='Default button' margin='right'/>
-        <Button body='Default button' context='primary'/><br />
-      </Panel>
-      <Panel>
-        <Button size='large' body='Large button' margin='right'/>
-        <Button size='large' body='Large button' context='primary'/><br />
-      </Panel>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Button size='mini' body='Mini button' margin='right'/>
 <Button size='mini' body='Mini button' context='primary'/><br />
 
@@ -189,43 +155,21 @@ const ButtonDoc = (props) => (
         to <code>mini</code>, <code>small</code> or <code>large</code>.
       </p>
 
-      <h3 className='example'>Example</h3>
+      <h3>Example</h3>
 
-      <Panel>
-        <Button size='mini' body='Mini button' margin='right'/>
-        <Button size='mini' body='Mini button' context='primary'/><br />
-      </Panel>
-      <Panel>
-          <Button size='small' body='Small button' margin='right'/>
-          <Button size='small' body='Small button' context='primary'/><br />
-      </Panel>
-      <Panel>
-        <Button body='Default button'/>
-        <Button body='Default button' context='primary'/><br />
-      </Panel>
-      <Panel>
-        <Button size='large' body='Large button 'margin='right'/>
-        <Button size='large' body='Large button' context='primary'/><br />
-      </Panel>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-{`<Panel>
-<Button size='mini' body='Mini button' margin='right'/>
+      <Codeblock>
+{`<Button size='mini' body='Mini button' margin='right'/>
 <Button size='mini' body='Mini button' context='primary'/><br />
-</Panel>
-<Panel>
-  <Button size='small' body='Small button' margin='right'/>
-  <Button size='small' body='Small button' context='primary'/><br />
-</Panel>
-<Panel>
+
+<Button size='small' body='Small button' margin='right'/>
+<Button size='small' body='Small button' context='primary'/><br />
+
 <Button body='Default button'/>
 <Button body='Default button' context='primary'/><br />
-</Panel>
-<Panel>
+
 <Button size='large' body='Large button' margin='right'/>
 <Button size='large' body='Large button' context='primary'/><br />
-</Panel>
+
 `}
       </Codeblock>
     </section>
@@ -238,14 +182,9 @@ const ButtonDoc = (props) => (
         to the buttton component.
       </p>
 
-      <h3 className='example'>Example</h3>
+      <h3>Example</h3>
 
-      <Panel>
-        <Button block body='Button' margin='smallBottom' />
-        <Button block body='Button' context='primary'/>
-      </Panel>
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`
 <Button block body='Button' margin='smallBottom' />
 <Button block body='Button' context='primary'/>
@@ -260,13 +199,6 @@ const ButtonDoc = (props) => (
         Coming soon...
       </p>
 
-      <h3 className='example'>Example</h3>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-{`
-`}
-      </Codeblock>
     </section>
 
 
@@ -283,52 +215,52 @@ const ButtonDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>body</code>
             </td>
-            <td className='uk-text-left'>string</td>
+            <td>string</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>block</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>context</code>
             </td>
-            <td className='uk-text-left'>oneOf <br /> primary, success, danger or link</td>
+            <td>oneOf <br /> primary, success, danger or link</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>disabled</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>onClick</code>
             </td>
-            <td className='uk-text-left'>func</td>
+            <td>func</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>size</code>
             </td>
-            <td className='uk-text-left'>oneOf <br /> mini small or large</td>
+            <td>oneOf <br /> mini small or large</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>type</code>
             </td>
-            <td className='uk-text-left'>oneOf <br /> button close or link</td>
+            <td>oneOf <br /> button close or link</td>
           </tr>
         </tbody>
       </Table>
