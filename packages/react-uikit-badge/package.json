@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-badge",
-  "version": "0.1.01",
+  "version": "0.1.12",
   "description": "React uikit badge component to label and highlight content.",
   "keywords": [
     "javascript",
@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "react": "~0.14.3",
-    "react-uikit-base": "~0.1.0",
+    "react-uikit-base": "~0.1.1",
     "ufunc": "~0.2.1"
   },
   "babel": {

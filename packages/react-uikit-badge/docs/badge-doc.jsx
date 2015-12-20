@@ -2,17 +2,16 @@
 
 
 import React from 'react';
-import Badge from '../../react-uikit-badge/lib/badge';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 import Table from '../../react-uikit-table/lib/table';
 import Note from '../../react-uikit-note/lib/note';
 
 const BadgeDoc = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
+
     <section>
       <h1>Badge</h1>
-        <p className='uk-article-lead'>
+        <p>
           Easlily create nicely looking badges to label and highlight your content.
         </p>
       </section>
@@ -32,12 +31,16 @@ const BadgeDoc = (props) => (
       <code>var Badge = require&#40;'react-uikit-badge'&#41;;</code>
       </p>
 
-      <Note badge={{context: 'danger', body: 'Note'}}>
+      <Note badge={{context: 'danger', body: 'Note:'}}>
         UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
         This has been tested with UIKit version 2.24.2.
       </Note>
 
-      <hr className="uk-article-divider" />
+      <p>
+        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+      </p>
+
+      <hr/>
 
       <p>
         Badges can be either <code>&lt;span&gt;</code> or <code>&lt;div&gt;</code>.
@@ -53,12 +56,12 @@ const BadgeDoc = (props) => (
         by setting the <code>body</code> prop, <code>&lt;Badge body='Awesome'/&gt;</code>.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Badge>Info</Badge> <Badge>New</Badge> <Badge>Free</Badge>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-        {`<Badge>Info</Badge> <Badge>New</Badge> <Badge>Free</Badge>`}
+      <Codeblock>
+{`<Badge>Info</Badge>
+<Badge>New</Badge>
+<Badge>Free</Badge>`}
       </Codeblock>
     </section>
 
@@ -70,12 +73,12 @@ const BadgeDoc = (props) => (
         Typically it is used with numbers.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Badge notification>3</Badge> <Badge notification>20</Badge> <Badge notification>100</Badge>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-        {`<Badge notification>3</Badge> <Badge notification>20</Badge> <Badge notification>100</Badge>`}
+      <Codeblock>
+{`<Badge notification>3</Badge>
+<Badge notification>20</Badge>
+<Badge notification>100</Badge>`}
       </Codeblock>
     </section>
 
@@ -87,15 +90,16 @@ const BadgeDoc = (props) => (
         <code>context='danger'</code> prop for additional contexts.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Badge context='success'>success</Badge> <Badge context='warning'>warning</Badge> <Badge context='danger'>danger</Badge><br />
-      <Badge notification context='success'>1</Badge> <Badge notification context='warning'>10</Badge> <Badge notification context='danger'>99+</Badge>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-        {
-`<Badge context='success'>success</Badge> <Badge context='warning'>warning</Badge> <Badge context='danger'>danger</Badge><br />
-<Badge notification context='success'>1</Badge> <Badge notification context='warning'>10</Badge> <Badge notification context='danger'>99+</Badge>`}
+      <Codeblock>
+{`<Badge context='success'>success</Badge>
+<Badge context='warning'>warning</Badge>
+<Badge context='danger'>danger</Badge><br />
+
+<Badge notification context='success'>1</Badge>
+<Badge notification context='warning'>10</Badge>
+<Badge notification context='danger'>99+</Badge>`}
       </Codeblock>
     </section>
 
@@ -113,34 +117,34 @@ const BadgeDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>context</code>
             </td>
-            <td className='uk-text-left'>oneOf ["success", "warning", "danger"]</td>
+            <td>oneOf<br />success, warning, danger</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>block</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>body</code>
             </td>
-            <td className='uk-text-left'>string</td>
+            <td>string</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>notification</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
         </tbody>
       </Table>
