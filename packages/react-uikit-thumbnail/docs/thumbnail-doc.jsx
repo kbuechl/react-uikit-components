@@ -3,16 +3,14 @@
 
 import React from 'react';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-import Thumbnail from '../../react-uikit-thumbnail/lib/thumbnail';
 import Table from '../../react-uikit-table/lib/table';
 import Note from '../../react-uikit-note/lib/note';
 
 const ThumbnailDoc = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Thumbnail</h1>
-      <p className='uk-article-lead'>
+      <p>
         Create different thumbnail images, which come in various styles and sizes.
       </p>
       </section>
@@ -32,12 +30,16 @@ const ThumbnailDoc = (props) => (
       <code>var Article = require&#40;'react-uikit-article'&#41;;</code>
       </p>
 
-      <Note badge={{context: 'danger', body: 'Note'}}>
+      <Note badge={{context: 'danger', body: 'Note:'}}>
         UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
         This has been tested with UIKit version 2.24.2.
       </Note>
 
-      <hr className="uk-article-divider" />
+      <p>
+        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+      </p>
+
+      <hr />
 
       <p>
         Thumbnail compenent creates a thumbnail around the Img compenent.
@@ -49,12 +51,7 @@ const ThumbnailDoc = (props) => (
       </p>
 
       <h3 className='example'>Example</h3>
-      <Thumbnail height='100px' src='docs/images/placeholder_200x150_2.svg' />
-      <Thumbnail type='link' height='100px' src='docs/images/placeholder_200x150_2.svg' />
-      <Thumbnail type='figure' height='100px' src='docs/images/placeholder_200x150_2.svg' />
 
-
-      <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
 {`<Thumbnail height='100px' src='docs/images/placeholder_200x150_2.svg' />
 <Thumbnail type='link' height='100px' src='docs/images/placeholder_200x150_2.svg' />
@@ -70,18 +67,7 @@ const ThumbnailDoc = (props) => (
       </p>
 
       <h3 className='example'>Example</h3>
-      <Thumbnail height='100px' src='docs/images/placeholder_200x150_2.svg'>
-        Caption <code>div</code>
-      </Thumbnail>
-      <Thumbnail type='link' height='100px' src='docs/images/placeholder_200x150_2.svg'>
-        Caption <code>link</code>
-      </Thumbnail>
-      <Thumbnail type='figure' height='100px' src='docs/images/placeholder_200x150_2.svg'>
-        Caption <code>figure</code>
-      </Thumbnail>
 
-
-      <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
 {`<Thumbnail height='100px' src='docs/images/placeholder_200x150_2.svg'>
 Caption <code>div</code>
@@ -103,31 +89,13 @@ Caption <code>figure</code>
 
       </p>
 
-      <hr className="uk-article-divider" />
+      <hr />
       <p>
 
       </p>
 
       <h3 className='example'>Example</h3>
-      <Thumbnail size='large' src='docs/images/placeholder_600x400.svg'>
-        <code>large</code>
-      </Thumbnail>
-      <Thumbnail size='medium' src='docs/images/placeholder_600x400.svg'>
-        <code>medium</code>
-      </Thumbnail>
-      <Thumbnail size='small' src='docs/images/placeholder_600x400.svg'>
-        <code>small</code>
-      </Thumbnail>
-      <Thumbnail size='mini' src='docs/images/placeholder_600x400.svg'>
-        <code>mini</code>
-      </Thumbnail>
 
-      <Thumbnail size='expand' src='docs/images/placeholder_600x400.svg'>
-        <code>expand</code>
-      </Thumbnail>
-
-
-      <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
 {`<Thumbnail size='large' src='docs/images/placeholder_600x400.svg'>
 <code>large</code>
@@ -159,37 +127,37 @@ Caption <code>figure</code>
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>imgid</code>
             </td>
-            <td className='uk-text-left'>
+            <td>
               string<br/>
               Identifier for Img component. If none provided one will be generateded.
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>size</code>
             </td>
-            <td className='uk-text-left'>
+            <td>
               oneOf<br />
              large, medium, small, mini or expand
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>type</code>
             </td>
-            <td className='uk-text-left'>
+            <td>
               oneOf<br />
               block, figure or link.
-              Default is block,
+              Default is block.
             </td>
           </tr>
         </tbody>
