@@ -36,6 +36,10 @@ const PanelDoc = (props) => (
           This has been tested with UIKit version 2.24.2.
         </Note>
 
+        <p>
+          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+        </p>
+
         <hr/>
       <p>
         The Panel component consists of the panel itself, the panel title and a
