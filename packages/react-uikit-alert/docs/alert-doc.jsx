@@ -11,7 +11,7 @@ const AlertDoc = (props) => (
   <div>
     <section>
       <h1>Alert</h1>
-      <p className='uk-article-lead'>
+      <p>
         Defines styles for success, warning and error messages.
       </p>
     </section>
@@ -36,15 +36,19 @@ const AlertDoc = (props) => (
         This has been tested with UIKit version 2.24.2.
       </Note>
 
+      <p>
+        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+      </p>
+
       <hr className='uk-article-divider' />
 
       <p>
         The alert component creates an alert box.
       </p>
 
-      <h3 className='example'>Example</h3>
+      <h3>Example</h3>
 
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Alert>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit
 </Alert>
@@ -58,9 +62,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit
         To add a close button add the<code>close</code> prop to the Alert component.
       </p>
 
-      <h3 className='example'>Example</h3>
+      <h3>Example</h3>
 
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Alert close={someFunction}>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 </Alert>
@@ -76,9 +80,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         or <code>context='danger'</code> prop.
       </p>
 
-      <h3 className='example'>Example</h3>
+      <h3>Example</h3>
 
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Alert context='success'>
 To indicate success or a positive message add the <code>context='success'</code> prop.
 </Alert>
@@ -99,9 +103,9 @@ To indicate an important message add the <code>context='danger'</code> prop.
         To increase the spacing in an Alert add the <code>large</code> prop to the Alert component.
       </p>
 
-      <h3 className='example'>Example</h3>
+      <h3>Example</h3>
 
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Alert large >
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
@@ -123,31 +127,31 @@ tempor incididunt ut labore et dolore magna aliqua.
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr >
-            <td className='uk-text-left'>
+            <td>
               <code>close</code>
             </td>
-            <td className='uk-text-left'>func</td>
+            <td>func</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>context</code>
             </td>
-            <td className='uk-text-left'>
+            <td>
               oneOf <br />
               success, warning ordanger"
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>large</code>
             </td>
-            <td className='uk-text-left'>Bool</td>
+            <td>Bool</td>
           </tr>
         </tbody>
       </Table>
