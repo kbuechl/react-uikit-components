@@ -1,13 +1,15 @@
 {
   "name": "react-uikit-badge",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "React uikit badge component to label and highlight content.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
     "react-component",
-    "badge"
+    "badge",
+    "react-uikit",
+    "uikit-react"
   ],
   "repository": "git@github.com:otissv/react-uikit-badge.git",
   "author": "Otis Virginie",
