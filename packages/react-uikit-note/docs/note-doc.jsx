@@ -10,10 +10,9 @@ import Table from '../../react-uikit-table/lib/table';
 export default class NoteHandler extends React.Component {
   render () {
     return <div>
-      <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
       <section>
         <h1>Note</h1>
-        <p className='uk-article-lead'>
+        <p>
           Easily add notes.
         </p>
       </section>
@@ -38,7 +37,11 @@ export default class NoteHandler extends React.Component {
           This has been tested with UIKit version 2.24.2.
         </Note>
 
-        <hr className="uk-article-divider" />
+        <p>
+          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+        </p>
+
+        <hr/>
 
         <p>
           The Note componet consists of a paragrath with a prefixed bagde.
@@ -47,13 +50,8 @@ export default class NoteHandler extends React.Component {
           text as a child or to the body prop.
         </p>
 
-        <h3 className='example'>Example</h3>
-        <Note badge='EXAMPLE'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </Note>
+        <h3>Example</h3>
 
-        <h4 className='code'>Code</h4>
         <Codeblock syntax='xml'>
 {`<Note badge='EXAMPLE'>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -70,13 +68,8 @@ export default class NoteHandler extends React.Component {
 
         </p>
 
-        <h3 className='example'>Example</h3>
-        <Note badge={{body: 'EXAMPLE', context:'danger'}}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </Note>
+        <h3>Example</h3>
 
-        <h4 className='code'>Code</h4>
         <Codeblock syntax='xml'>
 {`<Note badge={{body: 'EXAMPLE', context:'danger'}}>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -100,22 +93,22 @@ export default class NoteHandler extends React.Component {
         <Table>
           <thead>
             <tr>
-              <th className='uk-text-left'>Prop</th>
-              <th className='uk-text-left'>Type</th>
+              <th>Prop</th>
+              <th>Type</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className='uk-text-left'>
+              <td>
                 <code>badge</code>
               </td>
-              <td className='uk-text-left'>string or object</td>
+              <td>string or object</td>
             </tr>
             <tr>
-              <td className='uk-text-left'>
+              <td>
                 <code>body</code>
               </td>
-              <td className='uk-text-left'>string</td>
+              <td>string</td>
             </tr>
           </tbody>
         </Table>

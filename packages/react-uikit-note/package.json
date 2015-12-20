@@ -7,6 +7,8 @@
     "react",
     "uikit",
     "react-component",
+    "react-uikit",
+    "uikit-react",
     "note"
   ],
   "repository": "git@github.com:otissv/react-uikit-note.git",
