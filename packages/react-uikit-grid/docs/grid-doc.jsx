@@ -3,18 +3,15 @@
 
 import React from 'react';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-import Grid from '../../react-uikit-grid/lib/grid';
 import Note from '../../react-uikit-note/lib/note';
-import Panel from '../../react-uikit-panel/lib/panel';
 import Table from '../../react-uikit-table/lib/table';
 
 
 const GridHandler = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Grid</h1>
-      <p className='uk-article-lead'>
+      <p>
         Create a fully responsive, fluid and nestable grid layout.
       </p>
       <p>
@@ -43,7 +40,11 @@ const GridHandler = (props) => (
           This has been tested with UIKit version 2.24.2.
         </Note>
 
-        <hr className="uk-article-divider" />
+        <p>
+          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+        </p>
+
+        <hr />
       <p>
         To create the grid container, use the <code>&lt;Grid&gt;</code> component.
         A <code>&lt;ul&gt;</code> grid be creaed by adding <code>list</code> prop.
@@ -54,35 +55,9 @@ const GridHandler = (props) => (
         See <a href='/https://github.com/otissv/react-uikit-base'>react uikit base</a>col values
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid textAlign='center'>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
+      <h3>Example</h3>
 
-        <Panel col='1-2' box>
-          Col
-        </Panel>
-        <Panel col='1-2' box>
-          Col
-        </Panel>
-        <Panel col='3-10' box>
-          Col
-        </Panel>
-        <Panel col='7-10' box>
-          Col
-        </Panel>
-      </Grid>
-
-
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
 {`<Grid textAlign='center'>
 <Panel col='1-3' box>
   Col
@@ -120,23 +95,9 @@ const GridHandler = (props) => (
         is wider on large screens.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid textAlign='center'>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
+      <h3>Example</h3>
 
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-      </Grid>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
 {`<Grid textAlign='center'>
 <Panel col='1-3' box>
   Col
@@ -154,7 +115,7 @@ const GridHandler = (props) => (
       </Codeblock>
 
 
-      <hr className="uk-grid-divider"/>
+      <hr/>
 
 
       <h3>Medium gutter</h3>
@@ -162,22 +123,10 @@ const GridHandler = (props) => (
         To apply a medium sized gutter between grid columns, just add the <code>gutter='medium'</code> prop.
       </p>
 
-      <h4 className='example'>Example</h4>
-      <Grid gutter='medium'>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
+      <h4>Example</h4>
 
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-      </Grid>
       <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
 {`<Grid gutter='medium'>
 <Panel col='1-3' box>
   Col
@@ -195,7 +144,7 @@ const GridHandler = (props) => (
       </Codeblock>
 
 
-      <hr className="uk-grid-divider"/>
+      <hr/>
 
 
       <h3>Small gutter</h3>
@@ -203,23 +152,9 @@ const GridHandler = (props) => (
         To apply a small sized gutter between grid columns, just add the <code>gutter='small'</code> prop.
       </p>
 
-      <h4 className='example'>Example</h4>
-      <Grid gutter='small'>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
+      <h4>Example</h4>
 
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-    </Grid>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
 {`<Grid gutter='small'>
 <Panel col='1-3' box>
   Col
@@ -237,7 +172,7 @@ const GridHandler = (props) => (
       </Codeblock>
 
 
-      <hr className="uk-grid-divider"/>
+      <hr/>
 
 
       <h3>Collapse gutter</h3>
@@ -245,23 +180,9 @@ const GridHandler = (props) => (
         To remove the gutter entirely, just add the <code>gutter='collapse'</code> prop.
       </p>
 
-      <h4 className='example'>Example</h4>
-      <Grid gutter='collapse'>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
+      <h4>Example</h4>
 
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-      </Grid>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
 {`<Grid gutter='collapse'>
 <Panel col='1-3' box>
   Col
@@ -288,39 +209,9 @@ const GridHandler = (props) => (
         To separate grids with a horizontal line, just add the class to a &lt;hr&gt; or &lt;div&gt;  element.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid textAlign='center' divider>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
+      <h3>Example</h3>
 
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-      </Grid>
-
-      <hr className="uk-grid-divider"/>
-
-      <Grid textAlign='center' divider>
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-
-        <Panel col='1-3' box>
-          Col
-        </Panel>
-      </Grid>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
         {
 `<Grid textAlign='center' divider>
 <Panel col='1-3' box>
@@ -336,7 +227,7 @@ const GridHandler = (props) => (
 </Panel>
 </Grid>
 
-<hr className="uk-grid-divider"/>
+<hr/>
 
 <Grid textAlign='center' divider>
 <Panel col='1-3' box>
@@ -354,7 +245,7 @@ const GridHandler = (props) => (
 `}
       </Codeblock>
 
-      <Note badge='NOTE'>
+      <Note badge='NOTE:'>
         For horizontal divider use <code>&lt;hr class="uk-grid-divider" /&gt;</code> can be used between grids.
       </Note>
 
@@ -367,23 +258,9 @@ const GridHandler = (props) => (
         To match grid colum heights add the <code>match</code> prop.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid match>
-        <Panel box>
-          Lorem ipsum dolor sit amet.
-        </Panel>
-        <Panel col='1-3'box>
-          Lorem ipsum dolor sit amet.
-        </Panel>
-        <Panel col='1-3'box>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam.
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Grid match>
 <Panel box>
   Lorem ipsum dolor sit amet.
@@ -400,7 +277,7 @@ const GridHandler = (props) => (
 `}
       </Codeblock>
 
-      <Note badge='NOTE'>
+      <Note badge='NOTE:'>
         If grid columns extend to a col of 100%, their heights will no longer be matched. This makes sense, for example, if they stack vertically in narrower viewports.
       </Note>
     </section>
@@ -415,34 +292,13 @@ const GridHandler = (props) => (
          col one of the col <a href='/col'>values</a>.
       </p>
 
-      <Note badge='Note'>
+      <Note badge='Note:'>
         For column width values see <a href='https://github.com/otissv/react-uikit-base'>react uikit base</a>.
       </Note>
 
-      <h3 className='example'>Example</h3>
-      <Grid width='1-6' type='list'>
-        <Panel margin='top bottom' list box>
-          Col
-        </Panel>
-        <Panel margin='top bottom' list box>
-          Col
-        </Panel>
-        <Panel margin='top bottom' list box>
-          Col
-        </Panel>
-        <Panel margin='top bottom' list box>
-          Col
-        </Panel>
-        <Panel margin='top bottom' list box>
-          Col
-        </Panel>
-        <Panel margin='top bottom' list box>
-          Col
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
 {`<Grid width='1-6' type='list' >
 <Panel margin='top bottom' list box>
   Col
@@ -479,30 +335,30 @@ const GridHandler = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Description</th>
+            <th>Prop</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'><code>widths='value'</code></td>
-            <td className='uk-text-left'>Affects direct children elements on all device .</td>
+            <td><code>widths='value'</code></td>
+            <td>Affects direct children elements on all device .</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>small='value'</code></td>
-            <td className='uk-text-left'>Affects direct children elements on 480px and higher devices.</td>
+            <td><code>small='value'</code></td>
+            <td>Affects direct children elements on 480px and higher devices.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>medium='value'</code></td>
-            <td className='uk-text-left'>Affects direct children elements on 768px and higher devices.</td>
+            <td><code>medium='value'</code></td>
+            <td>Affects direct children elements on 768px and higher devices.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>large='value</code>'</td>
-            <td className='uk-text-left'>Affects direct children elements on 960px and higher devices..</td>
+            <td><code>large='value</code>'</td>
+            <td>Affects direct children elements on 960px and higher devices..</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>xlarge='value'</code></td>
-            <td className='uk-text-left'>Affects direct children elements on 1220px and higher devices.</td>
+            <td><code>xlarge='value'</code></td>
+            <td>Affects direct children elements on 1220px and higher devices.</td>
           </tr>
         </tbody>
       </Table>
@@ -512,30 +368,9 @@ const GridHandler = (props) => (
         See <a href='/https://github.com/otissv/react-uikit-base'>react uikit base</a> for col values.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid type='list' widths='1-2' medium='1-3' large='1-6'>
-        <Panel list box>
-          Col
-        </Panel>
-        <Panel list box>
-          Col
-        </Panel>
-        <Panel list box>
-          Col
-        </Panel>
-        <Panel list box>
-          Col
-        </Panel>
-        <Panel list box>
-          Col
-        </Panel>
-        <Panel list box>
-          Col
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
 {`<Grid type='list' widths='1-2' medium='1-3' large='1-6'>
   <Panel list box>
     Col
@@ -580,64 +415,64 @@ const GridHandler = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>divider</code>
             </td>
-            <td className='uk-text-left'>Bool</td>
+            <td>Bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>gutter</code>
             </td>
-            <td className='uk-text-left'>oneOf "small", "medium" or "collapse"</td>
+            <td>oneOf <br />small, medium" or collapse</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>large</code>
             </td>
-            <td className='uk-text-left'>oneOf col values</td>
+            <td>oneOf col values</td>
         </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>match</code>
             </td>
-            <td className='uk-text-left'>Bool</td>
+            <td>Bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>medium</code>
             </td>
-            <td className='uk-text-left'>oneOf col values</td>
+            <td>oneOf col values</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>small</code>
             </td>
-            <td className='uk-text-left'>oneOf col values</td>
+            <td>oneOf col values</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>type</code>
             </td>
-            <td className='uk-text-left'>oneOf "block" or "list"</td>
+            <td>oneOf<br /> block or list</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>widths</code>
             </td>
-            <td className='uk-text-left'>oneOf col values</td>
+            <td>oneOf col values</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>xlarge</code>
             </td>
-            <td className='uk-text-left'>oneOf col values</td>
+            <td>oneOf col values</td>
           </tr>
         </tbody>
       </Table>
