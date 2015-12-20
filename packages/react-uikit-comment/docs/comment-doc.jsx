@@ -12,7 +12,7 @@ const CommentDoc = (props) => (
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Commnet</h1>
-      <p className='uk-article-lead'>
+      <p>
         Create comments, for example about articles.
       </p>
       </section>
@@ -36,7 +36,11 @@ const CommentDoc = (props) => (
           This has been tested with UIKit version 2.24.2.
         </Note>
 
-        <hr className="uk-article-divider" />
+        <p>
+          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+        </p>
+
+        <hr />
       <p>
         The Comment component consists of a comment header, including an
         avatar, a title and meta data, and a comment body.
@@ -45,26 +49,26 @@ const CommentDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Description</th>
+            <th>Prop</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'><code>avatar</code></td>
-            <td className='uk-text-left'>Add avatar prop to create an avatar for the comment author</td>
+            <td><code>avatar</code></td>
+            <td>Add avatar prop to create an avatar for the comment author</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>title</code></td>
-            <td className='uk-text-left'>Add tilte prop to createCreates a comment title.</td>
+            <td><code>title</code></td>
+            <td>Add tilte prop to createCreates a comment title.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>meta</code></td>
-            <td className='uk-text-left'>Add meta prop to add meta data about the comment.</td>
+            <td><code>meta</code></td>
+            <td>Add meta prop to add meta data about the comment.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>body</code></td>
-            <td className='uk-text-left'>
+            <td><code>body</code></td>
+            <td>
               Add body prop to add text comment body. Body is overridden
               if commet has children.
             </td>
@@ -72,18 +76,8 @@ const CommentDoc = (props) => (
         </tbody>
       </Table>
 
-      <h3 className='example'>Example</h3>
-      <Commnet title='Author' meta='12 days ago | Profile | #'
-        avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
+      <h3>Example</h3>
 
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua.
-        </p>
-      </Commnet>
-
-      <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
 {
 `<Commnet title='Author' meta='12 days ago | Profile | #'
@@ -106,18 +100,8 @@ const CommentDoc = (props) => (
         admin's comment, just add the <code>primary</code> prop.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Commnet primary title='Author' meta='12 days ago | Profile | #'
-        avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
-
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua.
-        </p>
-      </Commnet>
-
-      <h4 className='code'>Code</h4>
+      <h3>Example</h3>
+    
       <Codeblock syntax='xml'>
 {
 `<Commnet primary title='Author' meta='12 days ago | Profile | #'
@@ -146,40 +130,40 @@ const CommentDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>avatar</code>
             </td>
-            <td className='uk-text-left'>Object {`{src, alt }`}</td>
+            <td>Object {`{src, alt }`}</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>body</code>
             </td>
-            <td className='uk-text-left'>String</td>
+            <td>String</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>meta</code>
             </td>
-            <td className='uk-text-left'>String</td>
+            <td>String</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>primary</code>
             </td>
-            <td className='uk-text-left'>Bool</td>
+            <td>Bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>title</code>
             </td>
-            <td className='uk-text-left'>String</td>
+            <td>String</td>
           </tr>
         </tbody>
       </Table>
