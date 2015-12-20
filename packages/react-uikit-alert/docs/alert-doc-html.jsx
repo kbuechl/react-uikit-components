@@ -2,6 +2,7 @@
 
 
 import React from 'react';
+import Alert from '../lib/alert.js';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock.js';
 import Table from '../../react-uikit-table/lib/table';
 import Note from '../../react-uikit-note/lib/note';
@@ -9,6 +10,7 @@ import Note from '../../react-uikit-note/lib/note';
 
 const AlertDoc = (props) => (
   <div>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Alert</h1>
       <p className='uk-article-lead'>
@@ -31,7 +33,7 @@ const AlertDoc = (props) => (
       <code>var Alert = require&#40;'react-uikit-alert'&#41;;</code>
       </p>
 
-      <Note badge={{context: 'danger', body: 'Note:'}}>
+      <Note badge={{context: 'danger', body: 'Note'}}>
         UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
         This has been tested with UIKit version 2.24.2.
       </Note>
@@ -43,7 +45,12 @@ const AlertDoc = (props) => (
       </p>
 
       <h3 className='example'>Example</h3>
+      <Alert>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </Alert>
 
+      <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
 {`<Alert>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit
@@ -59,9 +66,14 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit
       </p>
 
       <h3 className='example'>Example</h3>
+      <Alert close >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </Alert>
 
+
+      <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
-{`<Alert close={someFunction}>
+{`<Alert close={(e) => this.handleAlertClose(e)}>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 </Alert>
 `}
@@ -77,7 +89,18 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </p>
 
       <h3 className='example'>Example</h3>
+      <Alert context='success'>
+        To indicate success or a positive message add the <code>context='success'</code> prop.
+      </Alert>
+      <Alert context='warning'>
+        To indicate a message containing a warning add the <code>context='warning'</code> prop.
+      </Alert>
+      <Alert context='danger'>
+        To indicate an important message add the <code>context='danger'</code> prop.
+      </Alert>
 
+
+      <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
 {`<Alert context='success'>
 To indicate success or a positive message add the <code>context='success'</code> prop.
@@ -100,7 +123,14 @@ To indicate an important message add the <code>context='danger'</code> prop.
       </p>
 
       <h3 className='example'>Example</h3>
+      <Alert large >
+        <h1>Important notice</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </Alert>
 
+
+      <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
 {`<Alert large >
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
