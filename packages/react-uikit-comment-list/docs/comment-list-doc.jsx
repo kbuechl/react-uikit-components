@@ -2,8 +2,6 @@
 
 
 import React from 'react';
-import Commnet from '../../react-uikit-comment/lib/comment';
-import CommentList from '../../react-uikit-comment-list/lib/comment-list';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 
 
@@ -12,7 +10,7 @@ const CommentListDoc = (props) => (
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Commentt List</h1>
-      <p className='uk-article-lead'>
+      <p>
         For lists of comments.
       </p>
 
@@ -34,42 +32,19 @@ const CommentListDoc = (props) => (
         <code>var CommentList = require&#40;'react-uikit-comment-list'&#41;;</code>
         </p>
 
-        <hr className="uk-article-divider" />
+        <p>
+          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+        </p>
+
+        <h/>
       <p>
         Use the <code>&lt;CommentList&gt;</code> component for lists of comments.
         You can nest any number of <code>&lt;CommentList&gt;</code> components inside a comment list.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <CommentList>
-        <li>
-          <Commnet primary title='Author' meta='12 days ago | Profile | #'
-            avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
+      <h3>Example</h3>
 
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua.
-            </p>
-          </Commnet>
-          <CommentList>
-            <li>
-              <Commnet title='Author' meta='12 days ago | Profile | #'
-                avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
-
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                  erat, sed diam voluptua.
-                </p>
-              </Commnet>
-            </li>
-          </CommentList>
-        </li>
-      </CommentList>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
   {
 `<CommentList>
   <li>
