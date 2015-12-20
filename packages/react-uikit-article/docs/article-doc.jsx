@@ -22,26 +22,31 @@ const ArticleDoc = (props) => (
         <p>
           <code>npm install react-uikit-article --save;</code>
         </p>
-      <p>
-        ES6 <br />
-      <code>import Article from 'react-uikit-article';</code><br />
-      </p>
+        <p>
+          ES6 <br />
+        <code>import Article from 'react-uikit-article';</code><br />
+        </p>
 
-      <p>
-        ES5 <br />
-      <code>var Article = require&#40;'react-uikit-article'&#41;;</code>
-      </p>
+        <p>
+          ES5 <br />
+        <code>var Article = require&#40;'react-uikit-article'&#41;;</code>
+        </p>
 
-      <Note badge={{context: 'danger', body: 'Note:'}}>
-        UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
-        This has been tested with UIKit version 2.24.2.
-      </Note>
+        <Note badge={{context: 'danger', body: 'Note:'}}>
+          UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
+          This has been tested with UIKit version 2.24.2.
+        </Note>
 
-      <hr/>
+      </section>
 
-      <p>
-        The article component constists of the article itself, a title a lead and meta data.
-      </p>
+      <hr />
+      <section>
+
+
+        <p>
+          The article component constists of the article itself, a title a lead and meta data.
+        </p>
+
 
       <Table>
         <thead>
@@ -97,6 +102,10 @@ const ArticleDoc = (props) => (
       <Note badge='Note:'>
         To create seperate sections in the article use <code>&lt;hr className="uk-article-divider" &#47;&gt;</code>
       </Note>
+
+      <p>
+        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+      </p>
     </section>
 
 
