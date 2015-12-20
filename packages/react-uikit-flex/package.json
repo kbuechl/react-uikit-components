@@ -1,12 +1,14 @@
 {
   "name": "react-uikit-flex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React uikit flexbox component for creating a wide range of layouts.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
     "react-component",
+    "react-uikit",
+    "uikit-react",
     "flex"
   ],
   "repository": "git@github.com:otissv/react-uikit-flex.git",
@@ -52,7 +54,7 @@
   },
   "dependencies": {
     "react": "~0.14.3",
-    "react-uikit-base": "~0.1.0",
+    "react-uikit-base": "~0.1.1",
     "ufunc": "~0.2.1"
   },
   "babel": {

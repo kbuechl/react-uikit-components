@@ -3,9 +3,7 @@
 
 import React from 'react';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-import Panel from '../../react-uikit-panel/lib/panel';
 import Table from '../../react-uikit-table/lib/table';
-import Flex from '../../react-uikit-flex/lib/flex';
 import Note from '../../react-uikit-note/lib/note';
 
 
@@ -14,13 +12,13 @@ const FlexDoc = (props) => (
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Flex</h1>
-      <p className='uk-article-lead'>
+      <p>
         Utilize the power of Flexbox to create a wide range of layouts.
       </p>
       <p>
         Flex component uses flexbox, a concept that is still quite new but
         extremely powerful for creating layouts. To order Flex items
-        see <a href='/https://github.com/otissv/react-uikit-base'>order</a> prop.
+        see <a href='/https://github.com/otissv/react-uikit-base'>base</a> order prop.
       </p>
       </section>
 
@@ -39,26 +37,18 @@ const FlexDoc = (props) => (
       <code>var Flex = require&#40;'react-uikit-flex'&#41;;</code>
       </p>
 
-      <Note badge={{context: 'danger', body: 'Note'}}>
+      <Note badge={{context: 'danger', body: 'Note:'}}>
         UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
         This has been tested with UIKit version 2.24.2.
       </Note>
 
-      <h3 className='example'>Example</h3>
-      <Flex>
-          <Panel col='1-3' box>
-            Box
-          </Panel>
-          <Panel margin='left'col='1-3'box>
-            Box
-          </Panel>
-          <Panel margin='left' col='1-3'box>
-            Box
-          </Panel>
-      </Flex>
+      <p>
+        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+      </p>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <h3>Example</h3>
+
+      <Codeblock>
 {
 `
 <Flex>
@@ -87,60 +77,48 @@ const FlexDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Description</th>
+            <th>Prop</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'><code>center</code></td>
-            <td className='uk-text-left'>Add this prop to center Flex items horizontally.</td>
+            <td><code>center</code></td>
+            <td>Add this prop to center Flex items horizontally.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>right</code></td>
-            <td className='uk-text-left'>Add this prop to align Flex items to the right.</td>
+            <td><code>right</code></td>
+            <td>Add this prop to align Flex items to the right.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>top</code></td>
-            <td className='uk-text-left'>Add this prop to align Flex items to the top.</td>
+            <td><code>top</code></td>
+            <td>Add this prop to align Flex items to the top.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>middle</code></td>
-            <td className='uk-text-left'>Add this prop to align Flex items to the middle.</td>
+            <td><code>middle</code></td>
+            <td>Add this prop to align Flex items to the middle.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>bottom</code></td>
-            <td className='uk-text-left'>Add this prop to align Flex items to the bottom</td>
+            <td><code>bottom</code></td>
+            <td>Add this prop to align Flex items to the bottom</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>between</code></td>
-            <td className='uk-text-left'>Add this prop to distribute items evenly, with the first
+            <td><code>between</code></td>
+            <td>Add this prop to distribute items evenly, with the first
               item at the beginning and last item at the end of the main axis.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>around</code></td>
-            <td className='uk-text-left'>Add this prop to distribute items evenly with equal space
+            <td><code>around</code></td>
+            <td>Add this prop to distribute items evenly with equal space
               on both sides of each item.</td>
           </tr>
         </tbody>
       </Table>
 
 
-      <h3 className='example'>Example</h3>
-      <Flex middle between >
-        <Panel col='1-3' box style={{height: '50px'}}>
-          Box
-        </Panel>
-        <Panel margin='left' col='1-3' box style={{height: '70px'}}>
-          Box
-        </Panel>
-        <Panel margin='left' col='1-3' box style={{height: '100px'}}>
-          Box
-        </Panel>
-      </Flex>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {
 ` <Flex middle between >
   <Panel col='1-3' box style={{height: '50px'}}>
@@ -168,41 +146,29 @@ const FlexDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Description</th>
+            <th>Prop</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'><code>direction='rowReverse'</code></td>
-            <td className='uk-text-left'>Add this props to lay out Flex items from right to left.</td>
+            <td><code>direction='rowReverse'</code></td>
+            <td>Add this props to lay out Flex items from right to left.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>direction='column'</code></td>
-            <td className='uk-text-left'>Add this props to lay out Flex items as vertical columns.</td>
+            <td><code>direction='column'</code></td>
+            <td>Add this props to lay out Flex items as vertical columns.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>direction='columnReverse'</code></td>
-            <td className='uk-text-left'>Add this props to lay out Flex items from bottom to top.</td>
+            <td><code>direction='columnReverse'</code></td>
+            <td>Add this props to lay out Flex items from bottom to top.</td>
           </tr>
         </tbody>
       </Table>
 
-      <h3 className='example'>Example</h3>
-      <Flex direction='columnReverse'>
-        <Panel col='1-3' box>
-          1
-        </Panel>
-        <Panel margin='bottom' col='1-3' box>
-          2
-        </Panel>
-        <Panel margin='bottom' col='1-3' box>
-          3
-        </Panel>
-      </Flex>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {
 `<Flex direction='columnReverse'>
   <Panel col='1-3' box>
@@ -234,81 +200,60 @@ const FlexDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Description</th>
+            <th>Prop</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'><code>row='wrap'</code></td>
-            <td className='uk-text-left'>Add this prop to for wrap Flex items on multiple rows.</td>
+            <td><code>row='wrap'</code></td>
+            <td>Add this prop to for wrap Flex items on multiple rows.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>row='top'</code></td>
-            <td className='uk-text-left'>Add this prop to align multirow Flex items to the top.</td>
+            <td><code>row='top'</code></td>
+            <td>Add this prop to align multirow Flex items to the top.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>row='middle'</code></td>
-            <td className='uk-text-left'>Add this prop to vertically center multirow Flex items.</td>
+            <td><code>row='middle'</code></td>
+            <td>Add this prop to vertically center multirow Flex items.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>row='bottom'</code></td>
-            <td className='uk-text-left'>Add this prop to align multiline Flex items to the bottom.</td>
+            <td><code>row='bottom'</code></td>
+            <td>Add this prop to align multiline Flex items to the bottom.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>row='between'</code></td>
-            <td className='uk-text-left'>
+            <td><code>row='between'</code></td>
+            <td>
               Add this prop to distribute Flex item rows evenly, with the first
               row at the top and last row at the bottom of the container.
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>row='around'</code></td>
-            <td className='uk-text-left'>
+            <td><code>row='around'</code></td>
+            <td>
               Add this prop to distribute Flex rows evenly with equal space at the
               top and bottom of each row.
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>row='reverse'</code></td>
-            <td className='uk-text-left'>
+            <td><code>row='reverse'</code></td>
+            <td>
               Add this prop to change the direction of the Flex items from
               right to left.
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>row='nowrap'</code></td>
-            <td className='uk-text-left'>
+            <td><code>row='nowrap'</code></td>
+            <td>
               Add this prop to remove row wrapping.
             </td>
           </tr>
         </tbody>
       </Table>
 
-      <h3 className='example'>Example</h3>
-      <Flex row='wrap reverse around'>
-        <Panel col='1-3' margin='bottom right' box>
-          1
-        </Panel>
-        <Panel margin='bottom right' col='1-2' box>
-          2
-        </Panel>
-        <Panel margin='bottom right' col='1-3' box>
-          3
-        </Panel>
-        <Panel margin='bottom right' col='1-3' box>
-          4
-        </Panel>
-        <Panel box>
-          5
-        </Panel>
-        <Panel margin='bottom right' col='1-3' box>
-          6
-        </Panel>
-      </Flex>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
 {
 `<Flex row='wrap reverse around'>
   <Panel col='1-3' margin='bottom right' box>
@@ -341,24 +286,9 @@ const FlexDoc = (props) => (
       the <a href='/grid'>Grid</a> component by adding
       <code>grid</code> prop.
 
-      <h4 className='example'>Example</h4>
-      <Flex grid >
-        <Panel col='1-3'>
-          <img src='docs/images/placeholder_400x250.svg' alt='Placeholder image' />
-        </Panel>
-        <Panel flexAlign='middle' col='2-3'>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor
-            sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit.
-          </p>
-        </Panel>
-      </Flex>
+      <h4>Example</h4>
 
-      <h4 className='code'>Code</h4>
-        <Codeblock syntax='xml'>
+        <Codeblock>
 {
 `<Flex grid >
   <Panel col='1-3'>
@@ -392,69 +322,69 @@ const FlexDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th>Prop</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>around</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>center</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>bottom</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>between</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>direction</code>
             </td>
-            <td className='uk-text-left'>oneOf<br />rowRevers, column or columnReverse</td>
+            <td>oneOf<br />rowRevers, column or columnReverse</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>grid</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>middle</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>right</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td>
               <code>row</code>
             </td>
-            <td className='uk-text-left'>string<br />wrap, bottom, middle, top, between, around, reverse and nowrap</td>
+            <td>string<br />wrap, bottom, middle, top, between, around, reverse and nowrap</td>
           </tr><tr>
-            <td className='uk-text-left'>
+            <td>
               <code>top</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td>bool</td>
           </tr>
         </tbody>
       </Table>
