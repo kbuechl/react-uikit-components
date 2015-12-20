@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-grid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React uikit grid component fror  fully responsive, fluid and nestable grid layouts",
   "keywords": [
     "javascript",
@@ -45,7 +45,6 @@
     "glob": "~6.0.1",
     "history": "~1.13.1",
     "react-addons-test-utils": "~0.14.3",
-    "react-uikit-base": "~0.1.1",
     "tap-difflet": "~0.4.0",
     "tap-min": "~1.0.0",
     "tape": "~4.2.2",
