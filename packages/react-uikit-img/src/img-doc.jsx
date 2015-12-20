@@ -3,15 +3,17 @@
 
 import React from 'react';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
+import Img from '../lib/img';
 import Table from '../../react-uikit-table/lib/table';
 import Note from '../../react-uikit-note/lib/note';
 
 
 const ImgDoc = (props) => (
   <div>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Img</h1>
-      <p>
+      <p className='uk-article-lead'>
         Easily create responsive images.
       </p>
     </section>
@@ -31,26 +33,20 @@ const ImgDoc = (props) => (
       <code>var Img = require&#40;'react-uikit-img'&#41;;</code>
       </p>
 
-      <Note badge={{context: 'danger', body: 'Note:'}}>
+      <Note badge={{context: 'danger', body: 'Note'}}>
         UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
         This has been tested with UIKit version 2.24.2.
       </Note>
 
-      <p>
-        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
-      </p>
+      <hr className="uk-article-divider" />
 
-      <hr/>
+      <h3 className='example'>Example</h3>
+      <Img width='300px' height='200px' src='docs/images/placeholder_200x150_2.svg' />
 
-      <h3>Example</h3>
-
-      <Codeblock>
+      <h4 className='code'>Code</h4>
+      <Codeblock syntax='xml'>
 {
-`<Img
-  width='300px'
-  height='200px'
-  src='docs/images/placeholder_200x150_2.svg'
-/>
+`<Img width='300px' height='200px' src='docs/images/placeholder_200x150_2.svg' />
 `}
       </Codeblock>
     </section>
@@ -71,22 +67,22 @@ const ImgDoc = (props) => (
     <Table>
       <thead>
         <tr>
-          <th>JSON key</th>
-          <th>Descrition</th>
+          <th className='uk-text-left'>JSON key</th>
+          <th className='uk-text-left'>Descrition</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>width</td>
-          <td>The width of the image. The defualt width is 100% if no width is specified</td>
+          <td className='uk-text-left'>width</td>
+          <td className='uk-text-left'>The width of the image. The defualt width is 100% if no width is specified</td>
         </tr>
         <tr>
-          <td>height</td>
-          <td>The height of the image. The defualt height is auto if no height is specified</td>
+          <td className='uk-text-left'>height</td>
+          <td className='uk-text-left'>The height of the image. The defualt height is auto if no height is specified</td>
         </tr>
         <tr>
-          <td>src</td>
-          <td>The src url for the image</td>
+          <td className='uk-text-left'>src</td>
+          <td className='uk-text-left'>The src url for the image</td>
         </tr>
       </tbody>
     </Table>
@@ -95,15 +91,14 @@ const ImgDoc = (props) => (
       For non-responsive images use the html <code>img</code> tag.
     </p>
 
-    <h3>Example</h3>
-    <Codeblock>
+    <h4 className='code'>Code</h4>
+    <Codeblock syntax='xml'>
 {
 `<Img
-  small={  {height: '150px', src: 'docs/images/placeholder_200x150_1.svg'} }
-  medium={ {height: '250px', src: 'docs/images/placeholder_200x150_2.svg'} }
-  large={  {height: '350px', src: 'docs/images/placeholder_200x150_3.svg'} }
-  xlarge={ {height: '450px', src: 'docs/images/placeholder_200x150_4.svg'} }
-/>
+small={  {height: '150px', src: 'docs/images/placeholder_200x150_1.svg'} }
+medium={ {height: '250px', src: 'docs/images/placeholder_200x150_2.svg'} }
+large={  {height: '350px', src: 'docs/images/placeholder_200x150_3.svg'} }
+xlarge={ {height: '450px', src: 'docs/images/placeholder_200x150_4.svg'} } />
 `}
     </Codeblock>
   </section>
@@ -118,16 +113,16 @@ const ImgDoc = (props) => (
       or images on top of the image by placing it inside of the <code>&lt;Image&gt;</code> component.
     </p>
 
-    <h3>Example</h3>
-    <Codeblock>
+    <h4 className='code'>Code</h4>
+    <Codeblock syntax='xml'>
 {
 `<Img cover
-  small={  {height: '200px', src: 'docs/images/placeholder_200x150_1.svg'} }
-  medium={ {height: '320px', src: 'docs/images/placeholder_200x150_2.svg'} }
-  large={  {height: '480px', src: 'docs/images/placeholder_200x150_3.svg'} }
-  xlarge={ {height: '640px', src: 'docs/images/placeholder_200x150_4.svg'} }
->
-  <h1>Cover image</h1>
+small={  {height: '200px', src: 'docs/images/placeholder_200x150_1.svg'} }
+medium={ {height: '320px', src: 'docs/images/placeholder_200x150_2.svg'} }
+large={  {height: '480px', src: 'docs/images/placeholder_200x150_3.svg'} }
+xlarge={ {height: '640px', src: 'docs/images/placeholder_200x150_4.svg'} } >
+
+<h1>Cover image</h1>
 </Img>
 `}
     </Codeblock>
@@ -146,66 +141,66 @@ const ImgDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th>Prop</th>
-            <th>Type</th>
+            <th className='uk-text-left'>Prop</th>
+            <th className='uk-text-left'>Type</th>
 
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>alt</code>
             </td>
-            <td>string</td>
+            <td className='uk-text-left'>string</td>
           </tr>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>cover</code>
             </td>
-            <td>Bool</td>
+            <td colSpan='2'>Bool</td>
           </tr>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>height</code>
             </td>
-            <td>string</td>
+            <td className='uk-text-left'>string</td>
           </tr>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>large</code>
             </td>
-            <td>object<br />{`{width, height, src}`}</td>
-            <td></td>
+            <td className='uk-text-left'>object<br />{`{width, height, src}`}</td>
+            <td className='uk-text-left'></td>
           </tr>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>medium</code>
             </td>
-            <td>object<br />{`{width, height, src}`}</td>
+            <td className='uk-text-left'>object<br />{`{width, height, src}`}</td>
           </tr>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>small</code>
             </td>
-            <td>object<br />{`{width, height, src}`}</td>
+            <td className='uk-text-left'>object<br />{`{width, height, src}`}</td>
           </tr>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>src</code>
             </td>
-            <td>string</td>
+            <td className='uk-text-left'>string</td>
           </tr>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>width</code>
             </td>
-            <td>string</td>
+            <td className='uk-text-left'>string</td>
           </tr>
           <tr>
-            <td>
+            <td className='uk-text-left'>
               <code>xlarge</code>
             </td>
-            <td>object<br />{`{width, height, src}`}</td>
+            <td className='uk-text-left'>object<br />{`{width, height, src}`}</td>
           </tr>
         </tbody>
       </Table>

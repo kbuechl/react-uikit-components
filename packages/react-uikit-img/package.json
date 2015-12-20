@@ -1,12 +1,14 @@
 {
   "name": "react-uikit-img",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React uikit image component for responsive or cover images.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
     "react-component",
+    "react-uikit",
+    "uikit-react",
     "img"
   ],
   "repository": "git@github.com:otissv/react-uikit-img.git",
