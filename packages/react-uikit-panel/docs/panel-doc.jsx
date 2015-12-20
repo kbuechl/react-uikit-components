@@ -3,15 +3,12 @@
 
 import React from 'react';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-import Grid from '../../react-uikit-grid/lib/grid';
 import Note from '../../react-uikit-note/lib/note';
-import Panel from '../../react-uikit-panel/lib/panel';
 import Table from '../../react-uikit-table/lib/table';
 
 
 const PanelDoc = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Panel</h1>
         <p className='uk-article-lead'>
@@ -34,12 +31,12 @@ const PanelDoc = (props) => (
         <code>var Panel = require&#40;'react-uikit-panel'&#41;;</code>
         </p>
 
-        <Note badge={{context: 'danger', body: 'Note'}}>
+        <Note badge={{context: 'danger', body: 'Note:'}}>
           UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
           This has been tested with UIKit version 2.24.2.
         </Note>
 
-        <hr className="uk-article-divider" />
+        <hr/>
       <p>
         The Panel component consists of the panel itself, the panel title and a
         panel badge. To prevent redundant white space, top and bottom margins are
@@ -49,19 +46,19 @@ const PanelDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Description</th>
+            <th>Prop</th>
+            <th >Description</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td className='uk-text-left'><code>tilte</code></td>
-            <td className='uk-text-left'>Add this prop to a heading to create the panel title.</td>
+            <td ><code>tilte</code></td>
+            <td >Add this prop to a heading to create the panel title.</td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>badge</code></td>
-            <td className='uk-text-left'>
+            <td ><code>badge</code></td>
+            <td >
               Add this prop to create a panel badge.<br /><br />
 
               <code>badge='value'</code>will set the body of the badge to the value of the string.<br /><br />
@@ -73,16 +70,9 @@ const PanelDoc = (props) => (
         </tbody>
       </Table>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='3-10' box title='Title' badge={{body: 'hot', context: 'danger'}}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Grid indent>
   <Panel margin='bottom' col='3-10' box title='Title' badge={{body: 'hot', context: 'danger'}}>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -92,7 +82,7 @@ const PanelDoc = (props) => (
 `}
       </Codeblock>
 
-      <Note badge='NOTE'>
+      <Note badge='NOTE:'>
         By default, a panel is blank and has no styling.
         That is why it is important to add a modifier props,
         which gives the panel some styling. In the examples
@@ -110,42 +100,30 @@ const PanelDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Description</th>
+            <th >Prop</th>
+            <th >Description</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td className='uk-text-left'><code>block</code></td>
-            <td className='uk-text-left'>
+            <td ><code>block</code></td>
+            <td >
               Renders the panel as a block.
             </td>
           </tr>
           <tr>
-            <td className='uk-text-left'><code>link</code></td>
-            <td className='uk-text-left'>
+            <td ><code>link</code></td>
+            <td >
               Renders the panel inside of a block. The <code>link='url/path'</code> is requiured to set the links address.
             </td>
           </tr>
         </tbody>
       </Table>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='1-3' box title='Block panel' type='block'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
+      <h3>Example</h3>
 
-        <Panel margin='bottom' col='1-3' box title='Link panel' type='link' link=''>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
     {`<Grid indent>
     <Panel margin='bottom' col='1-3' box title='Block panel' type='block'>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -168,24 +146,9 @@ const PanelDoc = (props) => (
         emphasize it by using a different color.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='1-3' box title='Title' context='primary'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-          <Panel margin='bottom' col='1-3' box title='Title' context='primary'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Panel>
-          <Panel margin='bottom' col='1-3' box title='Title' context='primary'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Grid indent>
   <Panel margin='bottom' col='1-3' box title='Title' context='primary'>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -211,24 +174,9 @@ const PanelDoc = (props) => (
         which will give it a white background.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='1-3' box title='Title' context='secondary'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' box title='Title' context='secondary'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' box title='Title' context='secondary'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Grid indent>
   <Panel margin='bottom' col='1-3' box title='Title' context='secondary'>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -258,24 +206,9 @@ const PanelDoc = (props) => (
         This comes in handy when using the panel as an anchor.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='1-3' title='Title' link='#' hover>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' title='Title' link='#' hover>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' title='Title' link='#' hover>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Grid indent>
   <Panel margin='bottom' col='1-3' title='Title' link='#' hover>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -302,24 +235,9 @@ const PanelDoc = (props) => (
         and content with a horizontal line.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='1-3' title='Title' header>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' title='Title' header>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' title='Title' header>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`
 <Grid indent>
   <Panel margin='bottom' col='1-3' title='Title' header>
@@ -345,38 +263,9 @@ const PanelDoc = (props) => (
         Add the <code>header</code> prop increase the spacing around the panel content.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='1-3' box title='Title' space>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' box title='Title' space>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' box title='Title' space>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
-      <Grid indent>
-          <Panel margin='bottom' col='1-3' title='Title' space>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Panel>
-          <Panel margin='bottom' col='1-3' title='Title' space>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Panel>
-          <Panel margin='bottom' col='1-3' title='Title' space>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock scroll='text' syntax='xml'>
+      <Codeblock scroll='text'>
         {
 `<Grid indent>
   <Panel margin='bottom' col='1-3' box title='Title' space>
@@ -416,28 +305,9 @@ const PanelDoc = (props) => (
         Add the <code>divider</code> prop to separate vertically stacked panels with lines.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' title='Title' divider>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' title='Title' divider>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' title='Title' divider>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' title='Title' divider>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`Grid>
 <Panel margin='bottom' title='Title' divider>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -467,24 +337,9 @@ const PanelDoc = (props) => (
         without any spacing, just add the <code>teaser=&#123;&#123;src: '', alt: ''&#125;&#125;</code> prop.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='1-3' box title='Title' teaser={{src: 'docs/images/placeholder_600x400.svg', alt: 'placeholder image'}}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' box title='Title' teaser={{src: 'docs/images/placeholder_600x400.svg', alt: 'placeholder image'}}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' box title='Title' teaser={{src: 'docs/images/placeholder_600x400.svg', alt: 'placeholder image'}}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Grid indent>
   <Panel margin='bottom' col='1-3' box title='Title' teaser={{src: '../images/placeholder_600x400.svg', alt: 'placeholder image'}}>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -510,24 +365,9 @@ const PanelDoc = (props) => (
         adding <code>icon='*'</code>.
       </p>
 
-      <h3 className='example'>Example</h3>
-      <Grid indent>
-        <Panel margin='bottom' col='1-3' box title='Title' icon='user'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' box title='Title' icon='home'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-        <Panel margin='bottom' col='1-3' box title='Title' icon='bookmark'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Panel>
-      </Grid>
+      <h3>Example</h3>
 
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
+      <Codeblock>
 {`<Grid indent>
   <Panel margin='bottom' col='1-3' box title='Title' icon='user'>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -558,76 +398,76 @@ const PanelDoc = (props) => (
       <Table>
         <thead>
           <tr>
-            <th className='uk-text-left'>Prop</th>
-            <th className='uk-text-left'>Type</th>
+            <th >Prop</th>
+            <th >Type</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>badge</code>
             </td>
-            <td className='uk-text-left'>string or object {`{body , context}`}</td>
+            <td >string or object {`{body , context}`}</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>box</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td >bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>context</code>
             </td>
-            <td className='uk-text-left'>oneOf "primary" or "secondary"</td>
+            <td >oneOf "primary" or "secondary"</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>divider</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td >bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>header</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td >bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>hover</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td >bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>icon</code>
             </td>
-            <td className='uk-text-left'>string</td>
+            <td >string</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>link</code>
             </td>
-            <td className='uk-text-left'>string</td>
+            <td >string</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>space</code>
             </td>
-            <td className='uk-text-left'>bool</td>
+            <td >bool</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>teaser</code>
             </td>
-            <td className='uk-text-left'>object {`{src, alt}`}</td>
+            <td >object {`{src, alt}`}</td>
           </tr>
           <tr>
-            <td className='uk-text-left'>
+            <td >
               <code>type</code>
             </td>
-            <td className='uk-text-left'>oneOf "block" (default) or "link"</td>
+            <td >oneOf "block" (default) or "link"</td>
           </tr>
         </tbody>
       </Table>
