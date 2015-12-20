@@ -2,10 +2,7 @@
 
 
 import React from 'react';
-import Block from '../../react-uikit-block/lib/block';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-import Panel from '../../react-uikit-panel/lib/panel';
-import Grid from '../../react-uikit-grid/lib/grid';
 import Note from '../../react-uikit-note/lib/note';
 import Table from '../../react-uikit-table/lib/table';
 
@@ -13,10 +10,10 @@ import Table from '../../react-uikit-table/lib/table';
 export default class BlockHandler extends React.Component {
   render () {
     return <div>
-        <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
+
       <section>
         <h1>Block</h1>
-        <p className='uk-article-lead'>
+        <p>
           Separate content sections by bundling them in blocks with different styles.
         </p>
       </section>
@@ -36,34 +33,20 @@ export default class BlockHandler extends React.Component {
         <code>var Block = require&#40;'react-uikit-block'&#41;;</code>
         </p>
 
-        <Note badge={{context: 'danger', body: 'Note'}}>
+        <Note badge={{context: 'danger', body: 'Note:'}}>
           UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
           This has been tested with UIKit version 2.24.2.
         </Note>
 
+        <p>
+          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+        </p>
+
           <hr className="uk-article-divider" />
 
-        <h3 className='example'>Example</h3>
-        <Block context='muted'>
-          <h4>Block</h4>
-          <Grid widths='1-3'>
-            <Panel>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-            <Panel >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-            <Panel >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-          </Grid>
-        </Block>
+        <h3>Example</h3>
 
-        <h3 className='code'>Code</h3>
-        <Codeblock scroll='text' syntax='xml'>
+        <Codeblock scroll='text'>
 {`<Block context='muted'>
   <h4>Block</h4>
   <Grid widths='1-3'>
@@ -90,27 +73,9 @@ export default class BlockHandler extends React.Component {
           To add the body in a container use the <code>container</code> prop.
         </p>
 
-        <h3 className='example'>Example</h3>
-        <Block context='muted' container >
-          <h4>Block</h4>
-          <Grid widths='1-3'>
-            <Panel>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-            <Panel>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-            <Panel >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-          </Grid>
-        </Block>
+        <h3>Example</h3>
 
-        <h3 className='code'>Code</h3>
-        <Codeblock scroll='text' syntax='xml'>
+        <Codeblock scroll='text'>
 {`<Block context='muted' container >
   <h4>Block</h4>
   <Grid widths='1-3'>
@@ -142,51 +107,33 @@ export default class BlockHandler extends React.Component {
         <Table>
           <thead>
             <tr>
-              <th className='uk-text-left'>Prop</th>
-              <th className='uk-text-left'>Description</th>
+              <th>Prop</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className='uk-text-left'><code>default</code></td>
-              <td className='uk-text-left'>Add the default background color, usually white or similar.</td>
+              <td><code>default</code></td>
+              <td>Add the default background color, usually white or similar.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>muted</code></td>
-              <td className='uk-text-left'>Adds a light background color.</td>
+              <td><code>muted</code></td>
+              <td>Adds a light background color.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>primary</code></td>
-              <td className='uk-text-left'>Adds a primary background color.</td>
+              <td><code>primary</code></td>
+              <td>Adds a primary background color.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>secondary</code></td>
-              <td className='uk-text-left'>Adds a another background color, usually a dark one.</td>
+              <td><code>secondary</code></td>
+              <td>Adds a another background color, usually a dark one.</td>
             </tr>
           </tbody>
         </Table>
 
-        <h3 className='example'>Example</h3>
-        <Block context='primary' container contrast >
-          <h4>Block</h4>
-          <Grid widths='1-3'>
-            <Panel>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-            <Panel >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-            <Panel >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-          </Grid>
-        </Block>
+        <h3>Example</h3>
 
-        <h3 className='code'>Code</h3>
-        <Codeblock scroll='text' syntax='xml'>
+        <Codeblock scroll='text'>
 {`<Block context='primary' container contrast >
   <h4>Block</h4>
   <Grid widths='1-3'>
@@ -206,7 +153,7 @@ export default class BlockHandler extends React.Component {
 </Block>`}
         </Codeblock>
 
-        <Note badge='NOTE'>
+        <Note badge='NOTE:'>
           To properly display colors, borders and other elements on colored blocks, you might want to apply the contrast prop to the Block componet.
         </Note>
       </section>
@@ -218,28 +165,10 @@ export default class BlockHandler extends React.Component {
           To add the body in a container use the <code>container</code> prop.
         </p>
 
-        <h3 className='example'>Example</h3>
-        <Block context='secondary' container contrast large >
-          <h4>Block</h4>
-          <Grid widths='1-3'>
-            <Panel>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
+        <h3>Example</h3>
 
-            <Panel >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-            <Panel >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </Panel>
-          </Grid>
-        </Block>
-
-        <h3 className='code'>Code</h3>
-        <Codeblock scroll='text' syntax='xml'>
+        <h3>Code</h3>
+        <Codeblock scroll='text'>
 {`<Block context='secondary' container contrast large >
   <h4>Block</h4>
   <Grid widths='1-3'>
@@ -274,35 +203,35 @@ export default class BlockHandler extends React.Component {
         <Table>
           <thead>
             <tr>
-              <th className='uk-text-left'>Prop</th>
-              <th className='uk-text-left'>Type</th>
+              <th>Prop</th>
+              <th>Type</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className='uk-text-left'>
+              <td>
                 <code>context</code>
               </td>
-              <td className='uk-text-left'>enums</td>
+              <td>enums</td>
             </tr>
             <tr>
-              <td className='uk-text-left'>
+              <td>
                 <code>container</code>
               </td>
               <td colSpan='2'>oneOf <br />
               default, muted, primary, secondary</td>
             </tr>
             <tr>
-              <td className='uk-text-left'>
+              <td>
                 <code>contrast</code>
               </td>
-              <td className='uk-text-left'>bool</td>
+              <td>bool</td>
             </tr>
             <tr>
-              <td className='uk-text-left'>
+              <td>
                 <code>large</code>
               </td>
-              <td className='uk-text-left'>bool</td>
+              <td>bool</td>
             </tr>
           </tbody>
         </Table>
