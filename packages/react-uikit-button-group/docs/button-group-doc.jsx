@@ -10,10 +10,9 @@ import Note from '../../react-uikit-note/lib/note';
 
 const ButtonGroupDoc = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
       <h1>Button Group</h1>
-      <p className='uk-article-lead'>
+      <p>
         Easily create nicely looking group buttons.
       </p>
     </section>
@@ -38,7 +37,11 @@ const ButtonGroupDoc = (props) => (
         This has been tested with UIKit version 2.24.2.
       </Note>
 
-      <hr className='uk-article-divider' />
+      <p>
+        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
+      </p>
+
+      <hr/>
     </section>
 
 
@@ -49,28 +52,7 @@ const ButtonGroupDoc = (props) => (
         to the buttton component.
       </p>
 
-      <h3 className='example'>Example</h3>
-
-      <ButtonGroup display='block' margin='smallBottom'>
-        <Button body='Link' type='link' />
-        <Button body='Button'/>
-        <Button body='Button'/>
-      </ButtonGroup>
-      <ButtonGroup display='block' margin='smallBottom'>
-        <Button body='Link' context='primary' type='link' />
-        <Button body='Button' context='primary'/>
-        <Button body='Button' context='primary'/>
-      </ButtonGroup>
-      <ButtonGroup display='block' margin='smallBottom'>
-        <Button body='Link' context='success' type='link' />
-        <Button body='Button' context='success'/>
-        <Button body='Button' context='success'/>
-      </ButtonGroup>
-      <ButtonGroup display='block' margin='smallBottom'>
-        <Button body='Link' context='danger' type='link' />
-        <Button body='Button' context='danger'/>
-        <Button body='Button' context='danger'/>
-      </ButtonGroup>
+      <h3>Example</h3>
 
       <h4 className='code'>Code</h4>
       <Codeblock syntax='xml'>
@@ -79,16 +61,19 @@ const ButtonGroupDoc = (props) => (
 <Button body='Button'/>
 <Button body='Button'/>
 </ButtonGroup>
+
 <ButtonGroup display='block' margin='smallBottom'>
 <Button body='Link'   context='primary' type='link' />
 <Button body='Button' context='primary'/>
 <Button body='Button' context='primary'/>
 </ButtonGroup>
+
 <ButtonGroup display='block' margin='smallBottom'>
 <Button body='Link'   context='success' type='link' />
 <Button body='Button' context='success'/>
 <Button body='Button' context='success'/>
 </ButtonGroup>
+
 <ButtonGroup  display='block' margin='smallBottom'>
 <Button body='Link'   context='danger' type='link' />
 <Button body='Button' context='danger'/>
@@ -104,13 +89,6 @@ const ButtonGroupDoc = (props) => (
         Coming soon...
       </p>
 
-      <h3 className='example'>Example</h3>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-{`
-`}
-      </Codeblock>
     </section>
 
     <section>
@@ -119,13 +97,6 @@ const ButtonGroupDoc = (props) => (
         Coming soon...
       </p>
 
-      <h3 className='example'>Example</h3>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-{`
-`}
-      </Codeblock>
     </section>
 
 
