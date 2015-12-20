@@ -1,12 +1,14 @@
 {
   "name": "react-uikit-table",
-  "version": "0.1.1",
+  "version": "0.1.12",
   "description": "React UIkit table component.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
     "react-component",
+    "react-uikit",
+    "uikit-react",
     "table"
   ],
   "repository": "git@github.com:otissv/react-uikit-table.git",
