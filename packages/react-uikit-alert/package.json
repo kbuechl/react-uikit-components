@@ -1,12 +1,14 @@
 {
   "name": "react-uikit-alert",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React uikit alert component for displaying messages.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
     "react-component",
+    "react-uikit",
+    "uikit-react",
     "alert"
   ],
   "repository": "git@github.com:otissv/react-uikit-alert.git",

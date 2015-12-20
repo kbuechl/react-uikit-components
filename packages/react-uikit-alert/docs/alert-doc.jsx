@@ -40,7 +40,7 @@ const AlertDoc = (props) => (
         See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
       </p>
 
-      <hr className='uk-article-divider' />
+      <hr/>
 
       <p>
         The alert component creates an alert box.
