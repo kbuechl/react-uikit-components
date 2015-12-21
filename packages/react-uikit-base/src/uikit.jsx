@@ -274,7 +274,7 @@ export default {
   base,
 
   element: (props) => (
-    <div className={helpers.cleanClasses(props.classes)}>
+    <div className={helpers.cleanClasses([props.classes])}>
       {props.children}
     </div>
   ),
