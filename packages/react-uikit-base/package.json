@@ -1,12 +1,14 @@
 {
   "name": "react-uikit-base",
-  "version": "0.1.1",
+  "version": "0.1.12",
   "description": "React UIkit base HOC with uikit utility classes",
   "keywords": [
     "javascript",
     "react",
     "uikit",
-    "react-component"
+    "react-component",
+    "react-uikit",
+    "uikit-react"
   ],
   "repository": "git@github.com:otissv/react-uikit-base.git",
   "author": "Otis Virginie",

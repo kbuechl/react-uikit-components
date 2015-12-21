@@ -272,6 +272,12 @@ const base = (Cmpt) => {
 
 export default {
   base,
-  element: (props) => base(<div {...props}></div>),
+
+  element: (props) => (
+    <div className={helpers.cleanClasses(props.classes)}>
+      {props.children}
+    </div>
+  ),
+
   helpers
 };
