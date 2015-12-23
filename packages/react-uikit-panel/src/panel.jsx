@@ -70,6 +70,10 @@ class Panel extends React.Component {
      </div>
    )($props.teaser);
 
+   const title = ufunc.maybeIf(
+     <h3 className='uk-panel-title'>{icon} {$props.title}</h3>
+   )($props.title);
+
 
     const block = <div
       {...uikit.helpers.cleanProps($props, ignoreProps)}
@@ -78,7 +82,7 @@ class Panel extends React.Component {
     >
      {teaser}
      {badge}
-     <h3 className='uk-panel-title'>{icon} {$props.title}</h3>
+     {title}
      {$props.children}
     </div>;
 
@@ -93,7 +97,7 @@ class Panel extends React.Component {
       >
         {teaser}
         {badge}
-        <h3 className='uk-panel-title'>{icon} {$props.title}</h3>
+        {title}
         {$props.children}
       </li>,
 
