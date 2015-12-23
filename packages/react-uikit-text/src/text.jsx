@@ -2,7 +2,6 @@
 
 import React from 'react';
 import uikit from 'react-uikit-base';
-import ufunc from 'ufunc';
 
 
 class Text extends React.Component {
@@ -10,7 +9,8 @@ class Text extends React.Component {
     bold    : React.PropTypes.bool,
     context : React.PropTypes.oneOf(['muted', 'primary', 'success', 'warning', 'danger']),
     heading : React.PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
-    size: React.PropTypes.oneOf(['small', 'large'])
+    size    : React.PropTypes.oneOf(['small', 'large']),
+    type    : React.PropTypes.string
   }
 
   render () {
