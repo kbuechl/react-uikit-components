@@ -7,10 +7,31 @@ import uikit from 'react-uikit-base';
 class Text extends React.Component {
   static propTypes = {
     bold    : React.PropTypes.bool,
-    context : React.PropTypes.oneOf(['muted', 'primary', 'success', 'warning', 'danger']),
+    context : React.PropTypes.oneOf(['muted', 'primary', 'success', 'warning', 'danger', 'contrast']),
     heading : React.PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
     size    : React.PropTypes.oneOf(['small', 'large']),
-    type    : React.PropTypes.string
+    type    : React.PropTypes.oneOf([
+      'a',
+      'abbr',
+      'code',
+      'del',
+      'dfn',
+      'em',
+      'h1',
+      'h2',
+      'h3',
+      'h4',
+      'h5',
+      'h6',
+      'hr',
+      'ins',
+      'mark',
+      'q',
+      'p',
+      'small',
+      'span',
+      'strong'
+    ])
   }
 
   render () {
