@@ -9,6 +9,8 @@
     "react-component",
     "react-uikit",
     "uikit-react",
+    "ui",
+    "ui-component",
     "button"
   ],
   "repository": "git@github.com:otissv/react-uikit-button.git",
@@ -53,7 +55,7 @@
   },
   "dependencies": {
     "react": "~0.14.3",
-    "react-uikit-base": "~0.1.1",
+    "react-uikit-base": "~0.1.4",
     "ufunc": "~0.2.1"
   },
   "babel": {
