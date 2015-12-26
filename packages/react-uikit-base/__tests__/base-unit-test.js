@@ -194,7 +194,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent col='1-6' padding='left'/>).dom('div');
 
       const actual = element.hasClass('uk-width-1-6');
-console.log(element['0'].children);
+
       assert.ok(actual, 'Adds order last xlarge class to grid element');
 
       assert.end();

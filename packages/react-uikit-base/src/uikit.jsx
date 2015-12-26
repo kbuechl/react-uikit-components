@@ -194,9 +194,9 @@ const base = (Cmpt) => {
       clear       : React.PropTypes.oneOf(utilityKeys('clear')),
       center      : React.PropTypes.bool,
       col         : React.PropTypes.oneOf(helpers.colSpan),
-      colsSmall   : React.PropTypes.oneOf(helpers.colSpan),
-      colsMedium  : React.PropTypes.oneOf(helpers.colSpan),
-      colsLarge   : React.PropTypes.oneOf(helpers.colSpan),
+      colSmall    : React.PropTypes.oneOf(helpers.colSpan),
+      colMedium   : React.PropTypes.oneOf(helpers.colSpan),
+      colLarge    : React.PropTypes.oneOf(helpers.colSpan),
       contrast    : React.PropTypes.bool,
       display     : React.PropTypes.oneOf(utilityKeys('display')),
       float       : React.PropTypes.oneOf(utilityKeys('float')),
@@ -244,9 +244,9 @@ const base = (Cmpt) => {
 
       const colClasses = helpers.cleanClasses([
         $props.col ? `uk-width-${$props.col}` : null,
-        $props.colsSmall ? `uk-width-small-${$props.colsSmall}` : null,
-        $props.colsMedium ? `uk-width-medium-${$props.colsMedium}` : null,
-        $props.colsLarge ? `uk-width-large-${$props.colsLarge}` : null
+        $props.colSmall ? `uk-width-small-${$props.colSmall}` : null,
+        $props.colMedium ? `uk-width-medium-${$props.colMedium}` : null,
+        $props.colLarge ? `uk-width-large-${$props.colLarge}` : null
       ]);
 
       // Elementd
