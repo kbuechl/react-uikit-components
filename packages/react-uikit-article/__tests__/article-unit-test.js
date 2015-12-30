@@ -6,6 +6,7 @@ import renderElement from './helpers/renderElement';
 
 
 const component = <Article
+  kitid='art1'
   title='A Tilte'
    lead='This is a lead'
    meta='Written by Super User on 12 April 2012. Posted in Blog'
@@ -15,8 +16,6 @@ const component = <Article
 
 
 test('Article Component', nested => {
-
-
   nested.test('Renders component:',
     assert => {
       const article = renderElement(component).dom();
@@ -24,11 +23,11 @@ test('Article Component', nested => {
       const actualText = article.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expectedText = '<article title="A Tilte" class="uk-article">' +
+      const expectedText = '<article class="uk-article" data-kitid="art1">' +
         '<h1 class="uk-article-title">A Tilte</h1>' +
         '<p class="uk-article-meta">Written by Super User on 12 April 2012. Posted in Blog</p>' +
         '<p class="uk-article-lead">This is a lead</p>' +
-        '<p>This is an article</p>' +
+        'This is an article' +
       '</article>';
       /* eslint-enable no-complex-string-concat */
 
