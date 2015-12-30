@@ -25,7 +25,13 @@ test('Alert Component', nested => {
       const alert = renderElement(<Alert kitid='alert2' close={() => {}}>An alert box</Alert>).dom();
 
       const actual = alert.html();
-      const expect = '<div data-kitid="alert2" class="uk-alert"><a href="#" class="uk-alert-close uk-close"></a>An alert box</div>';
+
+      /* eslint-disable smells/no-complex-string-concat */
+      const expect = '<div data-kitid="alert2" class="uk-alert">' +
+        '<a href="#" class="uk-alert-close uk-close" data-kitid="alert2"></a>' +
+        'An alert box' +
+        '</div>';
+      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
         'Correctly renders alert with close.');
