@@ -8,10 +8,10 @@ import renderElement from './helpers/renderElement';
 test('block Component', nested => {
   nested.test('container prop:',
     assert => {
-      const block = renderElement(<Block container>This is a block</Block>).dom();
+      const block = renderElement(<Block kitid='blk' container>This is a block</Block>).dom();
 
       const actual = block.html();
-      const expect = '<div class="uk-block"><div class="uk-container">This is a block</div></div>';
+      const expect = '<div class="uk-block" data-kitid="blk"><div class="uk-container">This is a block</div></div>';
       assert.equals(actual, expect,
         'Adds corrrect tag for container');
 
