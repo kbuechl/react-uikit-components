@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "react": "~0.14.3",
-    "react-uikit-base": "~0.1.1",
+    "react-uikit-base": "~0.2.2",
     "ufunc": "~0.2.1"
   },
   "babel": {
