@@ -30,14 +30,18 @@ const cleanClasses = (c) => {
 };
 
 
-const cleanProps = function (props, ignoreProps) {
-  const newProps = {};
+const cleanProps = (ignoreKeys) => {
+  return (obj) => {
+    const newObj = {...obj};
 
-  Object.keys(props).forEach(k => {
-    ufunc.either(null, () => newProps[k] = props[k])(ignoreProps);
-  });
+    for (let i = 0; i < ignoreKeys.length; i++) {
+      if (obj[ignoreKeys[i]]) {
+        newObj[ignoreKeys[i]] = null;
+      }
+    }
 
-  return newProps;
+    return newObj;
+  };
 };
 
 
@@ -76,12 +80,16 @@ const getClass = (str, cssClasses) => {
 
 
 const queryData = (value) => {
-  return document.querySelector(`[data-kitid="${value}"]`);
+  return document.querySelector(`[data-${value}]`);
 };
 
 
 const queryDataAll = (value) => {
-  return document.querySelectorAll(`[data-kitid="${value}"]`);
+  return document.querySelectorAll(`[data-${value}]`);
+};
+
+const getElement = (dataId) => {
+  return queryData(`kitid="${dataId}"`);
 };
 
 
@@ -93,6 +101,7 @@ export default {
   cleanProps,
   getClasses,
   getClass,
+  getElement,
   stringToClasses,
   queryData,
   queryDataAll

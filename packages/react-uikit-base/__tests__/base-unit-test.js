@@ -1,25 +1,21 @@
 'use strict';
 import test from 'tape';
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
 import uikit from '../lib/uikit';
-import dom from 'cheerio';
 import ufunc from 'ufunc';
 import renderElement from './helpers/renderElement';
-
-const renderMarkup = ReactDOMServer.renderToStaticMarkup;
 
 
 class Component extends React.Component {
   render () {
-    const $props = this.props;
+    const props = this.props;
 
     const cssClassNames = uikit.helpers.cleanClasses([
-      $props.classes
+      props.classes
     ]);
 
     return <div className={ufunc.maybe(null)(cssClassNames)}>
-      {$props.children}
+      {props.children}
     </div>;
   }
 }
@@ -202,10 +198,10 @@ test('UIkit Component', nested => {
 
 
   // col small
-  nested.test('colsSmall prop.',
+  nested.test('colSmall prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent colsSmall='1-6'/>).dom('div');
+      const element = renderElement(<TestComponent colSmall='1-6'/>).dom('div');
 
       const actual = element.hasClass('uk-width-small-1-6');
 
@@ -216,10 +212,10 @@ test('UIkit Component', nested => {
 
 
   // col medium
-  nested.test('colsMedium prop.',
+  nested.test('colMedium prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent colsMedium='1-6'/>).dom('div');
+      const element = renderElement(<TestComponent colMedium='1-6'/>).dom('div');
 
       const actual = element.hasClass('uk-width-medium-1-6');
 
@@ -230,10 +226,10 @@ test('UIkit Component', nested => {
 
 
   // col large
-  nested.test('colsLarge prop.',
+  nested.test('colLarge prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent colsLarge='1-6'/>).dom('div');
+      const element = renderElement(<TestComponent colLarge='1-6'/>).dom('div');
 
       const actual = element.hasClass('uk-width-large-1-6');
 
@@ -1108,11 +1104,11 @@ test('UIkit Component', nested => {
     });
 
 
-  // textVerticle
-  nested.test('textVerticle prop = top.',
+  // textVertical
+  nested.test('textVertical prop = top.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent textVerticle='top'/>).dom('div');
+      const element = renderElement(<TestComponent textVertical='top'/>).dom('div');
 
       const actual = element.hasClass('uk-text-top');
 
@@ -1122,10 +1118,10 @@ test('UIkit Component', nested => {
     });
 
 
-  nested.test('textVerticle prop = middle.',
+  nested.test('textVertical prop = middle.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent textVerticle='middle'/>).dom('div');
+      const element = renderElement(<TestComponent textVertical='middle'/>).dom('div');
 
       const actual = element.hasClass('uk-text-middle');
 
@@ -1135,10 +1131,10 @@ test('UIkit Component', nested => {
     });
 
 
-  nested.test('textVerticle prop = bottom.',
+  nested.test('textVertical prop = bottom.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent textVerticle='bottom'/>).dom('div');
+      const element = renderElement(<TestComponent textVertical='bottom'/>).dom('div');
 
       const actual = element.hasClass('uk-text-bottom');
 
