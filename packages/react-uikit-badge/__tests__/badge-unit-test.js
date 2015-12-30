@@ -8,10 +8,10 @@ import renderElement from './helpers/renderElement';
 test('Badge Component', nested => {
   nested.test('Renders badge component.',
     assert => {
-      const badge = renderElement(<Badge>This is a badge</Badge>).dom();
+      const badge = renderElement(<Badge kitid='bdg'>This is a badge</Badge>).dom();
 
       const actual = badge.html();
-      const expect = '<span class="uk-badge">This is a badge</span>';
+      const expect = '<span class="uk-badge" data-kitid="bdg">This is a badge</span>';
       assert.equals(actual, expect,
         'Correctly renders article component.');
 
@@ -21,10 +21,10 @@ test('Badge Component', nested => {
 
   nested.test('block prop:',
     assert => {
-      const badge = renderElement(<Badge block>This is a badge block</Badge>).dom();
+      const badge = renderElement(<Badge kitid='bdg' block>This is a badge block</Badge>).dom();
 
       const actual = badge.html();
-      const expect = '<div class="uk-badge">This is a badge block</div>';
+      const expect = '<div class="uk-badge" data-kitid="bdg">This is a badge block</div>';
       assert.equals(actual, expect,
         'Renders badge as a block');
 
