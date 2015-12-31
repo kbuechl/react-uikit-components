@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import uikit from '../../react-uikit-base';
+import uikit from 'react-uikit-base';
 
 
 class CommentList extends React.Component {

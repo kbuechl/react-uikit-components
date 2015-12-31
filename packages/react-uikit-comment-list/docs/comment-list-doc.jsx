@@ -7,9 +7,8 @@ import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 
 const CommentListDoc = (props) => (
   <div>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
-      <h1>React Uikit Comment List</h1>
+      <h1>React UIkit Comment List</h1>
       <p>
         For lists of comments.
       </p>
