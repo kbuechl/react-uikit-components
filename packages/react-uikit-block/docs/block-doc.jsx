@@ -15,7 +15,7 @@ export default class BlockHandler extends React.Component {
           Separate content sections by bundling them in blocks with different styles.
         </p>
         <p>
-          <a href='https://github.com/otissv/react-uikit-components'>react-uikit-components</a> for docs.
+          <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
         </p>
       </section>
 

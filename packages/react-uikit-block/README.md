@@ -1,4 +1,4 @@
-<div><section><h1>Block</h1><p>Separate content sections by bundling them in blocks with different styles.</p><p><a href="https://github.com/otissv/react-uikit-components">react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre><code>npm install react-uikit-base --save;
+<div><section><h1>Block</h1><p>Separate content sections by bundling them in blocks with different styles.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre><code>npm install react-uikit-base --save;
 
   // ES6
   import Block from &#x27;react-uikit-block&#x27;;
