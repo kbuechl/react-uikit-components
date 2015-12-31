@@ -20,7 +20,7 @@ const GridDoc = (props) => (
       <section>
         <h2>Usage</h2>
           <Codeblock>
-  {`npm install react-uikit-base --save;
+  {`npm install react-uikit-grid --save;
 
   // ES6
   import Grid from 'react-uikit-grid';
