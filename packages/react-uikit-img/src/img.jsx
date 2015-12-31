@@ -1,32 +1,21 @@
 'use strict';
 
 import React from 'react';
-import cuid from 'cuid';
-import uikit from 'react-uikit-base';
+
+import uikit from '../../react-uikit-base';
 import ufunc from 'ufunc';
 
-class Img extends React.Component {
-  static propTypes = {
-    alt    : React.PropTypes.string,
-    cover  : React.PropTypes.bool,
-    height : React.PropTypes.string,
-    kitid  : React.PropTypes.string,
-    large  : React.PropTypes.object,
-    src    : React.PropTypes.string,
-    width  : React.PropTypes.string,
-    xlarge : React.PropTypes.object
-  };
 
+class Img extends React.Component {
   constructor (props) {
     super(props);
     this.updateImg = this.updateImg.bind(this);
     this.element = null;
-    this.dataId = props.kitid || cuid();
   }
 
 
   componentDidMount () {
-    this.element = uikit.helpers.queryData(this.dataId);
+    this.element = uikit.helpers.getElement(this.props.kitid);
     this.updateImg(this.element);
     window.addEventListener('resize', this.updateImg);
   }
@@ -38,27 +27,27 @@ class Img extends React.Component {
 
 
   updateImg () {
-    const $props = this.props;
-    const $element = this.element;
+    const props = this.props;
+    const element = this.element;
 
     let screen = uikit.helpers.breakpoints().screen;
     let locked = false;
 
     if (!locked) {
       const updateElement = (media) => {
-        if ($props.cover) {
-          $element.style.backgroundImage = $props[media].src ? `url(${$props[media].src})` : `url(${$props.src})`;
+        if (props.cover) {
+          element.style.backgroundImage = props[media].src ? `url(${props[media].src})` : `url(${props.src})`;
         } else {
-          $element.src = $props[media].src || $props.src;
-          $element.alt = $props[media].alt || $props.alt;
+          element.src = props[media].src || props.src;
+          element.alt = props[media].alt || props.alt;
         }
 
-        $element.style.width = $props[media].width || $props.width;
-        $element.style.height = $props[media].height || $props.height;
+        element.style.width = props[media].width || props.width;
+        element.style.height = props[media].height || props.height;
       };
 
 
-      if ($props.small || $props.medium || $props.large || $props.xlarge) {
+      if (props.small || props.medium || props.large || props.xlarge) {
         if (screen.small) {
           updateElement('small');
 
@@ -77,42 +66,60 @@ class Img extends React.Component {
 
 
   render () {
-    const $props = this.props;
+    const props = this.props;
 
     // CSS classes
     const cssClassNames = uikit.helpers.cleanClasses([
-      $props.cover ? 'uk-cover-background' : null,
-      $props.classes,
-      $props.className
+      props.cover ? 'uk-cover-background' : null,
+      props.classes,
+      props.className
     ]);
 
 
     // Elements
-    const ignoreProps = ['src'];
-
+    const ignoreProps = ['alt', 'src'];
+    const attr = {
+      ...uikit.events(props),
+      className   : cssClassNames,
+      'data-kitid': props.kitid
+    };
 
     const img = <img
-      {...$props}
-      data-kitid={$props.kitid ? $props.kitid : this.dataId}
-      className={cssClassNames}
+      {...props}
+      {...attr}
     />;
 
 
     const cover = <div
-      {...uikit.helpers.cleanProps(ignoreProps)}
-      data-kitid={$props.kitid ? $props.kitid : this.dataId}
-      className={cssClassNames}
+      {...uikit.helpers.cleanProps(ignoreProps)(props)}
+      {...attr}
     >
-        {$props.children}
+        {props.children}
     </div>;
 
 
     // Return Component
     const component = ufunc.either(cover, img);
-    return component($props.cover);
+    return component(props.cover);
 
   }
 }
 
+
+Img.propTypes = {
+  alt       : React.PropTypes.string,
+  children  : React.PropTypes.any,
+  className : React.PropTypes.string,
+  classes   : React.PropTypes.array,
+  cover     : React.PropTypes.bool,
+  height    : React.PropTypes.string,
+  kitid     : React.PropTypes.string,
+  large     : React.PropTypes.object,
+  medium    : React.PropTypes.object,
+  small     : React.PropTypes.object,
+  src       : React.PropTypes.string,
+  width     : React.PropTypes.string,
+  xlarge    : React.PropTypes.object
+};
 
 export default uikit.base(Img);

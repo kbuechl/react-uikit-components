@@ -40,7 +40,7 @@ test('img Component', nested => {
       const img = renderElement(Cover).dom();
 
       const actual = img.html();
-      const expect = '<div data-kitid="cover1" class="uk-cover-background"></div>';
+      const expect = '<div height="100px" class="uk-cover-background" data-kitid="cover1"></div>';
 
       assert.equals(actual, expect,
         'Adds img default class to img element');

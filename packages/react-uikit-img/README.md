@@ -1,20 +1,8 @@
-<div><section><h1>Img</h1><p>Easily create responsive images.</p></section><section><h2>Usage</h2><p><code>npm install react-uikit-img --save;</code></p><p>ES6 <br/><code>import Img from &#x27;react-uikit-img&#x27;;</code><br/></p><p>ES5 <br/><code>var Img = require(&#x27;react-uikit-img&#x27;);</code></p><p><span class="uk-badge  uk-badge-danger">Note:</span>  UIkit css is not included. You can get it from <a href="http://getuikit.com/">getuikit.com</a>. This has been tested with UIKit version 2.24.2.</p><p>See <a href="http://otissv.github.io/react-uikit-components">React UIKit Componets</a> for examples and full documentation.</p><hr/><h3>Example</h3><pre><code>&lt;Img
-  width=&#x27;300px&#x27;
-  height=&#x27;200px&#x27;
-  src=&#x27;docs/images/placeholder_200x150_2.svg&#x27;
-/&gt;
-</code></pre></section><section><h2>Responsive image</h2><p>The Image component provides different images for various viewport widths. To enable responsive behavior by adding one or all of the responsive props <code>small</code>, <code>medium</code> <code>large</code> <code>xlarge</code>.</p><p>Each responsive size takes a JSON object.</p><table class="uk-table"><thead><tr><th>JSON key</th><th>Descrition</th></tr></thead><tbody><tr><td>width</td><td>The width of the image. The defualt width is 100% if no width is specified</td></tr><tr><td>height</td><td>The height of the image. The defualt height is auto if no height is specified</td></tr><tr><td>src</td><td>The src url for the image</td></tr></tbody></table><p>For non-responsive images use the html <code>img</code> tag.</p><h3>Example</h3><pre><code>&lt;Img
-  small={  {height: &#x27;150px&#x27;, src: &#x27;docs/images/placeholder_200x150_1.svg&#x27;} }
-  medium={ {height: &#x27;250px&#x27;, src: &#x27;docs/images/placeholder_200x150_2.svg&#x27;} }
-  large={  {height: &#x27;350px&#x27;, src: &#x27;docs/images/placeholder_200x150_3.svg&#x27;} }
-  xlarge={ {height: &#x27;450px&#x27;, src: &#x27;docs/images/placeholder_200x150_4.svg&#x27;} }
-/&gt;
-</code></pre></section><section><h1>Cover images</h1><p>The <code>cover</code> component allows you to create fullscreen teasers using images. It will always be centered vertically and horizontally and cover its container without losing its proportions. You can also place additional content, like text or images on top of the image by placing it inside of the <code>&lt;Image&gt;</code> component.</p><h3>Example</h3><pre><code>&lt;Img cover
-  small={  {height: &#x27;200px&#x27;, src: &#x27;docs/images/placeholder_200x150_1.svg&#x27;} }
-  medium={ {height: &#x27;320px&#x27;, src: &#x27;docs/images/placeholder_200x150_2.svg&#x27;} }
-  large={  {height: &#x27;480px&#x27;, src: &#x27;docs/images/placeholder_200x150_3.svg&#x27;} }
-  xlarge={ {height: &#x27;640px&#x27;, src: &#x27;docs/images/placeholder_200x150_4.svg&#x27;} }
-&gt;
-  &lt;h1&gt;Cover image&lt;/h1&gt;
-&lt;/Img&gt;
-</code></pre></section><section><h2>Img Props</h2><p><code>&lt;Img&gt;</code> props and their types.</p><p>See <a href="https://github.com/otissv/react-uikit-base">base</a> for additional props.</p><table class="uk-table"><thead><tr><th>Prop</th><th>Type</th></tr></thead><tbody><tr><td><code>alt</code></td><td>string</td></tr><tr><td><code>cover</code></td><td>Bool</td></tr><tr><td><code>height</code></td><td>string</td></tr><tr><td><code>large</code></td><td>object<br/>{width, height, src}</td><td></td></tr><tr><td><code>medium</code></td><td>object<br/>{width, height, src}</td></tr><tr><td><code>small</code></td><td>object<br/>{width, height, src}</td></tr><tr><td><code>src</code></td><td>string</td></tr><tr><td><code>width</code></td><td>string</td></tr><tr><td><code>xlarge</code></td><td>object<br/>{width, height, src}</td></tr></tbody></table></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>
+<div><section><h1>React Uikit Img</h1><p>Easily create responsive images.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiu1saya0000oxmdpizrz6uu"><code>npm install react-uikit-img --save;
+
+  // ES6
+  import Img from &#x27;react-uikit-img&#x27;;
+
+  // ES5
+  var Img = require(&#x27;react-uikit-img&#x27;);
+  </code></pre></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>
