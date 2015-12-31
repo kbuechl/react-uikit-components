@@ -1,4 +1,4 @@
-<div><section><h1>React Uikit Grid</h1><p>Create a fully responsive, fluid and nestable grid layout.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiu1keql0000h9md5okx8tyx"><code>npm install react-uikit-grid --save;
+<div><section><h1>React UIkit Grid</h1><p>Create a fully responsive, fluid and nestable grid layout.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiun8jk100005fmdbocq425c"><code>npm install react-uikit-grid --save;
 
   // ES6
   import Grid from &#x27;react-uikit-grid&#x27;;

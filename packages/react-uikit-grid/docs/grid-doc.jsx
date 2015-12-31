@@ -8,7 +8,7 @@ import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 const GridDoc = (props) => (
   <div>
     <section>
-      <h1>React Uikit Grid</h1>
+      <h1>React UIkit Grid</h1>
       <p>
         Create a fully responsive, fluid and nestable grid layout.
       </p>
