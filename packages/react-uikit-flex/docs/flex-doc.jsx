@@ -8,7 +8,7 @@ import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 const FlexDoc = (props) => (
   <div>
     <section>
-      <h1>React Uikit Flex</h1>
+      <h1>React UIkit Flex</h1>
       <p>
         Utilize the power of Flexbox to create a wide range of layouts.
       </p>

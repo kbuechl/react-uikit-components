@@ -1,4 +1,4 @@
-<div><section><h1>React Uikit Flex</h1><p>Utilize the power of Flexbox to create a wide range of layouts.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiu1jfe50000wsmdjp3r0x69"><code>npm install react-uikit-flex --save;
+<div><section><h1>React UIkit Flex</h1><p>Utilize the power of Flexbox to create a wide range of layouts.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiun5a1f0000sumdebix2ahb"><code>npm install react-uikit-flex --save;
 
   // ES6
   &gt;import Flex from &#x27;react-uikit-flex&#x27;;
