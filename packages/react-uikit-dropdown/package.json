@@ -55,8 +55,9 @@
   },
   "dependencies": {
     "react": "~0.14.3",
-    "react-uikit-base": "~0.1.4",
-    "react-uikit-button": "~0.2.2",
+    "react-uikit-base": "~0.2.2",
+    "react-uikit-trigger": "~0.1.0",
+    "react-uikit-button": "~0.2.0",
     "ufunc": "~0.2.1"
   },
   "babel": {

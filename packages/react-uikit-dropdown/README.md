@@ -1,4 +1,4 @@
-<div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/uikit.almost-flat.min.css"/><section><h1>React Uikit Dropdown</h1><p class="uk-dropdown-lead">Defines different styles for list dropdownigations.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre><code>npm install react-uikit-dropdown --save;
+<div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/uikit.almost-flat.min.css"/><section><h1>React UIkit Dropdown</h1><p class="uk-dropdown-lead">Defines different styles for list dropdown navigations.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre><code>npm install react-uikit-dropdown --save;
 
   // ES6
   import uikit from &#x27;react-uikit-dropdown&#x27;;

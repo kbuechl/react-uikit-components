@@ -10,9 +10,9 @@ export default class dropdownDoc extends React.Component {
     return <div>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/uikit.almost-flat.min.css" />
       <section>
-        <h1>React Uikit Dropdown</h1>
+        <h1>React UIkit Dropdown</h1>
         <p className='uk-dropdown-lead'>
-          Defines different styles for list dropdownigations.
+          Defines different styles for list dropdown navigations.
         </p>
         <p>
           <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.

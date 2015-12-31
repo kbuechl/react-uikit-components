@@ -4,10 +4,10 @@ import React from 'react';
 import ufunc from 'ufunc';
 import posOffset from './posOffset';
 import R from 'ramda';
-import uikit from '../../react-uikit-base';
+import uikit from 'react-uikit-base';
 import Trigger from '../../react-uikit-trigger';
 import Dropbody from './dropbody';
-import Button from '../../react-uikit-button';
+import Button from 'react-uikit-button';
 
 
 class Dropdown extends React.Component {
@@ -201,7 +201,7 @@ class Dropdown extends React.Component {
     // Elements
     const cleanProps = uikit.helpers.cleanProps(['type'])(props);
     const cleanTriggerProps = ufunc.either(
-      uikit.helpers.cleanProps(props.trigger, ['body']),
+      uikit.helpers.cleanProps(props.trigger, ['body', 'icon']),
       props.trigger
     )(props.type === 'button-group');
 
