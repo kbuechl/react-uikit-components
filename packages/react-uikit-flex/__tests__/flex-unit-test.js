@@ -8,10 +8,10 @@ import renderElement from './helpers/renderElement';
 test('flex Component', nested => {
   nested.test('Renders flex component.',
     assert => {
-      const flex = renderElement(<Flex>This is a flexbox</Flex>).dom();
+      const flex = renderElement(<Flex kitid="flex1">This is a flexbox</Flex>).dom();
 
       const actualText = flex.html();
-      const expectedText = '<div class="uk-flex">This is a flexbox</div>';
+      const expectedText = '<div class="uk-flex" data-kitid="flex1">This is a flexbox</div>';
       assert.equals(actualText, expectedText,
         'Correctly renders flex element');
 
