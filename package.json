@@ -18,6 +18,7 @@
     "start": "node ./server.js",
     "webpack": "webpack",
     "watch": "webpack --watch",
+    "build": "babel -d ./lib ./src",
     "lint": "eslint --quiet ./src/**  && date || true && date",
     "lint:watch": "watch 'npm run lint' ./"
   },
