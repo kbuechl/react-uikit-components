@@ -5,19 +5,19 @@ import React from 'react';
 import renderElement from './helpers/renderElement';
 
 
-test.skip('List Component', nested => {
+test('List Component', nested => {
   nested.test('Renders list component:',
     assert => {
-      const Compoent = <List items={['item', 'item', 'item']} />;
+      const Compoent = <List kitid='list#' items={['item', 'item', 'item']} />;
       const listGroup = renderElement(Compoent).dom();
 
       const actual = listGroup.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<ul class="uk-list">' +
-        '<li> item</li>' +
-        '<li> item</li>' +
-        '<li> item</li>' +
+      const expect = '<ul data-kitid="list#" class="uk-list">' +
+        '<li data-kitid="item-0-list#"> item </li>' +
+        '<li data-kitid="item-1-list#"> item </li>' +
+        '<li data-kitid="item-2-list#"> item </li>' +
       '</ul>';
       /* eslint-enable no-complex-string-concat */
 
@@ -30,13 +30,13 @@ test.skip('List Component', nested => {
 
   nested.test('Renders description list component:',
     assert => {
-      const Compoent = <List type='description' />;
+      const Compoent = <List kitid='list#' type='description' />;
       const listGroup = renderElement(Compoent).dom();
 
       const actual = listGroup.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<dl></dl>';
+      const expect = '<dl data-kitid="list#"></dl>';
       /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
@@ -48,16 +48,16 @@ test.skip('List Component', nested => {
 
   nested.test('Renders unorderd list component:',
     assert => {
-      const Compoent = <List type='unorderd' items={['item', 'item', 'item']} />;
+      const Compoent = <List kitid='list#' type='unorderd' items={['item', 'item', 'item']} />;
       const listGroup = renderElement(Compoent).dom();
 
       const actual = listGroup.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<ul class="uk-list">' +
-        '<li> item</li>' +
-        '<li> item</li>' +
-        '<li> item</li>' +
+      const expect = '<ul data-kitid="list#" class="uk-list">' +
+        '<li data-kitid="item-0-list#"> item </li>' +
+        '<li data-kitid="item-1-list#"> item </li>' +
+        '<li data-kitid="item-2-list#"> item </li>' +
       '</ul>';
       /* eslint-enable no-complex-string-concat */
 
@@ -70,16 +70,16 @@ test.skip('List Component', nested => {
 
   nested.test('Renders ordered list component:',
     assert => {
-      const Compoent = <List type='ordered' items={['item', 'item', 'item']} />;
+      const Compoent = <List kitid='list#' type='ordered' items={['item', 'item', 'item']} />;
       const listGroup = renderElement(Compoent).dom();
 
       const actual = listGroup.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<ol class="uk-list">' +
-        '<li> item</li>' +
-        '<li> item</li>' +
-        '<li> item</li>' +
+      const expect = '<ol data-kitid="list#" class="uk-list">' +
+        '<li data-kitid="item-0-list#"> item </li>' +
+        '<li data-kitid="item-1-list#"> item </li>' +
+        '<li data-kitid="item-2-list#"> item </li>' +
       '</ol>';
       /* eslint-enable no-complex-string-concat */
 

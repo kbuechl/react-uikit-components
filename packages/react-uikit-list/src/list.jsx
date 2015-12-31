@@ -7,67 +7,52 @@ import ListItem from './list-item';
 
 
 class List extends React.Component {
-  static propTypes = {
-    items        : React.PropTypes.array,
-    horizontal   : React.PropTypes.bool,
-    line         : React.PropTypes.bool,
-    striped      : React.PropTypes.bool,
-    onSelectMode : React.PropTypes.func,
-    space        : React.PropTypes.bool,
-    type         : React.PropTypes.oneOf(['description', 'ordered', 'unorderd'])
+
+  getItemId (index) {
+    return `item-${index}-${this.props.kitid}`;
   }
 
-
   render () {
-    const $props = this.props;
-
+    const props = this.props;
+    const ignoreProps = ['type'];
+    const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
     // CSS classes
     const isLine = ufunc.either('uk-list-line', 'uk-description-list-line');
-    const isHor = ufunc.maybeIf('uk-description-list-horizontal')($props.type === 'description');
+    const isHor = ufunc.maybeIf('uk-description-list-horizontal')(props.type === 'description');
 
     const cssClassNames = uikit.helpers.cleanClasses([
-      $props.type !== 'description' ? 'uk-list' : null,
-      $props.horizontal ? isHor : null,
-      !$props.line ? null : isLine($props.type !== 'description'),
-      $props.striped ? 'uk-list-striped' : null,
-      $props.space ? 'uk-list-space' : null,
-      $props.classes,
-      $props.className
+      props.type !== 'description' ? 'uk-list' : null,
+      props.horizontal ? isHor : null,
+      !props.line ? null : isLine(props.type !== 'description'),
+      props.striped ? 'uk-list-striped' : null,
+      props.space ? 'uk-list-space' : null,
+      props.classes,
+      props.className
     ]);
 
 
     // Elements
-    const selectable = ufunc.maybeIf(
-      <input type="checkbox" className='close' onClick={ (e) => $props.onSelectMode(e) }/>
-    )($props.selectable);
 
 
     const link = (item, index) => <ListItem
-      active={item.active}
-      description={$props.description}
-      badge={item.badge}
-      body={item.body }
-      href={item.href}
       key={index}
-      kitId={item.kitId}
-      onClick={item.onClick}
-      onSelectMode={selectable}
+      {...item}
+      kitid={this.getItemId(index)}
+      selectable={props.selectable}
+      onClick={props.onClick}
     />;
 
 
     const text = (item, index) => <ListItem
-      body={item}
       key={index}
-      kitId={item.kitId}
-      onClick={item.onClick}
-      selectable={selectable}
+      body={item}
+      kitid={this.getItemId(index)}
     />;
 
-
     let items;
-    if ($props.items) {
-      items = $props.items.map((item, index) => {
+    if (props.items) {
+      items = props.items.map((item, index) => {
         return ufunc.either(
           link(item, index),
           text(item, index)
@@ -75,40 +60,51 @@ class List extends React.Component {
       });
     }
 
+    const attr = {
+      ...cleanProps,
+      ...uikit.events(props),
+      'data-kitid': props.kitid,
+      className   :cssClassNames
+    };
 
-    const ignoreProps = ['type'];
 
-    
     const type = {
-      unorderd: <ul
-        {...uikit.helpers.cleanProps($props, ignoreProps)}
-        className={cssClassNames}
-      >
+      unorderd: <ul {...attr}>
         {items}
-        {$props.children}
+        {props.children}
       </ul>,
 
-      ordered: <ol
-        {...uikit.helpers.cleanProps($props, ignoreProps)}
-        className={cssClassNames}
+      ordered: <ol {...attr}
       >
         {items}
-        {$props.children}
+        {props.children}
       </ol>,
 
-      description: <dl
-      {...uikit.helpers.cleanProps($props, ignoreProps)}
-        className={cssClassNames}
-      >
-        {$props.children}
+      description: <dl {...attr}>
+        {props.children}
       </dl>
     };
 
 
     // Return Component
-    return type[$props.type] || type['unorderd'];
+    return type[props.type] || type['unorderd'];
   }
-}
+};
+
+List.propTypes = {
+  children     : React.PropTypes.any,
+  className    : React.PropTypes.string,
+  classes      : React.PropTypes.array,
+  description  : React.PropTypes.string,
+  items        : React.PropTypes.array,
+  horizontal   : React.PropTypes.bool,
+  kitid        : React.PropTypes.string,
+  line         : React.PropTypes.bool,
+  striped      : React.PropTypes.bool,
+  selectable   : React.PropTypes.bool,
+  space        : React.PropTypes.bool,
+  type         : React.PropTypes.oneOf(['description', 'ordered', 'unorderd'])
+};
 
 
 export default uikit.base(List);
