@@ -8,7 +8,7 @@ import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 const ButtonDoc = (props) => (
   <div>
     <section>
-      <h1>Button</h1>
+      <h1>React Uikit Button</h1>
       <p>
         Easily create nicely looking buttons, which come in different styles.
       </p>
