@@ -20,7 +20,7 @@ const FlexDoc = (props) => (
       <section>
         <h2>Usage</h2>
           <Codeblock>
-  {`npm install react-uikit-base --save;
+  {`npm install react-uikit-flex --save;
 
   // ES6
   >import Flex from 'react-uikit-flex';
