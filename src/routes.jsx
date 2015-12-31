@@ -46,34 +46,37 @@ Main.propTypes = {
 const Content = uikit.base(Main);
 
 const Layout = (props) => (
-  <Grid >
-    <Nav col='1-6' type='side'>
-      <NavItem type='item'><Link to='/alert'>Alert</Link></NavItem>
-      <NavItem type='item'><Link to='/article'>Article</Link></NavItem>
-      <NavItem type='item'><Link to='/base'>Base</Link></NavItem>
-      <NavItem type='item'><Link to='/badge'>Badge</Link></NavItem>
-      <NavItem type='item'><Link to='/block'>Block</Link></NavItem>
-      <NavItem type='item'><Link to='/button'>Button</Link></NavItem>
-      <NavItem type='item'><Link to='/button-group'>Button group</Link></NavItem>
-      <NavItem type='item'><Link to='/codeblock'>Codeblock</Link></NavItem>
-      <NavItem type='item'><Link to='/comment'>Comment</Link></NavItem>
-      <NavItem type='item'><Link to='/comment-list'>Comment list</Link></NavItem>
-      <NavItem type='item'><Link to='/dropdown'>Dropdown</Link></NavItem>
-      <NavItem type='item'><Link to='/flex'>Flex</Link></NavItem>
-      <NavItem type='item'><Link to='/grid'>Grid</Link></NavItem>
-      <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
-      <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
-      <NavItem type='item'><Link to='/list'>List</Link></NavItem>
-      <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
-      <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
-      <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
-      <NavItem type='item'><Link to='/table'>Table</Link></NavItem>
-      <NavItem type='item'><Link to='/text'>Text</Link></NavItem>
-      <NavItem type='item'><Link to='/thumbnail'>Thumbnail</Link></NavItem>
-    </Nav>
+  <div>
+    <h1>React UIkit Components</h1>
+    <Grid >
+      <Nav col='1-6' type='side'>
+        <NavItem type='item'><Link to='/alert'>Alert</Link></NavItem>
+        <NavItem type='item'><Link to='/article'>Article</Link></NavItem>
+        <NavItem type='item'><Link to='/base'>Base</Link></NavItem>
+        <NavItem type='item'><Link to='/badge'>Badge</Link></NavItem>
+        <NavItem type='item'><Link to='/block'>Block</Link></NavItem>
+        <NavItem type='item'><Link to='/button'>Button</Link></NavItem>
+        <NavItem type='item'><Link to='/button-group'>Button group</Link></NavItem>
+        <NavItem type='item'><Link to='/codeblock'>Codeblock</Link></NavItem>
+        <NavItem type='item'><Link to='/comment'>Comment</Link></NavItem>
+        <NavItem type='item'><Link to='/comment-list'>Comment list</Link></NavItem>
+        <NavItem type='item'><Link to='/dropdown'>Dropdown</Link></NavItem>
+        <NavItem type='item'><Link to='/flex'>Flex</Link></NavItem>
+        <NavItem type='item'><Link to='/grid'>Grid</Link></NavItem>
+        <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
+        <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
+        <NavItem type='item'><Link to='/list'>List</Link></NavItem>
+        <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
+        <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
+        <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
+        <NavItem type='item'><Link to='/table'>Table</Link></NavItem>
+        <NavItem type='item'><Link to='/text'>Text</Link></NavItem>
+        <NavItem type='item'><Link to='/thumbnail'>Thumbnail</Link></NavItem>
+      </Nav>
 
-    <Content col='5-6' margin='right'>{props.children}</Content>
-  </Grid>
+      <Content col='5-6' margin='right'>{props.children}</Content>
+    </Grid>
+  </div>
 );
 
 Layout.propTypes = {
