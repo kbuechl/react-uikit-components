@@ -13,6 +13,7 @@ Examples and documentation can be found at <a href='https://github.com/otissv/re
 
 <ul>
   <li><a href='https://github.com/otissv/react-uikit-alert'>react-uikit-alert</a></li>
+  <li><a href='https://github.com/otissv/react-uikit-article'>react-uikit-article</a></li>
   <li><a href='https://github.com/otissv/react-uikit-badge'>react-uikit-badge</a></li>
   <li><a href='https://github.com/otissv/react-uikit-base'>react-uikit-base</a></li>
   <li><a href='https://github.com/otissv/react-uikit-block'>react-uikit-block</a></li>
