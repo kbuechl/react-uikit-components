@@ -8,7 +8,7 @@ import renderElement from './helpers/renderElement';
 test('img-gallery Component', nested => {
   nested.test('Renders img gallery component.',
     assert => {
-      const imgGroup = renderElement(<ImgGroup items={[
+      const imgGroup = renderElement(<ImgGroup kitid='igp1' items={[
         {src: 'docs/images/placeholder_200x150_2.svg', kitid: 'iGid1'},
         {src: 'docs/images/placeholder_200x150_2.svg', kitid: 'iGid2'}
       ]}/>).dom();
@@ -16,7 +16,7 @@ test('img-gallery Component', nested => {
       const actual = imgGroup.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div>' +
+      const expect = '<div data-kitid="igp1">' +
         '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="iGid1">' +
         '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="iGid2">' +
       '</div>';
@@ -28,18 +28,20 @@ test('img-gallery Component', nested => {
       assert.end();
     });
 
+
   nested.test('Renders img gallery component with item props.',
     assert => {
-      const imgGroup = renderElement(<ImgGroup items={[
-        {src: 'docs/images/placeholder_200x150_2.svg', props: {margin: 'bottom right'}, kitid: 'imglx1'}
+      const imgGroup = renderElement(<ImgGroup kitid='igp1' items={[
+        {src: 'docs/images/placeholder_200x150_2.svg', margin: 'bottom right', kitid: 'imglx1'}
       ]}/>).dom();
 
       const actual = imgGroup.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div>' +
+      const expect = '<div data-kitid="igp1">' +
         '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="imglx1" class="uk-margin-bottom uk-margin-right">' +
-      '</div>';
+        '</div>';
+
       /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
