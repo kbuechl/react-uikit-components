@@ -9,6 +9,7 @@ test('block Component', nested => {
   nested.test('Renders comment component:',
     assert => {
       const Component = <Comment
+        kitid='com1'
         title='Author'
         meta='12 days ago | Profile | #'
         avatar={{src:'images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}
@@ -20,7 +21,7 @@ test('block Component', nested => {
       const actual = comment.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<article title="Author" class="uk-comment">' +
+      const expect = '<article title="Author" class="uk-comment" data-kitid="com1">' +
         '<header class="uk-comment-header">' +
           '<img class="uk-comment-avatar" src="images/placeholder_avatar.svg" alt="Avatar placeholder">' +
           '<h4 class="uk-comment-title">Author</h4>' +

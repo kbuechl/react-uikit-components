@@ -2,10 +2,8 @@
 
 
 import React from 'react';
-import Commnet from '../../react-uikit-comment/lib/comment';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-import Table from '../../react-uikit-table/lib/table';
-import Note from '../../react-uikit-note/lib/note';
+
 
 const CommentDoc = (props) => (
   <div>
@@ -15,158 +13,22 @@ const CommentDoc = (props) => (
       <p>
         Create comments, for example about articles.
       </p>
+      <p>
+        <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
+      </p>
       </section>
 
       <section>
         <h2>Usage</h2>
-        <p>
-          <code>npm install react-uikit-comment --save;</code>
-        </p>
-        <p>
-          ES6 <br />
-        <code>import Commnet from 'react-uikit-comment';</code><br />
-        </p>
-        <p>
-          ES5 <br />
-        <code>var Commnet = require&#40;'react-uikit-comment'&#41;;</code>
-        </p>
+          <Codeblock>
+  {`npm install react-uikit-comment --save;
 
-        <Note badge={{context: 'danger', body: 'Note'}}>
-          UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
-          This has been tested with UIKit version 2.24.2.
-        </Note>
+  //ES6
+  import Commnet from 'react-uikit-comment';
 
-        <p>
-          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
-        </p>
-
-        <hr />
-      <p>
-        The Comment component consists of a comment header, including an
-        avatar, a title and meta data, and a comment body.
-      </p>
-
-      <Table>
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>avatar</code></td>
-            <td>Add avatar prop to create an avatar for the comment author</td>
-          </tr>
-          <tr>
-            <td><code>title</code></td>
-            <td>Add tilte prop to createCreates a comment title.</td>
-          </tr>
-          <tr>
-            <td><code>meta</code></td>
-            <td>Add meta prop to add meta data about the comment.</td>
-          </tr>
-          <tr>
-            <td><code>body</code></td>
-            <td>
-              Add body prop to add text comment body. Body is overridden
-              if commet has children.
-            </td>
-          </tr>
-        </tbody>
-      </Table>
-
-      <h3>Example</h3>
-
-      <Codeblock syntax='xml'>
-{
-`<Commnet title='Author' meta='12 days ago | Profile | #'
-  avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
-
-  <p>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-    erat, sed diam voluptua.
-  </p>
-</Commnet>
-`}
-      </Codeblock>
-    </section>
-
-    <section>
-      <h2>Comment Color</h2>
-      <p>
-        To style a comment differently, for example to highlight it as the
-        admin's comment, just add the <code>primary</code> prop.
-      </p>
-
-      <h3>Example</h3>
-    
-      <Codeblock syntax='xml'>
-{
-`<Commnet primary title='Author' meta='12 days ago | Profile | #'
-  avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
-
-  <p>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-    erat, sed diam voluptua.
-  </p>
-</Commnet>
-`}
-      </Codeblock>
-    </section>
-
-    <section>
-      <h2>Commnet Props</h2>
-      <p>
-        <code>&lt;Commnet&gt;</code> props and their types.
-      </p>
-
-      <p>
-        See <a href='https://github.com/otissv/react-uikit-base'>base</a> for additional props.
-      </p>
-
-      <Table>
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <code>avatar</code>
-            </td>
-            <td>Object {`{src, alt }`}</td>
-          </tr>
-          <tr>
-            <td>
-              <code>body</code>
-            </td>
-            <td>String</td>
-          </tr>
-          <tr>
-            <td>
-              <code>meta</code>
-            </td>
-            <td>String</td>
-          </tr>
-          <tr>
-            <td>
-              <code>primary</code>
-            </td>
-            <td>Bool</td>
-          </tr>
-          <tr>
-            <td>
-              <code>title</code>
-            </td>
-            <td>String</td>
-          </tr>
-        </tbody>
-      </Table>
+  // ES5
+  var Commnet = require('react-uikit-comment');`}
+          </Codeblock>
     </section>
 
 
