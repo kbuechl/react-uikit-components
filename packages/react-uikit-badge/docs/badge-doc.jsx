@@ -3,14 +3,13 @@
 
 import React from 'react';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-import Table from '../../react-uikit-table/lib/table';
-import Note from '../../react-uikit-note/lib/note';
+
 
 const BadgeDoc = (props) => (
   <div>
 
     <section>
-      <h1>Badge</h1>
+      <h1>React UIkit Badge</h1>
         <p>
           Easlily create nicely looking badges to label and highlight your content.
         </p>
