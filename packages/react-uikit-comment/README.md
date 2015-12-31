@@ -1,4 +1,4 @@
-<div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css"/><section><h1>Commnet</h1><p>Create comments, for example about articles.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiu06jg50000gmmdq4h7shki"><code>npm install react-uikit-comment --save;
+<div><section><h1>React UIkit Commnet</h1><p>Create comments, for example about articles.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiumzm1k0000hvmdqit88osl"><code>npm install react-uikit-comment --save;
 
   //ES6
   import Commnet from &#x27;react-uikit-comment&#x27;;
