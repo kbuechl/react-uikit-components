@@ -13,6 +13,9 @@ const CodeblockDoc = (props) => (
       <p>
         Displays code inside of a block.
       </p>
+      <p>
+        <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
+      </p>
     </section>
 
     <section>
