@@ -1,4 +1,4 @@
-<div><section><h1>Badge</h1><p>Easlily create nicely looking badges to label and highlight your content.</p><p><a href="https://github.com/otissv/react-uikit-components">react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitd67nw0000qmmd49b2v18j"><code>npm install react-uikit-badge --save;
+<div><section><h1>Badge</h1><p>Easlily create nicely looking badges to label and highlight your content.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitzi33x000042mdbtei64ma"><code>npm install react-uikit-badge --save;
 
   // ES6
   mport Badge from &#x27;react-uikit-badge&#x27;;
