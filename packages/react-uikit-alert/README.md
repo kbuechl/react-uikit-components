@@ -1,4 +1,4 @@
-<div><section><h1>Alert</h1><p>Defines styles for success, warning and error messages.</p><p><a href="https://github.com/otissv/react-uikit-components">react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitcvi8d00008vmdolufv3lo"><code>npm install react-uikit-alert --save;
+<div><section><h1>Alert</h1><p>Defines styles for success, warning and error messages.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitzfqft0000unmdwijzxd86"><code>npm install react-uikit-alert --save;
 
 // ES6
 import Alert from &#x27;react-uikit-alert&#x27;;
