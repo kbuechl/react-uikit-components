@@ -13,74 +13,24 @@ const CommentListDoc = (props) => (
       <p>
         For lists of comments.
       </p>
+      <p>
+        <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
+      </p>
 
 
       </section>
 
       <section>
         <h2>Usage</h2>
-        <p>
-          <code>npm install react-uikit-comment-list --save;</code>
-        </p>
-        <p>
-          ES6 <br />
-        <code>import CommentList from 'react-uikit-comment-list';</code><br />
-        </p>
+          <Codeblock>
+  {`npm install react-uikit-comment-list --save;
 
-        <p>
-          ES5 <br />
-        <code>var CommentList = require&#40;'react-uikit-comment-list'&#41;;</code>
-        </p>
+  // ES6
+  import CommentList from 'react-uikit-comment-list';
 
-        <p>
-          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
-        </p>
-
-        <h/>
-      <p>
-        Use the <code>&lt;CommentList&gt;</code> component for lists of comments.
-        You can nest any number of <code>&lt;CommentList&gt;</code> components inside a comment list.
-      </p>
-
-      <h3>Example</h3>
-
-      <Codeblock scroll='text'>
-  {
-`<CommentList>
-  <li>
-    <Commnet title='Author' meta='12 days ago | Profile | #'
-      avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
-
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat, sed diam voluptua.
-      </p>
-    </Commnet>
-    <CommentList>
-      <li>
-        <Commnet title='Author' meta='12 days ago | Profile | #'
-          avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
-
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
-          </p>
-        </Commnet>
-      </li>
-    </CommentList>
-  </li>
-</CommentList>
-`}
-      </Codeblock>
-    </section>
-
-    <section>
-      <h2>Commet list props</h2>
-      <p>
-        See <a href='https://github.com/otissv/react-uikit-base'>base</a> for additional props.
-      </p>
+  // ES5
+  var CommentList = require('react-uikit-comment-list'&#41);`}
+          </Codeblock>
     </section>
 
 
