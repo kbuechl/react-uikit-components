@@ -9,7 +9,7 @@ import Codeblock from '../../react-uikit-codeblock/lib/codeblock.js';
 const AlertDoc = (props) => (
   <div>
     <section>
-      <h1>Alert</h1>
+      <h1>React UIkit Alert</h1>
       <p>
         Defines styles for success, warning and error messages.
       </p>
