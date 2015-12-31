@@ -1,23 +1,7 @@
-<div><section><h1>Overlay</h1><p class="uk-article-lead">Easily createresponsive images.</p></section><section><h2>Usage</h2><p><code>npm install react-uikit-overlay --save;</code></p><p>ES6 <br/><code>import Overlay from &#x27;react-uikit-overlay&#x27;;</code><br/></p><p>ES5 <br/><code>var Overlay = require(&#x27;react-uikit-overlay&#x27;);</code></p><p><span class="uk-badge  uk-badge-danger">Note:</span>  UIkit css is not included. You can get it from <a href="http://getuikit.com/">getuikit.com</a>. This has been tested with UIKit version 2.24.2.</p><p>See <a href="http://otissv.github.io/react-uikit-components">React UIKit Componets</a> for examples and full documentation.</p><hr/><h3>Example</h3><pre><code>&lt;Overlay  width=&#x27;300px&#x27; height=&#x27;250px&#x27; src=&#x27;images/placeholder_600x400.svg&#x27; &gt;
-  &lt;h3&gt;Title&lt;/h3&gt;
-  &lt;p&gt;Lorem &lt;a href=&quot;#&quot;&gt;ipsum dolor&lt;/a&gt; sit amet, consetetur sadipscing elitr.&lt;/p&gt;
-&lt;/Overlay&gt;
-  </code></pre></section><section><h1>Overlay background</h1><p></p><h3>Example</h3><pre><code>&lt;Overlay background  width=&#x27;300px&#x27; height=&#x27;250px&#x27; src=&#x27;images/placeholder_600x400.svg&#x27; &gt;
-  &lt;h3&gt;Title&lt;/h3&gt;
-  &lt;p&gt;Lorem &lt;a href=&quot;#&quot;&gt;ipsum dolor&lt;/a&gt; sit amet, consetetur sadipscing elitr.&lt;/p&gt;
-&lt;/Overlay&gt;
-</code></pre></section><section><h1>Overlay caption</h1><p></p><h3>Example</h3><pre><code>&lt;Overlay cols=&#x27;1-2&#x27; caption=&#x27;top&#x27; background width=&#x27;300px&#x27; height=&#x27;200px&#x27; src=&#x27;images/placeholder_600x400.svg&#x27; margin=&#x27;bottom&#x27;&gt;
-  Lorem ipsum dolor sit amet.
-&lt;/Overlay&gt;
-&lt;Overlay cols=&#x27;1-2&#x27; caption=&#x27;bottom&#x27; background width=&#x27;300px&#x27; height=&#x27;200px&#x27; src=&#x27;images/placeholder_600x400.svg&#x27; margin=&#x27;bottom&#x27;&gt;
-  Lorem ipsum dolor sit amet.
-&lt;/Overlay&gt;
-&lt;Overlay cols=&#x27;1-2&#x27; caption=&#x27;left&#x27; background width=&#x27;300px&#x27; height=&#x27;200px&#x27; src=&#x27;images/placeholder_600x400.svg&#x27; &gt;
-  Lorem ipsum dolor sit amet.
-&lt;/Overlay&gt;
-&lt;Overlay cols=&#x27;1-2&#x27; caption=&#x27;right&#x27; background width=&#x27;300px&#x27; height=&#x27;200px&#x27; src=&#x27;images/placeholder_600x400.svg&#x27; &gt;
-  Lorem ipsum dolor sit amet.
-&lt;/Overlay&gt;
-</code></pre></section><section><h1>Overlay icon</h1><p></p><h3>Example</h3><pre><code>&lt;Overlay icon background  width=&#x27;300px&#x27; height=&#x27;250px&#x27; src=&#x27;images/placeholder_600x400.svg&#x27; /&gt;
-  </code></pre></section><section><h1>Overlay image</h1><p></p><h3>Example</h3><pre><code>&lt;Overlay icon background  width=&#x27;300px&#x27; height=&#x27;250px&#x27; src=&#x27;images/placeholder_600x400.svg&#x27; /&gt;
-  </code></pre></section><section><h1>Overlay and flex</h1><p>Coming soon...</p></section><section><h1>Overlay anchor</h1><p>Coming soon...</p></section><section><h2>Overlay Props</h2><p><code>&lt;Overlay&gt;</code> props and their types.</p><p>See <a href="https://github.com/otissv/react-uikit-base">base</a> for additional props.</p><table class="uk-table"><thead><tr><th>Prop</th><th>Type</th></tr></thead><tbody><tr><td><code>alt</code></td><td>string</td></tr><tr><td><code>cover</code></td><td>Bool</td></tr><tr><td><code>height</code></td><td>string</td></tr><tr><td><code>large</code></td><td>object<br/> {width, height, src}</td></tr><tr><td><code>medium</code></td><td>object<br/> {width, height, src}</td></tr><tr><td><code>small</code></td><td>object<br/> {width, height, src}</td></tr><tr><td><code>src</code></td><td>string</td></tr><tr><td><code>width</code></td><td>string</td></tr><tr><td><code>xlarge</code></td><td>object<br/> {width, height, src}</td></tr></tbody></table></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>
+<div><section><h1>React UIKit Overlay</h1><p class="uk-article-lead">Easily create responsive images.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiuq6a6g000021mdhff4n5w8"><code>npm install react-uikit-overlay --save;
+
+  // ES6
+  import Overlay from &#x27;react-uikit-overlay&#x27;;
+
+  // ES5
+  var Overlay = require(&#x27;react-uikit-overlay&#x27;);</code></pre></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>

@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-overlay",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "React uikit overlay component create an overlay on top of an image.",
   "keywords": [
     "javascript",
@@ -53,14 +53,15 @@
   },
   "dependencies": {
     "react": "~0.14.3",
-    "react-uikit-base": "~0.1.1",
+    "react-uikit-base": "~0.2.2",
+    "react-uikit-img": "~0.2.0",
     "ufunc": "~0.2.1"
   },
   "babel": {
     "presets": [
       "es2015",
       "react",
-      "stage-0"
+      "stage-2"
     ]
   },
   "engines": {
