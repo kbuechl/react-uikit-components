@@ -36,15 +36,14 @@ const Button = (props) => {
 
 
   const attr = {
-    ...cleanProps,
     ...uikit.events(props),
     'data-kitid': props.kitid
-
   };
 
 
   const type = {
     button: <button
+      {...cleanProps}
       {...attr}
       className={cssClassNames}
       type='button'
@@ -55,12 +54,14 @@ const Button = (props) => {
 
     close: <a
       {...cleanProps}
+      {...attr}
       className={`uk-close ${cssClassNames}`}
       href='#'
     />,
 
     link: <a
       {...cleanProps}
+      {...attr}
       className={cssClassNames}
       href='#'
       role='button'
