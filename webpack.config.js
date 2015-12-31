@@ -9,8 +9,8 @@ module.exports = {
   context: path.join(__dirname, 'src'),
 
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-hot-middleware/client',
+    // 'webpack/hot/dev-server',
+    // 'webpack-hot-middleware/client',
     './app'
   ],
 
