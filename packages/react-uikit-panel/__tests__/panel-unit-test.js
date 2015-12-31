@@ -9,6 +9,7 @@ test('panel Component', nested => {
   nested.test('Renders panel component:',
     assert => {
       const Component = <Panel
+        kitid='pan1'
         box
         title='Title'
         header
@@ -18,16 +19,17 @@ test('panel Component', nested => {
         This is a panel
       </Panel>;
 
-      const alert = renderElement(Component).dom();
+      const panel = renderElement(Component).dom();
 
-      const actual = alert.html();
+      const actual = panel.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">' +
-        '<span class="uk-badge  uk-badge-danger">hot</span>' +
+      const expect = '<div data-kitid="pan1" class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">' +
+        '<span class="uk-badge  uk-badge-danger uk-panel-badge" data-kitid="pan1">hot</span>' +
         '<h3 class="uk-panel-title"> Title</h3>' +
         'This is a panel' +
-      '</div>';
+      '</div>'
+;
       /* eslint-enable no-complex-string-concat */
 
 
@@ -41,6 +43,7 @@ test('panel Component', nested => {
   nested.test('Renders panel component as link:',
     assert => {
       const Component = <Panel
+        kitid='pan1'
         box
         title='Link panel'
         type='link'
@@ -57,15 +60,14 @@ test('panel Component', nested => {
       const actual = alert.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<a href="">' +
-        '<div class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">' +
-          '<span class="uk-badge  uk-badge-danger">hot</span>' +
+      const expect = '<a data-kitid="pan1">' +
+        '<div data-kitid="pan1" class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">' +
+          '<span class="uk-badge  uk-badge-danger uk-panel-badge" data-kitid="pan1">hot</span>' +
           '<h3 class="uk-panel-title"> Link panel</h3>' +
           'This is a panel' +
         '</div>' +
       '</a>';
       /* eslint-enable no-complex-string-concat */
-
 
       assert.equals(actual, expect,
         'Correctly renders panel element.');
@@ -142,8 +144,5 @@ test('panel Component', nested => {
 
       assert.end();
     });
-
-
-
 
 });
