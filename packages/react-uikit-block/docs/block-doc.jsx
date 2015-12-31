@@ -10,7 +10,7 @@ export default class BlockHandler extends React.Component {
     return <div>
 
       <section>
-        <h1>React Uikit Block</h1>
+        <h1>React UIkit Block</h1>
         <p>
           Separate content sections by bundling them in blocks with different styles.
         </p>
