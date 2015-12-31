@@ -1,36 +1,36 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import uikit from '../../react-uikit-base';
 
 
-class ButtonGroup extends React.Component {
-  static propTypes = {
-    type: React.PropTypes.oneOf(['button', 'dropdown', 'checkbox', 'radio'])
-  }
-
-  render () {
-    const $props = this.props;
-
-
-    // CSS classes
-    const cssClassNames = uikit.helpers.cleanClasses([
-      'uk-button-group',
-      $props.classes,
-      $props.className
-    ]);
+const ButtonGroup = (props) => {
+  // CSS classes
+  const cssClassNames = uikit.helpers.cleanClasses([
+    'uk-button-group',
+    props.classes,
+    props.className
+  ]);
 
 
-    // Return Component
-    return <div
-      {...$props}
-      className={cssClassNames}
-      data-kitid={$props.kitid}
-    >
-      {$props.children}
-    </div>;
-  }
-}
+  // Return Component
+  return <div
+    {...{...props, ...uikit.events(props)}}
+    className={cssClassNames}
+    data-kitid={props.kitid}
+  >
+    {props.children}
+  </div>;
 
+};
+
+
+ButtonGroup.propTypes = {
+  children  : React.PropTypes.any,
+  className : React.PropTypes.string,
+  classes   : React.PropTypes.array,
+  kitid     : React.PropTypes.string,
+  type: React.PropTypes.oneOf(['button', 'dropdown', 'checkbox', 'radio'])
+};
 
 export default uikit.base(ButtonGroup);

@@ -15,97 +15,22 @@ const ButtonGroupDoc = (props) => (
       <p>
         Easily create nicely looking group buttons.
       </p>
+      <p>
+        <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
+      </p>
     </section>
 
     <section>
       <h2>Usage</h2>
-      <p>
-        <code>npm install react-uikit-button-group --save;</code>
-      </p>
-      <p>
-        ES6 <br />
-      <code>import ButtonGroup from 'react-uikit-button-group';</code><br />
-      </p>
+        <Codeblock>
+  {`npm install react-uikit-button-group --save;
 
-      <p>
-        ES5 <br />
-      <code>var ButtonGroup = require&#40;'react-uikit-button-group'&#41;;</code>
-      </p>
+  // ES6
+  import ButtonGroup from 'react-uikit-button-group';
 
-      <Note badge={{context: 'danger', body: 'Note'}}>
-        UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
-        This has been tested with UIKit version 2.24.2.
-      </Note>
-
-      <p>
-        See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
-      </p>
-
-      <hr/>
-    </section>
-
-
-    <section>
-      <h2>Button group</h2>
-      <p>
-        To create a Button group place the Buttons inside a <code>ButtonGroup</code> compoment
-        to the buttton component.
-      </p>
-
-      <h3>Example</h3>
-
-      <h4 className='code'>Code</h4>
-      <Codeblock syntax='xml'>
-{`<ButtonGroup display='block' margin='smallBottom'>
-<Button body='Link' type='link' />
-<Button body='Button'/>
-<Button body='Button'/>
-</ButtonGroup>
-
-<ButtonGroup display='block' margin='smallBottom'>
-<Button body='Link'   context='primary' type='link' />
-<Button body='Button' context='primary'/>
-<Button body='Button' context='primary'/>
-</ButtonGroup>
-
-<ButtonGroup display='block' margin='smallBottom'>
-<Button body='Link'   context='success' type='link' />
-<Button body='Button' context='success'/>
-<Button body='Button' context='success'/>
-</ButtonGroup>
-
-<ButtonGroup  display='block' margin='smallBottom'>
-<Button body='Link'   context='danger' type='link' />
-<Button body='Button' context='danger'/>
-<Button body='Button' context='danger'/>
-</ButtonGroup>
-`}
-      </Codeblock>
-    </section>
-
-    <section>
-      <h2>checkbox button</h2>
-      <p>
-        Coming soon...
-      </p>
-
-    </section>
-
-    <section>
-      <h2>Radio buttons</h2>
-      <p>
-        Coming soon...
-      </p>
-
-    </section>
-
-
-    <section>
-      <h2>Button Group Props</h2>
-      <p>
-        See <a href='https://github.com/otissv/react-uikit-base'>base</a> for additional props.
-      </p>
-
+  // ES5
+  var ButtonGroup = require('react-uikit-button-group');`}
+        </Codeblock>
     </section>
 
 
