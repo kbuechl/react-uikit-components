@@ -9,7 +9,7 @@ import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 const ArticleDoc = (props) => (
   <div>
     <section>
-      <h1>Article</h1>
+      <h1>React UIkit Article</h1>
       <p>
         Create articles within your page.
       </p>
