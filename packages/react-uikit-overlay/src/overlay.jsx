@@ -50,7 +50,6 @@ const Overlay = (props) => {
 
   const figure = <figure {...props} className={cssClassNames} >
     <Img
-      ref='img'
       alt={props.alt}
       height={props.height}
       large={props.large}
