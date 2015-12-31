@@ -1,4 +1,4 @@
-<div><section><h1>UIKit base</h1><p class="uk-article-lead">Create react components for UIKit.</p><p><a href="https://github.com/otissv/react-uikit-components">react-uikit-components</a> docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitclfnk0000fgmd0dbh663f"><code>npm install react-uikit-base --save;
+<div><section><h1>UIKit base</h1><p class="uk-article-lead">Create react components for UIKit.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitziszt0000i5mdipgk5wv2"><code>npm install react-uikit-base --save;
 
 // ES6
 &lt;code&gt;import uikit from &#x27;react-uikit-base&#x27;;

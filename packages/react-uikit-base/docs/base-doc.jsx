@@ -16,7 +16,7 @@ export default class BlockHandler extends React.Component {
           Create react components for UIKit.
         </p>
         <p>
-          <a href='https://github.com/otissv/react-uikit-components'>react-uikit-components</a> docs.
+          <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
         </p>
 
       </section>
