@@ -9,7 +9,7 @@ import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 const ImgDoc = (props) => (
   <div>
     <section>
-      <h1>React Uikit Img</h1>
+      <h1>React UIkit Img</h1>
       <p>
         Easily create responsive images.
       </p>

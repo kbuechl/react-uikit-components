@@ -1,4 +1,4 @@
-<div><section><h1>React Uikit Img</h1><p>Easily create responsive images.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiu1saya0000oxmdpizrz6uu"><code>npm install react-uikit-img --save;
+<div><section><h1>React UIkit Img</h1><p>Easily create responsive images.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiund8mp0000xwmd82pxnh49"><code>npm install react-uikit-img --save;
 
   // ES6
   import Img from &#x27;react-uikit-img&#x27;;
