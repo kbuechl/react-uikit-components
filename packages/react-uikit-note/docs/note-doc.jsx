@@ -2,116 +2,32 @@
 
 
 import React from 'react';
-import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-import Note from '../../react-uikit-note/lib/note';
-import Table from '../../react-uikit-table/lib/table';
+import Codeblock from 'react-uikit-codeblock';
 
 
 export default class NoteHandler extends React.Component {
   render () {
     return <div>
       <section>
-        <h1>Note</h1>
+        <h1>React UIkit Note</h1>
         <p>
           Easily add notes.
+        </p>
+        <p>
+          <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
         </p>
       </section>
 
       <section>
         <h2>Usage</h2>
-        <p>
-          <code>npm install react-uikit-note --save;</code>
-        </p>
-        <p>
-          ES6 <br />
-        <code>import Note from 'react-uikit-note';</code><br />
-        </p>
+          <Codeblock>
+  {`npm install react-uikit-note --save;
+  // ES6
+  import Note from 'react-uikit-note';
 
-        <p>
-          ES5 <br />
-        <code>var Note = require&#40;'react-uikit-note'&#41;;</code>
-        </p>
-
-        <Note badge={{context: 'danger', body: 'Note'}}>
-          UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
-          This has been tested with UIKit version 2.24.2.
-        </Note>
-
-        <p>
-          See <a href='http://otissv.github.io/react-uikit-components'>React UIKit Componets</a> for examples and full documentation.
-        </p>
-
-        <hr/>
-
-        <p>
-          The Note componet consists of a paragrath with a prefixed bagde.
-          To create a Note component add a label for the badge
-          prop <code>&lt;Note badge='NOTE'&gt;</code> and either add
-          text as a child or to the body prop.
-        </p>
-
-        <h3>Example</h3>
-
-        <Codeblock syntax='xml'>
-{`<Note badge='EXAMPLE'>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua.
-</Note>
-`}
-        </Codeblock>
-      </section>
-
-
-      <section>
-        <h2>Note colors</h2>
-        <p>
-
-        </p>
-
-        <h3>Example</h3>
-
-        <Codeblock syntax='xml'>
-{`<Note badge={{body: 'EXAMPLE', context:'danger'}}>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua.
-</Note>
-  `}
-        </Codeblock>
-      </section>
-
-
-      <section>
-        <h2>Note Props</h2>
-        <p>
-          <code>&lt;Note&gt;</code> props and their types.
-        </p>
-        <p>
-          See <a href='https://github.com/otissv/react-uikit-base'>base</a> for additional props. <br />
-        See <a href='https://github.com/otissv/react-uikit-badge'>badge</a> for badge props. <br />
-        </p>
-
-        <Table>
-          <thead>
-            <tr>
-              <th>Prop</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <code>badge</code>
-              </td>
-              <td>string or object</td>
-            </tr>
-            <tr>
-              <td>
-                <code>body</code>
-              </td>
-              <td>string</td>
-            </tr>
-          </tbody>
-        </Table>
+  // ES5
+  var Note = require&('react-uikit-note')`}
+          </Codeblock>
       </section>
 
 

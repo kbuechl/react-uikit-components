@@ -8,10 +8,15 @@ import renderElement from './helpers/renderElement';
 test('note Component', nested => {
   nested.test('Renders note component.',
     assert => {
-      const alert = renderElement(<Note>This is a note</Note>).dom();
+      const alert = renderElement(<Note kitid='n1'>This is a note</Note>).dom();
 
       const actual = alert.html();
-      const expect = '<p><span class="uk-badge">Note</span>  This is a note</p>';
+
+      /* eslint-disable smells/no-complex-string-concat */
+      const expect = '<p data-kitid="n1">' +
+        '<span class="uk-badge" data-kitid="badge-n1">Note</span>  This is a note' +
+      '</p>';
+      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
         'Correctly renders alert component.');
@@ -22,10 +27,15 @@ test('note Component', nested => {
 
   nested.test('Renders note component.',
     assert => {
-      const alert = renderElement(<Note badge={{body: 'EXAMPLE', context:'danger'}}>This is a note</Note>).dom();
+      const alert = renderElement(<Note kitid='n1' badge={{body: 'EXAMPLE', context:'danger'}}>This is a note</Note>).dom();
 
       const actual = alert.html();
-      const expect = '<p><span class="uk-badge  uk-badge-danger">EXAMPLE</span>  This is a note</p>';
+
+      /* eslint-disable smells/no-complex-string-concat */
+      const expect = '<p data-kitid="n1">' +
+        '<span class="uk-badge  uk-badge-danger" data-kitid="badge-n1">EXAMPLE</span>  This is a note' +
+      '</p>';
+      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
         'Correctly renders alert component.');
