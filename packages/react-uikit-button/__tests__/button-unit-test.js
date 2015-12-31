@@ -8,10 +8,10 @@ import renderElement from './helpers/renderElement';
 test('button Component', nested => {
   nested.test('type prop = button:',
     assert => {
-      const button = renderElement(<Button kitid='butt'type='button'>This is a button</Button>).dom();
+      const button = renderElement(<Button kitid='butt' type='button'>This is a button</Button>).dom();
 
       const actualText = button.html();
-      const expectedText = '<button data-kitid="butt" class="uk-button" type="button">This is a button</button>';
+      const expectedText = '<button type="button" data-kitid="butt" class="uk-button">This is a button</button>';
       assert.equals(actualText, expectedText,
         'Correctly renders button element as button');
 
@@ -21,10 +21,10 @@ test('button Component', nested => {
 
   nested.test('type prop = link:',
     assert => {
-      const button = renderElement(<Button type='link'>This is a button</Button>).dom();
+      const button = renderElement(<Button kitid='butt' type='link'>This is a button</Button>).dom();
 
       const actualText = button.html();
-      const expectedText = '<a class="uk-button" href="#" role="button">This is a button</a>';
+      const expectedText = '<a data-kitid="butt" class="uk-button" href="#" role="button">This is a button</a>';
       assert.equals(actualText, expectedText,
         'Correctly renders button element as link.');
 
@@ -34,10 +34,10 @@ test('button Component', nested => {
 
   nested.test('type prop = close:',
     assert => {
-      const button = renderElement(<Button type='close' />).dom();
+      const button = renderElement(<Button kitid='butt' type='close' />).dom();
 
       const actualText = button.html();
-      const expectedText = '<a class="uk-close uk-button" href="#"></a>';
+      const expectedText = '<a data-kitid="butt" class="uk-close uk-button" href="#"></a>';
       assert.equals(actualText, expectedText,
         'Correctly renders button element as close.');
 
@@ -56,10 +56,10 @@ test('button Component', nested => {
 
   nested.test('disabled prop:',
     assert => {
-      const button = renderElement(<Button kitid='buttdis' disabled />).dom();
+      const button = renderElement(<Button kitid='butt' disabled />).dom();
 
       const actual = button.html();
-      const expect = '<button data-kitid="buttdis" class="uk-button" type="button" disabled></button>';
+      const expect = '<button disabled data-kitid="butt" class="uk-button" type="button"></button>';
 
       assert.equals(actual, expect,
         'Adds button disabled to button element');
