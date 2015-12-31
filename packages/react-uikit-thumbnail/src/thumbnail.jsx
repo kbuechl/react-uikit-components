@@ -3,106 +3,107 @@
 import React from 'react';
 import uikit from 'react-uikit-base';
 import ufunc from 'ufunc';
-import Img from '../../react-uikit-img/lib/img';
+import Img from 'react-uikit-img';
 
 
-class Thumbnail extends React.Component {
-  static propTypes = {
-    imgid    : React.PropTypes.string,
-    imgProps : React.PropTypes.object,
-    size     : React.PropTypes.oneOf(['large', 'medium', 'small', 'mini', 'expand']),
-    type     : React.PropTypes.oneOf(['block', 'figure', 'link'])
-  }
-
-  render () {
-    const $props = this.props;
-
-
-    // CSS classes
-    const size = {
-      large : 'uk-thumbnail-large',
-      medium: 'uk-thumbnail-medium',
-      small : 'uk-thumbnail-small',
-      mini  : 'uk-thumbnail-mini',
-      expand: 'uk-thumbnail-expand'
-    };
+const Thumbnail = (props) => {
+  // CSS classes
+  const size = {
+    large : 'uk-thumbnail-large',
+    medium: 'uk-thumbnail-medium',
+    small : 'uk-thumbnail-small',
+    mini  : 'uk-thumbnail-mini',
+    expand: 'uk-thumbnail-expand'
+  };
 
 
-    const cssClassNames = uikit.helpers.cleanClasses([
-      'uk-thumbnail',
-      $props.classes,
-      $props.className,
-      size[$props.size] || null
-    ]);
+  const cssClassNames = uikit.helpers.cleanClasses([
+    'uk-thumbnail',
+    props.classes,
+    props.className,
+    size[props.size] || null
+  ]);
 
 
-    // Elements
-    const img = <Img
-      {...$props.imgProps}
-      kitid={$props.imgid}
-      src={$props.src}
-      width={$props.width}
-      heigh={$props.heigh}
-      small={$props.small}
-      medium={$props.medium}
-      large={$props.large}
-      xlarge ={$props.xlarge}
-    />;
+  // Elements
+  const img = <Img
+    {...props.img}
+    kitid={`thumbimg-${props.kitid}`}
+    src={props.src}
+    width={props.width}
+    height={props.height}
+    small={props.small}
+    medium={props.medium}
+    large={props.large}
+    xlarge ={props.xlarge}
+  />;
 
 
-    const figcaption = <figcaption
-      className='uk-thumbnail-caption'
-    >
-      {$props.children}
-    </figcaption>;
+  const figcaption = <figcaption
+    className='uk-thumbnail-caption'
+  >
+    {props.children}
+  </figcaption>;
 
-    const caption = <div className='uk-thumbnail-caption'>
-      {$props.children}
-    </div>;
+  const caption = <div className='uk-thumbnail-caption'>
+    {props.children}
+  </div>;
 
 
-    const children = ufunc.maybeIf(
-      ufunc.either(
-        figcaption,
-        caption
-      )($props.type === 'figure')
-    )($props.children);
+  const children = ufunc.maybeIf(
+    ufunc.either(
+      figcaption,
+      caption
+    )(props.type === 'figure')
+  )(props.children);
 
-    const ignoreProps = ['height', 'src', 'width'];
 
-    const type = {
-      block: <div {...uikit.helpers.cleanProps($props, ignoreProps)}
-        className={cssClassNames}
-        data-kitid={$props.kitid}
-       >
-        {img}
-        {children}
-      </div>,
+  const ignoreProps = ['height', 'src', 'width', 'type'];
+  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
-      figure: <figure {...uikit.helpers.cleanProps($props, ignoreProps)}
-        className={cssClassNames}
-        data-kitid={$props.kitid}
-       >
-        {img}
-        {children}
+  const attr = {
+    ...cleanProps,
+    ...uikit.events(props),
+    className   : cssClassNames,
+    'data-kitid': props.kitid
+  };
 
-      </figure>,
+  const type = {
+    block: <div {...attr}>
+      {img}
+      {children}
+    </div>,
 
-      link: <a {...uikit.helpers.cleanProps($props, ignoreProps)}
-        className={cssClassNames}
-        href={$props.href}
-        data-kitid={$props.kitid}
-       >
-        {img}
-        {children}
-      </a>
-    };
+    figure: <figure {...attr}>
+      {img}
+      {children}
 
-    // Return Component
-    return type[$props.type] || type['block'];
+    </figure>,
 
-  }
-}
+    link: <a {...attr} href={props.href}>
+      {img}
+      {children}
+    </a>
+  };
+
+  // Return Component
+  return type[props.type] || type['block'];
+};
+
+
+Thumbnail.propTypes = {
+  height: React.PropTypes.string,
+  img  : React.PropTypes.object,
+  kitid: React.PropTypes.string,
+  medium: React.PropTypes.object,
+  large: React.PropTypes.object,
+  small: React.PropTypes.object,
+  src: React.PropTypes.string,
+  size : React.PropTypes.oneOf(['large', 'medium', 'small', 'mini', 'expand']),
+  type : React.PropTypes.oneOf(['block', 'figure', 'link']),
+  width: React.PropTypes.string,
+  xlarg: React.PropTypes.object
+};
 
 
 export default uikit.base(Thumbnail);

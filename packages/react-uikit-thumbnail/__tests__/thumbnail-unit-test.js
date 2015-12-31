@@ -9,7 +9,7 @@ test('thumbnail Component', nested => {
   nested.test('Renders thumbnail component:',
     assert => {
       const Component = <Thumbnail
-        imgid='THUMB1'
+        kitid='THUMB1'
         height='100px'
         src='docs/images/placeholder_200x150_2.svg'
       />;
@@ -19,8 +19,8 @@ test('thumbnail Component', nested => {
       const actual = thumbnail.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div class="uk-thumbnail">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="THUMB1">' +
+      const expect = '<div class="uk-thumbnail" data-kitid="THUMB1">' +
+        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
       '</div>';
       /* eslint-enable no-complex-string-concat */
 
@@ -34,7 +34,7 @@ test('thumbnail Component', nested => {
   nested.test('Renders thumbnail children:',
     assert => {
       const Component = <Thumbnail
-        imgid='THUMB1'
+        kitid='THUMB1'
         height='100px'
         src='docs/images/placeholder_200x150_2.svg'>
         This is a caption
@@ -45,8 +45,8 @@ test('thumbnail Component', nested => {
       const actual = thumbnail.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div class="uk-thumbnail">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="THUMB1">' +
+      const expect = '<div class="uk-thumbnail" data-kitid="THUMB1">' +
+        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
         '<div class="uk-thumbnail-caption">This is a caption</div>' +
       '</div>';
       /* eslint-enable no-complex-string-concat */
@@ -122,11 +122,11 @@ test('thumbnail Component', nested => {
       assert.end();
     });
 
-  nested.test('Renders thumbnail component:',
+  nested.test('type prop = block:',
     assert => {
       const Component = <Thumbnail
         type='block'
-        imgid='THUMB1'
+        kitid='THUMB1'
         height='100px'
         src='docs/images/placeholder_200x150_2.svg'
       />;
@@ -136,13 +136,13 @@ test('thumbnail Component', nested => {
       const actual = thumbnail.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div class="uk-thumbnail">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="THUMB1">' +
+      const expect = '<div class="uk-thumbnail" data-kitid="THUMB1">' +
+        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
       '</div>';
       /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
-        'Correctly thumbnail type as block.');
+        'Correctly renders thumbnail type as block.');
 
       assert.end();
     });
@@ -151,6 +151,7 @@ test('thumbnail Component', nested => {
   nested.test('type prop = figure:',
     assert => {
       const Component = <Thumbnail
+        kitid='THUMB1'
         type='figure'
         imgid='THUMB1'
         height='100px'
@@ -163,14 +164,14 @@ test('thumbnail Component', nested => {
       const actual = thumbnail.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<figure class="uk-thumbnail">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="THUMB1">' +
+      const expect = '<figure class="uk-thumbnail" data-kitid="THUMB1">' +
+        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
         '<figcaption class="uk-thumbnail-caption">This is a caption</figcaption>' +
       '</figure>';
       /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
-        'Correctly thumbnail type as figure.');
+        'Correctly renders thumbnail type as figure.');
 
       assert.end();
     });
@@ -179,6 +180,7 @@ test('thumbnail Component', nested => {
   nested.test('type prop = link:',
     assert => {
       const Component = <Thumbnail
+        kitid='THUMB1'
         type='link'
         imgid='THUMB1'
         height='100px'
@@ -191,14 +193,14 @@ test('thumbnail Component', nested => {
       const actual = thumbnail.html();
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<a class="uk-thumbnail">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="THUMB1">' +
+      const expect = '<a class="uk-thumbnail" data-kitid="THUMB1">' +
+        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
         '<div class="uk-thumbnail-caption">This is a caption</div>' +
       '</a>';
       /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
-        'Correctly thumbnail type as link.');
+        'Correctly renders thumbnail type as link.');
 
       assert.end();
     });

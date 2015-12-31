@@ -1,25 +1,7 @@
-<div><section><h1>Thumbnail</h1><p>Create different thumbnail images, which come in various styles and sizes.</p></section><section><h2>Usage</h2><p><code>npm install react-uikit-article --save;</code></p><p>ES6 <br/><code>import Article from &#x27;react-uikit-article&#x27;;</code><br/></p><p>ES5 <br/><code>var Article = require(&#x27;react-uikit-article&#x27;);</code></p><p><span class="uk-badge  uk-badge-danger">Note:</span>  UIkit css is not included. You can get it from <a href="http://getuikit.com/">getuikit.com</a>. This has been tested with UIKit version 2.24.2.</p><p>See <a href="http://otissv.github.io/react-uikit-components">React UIKit Componets</a> for examples and full documentation.</p><hr/><p>Thumbnail compenent creates a thumbnail around the Img compenent.</p><p>There are three types of thumblnail, block, link and figure. Block is the defualt type. To change the type of thumbnail added the <code>type</code> prop and the respective type.</p><h3 class="example">Example</h3><pre class="xml"><code class="xml">&lt;Thumbnail height=&#x27;100px&#x27; src=&#x27;docs/images/placeholder_200x150_2.svg&#x27; /&gt;
-&lt;Thumbnail type=&#x27;link&#x27; height=&#x27;100px&#x27; src=&#x27;docs/images/placeholder_200x150_2.svg&#x27; /&gt;
-&lt;Thumbnail type=&#x27;figure&#x27; height=&#x27;100px&#x27; src=&#x27;docs/images/placeholder_200x150_2.svg&#x27; /&gt;
-</code></pre></section><section><h2>Thumbnail caption</h2><p>To add a caption, simply add it as a child of the thumbnail.</p><h3 class="example">Example</h3><pre class="xml"><code class="xml">&lt;Thumbnail height=&#x27;100px&#x27; src=&#x27;docs/images/placeholder_200x150_2.svg&#x27;&gt;
-Caption &lt;code&gt;div&lt;/code&gt;
-&lt;/Thumbnail&gt;
-&lt;Thumbnail type=&#x27;link&#x27; height=&#x27;100px&#x27; src=&#x27;docs/images/placeholder_200x150_2.svg&#x27;&gt;
-Caption &lt;code&gt;link&lt;/code&gt;
-&lt;/Thumbnail&gt;
-&lt;Thumbnail type=&#x27;figure&#x27; height=&#x27;100px&#x27; src=&#x27;docs/images/placeholder_200x150_2.svg&#x27;&gt;
-Caption &lt;code&gt;figure&lt;/code&gt;
-&lt;/Thumbnail&gt;
-</code></pre></section><section><h2>Thumbnail sizes</h2><p></p><hr/><p></p><h3 class="example">Example</h3><pre class="xml"><code class="xml">&lt;Thumbnail size=&#x27;large&#x27; src=&#x27;docs/images/placeholder_600x400.svg&#x27;&gt;
-&lt;code&gt;large&lt;/code&gt;
-&lt;/Thumbnail&gt;
-&lt;Thumbnail size=&#x27;medium&#x27; src=&#x27;docs/images/placeholder_600x400.svg&#x27;&gt;
-&lt;code&gt;medium&lt;/code&gt;
-&lt;/Thumbnail&gt;
-&lt;Thumbnail size=&#x27;small&#x27; src=&#x27;docs/images/placeholder_600x400.svg&#x27;&gt;
-&lt;code&gt;small&lt;/code&gt;
-&lt;/Thumbnail&gt;
-&lt;Thumbnail size=&#x27;mini&#x27; src=&#x27;docs/images/placeholder_600x400.svg&#x27;&gt;
-&lt;code&gt;mini&lt;/code&gt;
-&lt;/Thumbnail&gt;
-</code></pre></section><section><h2>Thumbnail Props</h2><p><code>&lt;Thumbnail&gt;</code> props and their types.</p><p>See <a href="/https://github.com/otissv/react-uikit-img">Img</a> and <a href="/https://github.com/otissv/react-uikit-base">base</a> componets addtional props.</p><table class="uk-table"><thead><tr><th>Prop</th><th>Type</th></tr></thead><tbody><tr><td><code>imgid</code></td><td>string<br/>Identifier for Img component. If none provided one will be generateded.</td></tr><tr><td><code>size</code></td><td>oneOf<br/>large, medium, small, mini or expand</td></tr><tr><td><code>type</code></td><td>oneOf<br/>block, figure or link. Default is block.</td></tr></tbody></table></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>
+<div><section><h1>React UIkit Thumbnail</h1><p>Create different thumbnail images, which come in various styles and sizes.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiuopi6q0000oimd9kti4bx1"><code>npm install react-uikit-thumbnail --save;
+
+// ES6
+&lt;code&gt;import Article from &#x27;react-uikit-thumbnail&#x27;;
+
+// ES5
+var Article = require(&#x27;react-uikit-thumbnail&#x27;);</code></pre></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>
