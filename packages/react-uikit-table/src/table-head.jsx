@@ -23,6 +23,7 @@ const headfromBodyKeys = (ary) => {
 const TableHead = (props) => (
   <thead>
     <tr>
+      {props.numbered ? <th>{props.numbered}</th> : null}
       {ufunc.either(() => headfromBodyKeys(props.body), () => headFromProp(props.head))(props.head === '*')}
     </tr>
   </thead>
@@ -33,6 +34,10 @@ TableHead.propTypes = {
   body: React.PropTypes.array,
   head: React.PropTypes.oneOfType([
     React.PropTypes.array,
+    React.PropTypes.string
+  ]),
+  numbered: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
     React.PropTypes.string
   ])
 };

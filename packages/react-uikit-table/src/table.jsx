@@ -25,7 +25,7 @@ const Table = (props) => {
   let thead;
 
   if (props.head) {
-    thead = <TableHead head={props.head} body={props.body} />;
+    thead = <TableHead numbered={props.numbered} head={props.head} body={props.body}/>;
   };
 
 
@@ -44,6 +44,7 @@ const Table = (props) => {
     {...props}
     className={cssClassNames}
     data-kitid={props.kitid}
+    {...uikit.events(props)}
   >
     {caption}
     {thead}
@@ -55,7 +56,6 @@ const Table = (props) => {
   const overflow = <div
     {...props}
     className='uk-overflow-container'
-    data-kitid={props.kitid}
   >
     {table}
   </div>;
@@ -79,6 +79,10 @@ Table.propTypes = {
     React.PropTypes.string
   ]),
   kitid     : React.PropTypes.string,
+  numbered: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.string
+  ]),
   overflow  : React.PropTypes.bool,
   sort      : React.PropTypes.oneOfType([
     React.PropTypes.array,
