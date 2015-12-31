@@ -22,7 +22,7 @@ export default class BlockHandler extends React.Component {
       <section>
         <h2>Usage</h2>
           <Codeblock>
-  {`npm install react-uikit-base --save;
+  {`npm install react-uikit-block --save;
 
   // ES6
   import Block from 'react-uikit-block';
