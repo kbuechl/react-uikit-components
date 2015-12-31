@@ -11,7 +11,7 @@ import Note from '../../react-uikit-note/lib/note';
 const ButtonGroupDoc = (props) => (
   <div>
     <section>
-      <h1>Button Group</h1>
+      <h1>React UIkit Button Group</h1>
       <p>
         Easily create nicely looking group buttons.
       </p>

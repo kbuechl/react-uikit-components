@@ -1,4 +1,4 @@
-<div><section><h1>Button Group</h1><p>Easily create nicely looking group buttons.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitzfd8w0000mqmdxwhciige"><code>npm install react-uikit-button-group --save;
+<div><section><h1>React UIkit Button Group</h1><p>Easily create nicely looking group buttons.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiumtldz0000oimdaezcsyg9"><code>npm install react-uikit-button-group --save;
 
   // ES6
   import ButtonGroup from &#x27;react-uikit-button-group&#x27;;
