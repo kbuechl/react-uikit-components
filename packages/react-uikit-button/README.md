@@ -1,4 +1,4 @@
-<div><section><h1>Button</h1><p>Easily create nicely looking buttons, which come in different styles.</p></section><section><h2>Usage</h2><pre data-kitid="ciitx9xsw00005lmdg67hybvg"><code>npm install react-uikit-button --save;
+<div><section><h1>Button</h1><p>Easily create nicely looking buttons, which come in different styles.</p><p><a href="https://github.com/otissv/react-uikit-components">react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitxlmqh0000z4mdatmxv310"><code>npm install react-uikit-button --save;
 
   // ES6
   import Button from &#x27;react-uikit-button&#x27;;

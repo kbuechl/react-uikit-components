@@ -12,6 +12,9 @@ const ButtonDoc = (props) => (
       <p>
         Easily create nicely looking buttons, which come in different styles.
       </p>
+      <p>
+        <a href='https://github.com/otissv/react-uikit-components'>react-uikit-components</a> for docs.
+      </p>
     </section>
 
     <section>
