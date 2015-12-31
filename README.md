@@ -7,7 +7,7 @@ A collection of react components using <a href=http://getuikit.com/>UIkit CSS fr
 This module does not contain any components as they all have their own modules.
 
 <p>
-Examples and documentation can be found at <a href='https://github.com/otissv/react-uikit-components'>react-uikit-components</a>
+Examples and documentation can be found at <a href='http://otissv.github.io/react-uikit-components/'>react-uikit-components</a>
 </a>
 </p>
 
