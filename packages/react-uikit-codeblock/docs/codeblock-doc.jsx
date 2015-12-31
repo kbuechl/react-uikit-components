@@ -9,7 +9,7 @@ import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
 const CodeblockDoc = (props) => (
   <div>
     <section>
-      <h1>Codeblock</h1>
+      <h1>React UIkit Codeblock</h1>
       <p>
         Displays code inside of a block.
       </p>

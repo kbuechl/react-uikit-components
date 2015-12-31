@@ -1,4 +1,4 @@
-<div><section><h1>Codeblock</h1><p>Displays code inside of a block.</p></section><section><h2>Usage</h2><pre lang="xml" class="xml" data-kitid="ciitzsvbr0000ysmd3wjb0hqz"><code>npm install react-uikit-codeblock --save;
+<div><section><h1>React UIkit Codeblock</h1><p>Displays code inside of a block.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre lang="xml" class="xml" data-kitid="ciiumum42000073mdabvhh7js"><code>npm install react-uikit-codeblock --save;
 
 // ES6
 import Codeblock from &#x27;react-uikit-codeblock&#x27;;

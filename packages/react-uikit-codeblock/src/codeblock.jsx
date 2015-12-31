@@ -1,29 +1,12 @@
 'use strict';
 
 import React from 'react';
-import uikit from '../../react-uikit-base';
-import highlight from 'highlight.js';
+import uikit from 'react-uikit-base';
 
 
 class Codeblock extends React.Component {
   constructor (props) {
     super(props);
-  }
-
-
-  componentDidMount () {
-    this.handleHighlight();
-  }
-
-
-  componentDidUpdate () {
-    this.handleHighlight();
-  }
-
-
-  handleHighlight () {
-    const element = uikit.helpers.getElement(this.props.kitid);
-    highlight.highlightBlock(element);
   }
 
 
