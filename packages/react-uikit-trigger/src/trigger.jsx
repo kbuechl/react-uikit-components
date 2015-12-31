@@ -9,9 +9,12 @@ import Button from 'react-uikit-button';
 const Trigger = (props) => {
   const icon = ufunc.maybeIf(<i className={`uk-icon-${props.icon}`}/>)(props.icon);
 
+  const cleanProps = uikit.helpers.cleanProps(['icon'])(props);
+
   const type = {
     button: <Button
       {...props}
+      {...cleanProps}
       block
       kitid={props.kitid}
       body={props.body}
@@ -21,6 +24,7 @@ const Trigger = (props) => {
 
     link: <Button
       {...props}
+      {...cleanProps}
       block
       kitid={props.kitid}
       type='link'
@@ -31,6 +35,8 @@ const Trigger = (props) => {
 
     span : <span
       {...props}
+      {...cleanProps}
+      {...uikit.helpers.events}
       col='1-1'
       data-kitid={props.kitid}
     >
@@ -39,8 +45,10 @@ const Trigger = (props) => {
     </span>,
 
     div: <div
-    {...props}
+      {...props}
+      {...cleanProps}
       col='1-1'
+      {...uikit.helpers.events}
       data-kitid={props.kitid}
     >
       {props.body}
