@@ -1,4 +1,4 @@
-<div><section><h1>Article</h1><p>Create articles within your page.</p><p><a href="https://github.com/otissv/react-uikit-components">react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitd2kdk00007omdxf16karc"><code>npm install react-uikit-article --save;
+<div><section><h1>Article</h1><p>Create articles within your page.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciitzhopo0000uvmddf0ep5is"><code>npm install react-uikit-article --save;
 
 // ES6
 import Article from &#x27;react-uikit-article&#x27;;
