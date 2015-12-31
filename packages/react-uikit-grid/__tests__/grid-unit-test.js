@@ -9,10 +9,10 @@ import renderElement from './helpers/renderElement';
 test('Grid Component', nested => {
   nested.test('Renders component:',
     assert => {
-      const grid = renderElement(<Grid />).dom();
+      const grid = renderElement(<Grid kitid='gd1'/>).dom();
 
       const actual = grid.html();
-      const expect = '<div class="uk-grid"></div>';
+      const expect = '<div class="uk-grid" data-kitid="gd1"></div>';
       assert.equals(actual, expect,
         'Correctly renders grid element');
 
@@ -22,10 +22,10 @@ test('Grid Component', nested => {
 
   nested.test('type prop = block:',
     assert => {
-      const grid = renderElement(<Grid type='block'/>).dom();
+      const grid = renderElement(<Grid type='block' kitid='gd1'/>).dom();
 
       const actual = grid.html();
-      const expect = '<div class="uk-grid"></div>';
+      const expect = '<div class="uk-grid" data-kitid="gd1"></div>';
       assert.equals(actual, expect,
         'Correctly renders grid element');
 
@@ -35,10 +35,10 @@ test('Grid Component', nested => {
 
   nested.test('type prop = list:',
     assert => {
-      const grid = renderElement(<Grid type='list'/>).dom();
+      const grid = renderElement(<Grid kitid='gd1' type='list'/>).dom();
 
       const actual = grid.html();
-      const expect = '<ul class="uk-grid"></ul>';
+      const expect = '<ul class="uk-grid" data-kitid="gd1"></ul>';
       assert.equals(actual, expect,
         'Correctly renders grid element');
 
@@ -175,10 +175,10 @@ test('Grid Component', nested => {
 
   nested.test('indent prop:',
     assert => {
-      const grid = renderElement(<Grid indent/>).dom();
+      const grid = renderElement(<Grid kitid='gd1' indent/>).dom();
 
       const actual = grid.html();
-      const expect = '<div style="margin-left:0px;" class="uk-grid"></div>';
+      const expect = '<div style="margin-left:0px;" class="uk-grid" data-kitid="gd1"></div>';
       assert.equals(actual, expect,
         'indent grid');
 
