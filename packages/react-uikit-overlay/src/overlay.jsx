@@ -34,7 +34,6 @@ const Overlay = (props) => {
 
 
   const img = <Img
-    ref='img'
     alt={props.alt}
     height={props.height}
     large={props.large}
