@@ -32,22 +32,38 @@ import TableDoc from './table-doc.jsx';
 import TextDoc from './text-doc.jsx';
 import ThumbnailDoc from './thumbnail-doc.jsx';
 
-const Main = (props) => (
-  <div className={uikit.helpers.cleanClasses(props.classes)}>
+const ContentView = (props) => (
+  <div {...props} className={uikit.helpers.cleanClasses(props.classes)}>
     {props.children}
   </div>
 );
 
-Main.propTypes = {
+ContentView.propTypes = {
   children: React.PropTypes.any,
   classes: React.PropTypes.array
 };
 
-const Content = uikit.base(Main);
+const HeaderView = (props) => (
+  <div {...props} className={uikit.helpers.cleanClasses(props.classes)}>
+    <h1 style={{color: '#666666'}}>React UIkit Components</h1>
+  </div>
+);
+
+HeaderView.propTypes = {
+  children: React.PropTypes.any,
+  classes: React.PropTypes.array
+};
+
+
+const Content = uikit.base(ContentView);
+const Header = uikit.base(HeaderView);
+
 
 const Layout = (props) => (
   <div>
-    <h1>React UIkit Components</h1>
+    <div style={{background: '#0B100B'}}>
+      <Header margin='bottom left right' />
+    </div>
     <Grid >
       <Nav col='1-6' type='side'>
         <NavItem type='item'><Link to='/alert'>Alert</Link></NavItem>
