@@ -10,7 +10,7 @@ const CommentListDoc = (props) => (
   <div>
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.almost-flat.min.css' />
     <section>
-      <h1>Commentt List</h1>
+      <h1>Comment List</h1>
 
         <p>
           <a href='https://github.com/otissv/react-uikit-comment-list'>react-uikit-comment-list</a> on github.
