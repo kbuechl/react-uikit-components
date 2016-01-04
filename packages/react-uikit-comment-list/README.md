@@ -1,7 +1,63 @@
-<div><section><h1>React UIkit Comment List</h1><p>For lists of comments.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiumzubx0000numd5z22s0bw"><code>npm install react-uikit-comment-list --save;
+#React UIkit Comment List
 
-  // ES6
-  import CommentList from &#x27;react-uikit-comment-list&#x27;;
+See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
-  // ES5
-  var CommentList = require(&#x27;react-uikit-comment-list&#x27;);</code></pre></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>
+##Usage
+
+###Installation
+
+    npm install react-uikit-comment-list --save;
+
+    // ES6
+    import CommentList from 'react-uikit-comment-list';
+
+    // ES5
+    var CommentList = require('react-uikit-comment-list')
+
+
+
+###Example
+    <CommentList>
+      <li>
+        <Commnet title='Author' meta='12 days ago | Profile | #'
+          avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
+
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua.
+          </p>
+        </Commnet>
+        <CommentList>
+          <li>
+            <Commnet title='Author' meta='12 days ago | Profile | #'
+              avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
+
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                erat, sed diam voluptua.
+              </p>
+            </Commnet>
+          </li>
+        </CommentList>
+      </li>
+    </CommentList>
+
+
+##Tests
+
+`npm run test`to run tests with minimal output.  
+`npm run test:spec` to run tests with detailed output.  
+`npm run test:watch` watches all directories and run tests with minimal output on file changes.
+
+##Build
+`npm run build` to build files fro distribution.  
+`npm run build:watch` watches src directory and builds files on changes.
+
+##Lint
+`npm run lint` lints scripts in src directory.  
+`npm run lint:watch` watches src directory and lints scripts in src directory.
+
+##License
+MIT
