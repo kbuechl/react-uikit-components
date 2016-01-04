@@ -1,7 +1,42 @@
-<div><section><h1>React UIkit Block</h1><p>Separate content sections by bundling them in blocks with different styles.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre><code>npm install react-uikit-block --save;
+#React UIkit Block
 
-  // ES6
-  import Block from &#x27;react-uikit-block&#x27;;
+Separate content sections by bundling them in blocks with different styles.
 
-  // ES5
-  var Block = require(&#x27;react-uikit-block&#x27;);</code></pre></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section></div>
+See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
+
+##Usage
+
+###Installation
+
+    npm install react-uikit-block --save;
+
+    // ES6
+    import Block from 'react-uikit-block';
+
+    // ES5
+    var Block = require('react-uikit-block');
+
+
+###Example
+    <Block context='muted'>
+    ...
+    </Block>
+
+
+
+##Tests
+
+`npm run test`to run tests with minimal output.  
+`npm run test:spec` to run tests with detailed output.  
+`npm run test:watch` watches all directories and run tests with minimal output on file changes.
+
+##Build
+`npm run build` to build files fro distribution.  
+`npm run build:watch` watches src directory and builds files on changes.
+
+##Lint
+`npm run lint` lints scripts in src directory.  
+`npm run lint:watch` watches src directory and lints scripts in src directory.
+
+##License
+MIT
