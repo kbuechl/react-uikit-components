@@ -1,8 +1,41 @@
-<div><section><h1>React UIkit Img</h1><p>Easily create responsive images.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiund8mp0000xwmd82pxnh49"><code>npm install react-uikit-img --save;
+#React UIkit Img
 
-  // ES6
-  import Img from &#x27;react-uikit-img&#x27;;
+Easily create responsive images.
 
-  // ES5
-  var Img = require(&#x27;react-uikit-img&#x27;);
-  </code></pre></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>
+
+  npm install react-uikit-img --save;
+
+  // ES6  
+  import Img from 'react-uikit-img';
+
+  // ES5  
+  var Img = require('react-uikit-img');
+
+
+###Example
+
+    <Img width='300px' height='200px' src='docs/images/placeholder_200x150_2.svg' />
+
+    <Img
+      small={{height: '150px', src: 'docs/images/placeholder_200x150_1.svg'} }
+      medium={{height: '250px', src: 'docs/images/placeholder_200x150_2.svg'} }
+      large={{height: '350px', src: 'docs/images/placeholder_200x150_3.svg'} }
+      xlarge={{height: '450px', src: 'docs/images/placeholder_200x150_4.svg'} }
+    />
+
+##Tests
+
+`npm run test`to run tests with minimal output.  
+`npm run test:spec` to run tests with detailed output.  
+`npm run test:watch` watches all directories and run tests with minimal output on file changes.
+
+##Build
+`npm run build` to build files fro distribution.  
+`npm run build:watch` watches src directory and builds files on changes.
+
+##Lint
+`npm run lint` lints scripts in src directory.  
+`npm run lint:watch` watches src directory and lints scripts in src directory.
+
+##License
+MIT
