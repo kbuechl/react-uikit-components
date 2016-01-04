@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-alert",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "React uikit alert component for displaying messages.",
   "keywords": [
     "javascript",
@@ -16,8 +16,6 @@
   "license": "MIT",
   "main": "./lib/alert.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/alert-doc > README.md && date",
-    "docs:watch": "watch 'npm run docs' ./docs",
     "build": "babel -d lib/ src/  && date",
     "build:watch": "watch 'npm run build' ./src",
     "lint": "eslint --quiet ./src/**  && date || true && date",
