@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-list",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React uikit list component.",
   "keywords": [
     "javascript",
@@ -55,6 +55,7 @@
   "dependencies": {
     "react": "~0.14.3",
     "react-dom": "~0.14.3",
+    "react-uikit-badge": "~0.2.0",
     "react-uikit-base": "~0.2.2",
     "ufunc": "~0.2.1"
   },

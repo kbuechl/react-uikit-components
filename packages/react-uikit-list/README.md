@@ -1,9 +1,44 @@
-<div><section><h1>React UIkit List Group</h1><p>Dynamicly create lists.</p><p><a href="http://otissv.github.io/react-uikit-components/">http://otissv.github.io/react-uikit-components</a> for docs.</p></section><section><h2>Usage</h2><pre data-kitid="ciiunnq5c00006fmdi606iwmg"><code>npm install react-uikit-list --save;
+#React UIkit List
 
-// ES6
-import List from &#x27;react-uikit-list&#x27;;
-import Listitem from &#x27;react-uikit-list/lib/ListItem&#x27;;
+Dynamicly create lists.
 
-// ES5
-var List = require(&#x27;react-uikit-list&#x27;);
-var Listitem = require(&#x27;react-uikit-list/lib/ListItem&#x27;)</code></pre></section><section><h2>Tests</h2><p><code>npm run test</code> to run tests with minimal output.<br/><code>npm run test:spec</code> to run tests with detailed output.<br/><code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br/></p></section><section><h2>Build</h2><p><code>npm run build</code> to build files fro distribution.<br/><code>npm run build:watch</code> watches src directory and builds files on changes.<br/></p></section><section><h2>Lint</h2><p><code>npm run lint</code> lints scripts in src directory.<br/><code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br/></p></section><section><h2>License</h2><p>MIT</p></section></div>
+npm install react-uikit-list --save;
+
+// ES6  
+import List from 'react-uikit-list';  
+import Listitem from 'react-uikit-list/lib/ListItem';
+
+// ES5  
+var List = require('react-uikit-list');  
+var Listitem = require('react-uikit-list/lib/ListItem');
+
+
+###Example
+    <List items={['item', 'item', 'item']} />
+
+    <List type='description' horizontal>
+      <dt>Description lists</dt>
+      <dd>A description list defines terms and their corresponding descriptions.</dd>
+      <dt>Lorem ipsum</dt>
+      <dd>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+      <dt>A long term is truncated</dt>
+      <dd>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</dd>
+    </List>
+
+
+##Tests
+
+`npm run test`to run tests with minimal output.  
+`npm run test:spec` to run tests with detailed output.  
+`npm run test:watch` watches all directories and run tests with minimal output on file changes.
+
+##Build
+`npm run build` to build files fro distribution.  
+`npm run build:watch` watches src directory and builds files on changes.
+
+##Lint
+`npm run lint` lints scripts in src directory.  
+`npm run lint:watch` watches src directory and lints scripts in src directory.
+
+##License
+MIT
