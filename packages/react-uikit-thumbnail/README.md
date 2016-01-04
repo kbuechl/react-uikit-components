@@ -2,6 +2,12 @@
 
 Create different thumbnail images, which come in various styles and sizes.
 
+
+See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
+
+##Usage
+
+###Installation
     npm install react-uikit-thumbnail --save;
 
     // ES6  
