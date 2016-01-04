@@ -10,7 +10,7 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     npm install react-uikit-flex --save;
 
     // ES6
-    &gt;import Flex from 'react-uikit-flex';
+    import Flex from 'react-uikit-flex';
 
     // ES5
     var Flex = require('react-uikit-flex');
