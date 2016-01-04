@@ -18,7 +18,7 @@ const meta = <div>
 const CommentDoc = (props) => (
   <div>
     <section>
-      <h1>Commnet</h1>
+      <h1>Comment</h1>
       <p>
         Create comments, for example for articles.
       </p>
@@ -33,10 +33,10 @@ const CommentDoc = (props) => (
 {`npm install react-uikit-comment --save;
 
 //ES6
-import Commnet from 'react-uikit-comment';
+import Comment from 'react-uikit-comment';
 
 // ES5
-var Commnet = require('react-uikit-comment');`}
+var Comment = require('react-uikit-comment');`}
         </Codeblock>
 
         <hr />
