@@ -2,6 +2,9 @@
 
 Create comments, for example about articles
 
+See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
+
+
 ##Usage
 
 ###Installation
