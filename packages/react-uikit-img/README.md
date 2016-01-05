@@ -2,6 +2,13 @@
 
 Easily create responsive images.
 
+See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
+
+##Usage
+
+###Installation
+Easily create responsive images.
+
 
   npm install react-uikit-img --save;
 
