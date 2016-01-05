@@ -1,5 +1,7 @@
 #React UIkit Grid
 
+Create a fully responsive, fluid and nestable grid layout.
+
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
