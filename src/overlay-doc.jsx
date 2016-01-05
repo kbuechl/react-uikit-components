@@ -13,7 +13,7 @@ export default class OverlayHandler extends React.Component {
       <section>
         <h1>Overlay</h1>
         <p className='uk-article-lead'>
-          Easily create responsive images.
+          Create an image overlay.
         </p>
 
         <p>

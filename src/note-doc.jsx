@@ -13,7 +13,7 @@ export default class NoteHandler extends React.Component {
       <section>
         <h1>Note</h1>
         <p className='uk-article-lead'>
-          Easily add notes.
+          Easily add notes to content.
         </p>
 
         <p>
@@ -115,7 +115,7 @@ var Note = require&('react-uikit-note')`}
 
 
       <section>
-        <h2>Note Props</h2>
+        <h2>Badge Props</h2>
         <p>
           See base component for additional utility props.
         </p>

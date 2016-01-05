@@ -25,6 +25,7 @@ import ImgDoc from './img-doc.jsx';
 import ImgGalleryDoc from './img-gallery-doc.jsx';
 import ListDoc from './list-doc.jsx';
 // import NavDoc from './nav-doc.jsx';
+import ModalDoc from './modal-doc.jsx';
 import NoteDoc from './note-doc.jsx';
 import OverlayDoc from './overlay-doc.jsx';
 import PanelDoc from './panel-doc.jsx';
@@ -82,6 +83,7 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
         <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
         <NavItem type='item'><Link to='/list'>List</Link></NavItem>
+        <NavItem type='item'><Link to='/modal'>Modal</Link></NavItem>
         <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
         <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
         <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
@@ -121,6 +123,7 @@ const routes = {
     { path: '/img-gallery', component  : ImgGalleryDoc },
     { path: '/list', component         : ListDoc },
     { path: '/note', component         : NoteDoc },
+    { path: '/modal', component        : ModalDoc },
     { path: '/overlay', component      : OverlayDoc },
     { path: '/panel', component        : PanelDoc },
     { path: '/table', component        : TableDoc },
@@ -130,30 +133,3 @@ const routes = {
 };
 
 export default routes;
-
-
-// <Nav col='1-6' type='side'>
-//   <NavItem type='item'><Link to='/alert'>Alert</Link></NavItem>
-//   <NavItem type='item'><Link to='/article'>Article</Link></NavItem>
-//   <NavItem type='item'><Link to='/base'>Base</Link></NavItem>
-//   <NavItem type='item'><Link to='/badge'>Badge</Link></NavItem>
-//   <NavItem type='item'><Link to='/block'>Block</Link></NavItem>
-//   <NavItem type='item'><Link to='/button-group'>Button group</Link></NavItem>
-//   <NavItem type='item'><Link to='/button'>Button</Link></NavItem>
-//   <NavItem type='item'><Link to='/codeblock'>Codeblock</Link></NavItem>
-//   <NavItem type='item'><Link to='/comment'>Comment</Link></NavItem>
-//   <NavItem type='item'><Link to='/comment-list'>Comment list</Link></NavItem>
-//   <NavItem type='item'><Link to='/flex'>Flex</Link></NavItem>
-//   <NavItem type='item'><Link to='/grid'>Grid</Link></NavItem>
-//   <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
-//   <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
-//   <NavItem type='item'><Link to='/list-group'>List group</Link></NavItem>
-//   <NavItem type='item'><Link to='/modal'>Modal</Link></NavItem>
-//   <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
-//   <NavItem type='item'><Link to='/nav'>Nav</Link></NavItem>
-//   <NavItem type='item'><Link to='/note'>note</Link></NavItem>
-//   <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
-//   <NavItem type='item'><Link to='/table'>Tabl</Link></NavItem>
-//   <NavItem type='item'><Link to='/text'>Text</Link></NavItem>
-//   <NavItem type='item'><Link to='/thumbnail'>Thumbnail</Link></NavItem>
-// </Nav>
