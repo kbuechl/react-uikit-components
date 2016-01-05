@@ -1,6 +1,6 @@
 #React UIkit Badge
 
-Easlily create nicely looking badges to label and highlight your content.
+Easily create nicely looking badges to label and highlight your content.
 
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
