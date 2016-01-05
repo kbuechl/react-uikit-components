@@ -1,6 +1,6 @@
 #React UIKit Overlay
 
-Easily create responsive images.
+Create an image overlay.
 
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
