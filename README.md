@@ -28,12 +28,14 @@ Examples and documentation can be found at <a href='http://otissv.github.io/reac
   <li><a href='https://github.com/otissv/react-uikit-img'>react-uikit-img</a></li>
   <li><a href='https://github.com/otissv/react-uikit-img-gallery'>react-uikit-img-gallery</a></li>
   <li><a href='https://github.com/otissv/react-uikit-list'>react-uikit-list</a></li>
+  <li><a href='https://github.com/otissv/react-uikit-modal'>react-uikit-modal</a></li>
   <li><a href='https://github.com/otissv/react-uikit-note'>react-uikit-note</a></li>
   <li><a href='https://github.com/otissv/react-uikit-overlay'>react-uikit-overlay</a> </li>
   <li><a href='https://github.com/otissv/react-uikit-panel'>react-uikit-panel</a></li>
   <li><a href='https://github.com/otissv/react-uikit-table'>react-uikit-table</a></li>
   <li><a href='https://github.com/otissv/react-uikit-text'>react-uikit-text</a></li>
   <li><a href='https://github.com/otissv/react-uikit-thumbnail'>react-uikit-thumbnail</a></li>
+  <li><a href='https://github.com/otissv/react-uikit-trigger'>react-uikit-trigger</a></li>
 </ul>
 
 <section>
