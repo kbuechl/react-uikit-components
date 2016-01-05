@@ -5,6 +5,8 @@ Dynamically create lists.
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
+
+###Installations
 npm install react-uikit-list --save;
 
 // ES6  
