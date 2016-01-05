@@ -2,13 +2,18 @@
 
 Displays dialogs prompts.
 
-npm install react-uikit-modal --save;
+See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
-// ES6  
-import Modal from 'react-uikit-modal';  
+##Usage
 
-// ES5  
-var Modal = require('react-uikit-modal');  
+###Installations
+    npm install react-uikit-modal --save;
+
+    // ES6  
+    import Modal from 'react-uikit-modal';  
+
+    // ES5  
+    var Modal = require('react-uikit-modal');  
 
 
 ###Example
