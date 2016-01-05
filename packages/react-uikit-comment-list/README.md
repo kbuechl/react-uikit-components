@@ -1,5 +1,7 @@
 #React UIkit Comment List
 
+Create comment lists.
+
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
