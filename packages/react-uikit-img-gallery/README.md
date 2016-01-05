@@ -1,7 +1,12 @@
 #React UIkit Img Gallery
 
-Create galery of imiages.
+Create gallery of images.
 
+See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
+
+##Usage
+
+###Installation
     npm install react-uikit-img-gallery --save;
 
     // ES6
