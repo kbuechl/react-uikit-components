@@ -286,7 +286,7 @@ const animateOut = (modal, dialog) => {
           }}
         >
           <img
-            src='../docs/images/placeholder_600x400.svg'
+            src='docs/images/placeholder_600x400.svg'
             alt='Image place holder'
             width="100%"
             height="400"/>
