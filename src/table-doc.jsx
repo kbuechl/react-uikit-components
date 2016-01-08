@@ -4,7 +4,6 @@ import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
 import Table from '../components/react-uikit-table';
 import Note from 'react-uikit-note';
-import phones from './data/phones.json';
 
 const items = [
   {

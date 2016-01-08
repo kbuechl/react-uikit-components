@@ -47,7 +47,7 @@ html, body {
 
 .landing {
   background-color: #FFC107;
-  padding: 80px  0px;
+  padding: 80px 0;
 }
 
 .landing-heading {
@@ -79,7 +79,7 @@ html, body {
 }
 
 .features {
-  padding: 50px 0px;
+  padding: 50px 0;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -104,4 +104,15 @@ html, body {
 .otissv {
   font-size: 32px;
   line-height: 1.5;
+}
+
+
+.doc-header {
+  height: 40px;
+  background-color: #FFC107;
+  padding: 15px 0;
+}
+
+.doc-header h1 {
+  color: #fff;
 }
