@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-components",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React UIkit components for UIkit CSS framework.",
   "keywords": [
     "javascript",
@@ -18,7 +18,7 @@
     "start": "node ./server.js",
     "webpack": "webpack",
     "watch": "webpack --watch",
-    "build": "babel -d ./lib ./src",
+    "build": "webpack --config ./webpack.config-build.js --production --optimize-minimize",
     "lint": "eslint --quiet ./src/**  && date || true && date",
     "lint:watch": "watch 'npm run lint' ./"
   },
@@ -53,6 +53,7 @@
     "tap-difflet": "~0.4.0",
     "tap-min": "~1.0.0",
     "tape": "~4.2.2",
+    "uglify-loader": "^1.3.0",
     "watch": "~0.16.0",
     "webpack": "~1.12.9",
     "webpack-dev-middleware": "~1.4.0",
