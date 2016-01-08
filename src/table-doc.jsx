@@ -33,7 +33,6 @@ const data = [
 const TableDoc = (props) => (
   <div>
 
-<Table kitid='tbl1' body={phones} head={['Age',	'Carrier', 'Id',	'Imageurl',	'Name',	'Snippet']}/>
     <section>
       <h1>Table</h1>
       <p className='uk-article-lead'>
