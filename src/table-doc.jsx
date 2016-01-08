@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
-import Table from 'react-uikit-table';
+import Table from '../components/react-uikit-table';
 import Note from 'react-uikit-note';
-
+import phones from './data/phones.json';
 
 const items = [
   {
@@ -32,6 +32,8 @@ const data = [
 
 const TableDoc = (props) => (
   <div>
+
+<Table kitid='tbl1' body={phones} head={['Age',	'Carrier', 'Id',	'Imageurl',	'Name',	'Snippet']}/>
     <section>
       <h1>Table</h1>
       <p className='uk-article-lead'>

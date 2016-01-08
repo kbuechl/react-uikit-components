@@ -35,6 +35,73 @@ section {
   hyphens: auto;
 }
 
+html, body {
+  height: 100%;
+  background-color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .uk-text-nowrap {
   white-space: nowrap;
+}
+
+.landing {
+  background-color: #FFC107;
+  padding: 80px  0px;
+}
+
+.landing-heading {
+  font-size: 55px;
+  line-height: 1.5;
+}
+
+.landing-leading {
+  font-size: 24px;
+}
+
+.landing-leading, .landing-heading, .landing-link {
+  color: #fff;
+}
+
+.landing-action-buttons {
+  margin-top: 50px;
+  padding-left: 0;
+}
+
+
+.landing-action-buttons li {
+  list-style: none;
+  display: inline;
+}
+
+.landing-action-buttons li a {
+  width: 90px;
+}
+
+.features {
+  padding: 50px 0px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.features-heading{
+  font-size: 48px;
+  margin-bottom: 50px;
+}
+
+.features .uk-panel {
+  height: 140px;
+}
+
+.uk-icon-check {
+  color: #00A8E6;
+}
+
+.footer li {
+  display: inline;
+}
+
+.otissv {
+  font-size: 32px;
+  line-height: 1.5;
 }

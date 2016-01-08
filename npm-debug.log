@@ -2,10 +2,10 @@
 1 verbose cli [ '/home/ninja/.nvm/versions/node/v5.1.0/bin/node',
 1 verbose cli   '/home/ninja/.nvm/versions/node/v5.1.0/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'docs' ]
+1 verbose cli   'build:watch' ]
 2 info using npm@3.5.2
 3 info using node@v5.1.0
-4 verbose stack Error: missing script: docs
+4 verbose stack Error: missing script: build:watch
 4 verbose stack     at run (/home/ninja/.nvm/versions/node/v5.1.0/lib/node_modules/npm/lib/run-script.js:147:19)
 4 verbose stack     at /home/ninja/.nvm/versions/node/v5.1.0/lib/node_modules/npm/lib/run-script.js:57:5
 4 verbose stack     at /home/ninja/.nvm/versions/node/v5.1.0/lib/node_modules/npm/node_modules/read-package-json/read-json.js:345:5
@@ -17,11 +17,11 @@
 4 verbose stack     at tryToString (fs.js:414:3)
 4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:401:12)
 5 verbose cwd /home/ninja/work/projects/react-uikit-components
-6 error Linux 4.2.5-1-ARCH
-7 error argv "/home/ninja/.nvm/versions/node/v5.1.0/bin/node" "/home/ninja/.nvm/versions/node/v5.1.0/bin/npm" "run" "docs"
+6 error Linux 4.3.3-2-ARCH
+7 error argv "/home/ninja/.nvm/versions/node/v5.1.0/bin/node" "/home/ninja/.nvm/versions/node/v5.1.0/bin/npm" "run" "build:watch"
 8 error node v5.1.0
 9 error npm  v3.5.2
-10 error missing script: docs
+10 error missing script: build:watch
 11 error If you need help, you may report this error at:
 11 error     <https://github.com/npm/npm/issues>
 12 verbose exit [ 1, true ]
