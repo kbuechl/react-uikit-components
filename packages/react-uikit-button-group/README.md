@@ -10,9 +10,11 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     npm install react-uikit-button-group --save;
 
     // ES6
+    import Button from 'react-uikit-button';
     import ButtonGroup from 'react-uikit-button-group';
 
     // ES5
+    var Button = require('react-uikit-button');
     var ButtonGroup = require('react-uikit-button-group');
 
 
