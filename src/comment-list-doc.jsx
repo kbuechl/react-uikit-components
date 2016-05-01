@@ -35,7 +35,7 @@ var CommentList = require('react-uikit-comment-list'&#41);`}
 
       <section>
         <p>
-          The CommentList componets enables the creattion of comment lists. I also supports nested comments
+          The CommentList component enables the creation of comment lists. It also supports nested comments
         </p>
 
         <h3 className='example'>Example</h3>
@@ -71,7 +71,7 @@ var CommentList = require('react-uikit-comment-list'&#41);`}
   {
 `<CommentList>
   <li>
-    <Commnet title='Author' meta='12 days ago | Profile | #'
+    <Comment title='Author' meta='12 days ago | Profile | #'
       avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
 
       <p>
@@ -79,10 +79,10 @@ var CommentList = require('react-uikit-comment-list'&#41);`}
         nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
         erat, sed diam voluptua.
       </p>
-    </Commnet>
+    </Comment>
     <CommentList>
       <li>
-        <Commnet title='Author' meta='12 days ago | Profile | #'
+        <Comment title='Author' meta='12 days ago | Profile | #'
           avatar={{src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder'}}>
 
           <p>
@@ -90,7 +90,7 @@ var CommentList = require('react-uikit-comment-list'&#41);`}
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua.
           </p>
-        </Commnet>
+        </Comment>
       </li>
     </CommentList>
   </li>
@@ -100,7 +100,7 @@ var CommentList = require('react-uikit-comment-list'&#41);`}
     </section>
 
     <section>
-      <h2>Commet list props</h2>
+      <h2>Comment list props</h2>
         See Base for additional utility props.
     </section>
 
