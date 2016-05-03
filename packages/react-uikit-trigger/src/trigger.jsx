@@ -10,11 +10,18 @@ const Trigger = (props) => {
   const icon = ufunc.maybeIf(<i className={`uk-icon-${props.icon}`}/>)(props.icon);
 
   const cleanProps = uikit.helpers.cleanProps(['icon'])(props);
+  const cleanPropType = uikit.helpers.cleanProps(['type'])(props);
+
+  const cssClassNames = uikit.helpers.cleanClasses([
+    props.classes,
+    props.className
+  ]);
 
   const type = {
     button: <Button
       {...props}
       {...cleanProps}
+      className={cssClassNames}
       block
       kitid={props.kitid}
       body={props.body}
@@ -25,6 +32,8 @@ const Trigger = (props) => {
     link: <Button
       {...props}
       {...cleanProps}
+      {...cleanPropType}
+      className={cssClassNames}
       block
       kitid={props.kitid}
       type='link'
@@ -36,8 +45,9 @@ const Trigger = (props) => {
     span : <span
       {...props}
       {...cleanProps}
+      {...cleanPropType}
       {...uikit.helpers.events}
-      col='1-1'
+      className={cssClassNames}
       data-kitid={props.kitid}
     >
       {props.body}
@@ -47,7 +57,8 @@ const Trigger = (props) => {
     div: <div
       {...props}
       {...cleanProps}
-      col='1-1'
+      {...cleanPropType}
+      className={cssClassNames}
       {...uikit.helpers.events}
       data-kitid={props.kitid}
     >
@@ -55,7 +66,6 @@ const Trigger = (props) => {
       {props.children} {icon}
     </div>
   };
-
 
   return ufunc.either(type[props.type], type['button'])(props.type);
 };

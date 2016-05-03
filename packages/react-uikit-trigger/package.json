@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-trigger",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "React uikit trigger component.",
   "keywords": [
     "javascript",
@@ -54,6 +54,7 @@
     "watch": "~0.16.0"
   },
   "dependencies": {
+    "babel-cli": "~6.1.8",
     "react": "~0.14.3",
     "react-uikit-base": "~0.2.2",
     "react-uikit-button": "~0.2.0",
