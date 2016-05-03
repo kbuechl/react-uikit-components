@@ -3,8 +3,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Grid from 'react-uikit-grid';
-import Nav from '../components/react-uikit-nav/src/nav.jsx';
-import NavItem from '../components/react-uikit-nav/src/nav-item.jsx';
+import Nav from '../components/react-uikit-nav';
+import NavItem from '../components/react-uikit-nav/lib/nav-item';
 import uikit from 'react-uikit-base';
 
 // Layout Handlers
@@ -24,9 +24,10 @@ import GridDoc from './grid-doc.jsx';
 import ImgDoc from './img-doc.jsx';
 import ImgGalleryDoc from './img-gallery-doc.jsx';
 import ListDoc from './list-doc.jsx';
-// import NavDoc from './nav-doc.jsx';
+import NavDoc from './nav-doc.jsx';
 import ModalDoc from './modal-doc.jsx';
 import NoteDoc from './note-doc.jsx';
+import OffcanvasDoc from './offcanvas-doc.jsx';
 import OverlayDoc from './overlay-doc.jsx';
 import PanelDoc from './panel-doc.jsx';
 import TableDoc from './table-doc.jsx';
@@ -46,14 +47,10 @@ ContentView.propTypes = {
 
 const HeaderView = (props) => (
   <div {...props} className={uikit.helpers.cleanClasses(props.classes)}>
-    <h1>React UIkit Components</h1>
-    <a href="https://github.com/otissv/react-uikit-components">
-      <img style={{position: 'absolute', top: 0, right: 0, border: 0}}
-        src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
-        alt="Fork me on GitHub"
-        data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"/>
-
+    <a className='uk-margin-large-right' href='index.html'>
+      <h1 className='uk-display-inline'>React UIkit Components</h1>
     </a>
+    <a className='uk-button uk-button-large uk-button-primary uk-float-right' href='https://github.com/otissv/react-uikit-components'>GitHub</a>
   </div>
 );
 
@@ -91,7 +88,9 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
         <NavItem type='item'><Link to='/list'>List</Link></NavItem>
         <NavItem type='item'><Link to='/modal'>Modal</Link></NavItem>
+        <NavItem type='item'><Link to='/nav'>Nav</Link></NavItem>
         <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
+        <NavItem type='item'><Link to='/offcanvas'>Offcanvas</Link></NavItem>
         <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
         <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
         <NavItem type='item'><Link to='/table'>Table</Link></NavItem>
@@ -110,9 +109,10 @@ Layout.propTypes = {
 
 
 const routes = {
-  path: '/',
+  path: '/docs.html',
   component: Layout,
   childRoutes: [
+    { indexRoute: { component: AlertDoc } },
     { path: '/alert', component        : AlertDoc },
     { path: '/article', component      : ArticleDoc },
     { path: '/base', component         : BaseDoc },
@@ -129,8 +129,10 @@ const routes = {
     { path: '/img', component          : ImgDoc },
     { path: '/img-gallery', component  : ImgGalleryDoc },
     { path: '/list', component         : ListDoc },
-    { path: '/note', component         : NoteDoc },
     { path: '/modal', component        : ModalDoc },
+    { path: '/nav', component          : NavDoc },
+    { path: '/note', component         : NoteDoc },
+    { path: '/offcanvas', component    : OffcanvasDoc },
     { path: '/overlay', component      : OverlayDoc },
     { path: '/panel', component        : PanelDoc },
     { path: '/table', component        : TableDoc },
