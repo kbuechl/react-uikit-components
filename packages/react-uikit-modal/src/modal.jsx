@@ -15,15 +15,6 @@ const bodyStyle = (pading, overflow) => {
 
 
 class Modal extends React.Component {
-  constructor (props) {
-    super(props);
-
-    this.state = {
-      show: false
-    };
-  }
-
-
   handleOkClick (e) {
     const props = this.props;
 
@@ -49,10 +40,8 @@ class Modal extends React.Component {
     const modal = uikit.helpers.getElement(`modal-${props.kitid}`);
     const dialog = uikit.helpers.getElement(`dialog-${props.kitid}`);
 
-    this.setState({show: false});
     props.trigger.animate.out(modal, dialog);
     setTimeout(() => bodyStyle('', ''), 200);
-
   };
 
 
@@ -63,13 +52,11 @@ class Modal extends React.Component {
 
     const show = () => {
       bodyStyle('16px', 'hidden');
-      this.setState({show: true});
       props.trigger.animate.in(modal, dialog);
     };
 
     const hide = () => {
       const kitid = e.target.dataset.kitid;
-
       if (typeof kitid !== 'undefined') {
         const prefix = kitid.substr(0, kitid.indexOf('-'));
 
@@ -79,7 +66,7 @@ class Modal extends React.Component {
       }
     };
 
-    ufunc.either(show, hide)(!this.state.show);
+    ufunc.either(show, hide)(!this.props.show);
   }
 
 
@@ -150,6 +137,7 @@ Modal.propTypes = {
   lightbox  : React.PropTypes.bool,
   ok        : React.PropTypes.object,
   large     : React.PropTypes.bool,
+  show      : React.PropTypes.bool,
   trigger   : React.PropTypes.object,
   type      : React.PropTypes.oneOf(['block', 'alert', 'prompt'])
 };
