@@ -17,38 +17,48 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
 
 
 ###Example
-    <const animateIn = (modal, dialog) => {
-      velocity(modal, {opacity: 1}, {display: 'block'}, 300);
-      velocity(dialog, {translateY: 1, opacity: 1}, {display: 'block'}, 200);
-    };
+    class MyComponent extends React.Component {
+      constructor (props) {
+        super(props);
 
-    const animateOut = (modal, dialog) => {
-      velocity(modal, {opacity:0}, { display: 'none' }, 300);
-      velocity(dialog, {translateY: -100, opacity: 0}, { display: 'none' }, 200);
-    };
-    ...
-    <Modal
-      close
-      trigger={{
-        body: 'Open',
-        animate: {
-          'in': (modal, dialog) => animateIn(modal, dialog),
-          out: (modal, dialog) => animateOut(modal, dialog)
-        }
-      }}
-    >
-      <h2>Headline</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-        ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-</Modal>
+        this.state= { show: false };
+      }
 
+      animateIn (modal, dialog) => {
+        this.setState({ show: true });
+        velocity(modal, {opacity: 1}, {display: 'block'}, 300);
+        velocity(dialog, {translateY: 1, opacity: 1}, {display: 'block'}, 200);
+      }
+
+      animateOut (modal, dialog) => {
+        this.setState({ show: false });
+        velocity(modal, {opacity:0}, { display: 'none' }, 300);
+        velocity(dialog, {translateY: -100, opacity: 0}, { display: 'none' }, 200);
+      }
+
+      <Modal
+        close
+        show={this.state.show}
+        trigger={{
+          body: 'Open',
+          animate: {
+            'in': (modal, dialog) => animateIn(modal, dialog),
+            out: (modal, dialog) => animateOut(modal, dialog)
+          }
+        }}
+      >
+        <h2>Headline</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo consequat. Duis aute irure dolor in reprehenderit in
+          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+      </Modal>
+    }
 
 ##Tests
 
