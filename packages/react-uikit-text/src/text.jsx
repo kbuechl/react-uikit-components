@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import uikit from '../../react-uikit-base';
 
 
 const Text = (props) => {
@@ -23,9 +23,10 @@ const Text = (props) => {
     props.size ? `uk-text-${props.size}` : null
   ]);
 
+  const cleanProps = uikit.helpers.cleanProps(['type', 'href'])(props);
+  const cleanLinkProps = uikit.helpers.cleanProps(['type'])(props);
 
   const attr = {
-    ...uikit.helpers.cleanProps(['type'])(props),
     ...uikit.events(props),
     className   : cssClassNames,
     'data-kitid': props.kitid
@@ -34,81 +35,81 @@ const Text = (props) => {
 
   // Elements
   const type = {
-    a: <a href ='' {...attr}>
+    a: <a href ='' {...attr} {...cleanLinkProps}>
       {props.children}
     </a>,
 
-    abbr: <abbr {...attr}>
+    abbr: <abbr {...attr} {...cleanProps}>
       {props.children}
     </abbr>,
 
-    code  : <code {...attr}>
+    code  : <code {...attr} {...cleanProps}>
       {props.children}
     </code>,
 
-    del: <del {...attr}>
+    del: <del {...attr} {...cleanProps}>
       {props.children}
     </del>,
 
-    dfn: <dfn {...attr} title={props.title}>
+    dfn: <dfn {...attr} {...cleanProps} title={props.title}>
       {props.children}
     </dfn>,
 
-    em: <em {...attr}>
+    em: <em {...attr} {...cleanProps}>
       {props.children}
     </em>,
 
-    h1: <h1 {...attr}>
+    h1: <h1 {...attr} {...cleanProps}>
       {props.children}
     </h1>,
 
-    h2: <h2 {...attr}>
+    h2: <h2 {...attr} {...cleanProps}>
       {props.children}
     </h2>,
 
-    h3: <h3 {...attr}>
+    h3: <h3 {...attr} {...cleanProps}>
       {props.children}
     </h3>,
 
-    h4: <h4 {...attr}>
+    h4: <h4 {...attr} {...cleanProps}>
       {props.children}
     </h4>,
 
-    h5: <h5 {...attr}>
+    h5: <h5 {...attr} {...cleanProps}>
       {props.children}
     </h5>,
 
-    h6: <h6 {...attr}>
+    h6: <h6 {...attr} {...cleanProps}>
       {props.children}
     </h6>,
 
     hr: <hr {...attr} className={`uk-article-divider ${cssClassNames}`} />,
 
-    ins: <ins {...attr}>
+    ins: <ins {...attr} {...cleanProps}>
       {props.children}
     </ins>,
 
-    mark : <mark {...attr}>
+    mark : <mark {...attr} {...cleanProps}>
       {props.children}
     </mark>,
 
-    q: <q {...attr}>
+    q: <q {...attr} {...cleanProps}>
       {props.children}
     </q>,
 
-    p: <p {...attr}>
+    p: <p {...attr} {...cleanProps}>
       {props.children}
       </p>,
 
-    small: <small {...attr}>
+    small: <small {...attr} {...cleanProps}>
       {props.children}
     </small>,
 
-    span: <span {...attr}>
+    span: <span {...attr} {...cleanProps}>
       {props.children}
     </span>,
 
-    strong: <strong {...attr}>
+    strong: <strong {...attr} {...cleanProps}>
       {props.children}
     </strong>
   };
