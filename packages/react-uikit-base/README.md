@@ -20,6 +20,8 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
 UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
 
 
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
 ##Tests
 
 `npm run test`to run tests with minimal output.  
