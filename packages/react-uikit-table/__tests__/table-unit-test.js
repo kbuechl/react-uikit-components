@@ -2,31 +2,50 @@
 import test from 'tape';
 import Table from '../lib/table';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import {
+  htmlToString,
+  reactToDom,
+  reactToString
+} from './helpers/renderElement';
+
 
 const data = [
   {d1: 'data1', d2: 'data2'},
   {d1: 'data1', d2: 'data2'}
 ];
 
+const head = [
+  'Heading',
+  'Heading',
+];
+
 
 test('panel Component', nested => {
   nested.test('Renders table:',
     assert => {
-      const Component = <Table kitid='tbl1' condensed hover striped caption='Table caption' body={data}/>;
-      const table = renderElement(Component).dom();
+      const actual = reactToString(<Table kitid='tbl1' caption='Generated table.' head={head} body={data}/>);
 
-      const actual = table.html();
-
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<table class="uk-table  uk-table-condensed uk-table-hover uk-table-striped" data-kitid="tbl1">' +
-        '<caption>Table caption</caption>' +
-          '<tbody><tr data-kitid="tablerow-0-tbl1">' +
-            '<td data-kitid="tabledata-[0, 0]-tbl1">data1</td><td data-kitid="tabledata-[0, 1]-tbl1">data2</td></tr>' +
-            '<tr data-kitid="tablerow-1-tbl1"><td data-kitid="tabledata-[1, 0]-tbl1">data1</td><td data-kitid="tabledata-[1, 1]-tbl1">data2</td></tr>' +
-          '</tbody>' +
-        '</table>';
-      /* eslint-enable no-complex-string-concat */
+      const expect = htmlToString(`
+        <table class="uk-table" data-kitid="tbl1">
+          <caption>Generated table.</caption>
+          <thead>
+            <tr>
+              <th>Heading</th>
+              <th>Heading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-kitid="tablerow-0-tbl1">
+              <td data-kitid="tabledata-[0, 0]-tbl1">data1</td>
+              <td data-kitid="tabledata-[0, 1]-tbl1">data2</td>
+            </tr>
+            <tr data-kitid="tablerow-1-tbl1">
+              <td data-kitid="tabledata-[1, 0]-tbl1">data1</td>
+              <td data-kitid="tabledata-[1, 1]-tbl1">data2</td>
+            </tr>
+          </tbody>
+        </table>
+      `);
 
       assert.equals(actual, expect,
         'Correctly renders table element.');
@@ -37,15 +56,31 @@ test('panel Component', nested => {
 
   nested.test('Renders Table component with overflow:',
     assert => {
-      const Component = <Table kitid='tbl1' condensed hover striped overflow body={data} />;
-      const table = renderElement(Component).dom();
+      const actual = reactToString(<Table kitid='tbl1' overflow body={data} head={head} />);
 
-      const actual = table.html();
+      const expect = htmlToString(`
+        <div class="uk-overflow-container">
+          <table class="uk-table" data-kitid="tbl1">
+            <thead>
+              <tr>
+                <th>Heading</th>
+                <th>Heading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-kitid="tablerow-0-tbl1">
+                <td data-kitid="tabledata-[0, 0]-tbl1">data1</td>
+                <td data-kitid="tabledata-[0, 1]-tbl1">data2</td>
+              </tr>
+                <tr data-kitid="tablerow-1-tbl1">
+                <td data-kitid="tabledata-[1, 0]-tbl1">data1</td>
+                <td data-kitid="tabledata-[1, 1]-tbl1">data2</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      `);
 
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div class="uk-overflow-container"><table class="uk-table  uk-table-condensed uk-table-hover uk-table-striped" data-kitid="tbl1"><tbody><tr data-kitid="tablerow-0-tbl1"><td data-kitid="tabledata-[0, 0]-tbl1">data1</td><td data-kitid="tabledata-[0, 1]-tbl1">data2</td></tr><tr data-kitid="tablerow-1-tbl1"><td data-kitid="tabledata-[1, 0]-tbl1">data1</td><td data-kitid="tabledata-[1, 1]-tbl1">data2</td></tr></tbody></table></div>'
-;
-      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
         'Correctly renders table element with scrollbars');
@@ -56,7 +91,7 @@ test('panel Component', nested => {
 
   nested.test('condensed prop:',
     assert => {
-      const alert = renderElement(<Table condensed/>).dom('table.uk-table');
+      const alert = reactToDom(<Table condensed/>).dom('table.uk-table');
       const actual = alert.hasClass('uk-table-condensed');
 
       assert.ok(actual, 'Adds condensed class to table element');
@@ -67,7 +102,7 @@ test('panel Component', nested => {
 
   nested.test('hover prop:',
     assert => {
-      const alert = renderElement(<Table hover/>).dom('table.uk-table');
+      const alert = reactToDom(<Table hover/>).dom('table.uk-table');
       const actual = alert.hasClass('uk-table-hover');
 
       assert.ok(actual, 'Adds hover class to table element');
@@ -78,7 +113,7 @@ test('panel Component', nested => {
 
   nested.test('striped prop:',
     assert => {
-      const alert = renderElement(<Table striped/>).dom('table.uk-table');
+      const alert = reactToDom(<Table striped/>).dom('table.uk-table');
       const actual = alert.hasClass('uk-table-striped');
 
       assert.ok(actual, 'Adds striped class to table element');
@@ -106,7 +141,7 @@ test('panel Component', nested => {
   //
   //     const Component = <Table head='*' body={items} />;
   //
-  //     const table = renderElement(Component).dom();
+  //     const table = reactToDom(Component).dom();
   //
   //     const actual = table.html();
   //
@@ -139,14 +174,35 @@ test('panel Component', nested => {
         }
       ];
 
-      const Component = <Table kitid='tbl1' head='*' body={items} />;
+      const actual = reactToString(<Table kitid='tbl1' head='*' body={items} />);
 
-      const table = renderElement(Component).dom();
-
-      const actual = table.html();
-
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<table class="uk-table" data-kitid="tbl1"><thead><tr><th>name</th><th>score</th><th>height</th></tr></thead><tbody><tr data-kitid="tablerow-0-tbl1"><td data-kitid="tabledata-[0, 0]-tbl1">OTIS</td><td data-kitid="tabledata-[0, 1]-tbl1">39</td><td data-kitid="tabledata-[0, 2]-tbl1">5.6</td></tr><tr data-kitid="tablerow-1-tbl1"><td data-kitid="tabledata-[1, 0]-tbl1">Ania</td><td data-kitid="tabledata-[1, 1]-tbl1">-50</td><td data-kitid="tabledata-[1, 2]-tbl1">6.1</td></tr><tr data-kitid="tablerow-2-tbl1"><td data-kitid="tabledata-[2, 0]-tbl1">jocelyn</td><td data-kitid="tabledata-[2, 1]-tbl1">65</td><td data-kitid="tabledata-[2, 2]-tbl1">4.8</td></tr></tbody></table>';
+      const expect = htmlToString(`
+        <table class="uk-table" data-kitid="tbl1">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>score</th>
+              <th>height</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr data-kitid="tablerow-0-tbl1">
+            <td colspan="1" data-kitid="tabledata-[0, 0]-tbl1">OTIS</td>
+            <td colspan="1" data-kitid="tabledata-[0, 1]-tbl1">39</td>
+            <td data-kitid="tabledata-[0, 2]-tbl1">5.6</td>
+          </tr>
+          <tr data-kitid="tablerow-1-tbl1">
+            <td colspan="1" data-kitid="tabledata-[1, 0]-tbl1">Ania</td>
+            <td colspan="1" data-kitid="tabledata-[1, 1]-tbl1">-50</td>
+            <td data-kitid="tabledata-[1, 2]-tbl1">6.1</td>
+          </tr>
+          <tr data-kitid="tablerow-2-tbl1">
+            <td colspan="1" data-kitid="tabledata-[2, 0]-tbl1">jocelyn</td>
+            <td colspan="1" data-kitid="tabledata-[2, 1]-tbl1">65</td>
+            <td data-kitid="tabledata-[2, 2]-tbl1">4.8</td>
+          </tr>
+        </tbody>
+      </table>`);
 
       assert.equals(actual, expect,
         'Correctly renders headings from body keys');
@@ -181,18 +237,45 @@ test('panel Component', nested => {
         }
       ];
 
-      const Component = <Table kitid='tbl1' sort={['name', '-height', 'score']} head={'*'} body={items} />;
+      const actual = reactToString(<Table kitid='tbl1' sort={['name', '-height', 'score']} head={'*'} body={items} />);
 
-      const table = renderElement(Component).dom();
-
-      const actual = table.html();
-
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<table class="uk-table" data-kitid="tbl1">' +
-        '<thead>' +
-          '<tr><th>name</th><th>score</th><th>height</th></tr></thead><tbody><tr data-kitid="tablerow-0-tbl1"><td data-kitid="tabledata-[0, 0]-tbl1">Ania</td><td data-kitid="tabledata-[0, 1]-tbl1">1</td><td data-kitid="tabledata-[0, 2]-tbl1">9</td></tr><tr data-kitid="tablerow-1-tbl1"><td data-kitid="tabledata-[1, 0]-tbl1">OTIS</td><td data-kitid="tabledata-[1, 1]-tbl1">39</td><td data-kitid="tabledata-[1, 2]-tbl1">4</td></tr><tr data-kitid="tablerow-2-tbl1"><td data-kitid="tabledata-[2, 0]-tbl1">jocelyn</td><td data-kitid="tabledata-[2, 1]-tbl1">-50</td><td data-kitid="tabledata-[2, 2]-tbl1">5</td></tr><tr data-kitid="tablerow-3-tbl1"><td data-kitid="tabledata-[3, 0]-tbl1">jocelyn</td><td data-kitid="tabledata-[3, 1]-tbl1">1</td><td data-kitid="tabledata-[3, 2]-tbl1">4</td></tr><tr data-kitid="tablerow-4-tbl1"><td data-kitid="tabledata-[4, 0]-tbl1">jocelyn</td><td data-kitid="tabledata-[4, 1]-tbl1">2</td><td data-kitid="tabledata-[4, 2]-tbl1">4</td></tr></tbody></table>';
-
-      /* eslint-enable no-complex-string-concat */
+      const expect = htmlToString(`
+        <table class="uk-table" data-kitid="tbl1">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>score</th>
+              <th>height</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr data-kitid="tablerow-0-tbl1">
+            <td colspan="1" data-kitid="tabledata-[0, 0]-tbl1">Ania</td>
+            <td colspan="1" data-kitid="tabledata-[0, 1]-tbl1">1</td>
+            <td data-kitid="tabledata-[0, 2]-tbl1">9</td>
+          </tr>
+          <tr data-kitid="tablerow-1-tbl1">
+            <td colspan="1" data-kitid="tabledata-[1, 0]-tbl1">OTIS</td>
+            <td colspan="1" data-kitid="tabledata-[1, 1]-tbl1">39</td>
+            <td data-kitid="tabledata-[1, 2]-tbl1">4</td>
+          </tr>
+          <tr data-kitid="tablerow-2-tbl1">
+            <td colspan="1" data-kitid="tabledata-[2, 0]-tbl1">jocelyn</td>
+            <td colspan="1" data-kitid="tabledata-[2, 1]-tbl1">-50</td>
+            <td data-kitid="tabledata-[2, 2]-tbl1">5</td>
+          </tr>
+          <tr data-kitid="tablerow-3-tbl1">
+            <td colspan="1" data-kitid="tabledata-[3, 0]-tbl1">jocelyn</td>
+            <td colspan="1" data-kitid="tabledata-[3, 1]-tbl1">1</td>
+            <td data-kitid="tabledata-[3, 2]-tbl1">4</td>
+          </tr>
+          <tr data-kitid="tablerow-4-tbl1">
+            <td colspan="1" data-kitid="tabledata-[4, 0]-tbl1">jocelyn</td>
+            <td colspan="1" data-kitid="tabledata-[4, 1]-tbl1">2</td>
+            <td data-kitid="tabledata-[4, 2]-tbl1">4</td>
+          </tr>
+        </tbody>
+      </table>`);
 
       assert.equals(actual, expect,
         'Correctly renders sorted table element');
