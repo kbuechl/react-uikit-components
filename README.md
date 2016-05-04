@@ -2,13 +2,22 @@
 
 <p>
 A collection of react components using <a href=http://getuikit.com/>UIkit CSS framework</a>.
-<p/>
+</p>
 
+<p>
 This module does not contain any components as they all have their own modules.
+</p>
+
+
 
 <p>
 Examples and documentation can be found at <a href='http://otissv.github.io/react-uikit-components/'>react-uikit-components</a>
 </a>
+</p>
+
+<p>
+The master branch for each component has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
 </p>
 
 <ul>
