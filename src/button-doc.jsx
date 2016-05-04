@@ -2,7 +2,7 @@
 
 
 import React from 'react';
-import Button from '../components/react-uikit-button';
+import Button from 'react-uikit-button';
 import Codeblock from 'react-uikit-codeblock';
 import Table from 'react-uikit-table';
 
