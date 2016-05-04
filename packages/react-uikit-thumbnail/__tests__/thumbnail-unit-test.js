@@ -1,28 +1,29 @@
-'use strict';
 import test from 'tape';
 import Thumbnail from '../lib/thumbnail';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import {
+  htmlToString,
+  reactToDom,
+  reactToString
+} from './helpers/renderElement';
 
 
 test('thumbnail Component', nested => {
   nested.test('Renders thumbnail component:',
     assert => {
-      const Component = <Thumbnail
+      const actual = reactToString(<Thumbnail
         kitid='THUMB1'
         height='100px'
         src='docs/images/placeholder_200x150_2.svg'
-      />;
+      />);
 
-      const thumbnail = renderElement(Component).dom();
 
-      const actual = thumbnail.html();
+      const expect = htmlToString(`
+        <div class="uk-thumbnail" data-kitid="THUMB1">
+          <img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">
+        </div>
+      `);
 
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div class="uk-thumbnail" data-kitid="THUMB1">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
-      '</div>';
-      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
         'Correctly renders thumbnail component.');
@@ -33,23 +34,20 @@ test('thumbnail Component', nested => {
 
   nested.test('Renders thumbnail children:',
     assert => {
-      const Component = <Thumbnail
+      const actual = reactToString(<Thumbnail
         kitid='THUMB1'
         height='100px'
-        src='docs/images/placeholder_200x150_2.svg'>
+        src='docs/images/placeholder_200x150_2.svg'
+      >
         This is a caption
-      </Thumbnail>;
+      </Thumbnail>);
 
-      const thumbnail = renderElement(Component).dom();
 
-      const actual = thumbnail.html();
+      const expect = htmlToString(`<div class="uk-thumbnail" data-kitid="THUMB1">
+        <img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">
+        <div class="uk-thumbnail-caption">This is a caption</div>
+      </div>`);
 
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div class="uk-thumbnail" data-kitid="THUMB1">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
-        '<div class="uk-thumbnail-caption">This is a caption</div>' +
-      '</div>';
-      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
         'Correctly renders thumbnail children.');
@@ -61,7 +59,7 @@ test('thumbnail Component', nested => {
   nested.test('size prop = large:',
     assert => {
       const Component = <Thumbnail size='large'/>;
-      const thumbnail = renderElement(Component).dom('div.uk-thumbnail');
+      const thumbnail = reactToDom(Component).dom('div.uk-thumbnail');
 
       const actual = thumbnail.hasClass('uk-thumbnail-large');
 
@@ -74,7 +72,7 @@ test('thumbnail Component', nested => {
   nested.test('size prop = medium:',
     assert => {
       const Component = <Thumbnail size='medium'/>;
-      const thumbnail = renderElement(Component).dom('div.uk-thumbnail');
+      const thumbnail = reactToDom(Component).dom('div.uk-thumbnail');
 
       const actual = thumbnail.hasClass('uk-thumbnail-medium');
 
@@ -87,7 +85,7 @@ test('thumbnail Component', nested => {
   nested.test('size prop = small:',
     assert => {
       const Component = <Thumbnail size='small'/>;
-      const thumbnail = renderElement(Component).dom('div.uk-thumbnail');
+      const thumbnail = reactToDom(Component).dom('div.uk-thumbnail');
 
       const actual = thumbnail.hasClass('uk-thumbnail-small');
 
@@ -100,7 +98,7 @@ test('thumbnail Component', nested => {
   nested.test('size prop = mini:',
     assert => {
       const Component = <Thumbnail size='mini'/>;
-      const thumbnail = renderElement(Component).dom('div.uk-thumbnail');
+      const thumbnail = reactToDom(Component).dom('div.uk-thumbnail');
 
       const actual = thumbnail.hasClass('uk-thumbnail-mini');
 
@@ -113,7 +111,7 @@ test('thumbnail Component', nested => {
   nested.test('size prop = expand:',
     assert => {
       const Component = <Thumbnail size='expand'/>;
-      const thumbnail = renderElement(Component).dom('div.uk-thumbnail');
+      const thumbnail = reactToDom(Component).dom('div.uk-thumbnail');
 
       const actual = thumbnail.hasClass('uk-thumbnail-expand');
 
@@ -124,22 +122,18 @@ test('thumbnail Component', nested => {
 
   nested.test('type prop = block:',
     assert => {
-      const Component = <Thumbnail
+      const actual = reactToString(<Thumbnail
         type='block'
         kitid='THUMB1'
         height='100px'
         src='docs/images/placeholder_200x150_2.svg'
-      />;
+      />);
 
-      const thumbnail = renderElement(Component).dom();
 
-      const actual = thumbnail.html();
+      const expect =  htmlToString(`<div class="uk-thumbnail" data-kitid="THUMB1">
+        <img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">
+      </div>`);
 
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div class="uk-thumbnail" data-kitid="THUMB1">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
-      '</div>';
-      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
         'Correctly renders thumbnail type as block.');
@@ -150,28 +144,27 @@ test('thumbnail Component', nested => {
 
   nested.test('type prop = figure:',
     assert => {
-      const Component = <Thumbnail
+      const actual = reactToString(<Thumbnail
         kitid='THUMB1'
         type='figure'
         imgid='THUMB1'
         height='100px'
-        src='docs/images/placeholder_200x150_2.svg'>
+        src='docs/images/placeholder_200x150_2.svg'
+      >
         This is a caption
-      </Thumbnail>;
+      </Thumbnail>);
 
-      const thumbnail = renderElement(Component).dom();
 
-      const actual = thumbnail.html();
+      const expect =  htmlToString(`
+        <figure class="uk-thumbnail" data-kitid="THUMB1">
+          <img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">
+          <figcaption class="uk-thumbnail-caption">This is a caption</figcaption>
+        </figure>
+      `);
 
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<figure class="uk-thumbnail" data-kitid="THUMB1">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
-        '<figcaption class="uk-thumbnail-caption">This is a caption</figcaption>' +
-      '</figure>';
-      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
-        'Correctly renders thumbnail type as figure.');
+       'Correctly renders thumbnail type as figure.');
 
       assert.end();
     });
@@ -179,25 +172,24 @@ test('thumbnail Component', nested => {
 
   nested.test('type prop = link:',
     assert => {
-      const Component = <Thumbnail
+      const actual = reactToString(<Thumbnail
         kitid='THUMB1'
         type='link'
         imgid='THUMB1'
         height='100px'
-        src='docs/images/placeholder_200x150_2.svg'>
+        src='docs/images/placeholder_200x150_2.svg'
+        >
         This is a caption
-      </Thumbnail>;
+      </Thumbnail>);
 
-      const thumbnail = renderElement(Component).dom();
 
-      const actual = thumbnail.html();
+      const expect =  htmlToString(`
+        <a class="uk-thumbnail" data-kitid="THUMB1">
+          <img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">
+          <div class="uk-thumbnail-caption">This is a caption</div>
+        </a>
+      `);
 
-      /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<a class="uk-thumbnail" data-kitid="THUMB1">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" height="100px" data-kitid="thumbimg-THUMB1">' +
-        '<div class="uk-thumbnail-caption">This is a caption</div>' +
-      '</a>';
-      /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
         'Correctly renders thumbnail type as link.');
