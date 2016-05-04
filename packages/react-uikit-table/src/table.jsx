@@ -8,6 +8,7 @@ import TableRows from './table-rows';
 import TableHead from './table-head';
 
 
+
 const Table = (props) => {
 
   // CSS classes
@@ -39,9 +40,10 @@ const Table = (props) => {
 
   const caption = ufunc.maybeIf(<caption>{props.caption}</caption>)(props.caption);
 
+  const cleanProps = uikit.helpers.cleanProps(['overflow'])(props);
 
   const table = <table
-    {...props}
+    {...cleanProps}
     className={cssClassNames}
     data-kitid={props.kitid}
     {...uikit.events(props)}
@@ -54,7 +56,7 @@ const Table = (props) => {
 
 
   const overflow = <div
-    {...props}
+    {...cleanProps}
     className='uk-overflow-container'
   >
     {table}
