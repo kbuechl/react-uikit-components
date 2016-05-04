@@ -65,7 +65,7 @@ class Dropdown extends React.Component {
 
   getElement (dataId) {
     return uikit.helpers.getElement(dataId);
-  };
+  }
 
 
   listener (target, dataId) {
@@ -283,7 +283,7 @@ class Dropdown extends React.Component {
     // Return Component
     return component[props.type] || component['dropdown'];
   }
-};
+}
 
 
 Dropdown.propTypes = {
