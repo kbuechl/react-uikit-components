@@ -2,13 +2,17 @@
 import test from 'tape';
 import Panel from '../lib/panel';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import {
+  htmlToString,
+  reactToDom,
+  reactToString
+} from './helpers/renderElement';
 
 
 test('panel Component', nested => {
   nested.test('Renders panel component:',
     assert => {
-      const Component = <Panel
+      const actual = reactToString(<Panel
         kitid='pan1'
         box
         title='Title'
@@ -17,19 +21,17 @@ test('panel Component', nested => {
         badge={{body: 'hot', context: 'danger'}}
       >
         This is a panel
-      </Panel>;
-
-      const panel = renderElement(Component).dom();
-
-      const actual = panel.html();
+      </Panel>);
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<div data-kitid="pan1" class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">' +
-        '<span class="uk-badge  uk-badge-danger uk-panel-badge" data-kitid="pan1">hot</span>' +
-        '<h3 class="uk-panel-title"> Title</h3>' +
-        'This is a panel' +
-      '</div>'
-;
+      const expect = htmlToString(
+        `<div data-kitid="pan1" class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">
+          <span class="uk-badge  uk-badge-danger uk-panel-badge" data-kitid="pan1">hot</span>
+          <h3 class="uk-panel-title"> Title</h3>
+          This is a panel
+        </div>
+      `);
+
       /* eslint-enable no-complex-string-concat */
 
 
@@ -42,7 +44,7 @@ test('panel Component', nested => {
 
   nested.test('Renders panel component as link:',
     assert => {
-      const Component = <Panel
+      const actual = reactToString(<Panel
         kitid='pan1'
         box
         title='Link panel'
@@ -53,20 +55,18 @@ test('panel Component', nested => {
         badge={{body: 'hot', context: 'danger'}}
       >
         This is a panel
-      </Panel>;
-
-      const alert = renderElement(Component).dom();
-
-      const actual = alert.html();
+      </Panel>);
 
       /* eslint-disable smells/no-complex-string-concat */
-      const expect = '<a data-kitid="pan1">' +
-        '<div data-kitid="pan1" class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">' +
-          '<span class="uk-badge  uk-badge-danger uk-panel-badge" data-kitid="pan1">hot</span>' +
-          '<h3 class="uk-panel-title"> Link panel</h3>' +
-          'This is a panel' +
-        '</div>' +
-      '</a>';
+      const expect = htmlToString(
+        `<a data-kitid="pan1">
+          <div data-kitid="pan1" class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">
+            <span class="uk-badge  uk-badge-danger uk-panel-badge" data-kitid="pan1">hot</span>
+            <h3 class="uk-panel-title"> Link panel</h3>
+            This is a panel
+          </div>
+        </a>`
+      );
       /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
@@ -78,8 +78,8 @@ test('panel Component', nested => {
 
   nested.test('box prop:',
     assert => {
-      const alert = renderElement(<Panel box/>).dom('div.uk-panel');
-      const actual = alert.hasClass('uk-panel-box');
+      const panel = reactToDom(<Panel box/>).dom('div.uk-panel');
+      const actual = panel.hasClass('uk-panel-box');
       assert.ok(actual, 'Adds box class to panel element');
 
       assert.end();
@@ -88,8 +88,8 @@ test('panel Component', nested => {
 
   nested.test('context prop = primary:',
     assert => {
-      const alert = renderElement(<Panel context='primary'/>).dom('div.uk-panel');
-      const actual = alert.hasClass('uk-panel-box-primary');
+      const panel = reactToDom(<Panel context='primary'/>).dom('div.uk-panel');
+      const actual = panel.hasClass('uk-panel-box-primary');
       assert.ok(actual, 'Adds panel primary class to panel element');
 
       assert.end();
@@ -98,8 +98,8 @@ test('panel Component', nested => {
 
   nested.test('context prop = primary:',
     assert => {
-      const alert = renderElement(<Panel context='secondary'/>).dom('div.uk-panel');
-      const actual = alert.hasClass('uk-panel-box-secondary');
+      const panel = reactToDom(<Panel context='secondary'/>).dom('div.uk-panel');
+      const actual = panel.hasClass('uk-panel-box-secondary');
       assert.ok(actual, 'Adds panel secondary class to alepanelrt element');
 
       assert.end();
@@ -108,8 +108,8 @@ test('panel Component', nested => {
 
   nested.test('divider prop:',
     assert => {
-      const alert = renderElement(<Panel divider/>).dom('div.uk-panel');
-      const actual = alert.hasClass('uk-panel-divider');
+      const panel = reactToDom(<Panel divider/>).dom('div.uk-panel');
+      const actual = panel.hasClass('uk-panel-divider');
       assert.ok(actual, 'Adds divider class to panel element');
 
       assert.end();
@@ -118,8 +118,8 @@ test('panel Component', nested => {
 
   nested.test('header prop:',
     assert => {
-      const alert = renderElement(<Panel header/>).dom('div.uk-panel');
-      const actual = alert.hasClass('uk-panel-header');
+      const panel = reactToDom(<Panel header/>).dom('div.uk-panel');
+      const actual = panel.hasClass('uk-panel-header');
       assert.ok(actual, 'Adds header class to panel element');
 
       assert.end();
@@ -128,8 +128,8 @@ test('panel Component', nested => {
 
   nested.test('hover prop:',
     assert => {
-      const alert = renderElement(<Panel hover/>).dom('div.uk-panel');
-      const actual = alert.hasClass('uk-panel-hover');
+      const panel = reactToDom(<Panel hover/>).dom('div.uk-panel');
+      const actual = panel.hasClass('uk-panel-hover');
       assert.ok(actual, 'Adds header class to panel element');
 
       assert.end();
@@ -138,8 +138,8 @@ test('panel Component', nested => {
 
   nested.test('space prop:',
     assert => {
-      const alert = renderElement(<Panel space/>).dom('div.uk-panel');
-      const actual = alert.hasClass('uk-panel-space');
+      const panel = reactToDom(<Panel space/>).dom('div.uk-panel');
+      const actual = panel.hasClass('uk-panel-space');
       assert.ok(actual, 'Adds space class to panel element');
 
       assert.end();
