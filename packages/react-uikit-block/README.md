@@ -5,6 +5,10 @@ Separate content sections by bundling them in blocks with different styles.
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
 
 ###Installation
 
@@ -14,7 +18,7 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import Block from 'react-uikit-block';
 
     // ES5
-    var Block = require('react-uikit-block');
+    var Block = require('react-uikit-block').default;
 
 
 ###Example
