@@ -2,7 +2,7 @@
 
 
 import React from 'react';
-import Button from 'react-uikit-button';
+import Button from '../components/react-uikit-button';
 import Codeblock from 'react-uikit-codeblock';
 import Table from 'react-uikit-table';
 
@@ -143,7 +143,7 @@ var Button = require('react-uikit-button').default;`}
       <Button body='Default button' margin='right bottom'/>
       <Button body='Default button' context='primary' margin='bottom'/><br />
 
-      <Button size='large' body='Large button' margin='bottom'/>
+      <Button size='large' body='Large button' margin='right bottom'/>
       <Button size='large' body='Large button' context='primary' margin='bottom'/><br />
 
 
@@ -158,7 +158,7 @@ var Button = require('react-uikit-button').default;`}
 <Button body='Default button' margin='right bottom'/>
 <Button body='Default button' context='primary' margin='bottom'/><br />
 
-<Button size='large' body='Large button' margin='bottom'/>
+<Button size='large' body='Large button' margin='right bottom'/>
 <Button size='large' body='Large button' context='primary' margin='bottom'/><br />
 `}
       </Codeblock>
