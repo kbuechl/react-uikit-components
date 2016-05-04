@@ -8,6 +8,8 @@ import ufunc from 'ufunc';
 class Alert extends React.Component {
   constructor (props) {
     super(props);
+
+    this.handleClose = this.handleClose.bind(this);
   }
 
 
@@ -48,7 +50,7 @@ class Alert extends React.Component {
       href='#'
       className='uk-alert-close uk-close'
       data-kitid={props.kitid}
-      onClick={(e) => this.handleClose(e)}
+      onClick={this.handleClose}
     />)(props.close);
 
 
@@ -62,7 +64,7 @@ class Alert extends React.Component {
       {props.children}
     </div>;
   }
-};
+}
 
 
 Alert.propTypes = {
