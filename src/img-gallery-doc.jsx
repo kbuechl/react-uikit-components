@@ -30,7 +30,7 @@ const ImgGalleryDoc = (props) => (
 import ImgGallery from 'react-uikit-img-gallery';
 
 // ES5
-var ImgGallery = require('react-uikit-img-gallery');
+var ImgGallery = require('react-uikit-img-gallery').default;
 `}
     </Codeblock>
 

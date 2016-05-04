@@ -28,7 +28,7 @@ const ButtonDoc = (props) => {
 <code>import Button from 'react-uikit-button';
 
 // ES5
-var Button = require('react-uikit-button');`}
+var Button = require('react-uikit-button').default;`}
       </Codeblock>
 
 

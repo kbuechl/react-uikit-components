@@ -23,7 +23,11 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      React   : 'react',
+      ReactDOM: 'react-dom'
+    })
   ],
 
   module: {
@@ -33,7 +37,7 @@ module.exports = {
         loader: 'babel'
       },
       {
-        test: /\.json$/, 
+        test: /\.json$/,
         loader: 'json'
       }
     ]

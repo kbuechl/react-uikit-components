@@ -52,7 +52,7 @@ const TableDoc = (props) => (
 <code>import Table from 'react-uikit-table';
 
 // ES5
-<code>var Table = require('react-uikit-table');`}
+<code>var Table = require('react-uikit-table').default;`}
 </Codeblock>
 
     <hr className="uk-article-divider" />

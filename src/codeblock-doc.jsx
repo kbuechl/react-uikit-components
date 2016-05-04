@@ -25,7 +25,7 @@ const CodeblockDoc = (props) => (
 import Codeblock from 'react-uikit-codeblock';
 
 // ES5
-var Codeblock = require('react-uikit-codeblock')`}
+var Codeblock = require('react-uikit-codeblock').default`}
         </Codeblock>
 
         <hr className="uk-article-divider" />

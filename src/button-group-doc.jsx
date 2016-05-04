@@ -28,7 +28,7 @@ const ButtonGroupDoc = (props) => (
 import ButtonGroup from 'react-uikit-button-group';
 
 // ES5
-var ButtonGroup = require('react-uikit-button-group');`}
+var ButtonGroup = require('react-uikit-button-group').default;`}
       </Codeblock>
     </section>
 

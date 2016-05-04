@@ -31,7 +31,7 @@ const PanelDoc = (props) => (
 mport Panel from 'react-uikit-panel';
 
 // ES5
-var Panel = require('react-uikit-panel');`}
+var Panel = require('react-uikit-panel').default;`}
         </Codeblock>
 
         <hr className="uk-article-divider" />

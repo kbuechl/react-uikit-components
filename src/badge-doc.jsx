@@ -29,7 +29,7 @@ const BadgeDoc = (props) => (
 mport Badge from 'react-uikit-badge';
 
 // ES5
-var Badge = require;('react-uikit-badge');`}
+var Badge = require;('react-uikit-badge').default;`}
       </Codeblock>
 
       <hr className="uk-article-divider" />

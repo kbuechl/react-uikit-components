@@ -56,8 +56,8 @@ class ListDoc extends React.Component {
   import Listitem from 'react-uikit-list/lib/ListItem';
 
   // ES5
-  var List = require('react-uikit-list');
-  var Listitem = require('react-uikit-list/lib/ListItem')`}
+  var List = require('react-uikit-list').default;
+  var Listitem = require('react-uikit-list/lib/ListItem').default`}
         </Codeblock>
 
       </section>
@@ -448,7 +448,7 @@ class ListDoc extends React.Component {
       </section>
     </div>;
   }
-};
+}
 
 
 export default ListDoc;

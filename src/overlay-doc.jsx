@@ -31,7 +31,7 @@ export default class OverlayHandler extends React.Component {
 import Overlay from 'react-uikit-overlay';
 
 // ES5
-var Overlay = require('react-uikit-overlay');`}
+var Overlay = require('react-uikit-overlay').default;`}
         </Codeblock>
 
         <hr className="uk-article-divider" />

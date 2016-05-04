@@ -31,7 +31,7 @@ const ImgDoc = (props) => (
 import Img from 'react-uikit-img';
 
 // ES5
-var Img = require('react-uikit-img');
+var Img = require('react-uikit-img').default;
 `}
       </Codeblock>
 

@@ -2,21 +2,31 @@
 
 
 import React from 'react';
+import velocity from 'velocity-animate';
 import Codeblock from 'react-uikit-codeblock';
 import Grid from 'react-uikit-grid';
-import Nav from 'react-uikit-nav';
-import NavItem from 'react-uikit-nav/lib/nav-item';
+import Nav from '../components/react-uikit-nav';
+import NavItem from '../components/react-uikit-nav/lib/nav-item';
 import Table from 'react-uikit-table';
 import Note from 'react-uikit-note';
-
+import Droppdown from 'react-uikit-dropdown';
 
 export default class NavDoc extends React.Component {
+  animateIn (element) {
+    velocity(element, {opacity: 1}, {visibility: 'visible'}, 200);
+  }
+
+
+  animateOut (element) {
+    velocity(element, {opacity: 0}, { visibility: 'hidden' }, 200);
+  }
+
   render () {
     return <div>
       <section>
         <h1>Nav</h1>
         <p className='uk-Nav-lead'>
-          Defines different styles for list navigations.
+        Defines different styles for list navigations.
         </p>
 
         <p>
@@ -37,8 +47,8 @@ export default class NavDoc extends React.Component {
 
         <p>
           ES5 <br />
-        <code>var Nav = require&#40;'react-uikit-nav'&#41;;</code><br />
-          <code>var NavItem = require&#40;'react-uikit-nav/lib/na-vitem'&#41;;</code>
+          <code>var Nav = require('react-uikit-nav');</code><br />
+          <code>var NavItem = require('react-uikit-nav/lib/nav-item').default;</code>
         </p>
 
         <Note badge={{context: 'danger', body: 'Note'}}>
@@ -60,24 +70,24 @@ export default class NavDoc extends React.Component {
       <section>
         <h2>Nav side</h2>
 
-          <p>
-            Add the <code>type="side"</code> prop to place a nav inside your sidebar,
-            panels or anywhere else in your content.
-          </p>
+        <p>
+          Add the <code>type="side"</code> prop to place a nav inside your sidebar,
+          panels or anywhere else in your content.
+        </p>
 
-          <h3 className='example'>Example</h3>
+        <h3 className='example'>Example</h3>
 
-          <Grid>
-            <Nav type='side' cols='1-4'>
-              <NavItem label='Active' href='#' active />
-              <NavItem label='Item' href='#' />
-              <NavItem label='Item' href='#' />
-            </Nav>
-          </Grid>
+        <Grid>
+          <Nav type='side' cols='1-4'>
+            <NavItem label='Active' href='#' active />
+            <NavItem label='Item' href='#' />
+            <NavItem label='Item' href='#' />
+          </Nav>
+        </Grid>
 
         <h4 className='code'>Code</h4>
         <Codeblock syntax='xml'>
-{
+        {
 `<Grid>
   <Nav type='side' cols='1-4'>
     <NavItem label='Active' href='#' active />
@@ -92,29 +102,29 @@ export default class NavDoc extends React.Component {
 
       <section>
         <h2>Navs nested</h2>
-          <p>
-            Navs can easily be nested inside of each other by using the
-            Nav <code>parent</code> and <code>sub</code> props and
-            the NavItems <code>parent</code> prop.
-          </p>
+        <p>
+        Navs can easily be nested inside of each other by using the
+          Nav <code>parent</code> and <code>sub</code> props and
+          the NavItems <code>parent</code> prop.
+        </p>
 
-          <h3 className='example'>Example</h3>
-          <Grid>
-            <Nav parent type='side' cols='1-4'>
-              <NavItem label='Active' href='#' active />
-              <NavItem parent label='Item' href='#' >
-                <Nav type='sub'>
-                  <NavItem label='Sub item' href='#' />
-                  <NavItem label='Sub item' href='#' />
-                </Nav>
-              </NavItem>
-              <NavItem label='Item' href='#' />
-            </Nav>
-          </Grid>
+        <h3 className='example'>Example</h3>
+        <Grid>
+          <Nav parent type='side' cols='1-4'>
+            <NavItem label='Active' href='#' active />
+            <NavItem parent label='Item' href='#' >
+              <Nav type='sub'>
+                <NavItem label='Sub item' href='#' />
+                <NavItem label='Sub item' href='#' />
+              </Nav>
+            </NavItem>
+            <NavItem label='Item' href='#' />
+          </Nav>
+        </Grid>
 
-          <h4 className='code'>Code</h4>
-          <Codeblock syntax='xml'>
-  {
+        <h4 className='code'>Code</h4>
+        <Codeblock syntax='xml'>
+        {
 `<Grid>
   <Nav parent type='side' cols='1-4'>
     <NavItem label='Active' href='#' active />
@@ -128,24 +138,53 @@ export default class NavDoc extends React.Component {
   </Nav>
 </Grid>
 `}
-          </Codeblock>
-        </section>
+        </Codeblock>
+      </section>
 
 
-        <section>
-          <h2>Nav dropdown</h2>
-          <p>
-            Coming soon...
-          </p>
+      <section>
+        <h2>Nav dropdown</h2>
+        <p>
 
-          <h3 className='example'>Example</h3>
+        </p>
 
-          <h4 className='code'>Code</h4>
-          <Codeblock syntax='xml'>
-  {`
+        <h3 className='example'>Example</h3>
+        <Droppdown trigger={{
+          body: 'Nav dropdown',
+          animate: {
+            in: (element) => this.animateIn(element),
+            out: (element) => this.animateOut(element)
+          }
+        }}>
+          <Nav parent type='dropdown' cols='1-4'>
+            <NavItem label='Item' href='#' />
+            <NavItem label='Another item' href='#' />
+            <NavItem type='header' label='Header'/>
+            <NavItem label='Item' href='#' />
+            <NavItem label='Another item' href='#' />
+          </Nav>
+        </Droppdown>
+
+        <h4 className='code'>Code</h4>
+        <Codeblock syntax='xml'>
+{`<Droppdown trigger={{
+  body: 'Nav dropdown',
+  animate: {
+      in: (element) => this.animateIn(element),
+      out: (element) => this.animateOut(element)
+  }
+}}>
+<Nav parent type='dropdown' cols='1-4'>
+  <NavItem label='Item' href='#' />
+  <NavItem label='Another item' href='#' />
+  <NavItem type='header' label='Header'/>
+  <NavItem label='Item' href='#' />
+  <NavItem label='Another item' href='#' />
+  </Nav>
+</Droppdown>
   `}
-          </Codeblock>
-        </section>
+        </Codeblock>
+      </section>
 
 
         <section>

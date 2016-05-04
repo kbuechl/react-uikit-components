@@ -1,6 +1,3 @@
-'use strict';
-
-
 import React from 'react';
 import Alert from 'react-uikit-alert';
 import Codeblock from 'react-uikit-codeblock';
@@ -63,7 +60,7 @@ const AlertDoc = (props) => (
 import Alert from 'react-uikit-alert';
 
 // ES5
-var Alert = require('react-uikit-alert');
+var Alert = require('react-uikit-alert').default;
 `}
       </Codeblock>
 

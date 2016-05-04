@@ -44,7 +44,7 @@ export default class dropdownDoc extends React.Component {
 import uikit from 'react-uikit-dropdown';
 
 // ES5
-var Dropdown = require('react-uikit-dropdown');
+var Dropdown = require('react-uikit-dropdown').default;
 `}
         </Codeblock>
       </section>

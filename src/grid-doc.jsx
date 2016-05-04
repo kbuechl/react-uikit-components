@@ -39,7 +39,7 @@ const GridHandler = (props) => (
 import Grid from 'react-uikit-grid';
 
 // ES5
-var Grid = require('react-uikit-grid');`}
+var Grid = require('react-uikit-grid').default;`}
 </Codeblock>
 
       <p>

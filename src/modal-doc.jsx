@@ -56,7 +56,7 @@ const ModalDoc = (props) => (
 import Modal from 'react-uikit-modal';
 
 // ES5
-var Modal = require('react-uikit-modal');`}
+var Modal = require('react-uikit-modal').default;`}
       </Codeblock>
 
       <hr className='uk-article-divider' />

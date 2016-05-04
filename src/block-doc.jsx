@@ -30,7 +30,7 @@ const BlockDoc = (props) => (
 import Block from 'react-uikit-block';
 
 // ES5
-var Block = require('react-uikit-block');`}
+var Block = require('react-uikit-block').default;`}
       </Codeblock>
 
       <hr className="uk-article-divider" />

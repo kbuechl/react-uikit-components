@@ -29,7 +29,7 @@ const ArticleDoc = (props) => (
 import Article from 'react-uikit-article';
 
 // ES5
-var Article = require('react-uikit-article');
+var Article = require('react-uikit-article').default;
 `}
         </Codeblock>
 

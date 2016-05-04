@@ -30,7 +30,7 @@ export default class NoteHandler extends React.Component {
 import Note from 'react-uikit-note';
 
 // ES5
-var Note = require&('react-uikit-note')`}
+var Note = require&('react-uikit-note').default`}
         </Codeblock>
 
         <hr className="uk-article-divider" />

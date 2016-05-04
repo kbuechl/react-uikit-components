@@ -28,7 +28,7 @@ const ThumbnailDoc = (props) => (
 <code>import Article from 'react-uikit-thumbnail';
 
 // ES5
-var Article = require('react-uikit-thumbnail');`}
+var Article = require('react-uikit-thumbnail').default;`}
 </Codeblock>
 
       <hr className="uk-article-divider" />

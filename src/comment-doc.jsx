@@ -36,7 +36,7 @@ const CommentDoc = (props) => (
 import Comment from 'react-uikit-comment';
 
 // ES5
-var Comment = require('react-uikit-comment');`}
+var Comment = require('react-uikit-comment').default;`}
         </Codeblock>
 
         <hr />

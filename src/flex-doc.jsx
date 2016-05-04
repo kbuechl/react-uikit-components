@@ -30,7 +30,7 @@ const FlexDoc = (props) => (
 >import Flex from 'react-uikit-flex';
 
 // ES5
-var Flex = require('react-uikit-flex');`}
+var Flex = require('react-uikit-flex').default;`}
       </Codeblock>
 
       <p>

@@ -28,7 +28,7 @@ ES6
 import Text from 'react-uikit-text';
 
 ES5
-var Text = require(react-uikit-text');`}
+var Text = require(react-uikit-text').default;`}
         </Codeblock>
 
 

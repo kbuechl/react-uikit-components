@@ -7,8 +7,14 @@
     "mocha": true,
   },
 
+  "ecmaFeatures": {
+    "modules": true,
+  },
+
   "globals": {
-    "process.env": true
+    "process.env": true,
+    "React": true,
+    "ReactDOM": true
   },
 
   "plugins": [
@@ -16,7 +22,11 @@
     "react"
   ],
 
-  "extends": "standard",
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
 
   "rules": {
     "key-spacing": 0,
@@ -24,26 +34,13 @@
     "no-multiple-empty-lines": [2, {"max": 2}],
     "padded-blocks": 0,
     "semi": [2, "always"],
+    "arrow-parens": 0,
 
-    "smells/no-switch": 1,
+    "smells/no-switch": 0,
     "smells/no-complex-switch-case": 1,
     "smells/no-setinterval": 1,
     "smells/no-this-assign": 1,
     "smells/no-complex-string-concat": 1,
-    "smells/no-complex-chaining": 0,
-
-    "react/display-name": 0,
-    "react/jsx-no-undef": 2,
-    "react/jsx-sort-props": 0,
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/no-did-mount-set-state": 2,
-    "react/no-did-update-set-state": 2,
-    "react/no-multi-comp": 0,
-    "react/no-unknown-property": 2,
-    "react/prop-types": 2,
-    "react/react-in-jsx-scope": 2,
-    "react/self-closing-comp": 2,
-    "react/wrap-multilines": 0,
+    "smells/no-complex-chaining": 0
   }
 }

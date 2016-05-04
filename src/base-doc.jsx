@@ -29,7 +29,7 @@ const BaseDoc = (props) => (
 <code>import uikit from 'react-uikit-base';
 
 // ES5
-var uikit = require;('react-uikit-base');
+var uikit = require;('react-uikit-base').default;
 `}
       </Codeblock>
 
