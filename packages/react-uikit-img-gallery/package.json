@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-img-gallery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React uikit image gallery component.",
   "keywords": [
     "javascript",
@@ -56,7 +56,7 @@
     "react": "~15.0.2",
     "react-dom": "~15.0.2",
     "react-uikit-base": "~0.2.4",
-    "react-uikit-img": "~0.2.3",
+    "react-uikit-img": "~1.0.0",
     "ufunc": "~0.2.1"
   },
   "babel": {
