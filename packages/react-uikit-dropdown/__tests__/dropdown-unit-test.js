@@ -18,7 +18,7 @@ test('dropdown Component', nested => {
 
       /* eslint-disable smells/no-complex-string-concat */
       const expect = '<div aria-haspopup="true" aria-expanded="false" data-kitid="dropContainer-drop1">' +
-        '<button data-kitid="dropTrigger-drop1" class="uk-button  uk-width-1-1" type="button">' +
+        '<button class="uk-button  uk-width-1-1" data-kitid="dropTrigger-drop1" type="button">' +
           'dropdown <i class="uk-icon-caret-down"></i>' +
           '</button>' +
         '<div data-kitid="dropbody-drop1" class="uk-dropdown">' +
@@ -31,7 +31,7 @@ test('dropdown Component', nested => {
 
       assert.end();
     });
-    
+
 
   nested.test('blank prop:',
     assert => {
