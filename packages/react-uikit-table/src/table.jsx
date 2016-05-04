@@ -8,7 +8,6 @@ import TableRows from './table-rows';
 import TableHead from './table-head';
 
 
-
 const Table = (props) => {
 
   // CSS classes
