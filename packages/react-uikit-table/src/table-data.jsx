@@ -19,13 +19,11 @@ const TableData = (props) => {
       const item1PlusItem2 = item1 + isUndefined(item2[2]);
       const item2MinusItem1 = isUndefined(item2[2]) - item1;
 
-      console.log(item2MinusItem1);
-
 
       // sets colspan
       if (item1PlusOne !== item1PlusItem2 + 1) {
         col = item2MinusItem1 !== 0 ? item2MinusItem1 : null;
-      };
+      }
 
 
       return <td

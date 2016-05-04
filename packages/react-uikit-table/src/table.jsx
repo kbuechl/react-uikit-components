@@ -26,7 +26,7 @@ const Table = (props) => {
 
   if (props.head) {
     thead = <TableHead numbered={props.numbered} head={props.head} body={props.body}/>;
-  };
+  }
 
 
   let tbody;
