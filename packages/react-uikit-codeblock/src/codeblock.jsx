@@ -5,35 +5,26 @@ import React from 'react';
 import uikit from 'react-uikit-base';
 
 
-class Codeblock extends React.Component {
-  constructor (props) {
-    super(props);
-  }
+const Codeblock = (props) => {
+  // CSS classes
+  const cssClassNames = uikit.helpers.cleanClasses([
+    props.classes,
+    props.lang,
+    props.className
+  ]);
 
 
-  render () {
-    const props = this.props;
-
-    // CSS classes
-    const cssClassNames = uikit.helpers.cleanClasses([
-      props.classes,
-      props.lang,
-      props.className
-    ]);
-
-
-    // Return Component
-    return <pre
-      {...props}
-      {...uikit.events(props)}
-      className={cssClassNames}
-      data-kitid={props.kitid}
-    >
-      <code>
-      {props.children}
-      </code>
-    </pre>;
-  }
+  // Return Component
+  return <pre
+    {...props}
+    {...uikit.events(props)}
+    className={cssClassNames}
+    data-kitid={props.kitid}
+  >
+    <code>
+    {props.children}
+    </code>
+  </pre>;
 };
 
 
