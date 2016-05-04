@@ -7,9 +7,11 @@ import sortIt from 'sort-it';
 
 // Convert object to array with index column position
 const bodyToArray = (body, columns) => {
+
   return body.map(item => {
     return Object.keys(item).map(k => {
-      const pos = columns.indexOf(k);
+      const pos = columns.map(i => i.toLowerCase()).indexOf(k.toLowerCase());
+
       return [k, item[k], pos];
     });
   });
@@ -34,6 +36,7 @@ const TableRows = (props, columns) => {
     return <tr key={index} data-kitid={`tablerow-${index}-${props.kitid}`}>
       {props.numbered ? numbered(index) : null}
       {TableData({
+        columns,
         item,
         index,
         kitid: props.kitid

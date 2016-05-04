@@ -33,7 +33,7 @@ const Table = (props) => {
 
   if (props.body) {
     tbody = <tbody>
-      {TableRows(props, columns(props.body))}
+      {TableRows(props, props.head === '*' ? columns(props.body) : props.head)}
     </tbody>;
   }
 
@@ -83,6 +83,7 @@ Table.propTypes = {
     React.PropTypes.bool,
     React.PropTypes.string
   ]),
+  columns: React.PropTypes.array,
   overflow  : React.PropTypes.bool,
   sort      : React.PropTypes.oneOfType([
     React.PropTypes.array,

@@ -14,6 +14,7 @@ const headFromProp = (head) => head.map((item, index) => {
 
 // Generate headings from collection keys
 const headfromBodyKeys = (ary) => {
+
   return columns(ary).map((k, i) => <th key={i}>
     {k}
   </th>);
