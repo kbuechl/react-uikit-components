@@ -6,6 +6,10 @@ Create different thumbnail images, which come in various styles and sizes.
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
 
 ###Installation
     npm install react-uikit-thumbnail --save;
@@ -14,7 +18,7 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import Article from 'react-uikit-thumbnail';
 
     // ES5
-    var Article = require('react-uikit-thumbnail');
+    var Article = require('react-uikit-thumbnail').default;
 
 ###Example
     <Thumbnail height='100px' src='docs/images/placeholder_200x150_2.svg'>
