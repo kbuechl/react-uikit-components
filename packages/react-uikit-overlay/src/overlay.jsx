@@ -3,7 +3,7 @@
 import React from 'react';
 import uikit from 'react-uikit-base';
 import ufunc from 'ufunc';
-import Img from 'react-uikit-img';
+import Img from '../../react-uikit-img';
 
 
 const Overlay = (props) => {
@@ -43,11 +43,14 @@ const Overlay = (props) => {
     width={props.width}
     type={props.type}
     xlarge={props.xlarge}
+    kitid={`overlay-image-${props.kitid}`}
     className={props.image ? 'uk-overlay-panel uk-overlay-image' : null}
   />;
 
-
-  const figure = <figure {...props} className={cssClassNames} >
+  const figure = <figure {...props}
+    className={cssClassNames}
+    data-kitid={`overlay-${props.kitid}`}
+  >
     <Img
       alt={props.alt}
       height={props.height}
@@ -58,7 +61,7 @@ const Overlay = (props) => {
       width={props.width}
       type={props.type}
       xlarge={props.xlarge}
-      data-kitid={props.kitid}
+      kitid={`overlay-background-image-${props.kitid}`}
     />
       {img}
       {link}
@@ -68,7 +71,7 @@ const Overlay = (props) => {
   const caption = <figcaption
     className={captionClassNames}
     {...props}
-    data-kitid={props.kitid}
+    data-kitid={`overlay-caption-${props.kitid}`}
   >
     {props.children}
   </figcaption>;
@@ -77,7 +80,7 @@ const Overlay = (props) => {
   const linkCaption = <div
     className={cssClassNames}
     {...props}
-    data-kitid={props.kitid}
+    data-kitid={`overlay-link-${props.kitid}`}
   >
     {props.children}
   </div>;
@@ -86,7 +89,7 @@ const Overlay = (props) => {
   const figureCaption = <figure
     className={cssClassNames}
     {...props}
-    data-kitid={props.kitid}
+    data-data-kitid={`overlay-${props.kitid}`}
   >
     {img}
     {ufunc.either(linkCaption, caption)(props.link)}
