@@ -6,7 +6,12 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
 
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
 
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
+
+###Installation
     npm install react-uikit-button-group --save;
 
     // ES6
@@ -14,9 +19,8 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import ButtonGroup from 'react-uikit-button-group';
 
     // ES5
-    var Button = require('react-uikit-button');
-    var ButtonGroup = require('react-uikit-button-group');
-
+    var Button = require('react-uikit-button').default;
+    var ButtonGroup = require('react-uikit-button-group').default;
 
 ###Example
     <ButtonGroup display='block' margin='smallBottom'>
