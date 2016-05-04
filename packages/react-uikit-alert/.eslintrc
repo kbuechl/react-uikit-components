@@ -12,14 +12,21 @@
   },
 
   "globals": {
-    "process.env": true
+    "process.env": true,
+    "React": true,
+    "ReactDOM": true
   },
 
   "plugins": [
-    "smells"
+    "smells",
+    "react"
   ],
 
-  "extends": "standard",
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
 
   "rules": {
     "key-spacing": 0,
@@ -27,8 +34,9 @@
     "no-multiple-empty-lines": [2, {"max": 2}],
     "padded-blocks": 0,
     "semi": [2, "always"],
+    "arrow-parens": 0,
 
-    "smells/no-switch": 1,
+    "smells/no-switch": 0,
     "smells/no-complex-switch-case": 1,
     "smells/no-setinterval": 1,
     "smells/no-this-assign": 1,
