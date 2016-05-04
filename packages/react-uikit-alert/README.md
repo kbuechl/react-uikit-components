@@ -5,15 +5,19 @@ Defines styles for success, warning and error messages
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
 
 ###Installation
     npm install react-uikit-alert --save;
 
     // ES6
-    import Alert from ';react-uikit-alert';
+    import Alert from 'react-uikit-alert';
 
     // ES5
-    var Alert = require('react-uikit-alert');
+    var Alert = require('react-uikit-alert').default;
+
 
 ###Example
 
