@@ -5,6 +5,10 @@ Easily add notes to content.
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
 
 ###Installation
     npm install react-uikit-note --save;
@@ -12,7 +16,7 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import Note from 'react-uikit-note';
 
     // ES5
-    var Note = require('react-uikit-note');
+    var Note = require('react-uikit-note').default;
 
 
 ###Example
