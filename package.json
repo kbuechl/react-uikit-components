@@ -92,6 +92,6 @@
     "velocity-animate": "~1.2.3"
   },
   "engines": {
-    "node": "~4.2.3"
+    "node": "~4.4.3"
   }
 }
