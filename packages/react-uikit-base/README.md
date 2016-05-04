@@ -14,10 +14,10 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import uikit from 'react-uikit-base';
 
     // ES5
-    var uikit = require('react-uikit-base');
+    var uikit = require('react-uikit-base').default;
 
 
-UIkit css is not included. You can get it from [getuikit.com](href="http://getuikit.com/)
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
 
 
 ##Tests
