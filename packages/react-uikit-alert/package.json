@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-alert",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "React uikit alert component for displaying messages.",
   "keywords": [
     "javascript",
@@ -26,6 +26,7 @@
     "test:watch": "watch 'npm run test' ./"
   },
   "devDependencies": {
+    "babel-cli": "~6.8.0",
     "babel-core": "~6.8.0",
     "babel-eslint": "~6.0.4",
     "babel-plugin-transform-runtime": "~6.8.0",
@@ -33,7 +34,6 @@
     "babel-preset-react": "~6.5.0",
     "babel-preset-stage-0": "~6.5.0",
     "babel-runtime": "~6.6.1",
-    "tape": "~4.5.1",
     "cheerio": "~0.20.0",
     "eslint": "~2.9.0",
     "eslint-config-standard": "~5.3.0",
@@ -47,11 +47,12 @@
     "react-dom": "~15.0.2",
     "tap-difflet": "~0.4.0",
     "tap-min": "~1.1.0",
+    "tape": "~4.5.1",
     "watch": "~0.18.0"
   },
   "dependencies": {
     "react": "~15.0.2",
-    "react-uikit-base": "~0.2.4",
+    "react-uikit-base": "~1.0.0",
     "ufunc": "~0.2.1"
   },
   "babel": {
@@ -62,6 +63,6 @@
     ]
   },
   "engines": {
-    "node": "~4.2.3"
+    "node": "~4.4.3"
   }
 }
