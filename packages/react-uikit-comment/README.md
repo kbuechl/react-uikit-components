@@ -6,6 +6,10 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
 
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
 
 ###Installation
     npm install react-uikit-comment --save;
@@ -14,7 +18,8 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import Comment from 'react-uikit-comment';
 
     // ES5
-    var Comment = require('react-uikit-comment');
+    var Comment = require('react-uikit-comment').default;
+
 
 ###Example
     <Commnet primary title='Author' meta='12 days ago | Profile | #'
