@@ -13,7 +13,7 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import ImgGallery from 'react-uikit-img-gallery';
 
     // ES5
-    var ImgGallery = require('react-uikit-img-gallery');
+    var ImgGallery = require('react-uikit-img-gallery').default;
 
 
 ###Example
