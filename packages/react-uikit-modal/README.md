@@ -5,6 +5,10 @@ Displays dialogs prompts.
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
 
 ###Installations
     npm install react-uikit-modal --save;
@@ -13,7 +17,7 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import Modal from 'react-uikit-modal';  
 
     // ES5  
-    var Modal = require('react-uikit-modal');  
+    var Modal = require('react-uikit-modal').default;  
 
 
 ###Example
