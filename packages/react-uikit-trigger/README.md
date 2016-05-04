@@ -3,6 +3,10 @@
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
 
 ###Installation
 
@@ -12,7 +16,7 @@ See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/re
     import uikit from 'react-uikit-trigger';
 
     // ES5
-    var Dropdown = require('react-uikit-trigger');
+    var Dropdown = require('react-uikit-trigger').default;
 
 
 ##Build
