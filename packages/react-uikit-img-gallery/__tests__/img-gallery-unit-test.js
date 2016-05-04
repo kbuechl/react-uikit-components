@@ -39,13 +39,13 @@ test('img-gallery Component', nested => {
 
       /* eslint-disable smells/no-complex-string-concat */
       const expect = '<div data-kitid="igp1">' +
-        '<img src="docs/images/placeholder_200x150_2.svg" data-kitid="imglx1" class="uk-margin-bottom uk-margin-right">' +
+        '<img src="docs/images/placeholder_200x150_2.svg" class="uk-margin-bottom uk-margin-right" data-kitid="imglx1">' +
         '</div>';
 
       /* eslint-enable no-complex-string-concat */
 
       assert.equals(actual, expect,
-        'Correctly renders image gallery element');
+        'Correctly renders image gallery element with props');
 
       assert.end();
     });
