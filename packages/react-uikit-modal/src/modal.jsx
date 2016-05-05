@@ -42,7 +42,7 @@ class Modal extends React.Component {
 
     props.trigger.animate.out(modal, dialog);
     setTimeout(() => bodyStyle('', ''), 200);
-  };
+  }
 
 
   handleToggleClick (e) {
