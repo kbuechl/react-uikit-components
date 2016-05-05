@@ -116,7 +116,7 @@ class Modal extends React.Component {
             props.ok,
             {onClick: this.handleOkClick}
           )}
-          onClose={this.handleCloseClick}
+          onClose={props.close ? this.handleCloseClick: null}
           spinner={props.spinner}
           type={props.type}
         >
