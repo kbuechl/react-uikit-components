@@ -15,6 +15,14 @@ const bodyStyle = (pading, overflow) => {
 
 
 class Modal extends React.Component {
+  constructor (props) {
+    super(props);
+
+    this.handleOkClick = this.handleOkClick.bind(this);
+    this.handleCloseClick = this.handleCloseClick.bind(this);
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+
   handleOkClick (e) {
     const props = this.props;
 
@@ -83,18 +91,18 @@ class Modal extends React.Component {
 
     // Return Component
     return <div>
-      <Trigger {...props.trigger} kitid={`trigger-${props.kitid}`} onClick={(e) => this.handleToggleClick(e)}/>
+      <Trigger {...props.trigger} kitid={`trigger-${props.kitid}`} onClick={this.handleToggleClick}/>
 
       <div {...props}
         className={cssClassNames}
         data-kitid={`modal-${props.kitid}`}
-        onClick={(e) => this.handleToggleClick(e)}
+        onClick={this.handleToggleClick}
       >
         <Dialog
           {...props.dialog}
           blank={props.blank}
           cancel={Object.assign(
-            {onClick: (e) => this.handleCloseClick(e)},
+            {onClick: this.handleCloseClick},
             props.cancel
           )}
           caption={props.caption}
@@ -106,9 +114,9 @@ class Modal extends React.Component {
           ok={Object.assign(
             {},
             props.ok,
-            {onClick: (e) => this.handleOkClick(e)}
+            {onClick: this.handleOkClick}
           )}
-          onClose={(e) => this.handleCloseClick(e)}
+          onClose={this.handleCloseClick}
           spinner={props.spinner}
           type={props.type}
         >
