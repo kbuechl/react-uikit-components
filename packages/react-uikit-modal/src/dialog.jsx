@@ -32,7 +32,7 @@ const Dialog = (props) => {
     data-kitid={props.kitid ? props.kitid : `close-${props.kitid}`}
     onClick={props.onClose}
     float='right'/>
-  )(props.onClose);
+  )(props.onClose && props.close);
 
 
   const footer = (children, right) => ufunc.maybeIf(
