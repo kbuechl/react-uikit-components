@@ -13,6 +13,12 @@ const bodyStyle = (pading, overflow) => {
   body[0].style.overflow = overflow;
 };
 
+const getModalElement = (kitid) => {
+  return {
+    modal: uikit.helpers.getElement(`modal-${kitid}`),
+    dialog: uikit.helpers.getElement(`dialog-${kitid}`)
+  };
+};
 
 class Modal extends React.Component {
   constructor (props) {
@@ -27,6 +33,7 @@ class Modal extends React.Component {
 
   handleOkClick (e) {
     const props = this.props;
+    const { modal, dialog } = getModalElement(props.kitid);
 
     if (props.ok && props.ok.onClick) {
       const value = props.type === 'prompt' ? uikit.helpers.getElement(`input-${props.kitid}`).value : null;
@@ -40,7 +47,13 @@ class Modal extends React.Component {
       });
     }
 
-    this.handleCloseClick();
+    if (props.confirm && !props.confirm.show) {
+      props.confirm.animate.in(modal, dialog);
+    }
+    else {
+      props.trigger.animate.out(modal, dialog);
+      setTimeout(() => bodyStyle('', ''), 200);
+    }
   }
 
 
@@ -48,8 +61,7 @@ class Modal extends React.Component {
     e && e.preventDefault();
 
     const props = this.props;
-    const modal = uikit.helpers.getElement(`modal-${props.kitid}`);
-    const dialog = uikit.helpers.getElement(`dialog-${props.kitid}`);
+    const { modal, dialog } = getModalElement(props.kitid);
 
     if (props.confirm && props.confirm.onClick) {
       props.confirm.onClick({
@@ -68,24 +80,18 @@ class Modal extends React.Component {
     e && e.preventDefault();
 
     const props = this.props;
-    const modal = uikit.helpers.getElement(`modal-${props.kitid}`);
-    const dialog = uikit.helpers.getElement(`dialog-${props.kitid}`);
+    const { modal, dialog } = getModalElement(props.kitid);
 
-    if (props.confirm && !props.confirm.show) {
-      props.confirm.animate.in(modal, dialog);
-    }
-    else {
-      props.trigger.animate.out(modal, dialog);
-      setTimeout(() => bodyStyle('', ''), 200);
-    }
+    props.trigger.animate.out(modal, dialog);
+    setTimeout(() => bodyStyle('', ''), 200);
+
 
   }
 
 
   handleToggleClick (e) {
     const props = this.props;
-    const modal = uikit.helpers.getElement(`modal-${props.kitid}`);
-    const dialog = uikit.helpers.getElement(`dialog-${props.kitid}`);
+    const { modal, dialog } = getModalElement(props.kitid);
 
     const show = () => {
       bodyStyle('16px', 'hidden');
