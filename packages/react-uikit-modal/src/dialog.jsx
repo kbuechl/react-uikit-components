@@ -4,6 +4,8 @@ import React from 'react';
 import uikit from 'react-uikit-base';
 import ufunc from 'ufunc';
 import Button from 'react-uikit-button';
+import ComfirmButton from './comfirmButton';
+
 
 const Dialog = (props) => {
   // CSS classes
@@ -35,11 +37,19 @@ const Dialog = (props) => {
   )(props.onClose);
 
 
+  const confrim = (confirmObj, children) => {
+    return ufunc.either(
+      confirmObj && confirmObj.show ? confirmObj.dialog : children,
+      children
+    )(confirmObj);
+  };
+
+
   const footer = (children, right) => ufunc.maybeIf(
     <div className={right ? 'uk-modal-footer uk-text-right' : 'uk-modal-footer'}>
       {children}
     </div>
-  )(props.footer || props.type === 'alert' || props.type === 'prompt');
+  )(props.footer || props.type === 'alert' || props.type === 'prompt' || props.type === 'confirm');
 
 
   const header = ufunc.maybeIf(
@@ -79,14 +89,29 @@ const Dialog = (props) => {
 
       {footer(
         <div>
-          <Button body='cancel' margin='right' {...props.cancel}/>
-          <Button body='ok' {...props.ok}/>
+          <Button kitid={`ok-${props.kitid}`} body='cancel' margin='right' {...props.cancel}/>
+          <Button kitid={`cancel-${props.kitid}`} body='ok' {...props.ok}/>
         </div>,
         true
       )}
+    </div>,
+
+    confirm: <div
+      className={`${cssClassNames} uk-form`}
+      data-kitid={`dialog-${props.kitid}`}
+    >
+      {confrim(props.confirm, props.children)}
+
+      {footer(
+        <ComfirmButton
+          ok={props.ok}
+          cancel={props.cancel}
+          confirm={props.confirm}
+        />
+      , true)}
     </div>
   };
-
+  // if (props.confirm) console.log(props.confirm.show);
 
   // Return Component
   return type[props.type] || type['block'];
@@ -99,6 +124,7 @@ Dialog.propTypes = {
   caption  : React.PropTypes.string,
   children : React.PropTypes.any,
   close    : React.PropTypes.bool,
+  confirm  : React.PropTypes.object,
   footer   : React.PropTypes.node,
   header   : React.PropTypes.node,
   kitid    : React.PropTypes.string,
@@ -106,7 +132,7 @@ Dialog.propTypes = {
   lightbox : React.PropTypes.bool,
   onClose  : React.PropTypes.func,
   ok       : React.PropTypes.object,
-  type     : React.PropTypes.oneOf(['block', 'alert', 'prompt'])
+  type     : React.PropTypes.oneOf(['block', 'alert', 'prompt', 'confirm'])
 };
 
 export default uikit.base(Dialog);

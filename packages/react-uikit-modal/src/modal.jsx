@@ -21,23 +21,46 @@ class Modal extends React.Component {
     this.handleOkClick = this.handleOkClick.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
     this.handleToggleClick = this.handleToggleClick.bind(this);
+    this.handleConfirmClick = this.handleConfirmClick.bind(this);
   }
+
 
   handleOkClick (e) {
     const props = this.props;
 
-    if (props.type === 'prompt' && props.ok) {
-      const value = uikit.helpers.getElement(`input-${props.kitid}`).value;
+    if (props.ok && props.ok.onClick) {
+      const value = props.type === 'prompt' ? uikit.helpers.getElement(`input-${props.kitid}`).value : null;
 
-      props.ok.onClick(Object.assign(
-        {item: {
+      props.ok.onClick({
+        event: e,
+        item: {
           kitid: props.kitid,
-          value: value
-        }},
-        e
-      ));
+          value
+        }
+      });
     }
+
     this.handleCloseClick();
+  }
+
+
+  handleConfirmClick (e) {
+    e && e.preventDefault();
+
+    const props = this.props;
+    const modal = uikit.helpers.getElement(`modal-${props.kitid}`);
+    const dialog = uikit.helpers.getElement(`dialog-${props.kitid}`);
+
+    if (props.confirm && props.confirm.onClick) {
+      props.confirm.onClick({
+        event: e,
+        item: { kitid: props.kitid }
+      });
+    }
+
+
+    props.confirm.animate.out(modal, dialog);
+    setTimeout(() => bodyStyle('', ''), 200);
   }
 
 
@@ -48,8 +71,14 @@ class Modal extends React.Component {
     const modal = uikit.helpers.getElement(`modal-${props.kitid}`);
     const dialog = uikit.helpers.getElement(`dialog-${props.kitid}`);
 
-    props.trigger.animate.out(modal, dialog);
-    setTimeout(() => bodyStyle('', ''), 200);
+    if (props.confirm && !props.confirm.show) {
+      props.confirm.animate.in(modal, dialog);
+    }
+    else {
+      props.trigger.animate.out(modal, dialog);
+      setTimeout(() => bodyStyle('', ''), 200);
+    }
+
   }
 
 
@@ -65,6 +94,8 @@ class Modal extends React.Component {
 
     const hide = () => {
       const kitid = e.target.dataset.kitid;
+
+
       if (typeof kitid !== 'undefined') {
         const prefix = kitid.substr(0, kitid.indexOf('-'));
 
@@ -102,10 +133,20 @@ class Modal extends React.Component {
           {...props.dialog}
           blank={props.blank}
           cancel={Object.assign(
-            {onClick: this.handleCloseClick},
+            {
+              kitid: `ok-${props.kitid}`,
+              onClick: this.handleCloseClick
+            },
             props.cancel
           )}
           caption={props.caption}
+          confirm={{
+            ...props.confirm,
+            ...{
+              kitid: `confirm-${props.kitid}`,
+              onClick: this.handleConfirmClick
+            }
+          }}
           footer={props.footer}
           header={props.header}
           kitid={props.kitid}
@@ -114,7 +155,10 @@ class Modal extends React.Component {
           ok={Object.assign(
             {},
             props.ok,
-            {onClick: this.handleOkClick}
+            {
+              kitid: `ok-${props.kitid}`,
+              onClick: this.handleOkClick
+            }
           )}
           onClose={props.close ? this.handleCloseClick: null}
           spinner={props.spinner}
@@ -138,6 +182,7 @@ Modal.propTypes = {
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
   close     : React.PropTypes.bool,
+  confirm   : React.PropTypes.object,
   dialog    : React.PropTypes.object,
   footer    : React.PropTypes.any,
   header    : React.PropTypes.any,
@@ -147,7 +192,7 @@ Modal.propTypes = {
   large     : React.PropTypes.bool,
   show      : React.PropTypes.bool,
   trigger   : React.PropTypes.object,
-  type      : React.PropTypes.oneOf(['block', 'alert', 'prompt'])
+  type      : React.PropTypes.oneOf(['block', 'alert', 'prompt', 'confirm'])
 };
 
 
