@@ -5,6 +5,10 @@ Dynamically create lists.
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
 
 ###Installations
 npm install react-uikit-list --save;
@@ -15,7 +19,7 @@ import List item from 'react-uikit-list/lib/ListItem';
 
 // ES5  
 var List = require('react-uikit-list');  
-var List item = require('react-uikit-list/lib/ListItem');
+var List item = require('react-uikit-list/lib/ListItem').default;
 
 
 ###Example
