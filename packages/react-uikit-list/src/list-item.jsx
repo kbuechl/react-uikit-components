@@ -118,7 +118,7 @@ class ListItem extends React.Component {
     const component = ufunc.either(link, text);
     return component(props.href);
   }
-};
+}
 
 
 ListItem.propTypes = {

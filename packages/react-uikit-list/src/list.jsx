@@ -89,7 +89,7 @@ class List extends React.Component {
     // Return Component
     return type[props.type] || type['unorderd'];
   }
-};
+}
 
 List.propTypes = {
   children     : React.PropTypes.any,
