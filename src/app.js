@@ -9,7 +9,7 @@ import { createHistory } from 'history';
 
 
 const history = useRouterHistory(createHistory)({
-  basename: '/'
+  basename: '/react-uikit-components'
 });
 
 const mountNode = document.getElementById('mount-node');
