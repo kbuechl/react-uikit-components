@@ -24,10 +24,8 @@ import GridDoc from './grid-doc.jsx';
 import ImgDoc from './img-doc.jsx';
 import ImgGalleryDoc from './img-gallery-doc.jsx';
 import ListDoc from './list-doc.jsx';
-import NavDoc from './nav-doc.jsx';
 import ModalDoc from './modal-doc.jsx';
 import NoteDoc from './note-doc.jsx';
-import OffcanvasDoc from './offcanvas-doc.jsx';
 import OverlayDoc from './overlay-doc.jsx';
 import PanelDoc from './panel-doc.jsx';
 import TableDoc from './table-doc.jsx';
@@ -88,9 +86,7 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
         <NavItem type='item'><Link to='/list'>List</Link></NavItem>
         <NavItem type='item'><Link to='/modal'>Modal</Link></NavItem>
-        <NavItem type='item'><Link to='/nav'>Nav</Link></NavItem>
         <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
-        <NavItem type='item'><Link to='/offcanvas'>Offcanvas</Link></NavItem>
         <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
         <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
         <NavItem type='item'><Link to='/table'>Table</Link></NavItem>
@@ -109,7 +105,7 @@ Layout.propTypes = {
 
 
 const routes = {
-  path: '/',
+  path: '/docs.html',
   component: Layout,
   childRoutes: [
     { indexRoute: { component: BaseDoc } },
@@ -130,9 +126,7 @@ const routes = {
     { path: '/img-gallery', component  : ImgGalleryDoc },
     { path: '/list', component         : ListDoc },
     { path: '/modal', component        : ModalDoc },
-    { path: '/nav', component          : NavDoc },
     { path: '/note', component         : NoteDoc },
-    { path: '/offcanvas', component    : OffcanvasDoc },
     { path: '/overlay', component      : OverlayDoc },
     { path: '/panel', component        : PanelDoc },
     { path: '/table', component        : TableDoc },
