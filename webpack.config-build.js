@@ -18,12 +18,24 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+      comments: false,
+      sourceMap: false,
+      mangle: true,
+      minimize: true
+    }),
     new webpack.ProvidePlugin({
       React   : 'react',
       ReactDOM: 'react-dom'
-    })
+    }),
+    new webpack.optimize.AggressiveMergingPlugin()
   ],
 
   module: {
