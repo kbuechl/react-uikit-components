@@ -18,7 +18,7 @@
     "start": "node ./server.js",
     "webpack": "webpack",
     "watch": "webpack --watch",
-    "build": "webpack --config ./webpack.config-build.js --production --optimize-minimize",
+    "build": "webpack --config ./webpack.config-build.js --progress",
     "lint": "eslint --quiet ./src/**  && date || true && date",
     "lint:watch": "watch 'npm run lint' ./"
   },
