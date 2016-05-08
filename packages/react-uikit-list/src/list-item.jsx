@@ -7,47 +7,39 @@ import Badge from 'react-uikit-badge';
 
 
 class ListItem extends React.Component {
-  getItemDetails (index) {
-    let idx;
+  constructor(props) {
+    super(props);
 
-    if (index.charAt && index.charAt(0) === '.') {
-      idx = index.match(/\$(.+)$/)[1];
-    } else {
-      idx = index;
-    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+
+  getItemDetails (element) {
+
+    const kitid = element.dataset.kitid;
+    const index = kitid.match(/-(.*?)-/)[1];
 
     return {
       component: this,
-      element: uikit.helpers.getElement(this.props.kitid),
-      index: idx,
-      kitid: this.props.kitid
+      index    : index,
+      kitid    : this.props.kitid
     };
   }
 
 
-  handleClick (e, index) {
+  handleClick (e) {
     e.preventDefault();
-    e.stopPropagation();
+    e.stopPropagation ? e.stopPropagation() : (e.cancelBubble=true);
+
+    const element = e.currentTarget;
 
     if (this.props.onClick) {
-      this.props.onClick(Object.assign(
-        {item: this.getItemDetails(index)},
-        e
-      ));
+      this.props.onClick({
+        event: e,
+        item: this.getItemDetails(element)
+      });
     }
   }
-
-
-  handleSelect (e, index) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    this.props.onSelect(Object.assign(
-      {item: this.getItemDetails(index)},
-      e
-    ));
-  }
-
 
   render () {
     const props = this.props;
@@ -71,24 +63,27 @@ class ListItem extends React.Component {
       />
     )(props.badge);
 
+
     const selectable = (index) => {
-      return ufunc.maybeIf(
-        <input
-          type="checkbox"
-          className='close'
-          checked={props.checked}
-          data-kitid={`input-${props.kitid}`}
-          onSelect={(e, index) => this.handleSelect(e, index)}
-        />
-      )(props.selectable);
+      if (this.props.selectable && this.props.selectable.checked) {
+        const { checked } = this.props.selectable;
+
+        return ufunc.maybeIf(
+          ufunc.either(
+            () => checked.on,
+            () => checked.off
+          )(props.checked)
+        )(props.selectable);
+      }
     };
+
 
     const attr = {
       ...props,
       ...uikit.events(props),
       'data-kitid': props.kitid,
-      className   :cssClassNames,
-      onClick: (e, index) => this.handleClick(e, index)
+      className   : cssClassNames,
+      onClick     : this.handleClick
     };
 
 
@@ -108,7 +103,6 @@ class ListItem extends React.Component {
 
     const text = <li
       {...attr}
-
     >
      {props.selectable} {props.body} {props.children}
    </li>;
@@ -133,7 +127,10 @@ ListItem.propTypes = {
   kitid       : React.PropTypes.string,
   onClick     : React.PropTypes.func,
   onSelect    : React.PropTypes.func,
-  selectable  : React.PropTypes.bool
+  selectable  : React.PropTypes.oneOfType([
+                  React.PropTypes.bool,
+                  React.PropTypes.object
+                ])
 };
 
 

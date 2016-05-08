@@ -12,9 +12,10 @@ class List extends React.Component {
     return `item-${index}-${this.props.kitid}`;
   }
 
+
   render () {
     const props = this.props;
-    const ignoreProps = ['type'];
+    const ignoreProps = ['type', 'onClick'];
     const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
     // CSS classes
@@ -33,8 +34,6 @@ class List extends React.Component {
 
 
     // Elements
-
-
     const link = (item, index) => <ListItem
       key={index}
       {...item}
@@ -50,6 +49,7 @@ class List extends React.Component {
       kitid={this.getItemId(index)}
     />;
 
+
     let items;
     if (props.items) {
       items = props.items.map((item, index) => {
@@ -62,11 +62,10 @@ class List extends React.Component {
 
     const attr = {
       ...cleanProps,
-      ...uikit.events(props),
+      ...uikit.events(cleanProps),
       'data-kitid': props.kitid,
       className   :cssClassNames
     };
-
 
     const type = {
       unorderd: <ul {...attr}>
@@ -92,18 +91,21 @@ class List extends React.Component {
 }
 
 List.propTypes = {
-  children     : React.PropTypes.any,
-  className    : React.PropTypes.string,
-  classes      : React.PropTypes.array,
-  description  : React.PropTypes.string,
-  items        : React.PropTypes.array,
-  horizontal   : React.PropTypes.bool,
-  kitid        : React.PropTypes.string,
-  line         : React.PropTypes.bool,
-  striped      : React.PropTypes.bool,
-  selectable   : React.PropTypes.bool,
-  space        : React.PropTypes.bool,
-  type         : React.PropTypes.oneOf(['description', 'ordered', 'unorderd'])
+  children    : React.PropTypes.any,
+  className   : React.PropTypes.string,
+  classes     : React.PropTypes.array,
+  description : React.PropTypes.string,
+  items       : React.PropTypes.array,
+  horizontal  : React.PropTypes.bool,
+  kitid       : React.PropTypes.string,
+  line        : React.PropTypes.bool,
+  striped     : React.PropTypes.bool,
+  selectable  : React.PropTypes.oneOfType([
+                  React.PropTypes.bool,
+                  React.PropTypes.object
+                ]),
+  space       : React.PropTypes.bool,
+  type        : React.PropTypes.oneOf(['description', 'ordered', 'unorderd'])
 };
 
 

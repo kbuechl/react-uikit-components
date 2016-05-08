@@ -1,6 +1,6 @@
 'use strict';
 import test from 'tape';
-import ListItem from '../lib/list-item';
+import ListItem from 'react-uikit-list/lib/list-item';
 import React from 'react';
 import renderElement from './helpers/renderElement';
 
