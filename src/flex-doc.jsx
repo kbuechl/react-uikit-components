@@ -103,7 +103,7 @@ var Flex = require('react-uikit-flex').default;`}
           </tr>
           <tr>
             <td><code>bottom</code></td>
-            <td>Add this prop to align Flex items to the bottom</td>
+            <td>Add this prop to align Flex items to the bottom.</td>
           </tr>
           <tr>
             <td><code>between</code></td>
@@ -155,7 +155,7 @@ var Flex = require('react-uikit-flex').default;`}
     <section>
       <h2>Flex direction</h2>
       <p>
-        These props define the axis flex items placed on and their direction.
+        Directon props define the axis flex items placed on and their direction.
         By default, items run horizontally from left to right.
       </p>
 

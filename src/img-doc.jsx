@@ -3,7 +3,7 @@
 
 import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
-import Img from 'react-uikit-img';
+import Img from '../components/react-uikit-img';
 import Table from 'react-uikit-table';
 
 
@@ -53,7 +53,8 @@ var Img = require('react-uikit-img').default;
     <p>
       The Image component can provide different images for various
       viewport widths. Enable responsive behavior by adding one or
-       all of the responsive props small, medium, large, xlarge.
+       all of the responsive props <code>small</code>, <code>medium</code>,
+       <code>large</code> or <code>xlarge</code>.
     </p>
 
     <p>
@@ -112,7 +113,7 @@ var Img = require('react-uikit-img').default;
       The <code>cover</code> prop allows you to create fullscreen teasers using images. It will always
       be centered vertically and horizontally and cover its container without
       losing its proportions. You can also place additional content, like text
-      or images on top of the image by placing it inside of the <code>&lt;Image&gt;</code> component.
+      or images on top of the image cover.
     </p>
 
 

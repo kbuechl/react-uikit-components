@@ -2,14 +2,14 @@
 
 import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
-import List from 'react-uikit-list';
-import ListItem from 'react-uikit-list/lib/list-item';
+import List from '../components/react-uikit-list';
+import ListItem from '../components/react-uikit-list/lib/list-item';
 import Table from 'react-uikit-table';
 import Note from 'react-uikit-note';
 
 
 const items = [
-  {href: '#', kitId: 'list-group-1.1', body: 'Item 1'},
+  {href: '#', kitId: 'list-group-1.1', body: 'Item 1', checked: true},
   {href: '#', kitId: 'list-group-1.2', body: 'Item 2'},
   {href: '#', kitId: 'list-group-1.3', body: 'Item 3'},
   {href: '#', kitId: 'list-group-1.4', body: 'Item 4'}
@@ -26,7 +26,6 @@ class ListDoc extends React.Component {
 
   handleClick (e) {
     const items = {...this.state.items};
-
     items[e.item.index].checked = items[e.item.index].checked ? !items[e.item.index].checked : true;
 
     this.setState(items);
@@ -184,7 +183,7 @@ class ListDoc extends React.Component {
       <section>
         <h2>List link items</h2>
         <p>
-          The <code>space</code> prop increases the spacing between list items.
+          To turn a ListItem into a link item, use the <code>href</code> prop.
         </p>
         <h3 className='example'>Example</h3>
         <List space>
@@ -210,20 +209,35 @@ class ListDoc extends React.Component {
       <section>
         <h2>Selectable list</h2>
         <p>
-          Link list can be made selectable by adding the <code>selectable</code> prop which adds a checkbox infrom of an item.
+          Link list can be made selectable by adding the <code>selectable</code> prop.
+          Optional <code>checked</code> and <code>mulit</code> can also be added.
         </p>
+
+        <Table
+        caption='Selectable props'
+        head={['Prop', 'Description']}
+        body={[
+          { prop: 'checked=on' , description: 'Takes an element to be displayed when the items checked prop is true.' },
+          { prop: 'checked=off', description: 'Takes an element to be displayed when the items checked prop is false.' }
+        ]}
+        />
 
         <h3 className='example'>Example</h3>
         <List
           line
-          selectable
+          selectable={{
+            checked: {
+              on:  <i className={'uk-icon-check-circle'}></i>,
+              off: <i className={'uk-icon-circle-o'}></i>
+            }
+          }}
           onClick={(e) => this.handleClick(e)}
           items={this.state.items}/>
 
 
         <Codeblock syntax='xml'>
 {`const items = [
-  {href: '#', kitId: 'list-group-1.1', body: 'Item 1'},
+  {href: '#', kitId: 'list-group-1.1', body: 'Item 1', checked: true},
   {href: '#', kitId: 'list-group-1.2', body: 'Item 2'},
   {href: '#', kitId: 'list-group-1.3', body: 'Item 3'},
   {href: '#', kitId: 'list-group-1.4', body: 'Item 4'}
@@ -231,7 +245,12 @@ class ListDoc extends React.Component {
 ...
 <List
   line
-  selectable
+  selectable={{
+    checked: {
+      on:  <i className={'uk-icon-check-circle'}></i>,
+      off: <i className={'uk-icon-circle-o'}></i>
+    }
+  }}
   onClick={(e) => this.handleClick(e)}
   items={this.state.items}/>
 ...
@@ -307,7 +326,7 @@ class ListDoc extends React.Component {
       <section>
         <h2>Click and select events</h2>
         <p>
-          List item has <code>onClick</code> and <code>onSelect</code> props which both return
+          List item has an <code>onClick</code> prop which returns
           an object containing all the properties from the triggered event.
           There is also an addtional <code>item</code> property added for convinience.
         </p>
@@ -316,9 +335,6 @@ class ListDoc extends React.Component {
           {
             propery: 'component',
             description: 'Items\' component'
-          }, {
-            propery: 'element',
-            description: 'Items\' DOM element'
           }, {
             propery: 'index',
             description: 'Items\' index'

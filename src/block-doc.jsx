@@ -79,7 +79,7 @@ var Block = require('react-uikit-block').default;`}
     <section>
       <h2>Block container</h2>
       <p>
-        To add the body in a container use the <code>container</code> prop.
+        To put the Block in to a container use the <code>container</code> prop.
       </p>
 
       <h3 className='example'>Example</h3>

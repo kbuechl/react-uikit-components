@@ -13,7 +13,7 @@ export default class OverlayHandler extends React.Component {
       <section>
         <h1>Overlay</h1>
         <p className='uk-article-lead'>
-          Create an image overlay.
+          Create an image overlay. Useful for galleries or preview links.
         </p>
 
         <p>
@@ -37,11 +37,9 @@ var Overlay = require('react-uikit-overlay').default;`}
         <hr className="uk-article-divider" />
 
           <p>
-            To create a uikit component pass the component as an argument
-            to <code>uikit.base(Component)</code>.
+            Overlays are imahes that other elemets can be placed on top of.
           </p>
 
-        <hr className="uk-article-divider" />
 
         <h3 className='example'>Example</h3>
         <Overlay width='300px' height='250px' src='docs/images/placeholder_600x400.svg' >
@@ -64,7 +62,7 @@ var Overlay = require('react-uikit-overlay').default;`}
       <section>
         <h1>Overlay background</h1>
         <p>
-
+          Overlay can be given a background by adding the <code>background</code> prop.
         </p>
 
         <h3 className='example'>Example</h3>

@@ -28,7 +28,7 @@ const GridHandler = (props) => (
         The grid system of UIkit follows the mobile-first approach and
         accomodates up to 10 grid columns. It uses units with predefined classes
         inside each grid, which define the column col. It is also possible to
-        combine the grid with classes from the Flex component, although it
+        combine the grid with the Flex component, although it
         works only in modern browsers.
       </p>
         <h2>Usage</h2>
@@ -409,11 +409,11 @@ var Grid = require('react-uikit-grid').default;`}
         To create a grid whose child elements are evenly split,
         no need to apply the same prop to each child component. Just add one of
         the <code>widths</code> prop to the grid itself.
-         Widths use the same values as the prop <code>col</code> from uikit utility props.
+         Widths use the same values as the prop <code>col</code> from Base component utility props.
       </p>
 
       <p>For responsive widths, instead of the <code>widths</code> you can
-        use <code>small</code>, <code>medium</code><code>large</code> respectively.
+        use <code>small</code>, <code>medium</code> and <code>large</code> respectively.
       </p>
 
       <h3 className='example'>Example</h3>

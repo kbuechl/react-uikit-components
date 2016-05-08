@@ -66,8 +66,8 @@ var ImgGallery = require('react-uikit-img-gallery').default;
   <section>
     <h2>Img gallery items</h2>
     <p>
-      The <code>items</code> is an array wich takes a collection of JSON objects.
-      JSON object properties can be an any of the props fom the Img component.
+      The <code>items</code> is an array which takes a collection of JSON objects.
+      JSON object properties can be any of the props fom the Img component.
     </p>
     <ImgGroup
       items={[

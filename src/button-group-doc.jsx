@@ -12,7 +12,7 @@ const ButtonGroupDoc = (props) => (
     <section>
       <h1>Button Group</h1>
       <p>
-        Easily create nicely looking group buttons.
+        Easily create nice looking group buttons.
       </p>
       <p>
         <a href='https://github.com/otissv/react-uikit-button-group'>react-uikit-button-group</a> on github.
@@ -36,8 +36,7 @@ var ButtonGroup = require('react-uikit-button-group').default;`}
     <section>
       <h2>Button group</h2>
       <p>
-        To create a Button group place the Buttons inside a <code>ButtonGroup</code> compoment
-        to the buttton component.
+        To create a Button group place the Buttons inside a <code>ButtonGroup</code> component.
       </p>
 
       <h3>Example</h3>

@@ -138,7 +138,7 @@ Caption <code>figure</code>
 
     <section>
       <h2>Img Props</h2>
-      Props can be passed to the Img compoent by using the <code>img</code> prop.
+      Props can be passed to the Img component by using the <code>img</code> prop.
       See Img compoent for further details.
     </section>
 

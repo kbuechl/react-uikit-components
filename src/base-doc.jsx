@@ -96,7 +96,7 @@ const Col = uikit.element;
   <section>
     <h2>Helper functions</h2>
     <p>
-      UIkit components come with a number of helper function to assist in creating new components.
+      UIkit components come with a number of helper function to assist in the creation of new components.
     </p>
     <hr className="uk-article-divider" />
 
@@ -149,7 +149,7 @@ breakpoints.xlarge; // 1200
 
     <h3>closeClass</h3>
     <p>
-      Return UiKits 'uk-close' class. If alt is passed as an argument 'uk-close-alt' is returned instead.
+      Return UIKits 'uk-close' class. If alt is passed as an argument 'uk-close-alt' is returned instead.
     </p>
     <h3 className='example'>Example</h3>
 
@@ -165,7 +165,7 @@ closeClass(alt); // 'uk-close-alt';
 
     <h3>colSpan</h3>
     <p>
-      Returns an array of available column width spans.See utility props below.
+      Returns an array of available column width spans. See utility props below.
     </p>
 
 
@@ -209,7 +209,7 @@ const cssClassNames = uikit.helpers.cleanClasses([
 {`const MyComponent (props) = {
 ignoreProps = ['type'];
 
-return <div {...cleanProps(props, ignoreProps)}></div>;
+return <div {...cleanProps(ignoreProps)(props)}></div>;
 };
 
 
@@ -225,10 +225,6 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
     </p>
     <h3 className='example'>Example</h3>
 
-    <Codeblock>
-{`
-`}
-  </Codeblock>
     <hr className="uk-article-divider" />
 
 
@@ -239,10 +235,6 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
     </p>
     <h3 className='example'>Example</h3>
 
-    <Codeblock>
-{`
-`}
-  </Codeblock>
     <hr className="uk-article-divider" />
 
 
@@ -367,7 +359,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               '1-6', '2-6', ' 3-6', '4-6', '5-6'<br />
               '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
           </td>
-            <td className='uk-text-left'>Wraps the component inside of a div element and adds width class based on fraction.</td>
+            <td className='uk-text-left'>Wraps the component inside of a div element and adds a width class based on a fraction.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -383,7 +375,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               '1-6', '2-6', ' 3-6', '4-6', '5-6'<br />
               '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
             </td>
-            <td className='uk-text-left'>Wraps the component inside of a div element and adds width class based on fraction if the device width is 480px or higher</td>
+            <td className='uk-text-left'>Wraps the component inside of a div element and adds a width class based on a fraction, if the device width is 480px or higher</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -399,7 +391,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               '1-6', '2-6', ' 3-6', '4-6', '5-6'<br />
               '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
             </td>
-            <td className='uk-text-left'>Wraps the component inside of a div element and adds width based class on fraction if the device width is 768px or higher</td>
+            <td className='uk-text-left'>Wraps the component inside of a div element and adds a width class based on a fraction, if the device width is 768px or higher</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -415,7 +407,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               '1-6', '2-6', ' 3-6', '4-6', '5-6'<br />
               '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
             </td>
-            <td className='uk-text-left'>Wraps the component inside of a div element and adds width based class on fraction if the device width is 960px or higher</td>
+            <td className='uk-text-left'>Wraps the component inside of a div element and adds a widthclass based on a fraction, if the device width is 960px or higher</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -434,7 +426,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               inline
               or inlineblock.
             </td>
-            <td className='uk-text-left'>Changes the display style element</td>
+            <td className='uk-text-left'>Changes the display style element.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -474,7 +466,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               <code>list</code>
             </td>
             <td className='uk-text-left'>bool</td>
-            <td className='uk-text-left'>Wraps the component inside of a li element</td>
+            <td className='uk-text-left'>Wraps the component inside of a li element.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -498,7 +490,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               removeTop
               and removeBottom.
             </td>
-            <td className='uk-text-left'>Adds spacing to block elements</td>
+            <td className='uk-text-left'>Adds spacing to block elements.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -570,7 +562,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               string<br />
               width and height
             </td>
-            <td className='uk-text-left'>Makes max width and/or height 100%</td>
+            <td className='uk-text-left'>Makes max width and/or height 100%.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -582,7 +574,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               box,
               or text.
             </td>
-            <td className='uk-text-left'></td>
+            <td className='uk-text-left'>Adds scrollbars to element.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -611,7 +603,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               middle,
               or bottom.
             </td>
-            <td className='uk-text-left'>Aligns text vertically</td>
+            <td className='uk-text-left'>Aligns text vertically.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
@@ -634,7 +626,7 @@ return <div {...cleanProps(props, ignoreProps)}></div>;
               middle,
               bottom
             </td>
-            <td className='uk-text-left'>Vertically align element.</td>
+            <td className='uk-text-left'>Vertically aligns element.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>

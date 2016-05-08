@@ -52,17 +52,18 @@ var Panel = require('react-uikit-panel').default;`}
         <tbody>
           <tr>
             <td className='uk-text-left'><code>tilte</code></td>
-            <td className='uk-text-left'>Add this prop to a heading to create the panel title.</td>
+            <td className='uk-text-left'>Add <code>title</code> prop to add the panel title.</td>
           </tr>
           <tr>
             <td className='uk-text-left'><code>badge</code></td>
             <td className='uk-text-left'>
-              Add this prop to create a panel badge.<br /><br />
+              Add the <code>badge</code> prop to add a panel badge.<br /><br />
 
               Add <code>badge='value'</code> to set the body of the badge to the value of the string.<br /><br />
 
               Add <code>badge=&#123;&#123;body: 'value', context: 'danger'&#125;&#125;</code>
-              to set the body and the context of the badge. Badge context can be success, warning or danger.
+              to set the body and the context of the badge. <br />
+              Badge context can be success, warning or danger.
             </td>
           </tr>
         </tbody>
@@ -358,7 +359,7 @@ var Panel = require('react-uikit-panel').default;`}
     <section>
       <h2>Panel space</h2>
       <p>
-        Add the <code>header</code> prop to increase the spacing around the panel content.
+        Add the <code>space</code> prop to increase the spacing around the panel content.
       </p>
 
       <h3 className='example'>Example</h3>

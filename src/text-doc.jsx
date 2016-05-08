@@ -324,11 +324,11 @@ var Text = require(react-uikit-text').default;`}
               <td className='uk-text-left'>Aligns text to the left.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>textAlign='left-small'</code></td>
+              <td className='uk-text-left'><code>textAlign='leftSmall'</code></td>
               <td className='uk-text-left'>Aligns text to the left only on small devices.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>textAlign='left-medium'</code></td>
+              <td className='uk-text-left'><code>textAlign='leftMedium'</code></td>
               <td className='uk-text-left'>Aligns text to the left on medium and small devices.</td>
             </tr>
             <tr>
@@ -340,11 +340,11 @@ var Text = require(react-uikit-text').default;`}
               <td className='uk-text-left'>Centers text horizontally.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>textAlign='center-small'</code></td>
+              <td className='uk-text-left'><code>textAlign='centerSmall'</code></td>
               <td className='uk-text-left'>Centers text horizontally only on small devices.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>textAlign='center-medium'</code></td>
+              <td className='uk-text-left'><code>textAlign='centerMedium'</code></td>
               <td className='uk-text-left'>Centers text horizontally on medium and small devices.</td>
             </tr>
             <tr>
@@ -409,12 +409,12 @@ var Text = require(react-uikit-text').default;`}
   </Panel>
   <Panel box margin='bottom' col='1-2'>
     <Text textAlign='leftSmall'>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <code>textAlign='left-small'</code>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <code>textAlign='leftSmall'</code>
     </Text>
   </Panel>
   <Panel box margin='bottom' col='1-2'>
     <Text textAlign='leftMedium'>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <code>textAlign='left-medium'</code>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <code>textAlign='leftMedium'</code>
     </Text>
   </Panel>
   <Panel box margin='bottom' col='1-2'>
@@ -429,12 +429,12 @@ var Text = require(react-uikit-text').default;`}
   </Panel>
   <Panel box margin='bottom' col='1-2'>
     <Text textAlign='centerSmall'>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <code>textAlign='center-small'</code>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <code>textAlign='centerSmall'</code>
     </Text>
   </Panel>
   <Panel box margin='bottom' col='1-2'>
     <Text textAlign='centerMedium'>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <code>textAlign='center-medium'</code>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <code>textAlign='centerMedium'</code>
     </Text>
   </Panel>
   <Panel box margin='bottom' col='1-2'>
@@ -448,9 +448,9 @@ var Text = require(react-uikit-text').default;`}
 
 
       <section>
-        <h2>Text verticle</h2>
+        <h2>Text vertical</h2>
         <p>
-          The textVerticle prop vertically aligns text to an object.
+          The textVertical prop vertically aligns text to an object.
         </p>
         <Table>
           <thead>
@@ -462,15 +462,15 @@ var Text = require(react-uikit-text').default;`}
 
           <tbody>
             <tr>
-              <td className='uk-text-left'><code>textVerticle='top'</code></td>
+              <td className='uk-text-left'><code>textVertical='top'</code></td>
               <td className='uk-text-left'>Aligns text to the top.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>textVerticle='top'</code></td>
+              <td className='uk-text-left'><code>textVertical='middle'</code></td>
               <td className='uk-text-left'>Centers text vertically.</td>
             </tr>
             <tr>
-              <td className='uk-text-left'><code>textVerticle='top'</code></td>
+              <td className='uk-text-left'><code>textVertical='bottom'</code></td>
               <td className='uk-text-left'>Aligns text to the bottom.</td>
             </tr>
 
@@ -520,19 +520,19 @@ var Text = require(react-uikit-text').default;`}
 {`<Grid gutter='small'>
   <Panel colMedium='1-2' colLarge='1-3'>
     <img src='docs/images/placeholder_avatar.svg' width='50' height='50' />
-    <Text textVerticle='top' type='span'>
+    <Text textVertical='top' type='span'>
       Lorem ipsum <code>textVerticle='top'</code>
     </Text>
   </Panel>
   <Panel colMedium='1-2' colLarge='1-3'>
     <img src='docs/images/placeholder_avatar.svg' width='50' height='50' />
-    <Text textVerticle='middle' type='span'>
+    <Text textVertical='middle' type='span'>
       Lorem ipsum <code>textVerticle='middle'</code>
     </Text>
   </Panel>
   <Panel colMedium='1-2' colLarge='1-3'>
     <img src='docs/images/placeholder_avatar.svg' width='50' height='50' />
-    <Text textVerticle='bottom' type='span'>
+    <Text textVertical='bottom' type='span'>
       Lorem ipsum <code>textVerticle='bottom'</code>
     </Text>
   </Panel>
@@ -652,6 +652,15 @@ var Text = require(react-uikit-text').default;`}
               <td className='uk-text-left'>
                 oneOf<br/>
                 h1, h2, h3, h4, h5, h6
+              </td>
+            </tr>
+            <tr>
+              <td className='uk-text-left'>
+                <code>href</code>
+              </td>
+              <td className='uk-text-left'>
+                string<br/>
+                for a type only.
               </td>
             </tr>
             <tr>
