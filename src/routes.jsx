@@ -71,9 +71,9 @@ const Layout = (props) => (
     </div>
     <Grid >
       <Nav col='1-6' type='side'>
+        <NavItem type='item'><Link to='/base'>UIkit Base</Link></NavItem>
         <NavItem type='item'><Link to='/alert'>Alert</Link></NavItem>
         <NavItem type='item'><Link to='/article'>Article</Link></NavItem>
-        <NavItem type='item'><Link to='/base'>Base</Link></NavItem>
         <NavItem type='item'><Link to='/badge'>Badge</Link></NavItem>
         <NavItem type='item'><Link to='/block'>Block</Link></NavItem>
         <NavItem type='item'><Link to='/button'>Button</Link></NavItem>
@@ -112,7 +112,7 @@ const routes = {
   path: '/docs.html',
   component: Layout,
   childRoutes: [
-    { indexRoute: { component: AlertDoc } },
+    { indexRoute: { component: BaseDoc } },
     { path: '/alert', component        : AlertDoc },
     { path: '/article', component      : ArticleDoc },
     { path: '/base', component         : BaseDoc },
