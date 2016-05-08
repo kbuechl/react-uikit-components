@@ -109,7 +109,7 @@ Layout.propTypes = {
 
 
 const routes = {
-  path: '/docs.html',
+  path: '/',
   component: Layout,
   childRoutes: [
     { indexRoute: { component: BaseDoc } },
