@@ -76,7 +76,7 @@ uikit.base(Component);
           This can be useful for generic containers.
         </p>
 
-      <h3 className='example'>Example</h3>
+      <h3 className='example'>Code</h3>
 
       <Codeblock>
 {`import React from 'react';
@@ -110,7 +110,7 @@ const Col = uikit.element;
       Returns a string of the media size.
     </p>
 
-    <h3 className='example'>Example</h3>
+
 
     <Table striped caption='Responsive media sizes' head={'*'} body={[
       {Media: 'small', Size: 767},
@@ -133,8 +133,6 @@ breakpoints.xlarge; // 1200
       Returns a true or false depending on the window.innerWidth.
     </p>
 
-    <h3 className='example'>Example</h3>
-
     <Table striped caption='Responsive media sizes' head={'*'} body={[
       {Screen: 'small', Size: 'less than 767'},
       {Screen: 'medium', Size: 'More than 768 and less than 960'},
@@ -149,7 +147,7 @@ breakpoints.xlarge; // 1200
     <p>
       Return UIKits 'uk-close' class. If alt is passed as an argument 'uk-close-alt' is returned instead.
     </p>
-    <h3 className='example'>Example</h3>
+    <h3 className='example'>Code</h3>
 
     <Codeblock>
 {`closeClass();    // 'uk-close';
@@ -174,7 +172,7 @@ closeClass(alt); // 'uk-close-alt';
     <p>
       Returns a new array with all falsey values removed.
     </p>
-    <h3 className='example'>Example</h3>
+    <h3 className='example'>Code</h3>
 
 
     <Codeblock>
@@ -200,7 +198,7 @@ const cssClassNames = uikit.helpers.cleanClasses([
       cleanProps take two arguments, props object and array of keys to be removed.
       A new object literal is returned excluding keys that were in the array.
     </p>
-    <h3 className='example'>Example</h3>
+    <h3 className='example'>Code</h3>
 
 
     <Codeblock>
@@ -221,7 +219,6 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
       getClass takes two arguments. The key as a string and an object.
       If the key exists the value is returned, else an empty string is returned.
     </p>
-    <h3 className='example'>Example</h3>
 
     <hr className="uk-article-divider" />
 
@@ -231,7 +228,6 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
       stringToClasses take two arguments. The string of keys and an object. <br />
       A new string is returned containing all the values of the keys that exist in the object.
     </p>
-    <h3 className='example'>Example</h3>
 
     <hr className="uk-article-divider" />
 
@@ -240,7 +236,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
     <p>
       Returns DOM node that matches a data attribute value.
     </p>
-    <h3 className='example'>Example</h3>
+    <h3 className='example'>Code</h3>
 
     <Codeblock>
 {`queryData('myAttr="myid2"');
@@ -255,7 +251,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
     <p>
       Returns all DOM nodes that match a data attribute value.
     </p>
-    <h3 className='example'>Example</h3>
+    <h3 className='example'>Code</h3>
 
     <Codeblock>
 {`queryData('myAttr="myid2"');
@@ -274,7 +270,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
       <p>
         Returns DOM node that matches a data-kitid value.
       </p>
-      <h3 className='example'>Example</h3>
+      <h3 className='example'>Code</h3>
 
     <Codeblock>
 {`getElement('myid1');
@@ -282,7 +278,6 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
 // <div data-kitid="myid1"></div>
 `}
       </Codeblock>
-      <hr className="uk-article-divider" />
     </section>
 
 

@@ -1,3 +1,4 @@
 # Include your project-specific ignores in this file
 node_modules
 components
+docs/scripts
