@@ -1,7 +1,7 @@
 {
-  "name": "react-uikit-panel",
-  "version": "0.1.21",
-  "description": "React uikit panel component for creating layout boxes.",
+  "name": "react-uikit-nav",
+  "version": "1.0.0",
+  "description": "React uikit nav component.",
   "keywords": [
     "javascript",
     "react",
@@ -9,61 +9,64 @@
     "react-component",
     "react-uikit",
     "uikit-react",
-    "panel"
+    "navs"
   ],
-  "repository": "git@github.com:otissv/react-uikit-panel.git",
+  "repository": "git@github.com:otissv/react-uikit-nav.git",
   "author": "Otis Virginie",
   "license": "MIT",
-  "main": "./lib/panel.js",
+  "main": "./lib/nav.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/panel-doc > README.md && date",
+    "docs": "babel-node ./reactToHtml.js ./docs/nav-doc > README.md && date",
     "docs:watch": "watch 'npm run docs' ./docs",
     "build": "babel -d lib/ src/ && date",
-    "build:watch": "watch 'npm run build' ./src && date",
+    "build:watch": "watch 'npm run build' ./src",
     "lint": "eslint --quiet ./src/**   && date || true  && date",
     "lint:watch": "watch 'npm run lint' ./",
-    "prepublish": "babel -d lib/ src/",
-    "test": "babel-node test-runner.js | tap-min  && date || true  && date",
-    "test:spec": "babel-node test-runner.js | tap-difflet  && date || true  && date",
+    "prepublish": "babel -d lib/ src/ && date",
+    "test": "babel-node test-runner.js | tap-min && date || true  && date",
+    "test:spec": "babel-node test-runner.js | tap-difflet && date || true  && date",
     "test:watch": "watch 'npm run test' ./"
   },
   "devDependencies": {
-    "babel-core": "~6.2.1",
-    "babel-eslint": "~4.1.5",
-    "babel-plugin-transform-runtime": "~6.1.18",
-    "babel-preset-es2015": "~6.1.18",
-    "babel-preset-react": "~6.1.18",
-    "babel-preset-stage-0": "~6.1.18",
-    "babel-runtime": "~6.2.0",
-    "blue-tape": "~0.1.10",
-    "cheerio": "~0.19.0",
+    "babel-cli": "~6.8.0",
+    "babel-core": "~6.8.0",
+    "babel-eslint": "~6.0.4",
+    "babel-plugin-transform-runtime": "~6.8.0",
+    "babel-preset-es2015": "~6.6.0",
+    "babel-preset-react": "~6.5.0",
+    "babel-preset-stage-0": "~6.5.0",
+    "babel-runtime": "~6.6.1",
+    "cheerio": "~0.20.0",
     "cuid": "~1.3.8",
-    "eslint": "~1.10.1",
-    "eslint-config-standard": "~4.4.0",
-    "eslint-plugin-react": "~3.11.2",
+    "eslint": "~2.9.0",
+    "eslint-config-standard": "~5.3.0",
+    "eslint-loader": "~1.3.0",
+    "eslint-plugin-react": "~5.0.1",
     "eslint-plugin-smells": "~1.0.1",
-    "eslint-plugin-standard": "~1.3.1",
+    "eslint-plugin-standard": "~1.3.2",
     "faucet": "~0.0.1",
-    "glob": "~6.0.1",
-    "history": "~1.13.1",
-    "react-addons-test-utils": "~0.14.3",
+    "glob": "~7.0.3",
+    "history": "~2.1.1",
+    "react-addons-test-utils": "~15.0.2",
+    "react-dom": "~15.0.2",
     "tap-difflet": "~0.4.0",
-    "tap-min": "~1.0.0",
-    "watch": "~0.16.0"
+    "tap-min": "~1.1.0",
+    "tape": "~4.5.1",
+    "watch": "~0.18.0"
   },
   "dependencies": {
-    "react": "~0.14.3",
-    "react-uikit-base": "~0.1.1",
+    "react": "~15.0.2",
+    "react-uikit-base": "~1.0.0",
     "ufunc": "~0.2.1"
   },
   "babel": {
     "presets": [
       "es2015",
       "react",
-      "stage-0"
+      "stage-2"
     ]
   },
   "engines": {
-    "node": "~4.2.3"
+    "node": "~4.4.3"
   }
 }
