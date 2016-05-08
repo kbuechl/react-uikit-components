@@ -45,8 +45,6 @@ var uikit = require;('react-uikit-base').default;
           The new component will have all the utility props avaliable to it.
         </p>
 
-      <h3 className='example'>Example</h3>
-
       <h3 className='code'>Code</h3>
       <Codeblock>
 {`import React from 'react';
