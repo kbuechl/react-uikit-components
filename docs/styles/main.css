@@ -116,3 +116,7 @@ html, body {
 .doc-header h1 {
   color: #fff;
 }
+
+.confirm-dialog {
+  backface-visibility: hidden
+}
