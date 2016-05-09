@@ -117,7 +117,7 @@ var ImgGallery = require('react-uikit-img-gallery').default;
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>items</code>
+              items
             </td>
             <td className='uk-text-left'>
               array of objects.<br/>

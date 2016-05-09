@@ -213,13 +213,13 @@ tempor incididunt ut labore et dolore magna aliqua.
         <tbody>
           <tr >
             <td className='uk-text-left'>
-              <code>close</code>
+              close
             </td>
             <td className='uk-text-left'>func</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>context</code>
+              context
             </td>
             <td className='uk-text-left'>
               oneOf <br />
@@ -228,13 +228,13 @@ tempor incididunt ut labore et dolore magna aliqua.
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>large</code>
+              large
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>show</code>
+              show
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>

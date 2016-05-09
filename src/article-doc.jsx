@@ -136,25 +136,25 @@ var Article = require('react-uikit-article').default;
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>lead</code>
+              lead
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>meta</code>
+              meta
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>onClose</code>
+              onClose
             </td>
             <td className='uk-text-left'>func</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>title</code>
+              title
             </td>
             <td className='uk-text-left'>string</td>
           </tr>

@@ -381,26 +381,26 @@ var Block = require('react-uikit-block').default;`}
         <tbody>
           <tr>
             <td>
-              <code>context</code>
+              context
             </td>
             <td>enums</td>
           </tr>
           <tr>
             <td>
-              <code>container</code>
+              container
             </td>
             <td colSpan='2'>oneOf <br />
             default, muted, primary, secondary</td>
           </tr>
           <tr>
             <td>
-              <code>contrast</code>
+              contrast
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>large</code>
+              large
             </td>
             <td>bool</td>
           </tr>

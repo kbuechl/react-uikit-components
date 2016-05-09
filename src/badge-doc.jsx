@@ -120,25 +120,25 @@ var Badge = require;('react-uikit-badge').default;`}
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>context</code>
+              context
             </td>
             <td className='uk-text-left'>oneOf <br />success, warning, danger</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>block</code>
+              block
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>body</code>
+              body
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>notification</code>
+              notification
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>

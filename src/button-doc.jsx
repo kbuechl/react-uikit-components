@@ -212,37 +212,37 @@ var Button = require('react-uikit-button').default;`}
         <tbody>
           <tr>
             <td>
-              <code>body</code>
+              body
             </td>
             <td>string</td>
           </tr>
           <tr>
             <td>
-              <code>block</code>
+              block
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>context</code>
+              context
             </td>
             <td>oneOf <br /> primary, success, danger or link</td>
           </tr>
           <tr>
             <td>
-              <code>disabled</code>
+              disabled
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>size</code>
+              size
             </td>
             <td>oneOf <br /> mini small or large</td>
           </tr>
           <tr>
             <td>
-              <code>type</code>
+              type
             </td>
             <td>oneOf <br /> button close or link</td>
           </tr>

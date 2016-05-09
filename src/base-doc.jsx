@@ -111,7 +111,6 @@ const Col = uikit.element;
     </p>
 
 
-
     <Table striped caption='Responsive media sizes' head={'*'} body={[
       {Media: 'small', Size: 767},
       {Media: 'medium', Size: 768},
@@ -278,6 +277,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
 // <div data-kitid="myid1"></div>
 `}
       </Codeblock>
+
     </section>
 
 
@@ -295,35 +295,35 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>align</code>
+              align
             </td>
             <td className='uk-text-left'>oneOf<br /> left, right, center, middleLeft or middleRight</td>
             <td className='uk-text-left'>Aligns elements with spacing between the text and the element.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>children</code>
+              children
             </td>
             <td className='uk-text-left'>any</td>
             <td className='uk-text-left'>Children elements.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>className</code>
+              className
             </td>
             <td className='uk-text-left'>string</td>
             <td className='uk-text-left'>CSS class names.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>borderRadius</code>
+              borderRadius
             </td>
             <td className='uk-text-left'>oneOf<br /> rounded or circle</td>
             <td className='uk-text-left'>Add rounded corners to an element.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>clear</code>
+              clear
             </td>
             <td className='uk-text-left'>oneOf<br />
             fix,
@@ -333,14 +333,14 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>center</code>
+              center
             </td>
             <td className='uk-text-left'>bool</td>
             <td className='uk-text-left'>Center a container. For any other block element, you additionally need to apply a width.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>col</code>
+              col
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -356,7 +356,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>colsSmall</code>
+              colsSmall
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -372,7 +372,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>colsMedium</code>
+              colsMedium
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -388,7 +388,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>colsLarge</code>
+              colsLarge
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -404,14 +404,14 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>contrast</code>
+              contrast
             </td>
             <td className='uk-text-left'>bool</td>
             <td className='uk-text-left'>Changes the color of the element.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>display</code>
+              display
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -423,7 +423,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>float</code>
+              float
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -433,7 +433,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>hidden</code>
+              hidden
             </td>
             <td className='uk-text-left'>
               string<br />
@@ -449,21 +449,21 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>kitid</code>
+              kitid
             </td>
             <td className='uk-text-left'>string</td>
             <td className='uk-text-left'>Adds a data attribute to be used as an identifier.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>list</code>
+              list
             </td>
             <td className='uk-text-left'>bool</td>
             <td className='uk-text-left'>Wraps the component inside of a li element.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>margin</code>
+              margin
             </td>
             <td className='uk-text-left'>
               string<br />
@@ -487,7 +487,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>order</code>
+              order
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -506,7 +506,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>padding</code>
+              padding
             </td>
             <td className='uk-text-left'>
               string<br />
@@ -531,7 +531,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>position</code>
+              position
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -549,7 +549,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>responsive</code>
+              responsive
             </td>
             <td className='uk-text-left'>
               string<br />
@@ -559,7 +559,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>scroll</code>
+              scroll
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -571,7 +571,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>textAlign</code>
+              textAlign
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -588,7 +588,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>textVertical</code>
+              textVertical
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -600,7 +600,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>textWrap</code>
+              textWrap
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -612,7 +612,7 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>vertical</code>
+              vertical
             </td>
             <td className='uk-text-left'>
               parent,
@@ -623,14 +623,14 @@ return <div {...cleanProps(ignoreProps)(props)}></div>;
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>viewport</code>
+              viewport
             </td>
             <td className='uk-text-left'>bool</td>
             <td className='uk-text-left'>Fills the height of the entire viewport.</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>visible</code>
+              visible
             </td>
             <td className='uk-text-left'>
               string<br />

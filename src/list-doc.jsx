@@ -431,31 +431,31 @@ class ListDoc extends React.Component {
           <tbody>
             <tr>
               <td className='uk-text-left'>
-                <code>badge</code>
+                badge
               </td>
               <td className='uk-text-left'>object</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>body</code>
+                body
               </td>
               <td className='uk-text-left'>string</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>href</code>
+                href
               </td>
               <td className='uk-text-left'>string</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>onClick</code>
+                onClick
               </td>
               <td className='uk-text-left'>func</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>onSelect</code>
+                onSelect
               </td>
               <td className='uk-text-left'>func</td>
             </tr>

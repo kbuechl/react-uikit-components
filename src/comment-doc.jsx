@@ -163,31 +163,31 @@ var Comment = require('react-uikit-comment').default;`}
         <tbody>
           <tr>
             <td>
-              <code>avatar</code>
+              avatar
             </td>
             <td>object<br /> {`{src, alt }`}</td>
           </tr>
           <tr>
             <td>
-              <code>body</code>
+              body
             </td>
             <td>string</td>
           </tr>
           <tr>
             <td>
-              <code>meta</code>
+              meta
             </td>
             <td>any</td>
           </tr>
           <tr>
             <td>
-              <code>primary</code>
+              primary
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>title</code>
+              title
             </td>
             <td>string</td>
           </tr>

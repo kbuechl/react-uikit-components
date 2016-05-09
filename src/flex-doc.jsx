@@ -399,60 +399,60 @@ var Flex = require('react-uikit-flex').default;`}
         <tbody>
           <tr>
             <td>
-              <code>around</code>
+              around
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>center</code>
+              center
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>bottom</code>
+              bottom
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>between</code>
+              between
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>direction</code>
+              direction
             </td>
             <td>oneOf<br />rowRevers, column or columnReverse</td>
           </tr>
           <tr>
             <td>
-              <code>grid</code>
+              grid
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>middle</code>
+              middle
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>right</code>
+              right
             </td>
             <td>bool</td>
           </tr>
           <tr>
             <td>
-              <code>row</code>
+              row
             </td>
             <td>string<br />wrap, bottom, middle, top, between, around, reverse and nowrap</td>
           </tr><tr>
             <td>
-              <code>top</code>
+              top
             </td>
             <td>bool</td>
           </tr>

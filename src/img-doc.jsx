@@ -165,56 +165,56 @@ var Img = require('react-uikit-img').default;
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>alt</code>
+              alt
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>cover</code>
+              cover
             </td>
             <td colSpan='2'>Bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>height</code>
+              height
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>large</code>
+              large
             </td>
             <td className='uk-text-left'>object<br />{`{width, height, src}`}</td>
             <td className='uk-text-left'></td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>medium</code>
+              medium
             </td>
             <td className='uk-text-left'>object<br />{`{width, height, src}`}</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>small</code>
+              small
             </td>
             <td className='uk-text-left'>object<br />{`{width, height, src}`}</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>src</code>
+              src
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>width</code>
+              width
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>xlarge</code>
+              xlarge
             </td>
             <td className='uk-text-left'>object<br />{`{width, height, src}`}</td>
           </tr>

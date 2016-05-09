@@ -418,31 +418,31 @@ const TableDoc = (props) => (
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>body</code>
+              body
             </td>
             <td className='uk-text-left'>array</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>caption</code>
+              caption
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>condensed</code>
+              condensed
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>hover</code>
+              hover
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>head</code>
+              head
             </td>
             <td className='uk-text-left'>
               oneOfType<br />
@@ -451,7 +451,7 @@ const TableDoc = (props) => (
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>numbered</code>numbered
+              numbered
             </td>
             <td className='uk-text-left'>
               oneOfType<br />
@@ -460,13 +460,13 @@ const TableDoc = (props) => (
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>overflow</code>
+              overflow
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>sort</code>
+              sort
             </td>
             <td className='uk-text-left'>
               oneOfType<br />
@@ -475,7 +475,7 @@ const TableDoc = (props) => (
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>striped</code>
+              striped
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>

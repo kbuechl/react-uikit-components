@@ -368,7 +368,7 @@ export default class NavDoc extends React.Component {
           <tbody>
             <tr>
               <td className='uk-text-left'>
-                <code></code>
+      
               </td>
               <td className='uk-text-left'></td>
               <td className='uk-text-left'></td>

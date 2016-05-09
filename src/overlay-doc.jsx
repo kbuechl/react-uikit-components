@@ -219,7 +219,7 @@ var Overlay = require('react-uikit-overlay').default;`}
 
 
       <section>
-        <h2>Img Props</h2>
+        <h2>Overlay Props</h2>
         <p>
           See base component for additional utility props.
         </p>
@@ -234,81 +234,75 @@ var Overlay = require('react-uikit-overlay').default;`}
           <tbody>
             <tr>
               <td className='uk-text-left'>
-                <code>alt</code>
+                alt
               </td>
               <td className='uk-text-left'>string</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>background</code>
+                background
               </td>
               <td colSpan='2'>bool</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>flex</code>
+                flex
               </td>
               <td colSpan='2'>bool</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>height</code>
+                height
               </td>
               <td className='uk-text-left'>string</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>icon</code>
+                icon
               </td>
               <td colSpan='2'>bool</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>images</code>
+                image
               </td>
               <td colSpan='2'>string</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>large</code>
+                large
               </td>
-              <td className='uk-text-left'>Obj</td>
-              <td className='uk-text-left'>{`{width: "", height: "", src=""}`}</td>
+              <td className='uk-text-left'>Obj<br /> {`{width, height, url}`}</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>medium</code>
+                medium
               </td>
-              <td className='uk-text-left'>Obj</td>
-              <td className='uk-text-left'>{`{width: "", height: "", src=""}`}</td>
+              <td className='uk-text-left'>object<br /> {`{width, height, url}`}</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>small</code>
+                small
               </td>
-              <td className='uk-text-left'>Obj</td>
-              <td className='uk-text-left'>{`{width: "", height: "", src=""}`}</td>
+              <td className='uk-text-left'>object<br /> {`{width, height, url}`}</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>src</code>
+                src
               </td>
-              <td className='uk-text-left'>String</td>
-              <td className='uk-text-left'>url</td>
+              <td className='uk-text-left'>string</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>width</code>
+                width
               </td>
-              <td className='uk-text-left'>String</td>
-              <td className='uk-text-left'>Any</td>
+              <td className='uk-text-left'>Sstring</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>xlarge</code>
+                xlarge
               </td>
-              <td className='uk-text-left'>Obj</td>
-              <td className='uk-text-left'>&#123;width: "",height: "", src="url"}`}</td>
+              <td className='uk-text-left'>object<br /> {`{width, height, url}`}</td>
             </tr>
           </tbody>
         </Table>

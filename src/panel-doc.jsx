@@ -542,61 +542,61 @@ var Panel = require('react-uikit-panel').default;`}
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>badge</code>
+              badge
             </td>
-            <td className='uk-text-left'>string or object {`{body , context}`}</td>
+            <td className='uk-text-left'>string or object <br />{`{body , context}`}</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>box</code>
+              box
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>context</code>
+              context
             </td>
             <td className='uk-text-left'>oneOf<br /> primary or secondary</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>header</code>
+              header
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>hover</code>
+              hover
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>icon</code>
+              icon
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>link</code>
+              link
             </td>
             <td className='uk-text-left'>string</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>space</code>
+              space
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>teaser</code>
+              teaser
             </td>
-            <td className='uk-text-left'>object {`{src, alt}`}</td>
+            <td className='uk-text-left'>object<br /> {`{src, alt}`}</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>type</code>
+              type
             </td>
             <td className='uk-text-left'>oneOf<br />block (default) or link</td>
           </tr>

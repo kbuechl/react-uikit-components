@@ -158,7 +158,7 @@ Caption <code>figure</code>
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>height</code>
+              height
             </td>
             <td className='uk-text-left'>
               string
@@ -166,7 +166,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>img</code>
+              img
             </td>
             <td className='uk-text-left'>
               object<br />See Img component props.
@@ -174,7 +174,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>medium</code>
+              medium
             </td>
             <td className='uk-text-left'>
               object<br />See Img component props.
@@ -182,7 +182,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>large</code>
+              large
             </td>
             <td className='uk-text-left'>
               object<br />See Img component props.
@@ -190,7 +190,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>small</code>
+              small
             </td>
             <td className='uk-text-left'>
               object<br />See Img component props.
@@ -198,7 +198,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>src</code>
+              src
             </td>
             <td className='uk-text-left'>
               string<br />
@@ -206,7 +206,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>size</code>
+              size
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -215,7 +215,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>type</code>
+              type
             </td>
             <td className='uk-text-left'>
               oneOf<br />
@@ -225,7 +225,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>width</code>
+              width
             </td>
             <td className='uk-text-left'>
               string
@@ -233,7 +233,7 @@ Caption <code>figure</code>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>xlarge</code>
+              xlarge
             </td>
             <td className='uk-text-left'>
               object<br />See Img component props.

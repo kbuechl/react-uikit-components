@@ -632,13 +632,13 @@ var Text = require(react-uikit-text').default;`}
           <tbody>
             <tr>
               <td className='uk-text-left'>
-                <code>bold</code>
+                bold
               </td>
               <td className='uk-text-left'>bool</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>context</code>
+                context
               </td>
               <td className='uk-text-left'>
                 oneOf<br/>
@@ -647,7 +647,7 @@ var Text = require(react-uikit-text').default;`}
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>heading</code>
+                heading
               </td>
               <td className='uk-text-left'>
                 oneOf<br/>
@@ -656,7 +656,7 @@ var Text = require(react-uikit-text').default;`}
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>href</code>
+                href
               </td>
               <td className='uk-text-left'>
                 string<br/>
@@ -665,13 +665,13 @@ var Text = require(react-uikit-text').default;`}
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>size</code>
+                size
               </td>
               <td className='uk-text-left'>oneOf<br /> small or large</td>
             </tr>
             <tr>
               <td className='uk-text-left'>
-                <code>type</code>
+                type
               </td>
               <td className='uk-text-left'>oneOf<br/>
               a abbr, code, del, dfn, em, h1, h2, h3, h4, h5, h6, hr,

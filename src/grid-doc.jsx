@@ -582,61 +582,61 @@ var Grid = require('react-uikit-grid').default;`}
         <tbody>
           <tr>
             <td className='uk-text-left'>
-              <code>divider</code>
+              divider
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>gutter</code>
+              gutter
             </td>
             <td className='uk-text-left'>oneOf<br />small, medium or collapse</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>indent</code>
+              indent
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>large</code>
+              large
             </td>
             <td className='uk-text-left'>oneOf<br /> col values</td>
         </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>match</code>
+              match
             </td>
             <td className='uk-text-left'>bool</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>medium</code>
+              medium
             </td>
             <td className='uk-text-left'>oneOf<br />col values</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>small</code>
+              small
             </td>
             <td className='uk-text-left'>oneOf<br />col values</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>type</code>
+              type
             </td>
             <td className='uk-text-left'>oneOf <br />block or list</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>widths</code>
+              widths
             </td>
             <td className='uk-text-left'>oneOf<br /> col values</td>
           </tr>
           <tr>
             <td className='uk-text-left'>
-              <code>xlarge</code>
+              xlarge
             </td>
             <td className='uk-text-left'>oneOf<br /> col values</td>
           </tr>
