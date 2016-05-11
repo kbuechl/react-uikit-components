@@ -30,6 +30,7 @@ import NavDoc from './nav-doc.jsx';
 import NoteDoc from './note-doc.jsx';
 import OverlayDoc from './overlay-doc.jsx';
 import PanelDoc from './panel-doc.jsx';
+import PlaceholderDoc from './placeholder-doc.jsx';
 import TableDoc from './table-doc.jsx';
 import TextDoc from './text-doc.jsx';
 import ThumbnailDoc from './thumbnail-doc.jsx';
@@ -93,6 +94,7 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
         <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
         <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
+        <NavItem type='item'><Link to='/placeholder'>Placeholder</Link></NavItem>
         <NavItem type='item'><Link to='/table'>Table</Link></NavItem>
         <NavItem type='item'><Link to='/text'>Text</Link></NavItem>
         <NavItem type='item'><Link to='/thumbnail'>Thumbnail</Link></NavItem>
@@ -135,6 +137,7 @@ const routes = {
     { path: '/note', component         : NoteDoc },
     { path: '/overlay', component      : OverlayDoc },
     { path: '/panel', component        : PanelDoc },
+    { path: '/placeholder', component  : PlaceholderDoc },
     { path: '/table', component        : TableDoc },
     { path: '/text', component         : TextDoc },
     { path: '/thumbnail', component    : ThumbnailDoc }

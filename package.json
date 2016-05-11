@@ -88,6 +88,7 @@
     "react-uikit-note": "latest",
     "react-uikit-overlay": "latest",
     "react-uikit-panel": "latest",
+    "react-uikit-placeholder": "~1.0.0",
     "react-uikit-table": "latest",
     "react-uikit-text": "latest",
     "react-uikit-thumbnail": "latest",
