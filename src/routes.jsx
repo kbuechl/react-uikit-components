@@ -21,7 +21,7 @@ import CommentListDoc from './comment-list-doc.jsx';
 import DropdownDoc from './dropdown-doc.jsx';
 import FlexDoc from './flex-doc.jsx';
 import GridDoc from './grid-doc.jsx';
-import IconDoc from './icon-doc.jsx';
+import IconsDoc from './icons-doc.jsx';
 import ImgDoc from './img-doc.jsx';
 import ImgGalleryDoc from './img-gallery-doc.jsx';
 import ListDoc from './list-doc.jsx';
@@ -126,7 +126,7 @@ const routes = {
     { path: '/dropdown', component     : DropdownDoc },
     { path: '/flex', component         : FlexDoc },
     { path: '/grid', component         : GridDoc },
-    { path: '/icons', component         : IconDoc },
+    { path: '/icons', component        : IconsDoc },
     { path: '/img',  component         : ImgDoc },
     { path: '/img-gallery', component  : ImgGalleryDoc },
     { path: '/list', component         : ListDoc },
