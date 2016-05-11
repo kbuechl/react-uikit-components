@@ -41,7 +41,6 @@ Breadcrumb.propTypes = {
   classes   : React.PropTypes.array,
   items     : React.PropTypes.array,
   kitid     : React.PropTypes.string,
-  parent    : React.PropTypes.bool,
   type      : React.PropTypes.oneOf(['dropdown', 'offcanvas', 'side', 'sub', 'thumbnail'])
 };
 

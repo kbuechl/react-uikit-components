@@ -4,7 +4,7 @@ import React from 'react';
 import uikit from 'react-uikit-base';
 
 
-const NavItem = (props) => {
+const BreadcrumbItem = (props) => {
   const ignoreProps = ['href', 'label', 'type'];
   const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
@@ -59,19 +59,15 @@ const NavItem = (props) => {
 };
 
 
-NavItem.propTypes = {
-  active    : React.PropTypes.bool,
+BreadcrumbItem.propTypes = {
+  body      : React.PropTypes.string,
   children  : React.PropTypes.any,
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
-  divder    : React.PropTypes.bool,
-  header    : React.PropTypes.bool,
   href      : React.PropTypes.string,
   kitid     : React.PropTypes.string,
-  label     : React.PropTypes.string,
-  parent    : React.PropTypes.bool,
   type      : React.PropTypes.oneOf([ 'active',  'link', 'disabled' ])
 };
 
 
-export default uikit.base(NavItem);
+export default uikit.base(BreadcrumbItem);
