@@ -53,7 +53,7 @@ Nav.propTypes = {
   items     : React.PropTypes.array,
   kitid     : React.PropTypes.string,
   parent    : React.PropTypes.bool,
-  type      : React.PropTypes.oneOf(['bar', 'dropdown', 'offcanvas', 'side', 'sub', 'thumbnail'])
+  type      : React.PropTypes.oneOf(['dropdown', 'offcanvas', 'side', 'sub', 'thumbnail'])
 };
 
 

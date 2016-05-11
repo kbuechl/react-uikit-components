@@ -7,9 +7,12 @@ import uikit from 'react-uikit-base';
 const NavItem = (props) => {
   // CSS classes
   let type = {
-    divder: 'uk-nav-divder',
+    divider: 'uk-nav-divider',
     header: 'uk-nav-header'
   };
+
+  const ignoreProps = ['href', 'label', 'type'];
+  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
   const cssClassNames = uikit.helpers.cleanClasses([
     props.classes,
@@ -33,14 +36,14 @@ const NavItem = (props) => {
 
   const component = {
     divider: <li
-      {...props}
+      {...cleanProps}
       className={cssClassNames}
       data-kitid={props.kitid}
     >
     </li>,
 
     header: <li
-      {...props}
+      {...cleanProps}
       className={cssClassNames}
       data-kitid={props.kitid}
     >
@@ -48,7 +51,7 @@ const NavItem = (props) => {
     </li>,
 
     link: <li
-      {...props}
+      {...cleanProps}
       className={cssClassNames}
       data-kitid={props.kitid}
     >
@@ -57,7 +60,7 @@ const NavItem = (props) => {
     </li>,
 
     item: <li
-      {...props}
+      {...cleanProps}
       className={cssClassNames}
       data-kitid={props.kitid}
     >

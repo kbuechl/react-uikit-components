@@ -29,14 +29,14 @@ test('nav Component', nested => {
 
       const expect = htmlToString(`
         <ul class="uk-nav  uk-nav-side" data-kitid="nav">
-          <li type="header" label="Header" class="uk-nav-header" data-kitid="n1">Header</li>
-          <li label="Active" href="#" class="uk-active" data-kitid="n2"><a href="#">Active</a></li>
-          <li label="Item" href="#" data-kitid="n3"><a href="#">Item</a></li>
-          <li label="Item" href="#" data-kitid="n4"><a href="#">Item<div>Subtitle</div></a></li>
-          <li label="Item" href="#" data-kitid="n5"><a href="#">Item</a></li>
-          <li type="divider" data-kitid="n6"></li>
-          <li label="Item" href="#" data-kitid="n7"><a href="#">Item</a></li>
-          <li type="link" label="Item" href="#" data-kitid="n8"><a href="#">Item</a></li>
+          <li class="uk-nav-header" data-kitid="n1">Header</li>
+          <li class="uk-active" data-kitid="n2"><a href="#">Active</a></li>
+          <li data-kitid="n3"><a href="#">Item</a></li>
+          <li data-kitid="n4"><a href="#">Item<div>Subtitle</div></a></li>
+          <li data-kitid="n5"><a href="#">Item</a></li>
+          <li class="uk-nav-divider" data-kitid="n6"></li>
+          <li data-kitid="n7"><a href="#">Item</a></li>
+          <li data-kitid="n8"><a href="#">Item</a></li>
         </ul>
       `);
 
@@ -75,15 +75,15 @@ test('nav Component', nested => {
 
       const expect = htmlToString(`
         <ul class="uk-nav  uk-nav-side uk-nav-parent-icon" data-kitid="nav">
-          <li label="Active" href="#" class="uk-active" data-kitid="n1"><a href="#">Active</a></li>
-          <li label="Item" href="#" class="uk-parent" data-kitid="n2">
+          <li class="uk-active" data-kitid="n1"><a href="#">Active</a></li>
+          <li class="uk-parent" data-kitid="n2">
             <a href="#">Item</a>
             <ul class="uk-nav  uk-nav-sub" data-kitid="sub">
-              <li label="Sub item" href="#" data-kitid="n2a"><a href="#">Sub item</a></li>
-              <li label="Sub item" href="#" data-kitid="n2b"><a href="#">Sub item</a></li>
+              <li data-kitid="n2a"><a href="#">Sub item</a></li>
+              <li data-kitid="n2b"><a href="#">Sub item</a></li>
             </ul>
           </li>
-          <li label="Item" href="#" data-kitid="n3"><a href="#">Item</a></li>
+          <li data-kitid="n3"><a href="#">Item</a></li>
         </ul>
       `);
 
@@ -120,9 +120,9 @@ test('nav Component', nested => {
 
       const expect = htmlToString(`
         <ul class="uk-nav  uk-nav-side" data-kitid="nav">
-          <li label="Home" href="#" class="uk-active" data-kitid="n1"><a href="#">Home</a></li>
-          <li href="#" data-kitid="n2"><a href="#"><div>Subtitle</div></a></li>
-          <li label="About" href="#" data-kitid="n3"><a href="#">About</a></li>
+          <li class="uk-active" data-kitid="n1"><a href="#">Home</a></li>
+          <li data-kitid="n2"><a href="#"><div>Subtitle</div></a></li>
+          <li data-kitid="n3"><a href="#">About</a></li>
         </ul>
       `);
 
@@ -152,15 +152,15 @@ test('nav Component', nested => {
 
         const expect = htmlToString(`
           <ul class="uk-nav  uk-nav-side uk-nav-parent-icon" data-kitid="nav">
-            <li label="Active" href="#" class="uk-active" data-kitid="p1"><a href="#">Active</a></li>
-            <li label="Item" href="#" class="uk-parent" data-kitid="p22">
+            <li class="uk-active" data-kitid="p1"><a href="#">Active</a></li>
+            <li class="uk-parent" data-kitid="p22">
               <a href="#">Item</a>
               <ul class="uk-nav  uk-nav-sub" data-kitid="sub">
-                <li label="Sub item" href="#" data-kitid="s1"><a href="#">Sub item</a></li>
-                <li label="Sub item" href="#" data-kitid="s2"><a href="#">Sub item</a></li>
+                <li data-kitid="s1"><a href="#">Sub item</a></li>
+                <li data-kitid="s2"><a href="#">Sub item</a></li>
               </ul>
             </li>
-            <li label="Item" href="#" data-kitid="p3"><a href="#">Item</a></li>
+            <li data-kitid="p3"><a href="#">Item</a></li>
           </ul>
         `);
 
