@@ -34,12 +34,15 @@ The master branch for each component has been updated to React 15. To use with R
   <li><a href='https://github.com/otissv/react-uikit-dropdown'>Dropdown</a></li>
   <li><a href='https://github.com/otissv/react-uikit-flex'>Flex</a></li>
   <li><a href='https://github.com/otissv/react-uikit-grid'>Grid</a></li>
+  <li><a href='https://github.com/otissv/react-uikit-icons'>Icons</a></li>
   <li><a href='https://github.com/otissv/react-uikit-img'>Img</a></li>
   <li><a href='https://github.com/otissv/react-uikit-img-gallery'>Img Gallery</a></li>
   <li><a href='https://github.com/otissv/react-uikit-list'>List</a></li>
   <li><a href='https://github.com/otissv/react-uikit-modal'>Modal</a></li>
+  <li><a href='https://github.com/otissv/react-uikit-nav'>Nav</a></li>
   <li><a href='https://github.com/otissv/react-uikit-note'>Note</a></li>
   <li><a href='https://github.com/otissv/react-uikit-overlay'>Overlay</a> </li>
+  <li><a href='https://github.com/otissv/react-uikit-placeholder'>Placeholder</a></li>
   <li><a href='https://github.com/otissv/react-uikit-panel'>Panel</a></li>
   <li><a href='https://github.com/otissv/react-uikit-table'>Table</a></li>
   <li><a href='https://github.com/otissv/react-uikit-text'>Text</a></li>

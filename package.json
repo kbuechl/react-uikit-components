@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React UIkit components for UIkit CSS framework.",
   "keywords": [
     "javascript",
@@ -20,6 +20,7 @@
     "watch": "webpack --watch",
     "build": "webpack --config ./webpack.config-build.js --progress",
     "lint": "eslint --quiet ./src/**  && date || true && date",
+    "prepublish": "npm run build",
     "lint:watch": "watch 'npm run lint' ./"
   },
   "devDependencies": {
