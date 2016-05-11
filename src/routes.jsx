@@ -21,6 +21,7 @@ import CommentListDoc from './comment-list-doc.jsx';
 import DropdownDoc from './dropdown-doc.jsx';
 import FlexDoc from './flex-doc.jsx';
 import GridDoc from './grid-doc.jsx';
+import IconDoc from './icon-doc.jsx';
 import ImgDoc from './img-doc.jsx';
 import ImgGalleryDoc from './img-gallery-doc.jsx';
 import ListDoc from './list-doc.jsx';
@@ -82,6 +83,7 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/dropdown'>Dropdown</Link></NavItem>
         <NavItem type='item'><Link to='/flex'>Flex</Link></NavItem>
         <NavItem type='item'><Link to='/grid'>Grid</Link></NavItem>
+        <NavItem type='item'><Link to='/icon'>Icon</Link></NavItem>
         <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
         <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
         <NavItem type='item'><Link to='/list'>List</Link></NavItem>
@@ -122,7 +124,8 @@ const routes = {
     { path: '/dropdown', component     : DropdownDoc },
     { path: '/flex', component         : FlexDoc },
     { path: '/grid', component         : GridDoc },
-    { path: '/img', component          : ImgDoc },
+    { path: '/icon', component         : IconDoc },
+    { path: '/img',  component         : ImgDoc },
     { path: '/img-gallery', component  : ImgGalleryDoc },
     { path: '/list', component         : ListDoc },
     { path: '/modal', component        : ModalDoc },
