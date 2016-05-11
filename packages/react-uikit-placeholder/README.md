@@ -1,4 +1,4 @@
-#React UIkit Placeholder - Development branch
+#React UIkit Placeholder
 
 Create a placeholder space that can be used for uploading files via drag and drop.
 
