@@ -5,8 +5,8 @@ import React from 'react';
 import velocity from 'velocity-animate';
 import Codeblock from 'react-uikit-codeblock';
 import Grid from 'react-uikit-grid';
-import Nav from '../components/react-uikit-nav';
-import NavItem from '../components/react-uikit-nav/lib/nav-item';
+import Nav from 'react-uikit-nav';
+import NavItem from 'react-uikit-nav/lib/nav-item';
 import Table from 'react-uikit-table';
 
 import Droppdown from 'react-uikit-dropdown';

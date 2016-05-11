@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-components",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "React UIkit components for UIkit CSS framework.",
   "keywords": [
     "javascript",
@@ -85,6 +85,7 @@
     "react-uikit-img-gallery": "latest",
     "react-uikit-list": "latest",
     "react-uikit-modal": "^1.0.0",
+    "react-uikit-nav": "^1.0.0",
     "react-uikit-note": "latest",
     "react-uikit-overlay": "latest",
     "react-uikit-panel": "latest",
