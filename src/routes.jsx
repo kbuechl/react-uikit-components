@@ -13,6 +13,7 @@ import ArticleDoc from './article-doc.jsx';
 import BadgeDoc from './badge-doc.jsx';
 import BaseDoc from './base-doc.jsx';
 import BlockDoc from './block-doc.jsx';
+import BreadcrumbDoc from './breadcrumb-doc.jsx';
 import ButtonDoc from './button-doc.jsx';
 import ButtonGroupDoc from './button-group-doc.jsx';
 import CodeblockDoc from './codeblock-doc.jsx';
@@ -72,32 +73,47 @@ const Layout = (props) => (
     </div>
     <Grid >
       <Nav col='1-6' type='side'>
+        <NavItem type='header' label='DEFAULTS'/>
         <NavItem type='item'><Link to='/base'>UIkit Base</Link></NavItem>
-        <NavItem type='item'><Link to='/alert'>Alert</Link></NavItem>
-        <NavItem type='item'><Link to='/article'>Article</Link></NavItem>
-        <NavItem type='item'><Link to='/badge'>Badge</Link></NavItem>
+
+        <NavItem type='header' label='LAYOUT'/>
+        <NavItem type='item'><Link to='/grid'>Grid</Link></NavItem>
+        <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
         <NavItem type='item'><Link to='/block'>Block</Link></NavItem>
-        <NavItem type='item'><Link to='/button'>Button</Link></NavItem>
-        <NavItem type='item'><Link to='/button-group'>Button group</Link></NavItem>
-        <NavItem type='item'><Link to='/codeblock'>Codeblock</Link></NavItem>
+        <NavItem type='item'><Link to='/article'>Article</Link></NavItem>
         <NavItem type='item'><Link to='/comment'>Comment</Link></NavItem>
         <NavItem type='item'><Link to='/comment-list'>Comment list</Link></NavItem>
-        <NavItem type='item'><Link to='/dropdown'>Dropdown</Link></NavItem>
         <NavItem type='item'><Link to='/flex'>Flex</Link></NavItem>
-        <NavItem type='item'><Link to='/grid'>Grid</Link></NavItem>
-        <NavItem type='item'><Link to='/icons'>Icons</Link></NavItem>
-        <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
+        <NavItem type='item'><Link to='/codeblock'>Codeblock</Link></NavItem>
         <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
-        <NavItem type='item'><Link to='/list'>List</Link></NavItem>
-        <NavItem type='item'><Link to='/modal'>Modal</Link></NavItem>
+
+        <NavItem type='header' label='NAVIGATIONS'/>
         <NavItem type='item'><Link to='/nav'>Nav</Link></NavItem>
-        <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
-        <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
-        <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
-        <NavItem type='item'><Link to='/placeholder'>Placeholder</Link></NavItem>
+        <NavItem type='item'><Link to='/breadcrumb'>Breadcrumb</Link></NavItem>
+
+        <NavItem type='header' label='ELEMENTS'/>
+        <NavItem type='item'><Link to='/list'>List</Link></NavItem>
         <NavItem type='item'><Link to='/table'>Table</Link></NavItem>
-        <NavItem type='item'><Link to='/text'>Text</Link></NavItem>
+
+        <NavItem type='header' label='COMMON'/>
+        <NavItem type='item'><Link to='/button'>Button</Link></NavItem>
+        <NavItem type='item'><Link to='/button-group'>Button group</Link></NavItem>
+        <NavItem type='item'><Link to='/icons'>Icons</Link></NavItem>
+        <NavItem type='item'><Link to='/badge'>Badge</Link></NavItem>
+        <NavItem type='item'><Link to='/alert'>Alert</Link></NavItem>
         <NavItem type='item'><Link to='/thumbnail'>Thumbnail</Link></NavItem>
+        <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
+        <NavItem type='item'><Link to='/text'>Text</Link></NavItem>
+        <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
+        <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
+
+        <NavItem type='header' label='OTHER'/>
+        <NavItem type='item'><Link to='/dropdown'>Dropdown</Link></NavItem>
+        <NavItem type='item'><Link to='/modal'>Modal</Link></NavItem>
+
+        <NavItem type='header' label='COMPONENTS'/>
+        <NavItem type='item'><Link to='/placeholder'>Placeholder</Link></NavItem>
+
       </Nav>
 
       <Content col='5-6' margin='right'>{props.children}</Content>
@@ -120,6 +136,7 @@ const routes = {
     { path: '/base', component         : BaseDoc },
     { path: '/badge', component        : BadgeDoc },
     { path: '/block', component        : BlockDoc },
+    { path: '/breadcrumb', component   : BreadcrumbDoc },
     { path: '/button', component       : ButtonDoc },
     { path: '/button-group', component : ButtonGroupDoc },
     { path: '/codeblock', component    : CodeblockDoc },
