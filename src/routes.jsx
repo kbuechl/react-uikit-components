@@ -84,7 +84,7 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/dropdown'>Dropdown</Link></NavItem>
         <NavItem type='item'><Link to='/flex'>Flex</Link></NavItem>
         <NavItem type='item'><Link to='/grid'>Grid</Link></NavItem>
-        <NavItem type='item'><Link to='/icon'>Icons</Link></NavItem>
+        <NavItem type='item'><Link to='/icons'>Icons</Link></NavItem>
         <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
         <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
         <NavItem type='item'><Link to='/list'>List</Link></NavItem>
@@ -126,7 +126,7 @@ const routes = {
     { path: '/dropdown', component     : DropdownDoc },
     { path: '/flex', component         : FlexDoc },
     { path: '/grid', component         : GridDoc },
-    { path: '/icon', component         : IconDoc },
+    { path: '/icons', component         : IconDoc },
     { path: '/img',  component         : ImgDoc },
     { path: '/img-gallery', component  : ImgGalleryDoc },
     { path: '/list', component         : ListDoc },
