@@ -25,6 +25,7 @@ import ImgDoc from './img-doc.jsx';
 import ImgGalleryDoc from './img-gallery-doc.jsx';
 import ListDoc from './list-doc.jsx';
 import ModalDoc from './modal-doc.jsx';
+import NavDoc from './nav-doc.jsx';
 import NoteDoc from './note-doc.jsx';
 import OverlayDoc from './overlay-doc.jsx';
 import PanelDoc from './panel-doc.jsx';
@@ -86,6 +87,7 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
         <NavItem type='item'><Link to='/list'>List</Link></NavItem>
         <NavItem type='item'><Link to='/modal'>Modal</Link></NavItem>
+        <NavItem type='item'><Link to='/nav'>Nav</Link></NavItem>
         <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
         <NavItem type='item'><Link to='/overlay'>Overlay</Link></NavItem>
         <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
@@ -126,6 +128,7 @@ const routes = {
     { path: '/img-gallery', component  : ImgGalleryDoc },
     { path: '/list', component         : ListDoc },
     { path: '/modal', component        : ModalDoc },
+    { path: '/nav', component          : NavDoc },
     { path: '/note', component         : NoteDoc },
     { path: '/overlay', component      : OverlayDoc },
     { path: '/panel', component        : PanelDoc },

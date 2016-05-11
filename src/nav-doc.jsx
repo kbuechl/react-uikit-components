@@ -8,7 +8,7 @@ import Grid from 'react-uikit-grid';
 import Nav from '../components/react-uikit-nav';
 import NavItem from '../components/react-uikit-nav/lib/nav-item';
 import Table from 'react-uikit-table';
-import Note from 'react-uikit-note';
+
 import Droppdown from 'react-uikit-dropdown';
 
 export default class NavDoc extends React.Component {
@@ -36,32 +36,30 @@ export default class NavDoc extends React.Component {
 
       <section>
         <h2>Usage</h2>
-        <p>
-          <code>npm install react-uikit-nav --save;</code>
-        </p>
-        <p>
-          ES6 <br />
-          <code>Nav uikit from 'react-uikit-nav';</code><br />
-          <code>NavItem uikit from 'react-uikit-nav/lib/na-vitem';</code>
-        </p>
+        <Codeblock>
+{`npm install react-uikit-nav --save;</code>
 
-        <p>
-          ES5 <br />
-          <code>var Nav = require('react-uikit-nav');</code><br />
-          <code>var NavItem = require('react-uikit-nav/lib/nav-item').default;</code>
-        </p>
+// ES6
+Nav uikit from 'react-uikit-nav';
+NavItem uikit from 'react-uikit-nav/lib/na-vitem';
 
-        <Note badge={{context: 'danger', body: 'Note'}}>
-          UIkit css is not included. You can get it from <a href='http://getuikit.com/'>getuikit.com</a>.
-          This has been tested with UIKit version 2.24.x.
-        </Note>
+// ES5
+var Nav = require('react-uikit-nav').default;
+var NavItem = require('react-uikit-nav/lib/nav-item').default;
+`}
+        </Codeblock>
 
         <hr className="uk-article-divider" />
 
+        <h2>Nav</h2>
         <p>
-          Navigation consists of two components <code>&lt;Nav&gt;</code> and <code>&lt;NavItem&gt;</code>.
+          Navigation consists of two components the <code>&lt;Nav&gt;</code> container and <code>&lt;NavItem&gt;</code>.
           The Nav component displays a list of links for various types of Navs.
-          To choose a type of Nav the <code>type</code> prop must be added to the Nav component.
+        </p>
+
+        <p>
+          To choose which type of Nav the <code>type</code> prop must be added to the Nav component.
+          If no type is provided defaults to <code>type-'side'</code>.
         </p>
 
       </section>
@@ -77,8 +75,8 @@ export default class NavDoc extends React.Component {
 
         <h3 className='example'>Example</h3>
 
-        <Grid>
-          <Nav type='side' cols='1-4'>
+        <Grid indent>
+          <Nav type='side' cols='1-4' >
             <NavItem label='Active' href='#' active />
             <NavItem label='Item' href='#' />
             <NavItem label='Item' href='#' />
@@ -88,7 +86,7 @@ export default class NavDoc extends React.Component {
         <h4 className='code'>Code</h4>
         <Codeblock syntax='xml'>
         {
-`<Grid>
+`<Grid indent>
   <Nav type='side' cols='1-4'>
     <NavItem label='Active' href='#' active />
     <NavItem label='Item' href='#' />
@@ -104,12 +102,12 @@ export default class NavDoc extends React.Component {
         <h2>Navs nested</h2>
         <p>
         Navs can easily be nested inside of each other by using the
-          Nav <code>parent</code> and <code>sub</code> props and
+          Nav <code>parent</code> and <code>sub</code> props along with
           the NavItems <code>parent</code> prop.
         </p>
 
         <h3 className='example'>Example</h3>
-        <Grid>
+        <Grid indent>
           <Nav parent type='side' cols='1-4'>
             <NavItem label='Active' href='#' active />
             <NavItem parent label='Item' href='#' >
@@ -125,7 +123,7 @@ export default class NavDoc extends React.Component {
         <h4 className='code'>Code</h4>
         <Codeblock syntax='xml'>
         {
-`<Grid>
+`<Grid indent>
   <Nav parent type='side' cols='1-4'>
     <NavItem label='Active' href='#' active />
     <NavItem parent label='Item' href='#' >
@@ -145,7 +143,12 @@ export default class NavDoc extends React.Component {
       <section>
         <h2>Nav dropdown</h2>
         <p>
-
+          Nav compnents can be placed into a Dropdown component by setting
+          <code>type='dropdown'</code>.
+        </p>
+        <p>
+          Props can be passed to the Dropdown in the form of JSON object via the <code>dropdown</code> prop.
+          See Droppdown component props for more details.
         </p>
 
         <h3 className='example'>Example</h3>
@@ -188,38 +191,6 @@ export default class NavDoc extends React.Component {
 
 
         <section>
-          <h2>Nav offcanvas</h2>
-          <p>
-            Coming soon...
-          </p>
-
-          <h3 className='example'>Example</h3>
-
-          <h4 className='code'>Code</h4>
-          <Codeblock syntax='xml'>
-  {`
-  `}
-          </Codeblock>
-        </section>
-
-
-        <section>
-          <h2>Nav accordion</h2>
-          <p>
-            Coming soon...
-          </p>
-
-          <h3 className='example'>Example</h3>
-
-          <h4 className='code'>Code</h4>
-          <Codeblock syntax='xml'>
-  {`
-  `}
-          </Codeblock>
-        </section>
-
-
-        <section>
           <h2>Nav Items</h2>
             <p>
               The NavItem component creates a Nav item which can either be a link, header or a divider.
@@ -229,38 +200,59 @@ export default class NavDoc extends React.Component {
             <Table>
               <thead>
                 <tr>
-                  <th className='uk-text-left'>Type</th>
+                  <th className='uk-text-left'>Props</th>
                   <th className='uk-text-left'>Description</th>
                 </tr>
               </thead>
               <tbody>
+              <tr>
+                <td><code>label</code></td>
+                <td>
+                  Provides a label for a link.<br />
+                </td>
+              </tr>
+              <tr>
+                <td><code>href</code></td>
+                <td>Provides a URL for a link.<br /></td>
+              </tr>
+              <tr>
+                <td><code>active</code></td>
+                <td>Shows the item as active.<br /></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>subtitle</code></td>
+                <td>Creates a subtitle.</td>
+              </tr>
                 <tr>
-                  <td className='uk-text-left'><code>link</code></td>
+                  <td className='uk-text-left'><code>type='link'</code></td>
                   <td className='uk-text-left'>
-                    Add the link <code>type</code> to create a link<br />
-                    Add the <code>label</code> to provide a label for a link.<br />
-                    Add the <code>href</code> props to provide a URL for a link.<br />
-                    Add the <code>active</code>  prop to show the active as active.<br />
-                  Add the <code>subtitle='*'</code> prop to create a subtitle.
+                    Creates a link NavItem<br />
                   </td>
                 </tr>
                 <tr>
-                  <td className='uk-text-left'><code>header</code></td>
+                  <td className='uk-text-left'><code>type='header'</code></td>
                   <td className='uk-text-left'>
-                    Add the header <code>type</code> to create a header.<br />
-                    Add the <code>label</code> to provide a label for a link.
+                    Creates a header NavItem.<br />
                   </td>
                 </tr>
                 <tr>
-                  <td className='uk-text-left'><code>divider</code></td>
-                  <td className='uk-text-left'>Add the divider <code>type</code> to create a divider separating menu items.</td>
+                  <td className='uk-text-left'><code>type='label'</code></td>
+                  <td className='uk-text-left'>
+                    Creates a label a link.
+                  </td>
+                </tr>
+                <tr>
+                  <td className='uk-text-left'><code>type='divider'</code></td>
+                  <td className='uk-text-left'>Creates a divider NavItem for separating menu items.</td>
                 </tr>
               </tbody>
             </Table>
 
             <h3 className='example'>Example</h3>
 
-            <Grid>
+            <Grid indent>
               <Nav type='side' cols='1-4'>
                 <NavItem type='header' label='Header'/>
                 <NavItem label='Active' href='#' active />
@@ -275,7 +267,7 @@ export default class NavDoc extends React.Component {
           <h4 className='code'>Code</h4>
           <Codeblock syntax='xml'>
 {
-`<Grid>
+`<Grid indent>
   <Nav type='side' cols='1-4'>
     <NavItem type='header' label='Header'/>
     <NavItem label='Active' href='#' active />
@@ -292,8 +284,13 @@ export default class NavDoc extends React.Component {
 
         <section>
           <h2> Nav Item collections</h2>
+
+          <p>
+            An array of objects can be passed to the <code>items</code> prop of a Nav to generate NavItems.
+          </p>
+
           <h3 className='example'>Example</h3>
-          <Grid>
+          <Grid indent>
             <Nav cols='1-4' type='side' items={[
               {
                 label: 'Home',
@@ -310,7 +307,7 @@ export default class NavDoc extends React.Component {
           <h4 className='code'>Code</h4>
           <Codeblock syntax='xml'>
 {
-`<Grid>
+`<Grid indent>
   <Nav cols='1-4' type='side' items={[
     {
       label: 'Home',
@@ -357,24 +354,8 @@ export default class NavDoc extends React.Component {
         See base component for additional utility props.
         </p>
 
-        <Table>
-          <thead>
-            <tr>
-              <th className='uk-text-left'>Prop</th>
-              <th className='uk-text-left'>Type</th>
-              <th className='uk-text-left'>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className='uk-text-left'>
-      
-              </td>
-              <td className='uk-text-left'></td>
-              <td className='uk-text-left'></td>
-            </tr>
+        <Table head={['Prop', 'Type']}>
 
-          </tbody>
         </Table>
       </section>
 
