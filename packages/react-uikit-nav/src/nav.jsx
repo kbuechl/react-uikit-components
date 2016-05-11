@@ -26,9 +26,11 @@ const Nav = (props) => {
 
 
   // Elements
-  const items = props.items ? props.items.map((item) => <NavItem
-    {...item} key={cuid()}/>
-  ) : props.items;
+  const items = props.items
+    ? props.items.map((item) => <NavItem
+      {...item} key={item.kitid || cuid()}/>
+      )
+    : props.items;
 
   const cleanProps = uikit.helpers.cleanProps(['type'])(props);
 
@@ -36,6 +38,7 @@ const Nav = (props) => {
   return <ul
     {...cleanProps}
     className={cssClassNames}
+    data-kitid={props.kitid}
   >
     {items}
     {props.children}
