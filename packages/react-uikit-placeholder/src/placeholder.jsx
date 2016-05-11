@@ -22,17 +22,19 @@ const Placeholder = (props) => {
     className={cssClassNames}
     data-kitid={props.kitid}
   >
+    {props.body}
     {props.children}
   </div>;
 };
 
 
 Placeholder.propTypes = {
+  body      : React.PropTypes.string,
   children  : React.PropTypes.any,
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
   kitid     : React.PropTypes.string,
-  large     : React.PropTypes.string
+  large     : React.PropTypes.bool
 };
 
 
