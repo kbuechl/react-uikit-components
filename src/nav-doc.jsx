@@ -354,11 +354,53 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
         See base component for additional utility props.
         </p>
 
-        <Table head={['Prop', 'Type']}>
+        <Table head={['Prop', 'Type']} body={[
+          {
+            prop: 'parent',
+            type: 'bool'
+          },
+          {
+            prop: 'type',
+            type: 'oneOf dropdown, side or sub'
+          }
+        ]}>
 
         </Table>
       </section>
 
+
+      <section>
+        <h2>Nav Item Props</h2>
+        <p>
+
+        See base component for additional utility props.
+        </p>
+
+        <Table head={['Prop', 'Type']} body={[
+          {
+            prop: 'label',
+            type: 'string'
+          },
+          {
+            prop: 'href',
+            type: 'string'
+          },
+          {
+            prop: 'active',
+            type: 'bool'
+          },
+          {
+            prop: 'subtitle',
+            type: 'string'
+          },
+          {
+            prop: 'type',
+            type: 'oneOf link, header, label or divider'
+          }
+        ]}>
+
+        </Table>
+      </section>
 
     </div>;
   }
