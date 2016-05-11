@@ -159,7 +159,6 @@ var Icons = require('react-uikit-icons').default`}
     </section>
 
 
-
     <section>
       <h2>Spinning Icon</h2>
       <p>
@@ -169,8 +168,6 @@ var Icons = require('react-uikit-icons').default`}
       <h3 className='example'>Example</h3>
       <Icons spin icon='spinner' margin='right'/>
       <Icons spin icon='refresh' margin='right'/>
-
-
 
       <h3 className='code'>Code</h3>
       <Codeblock>
@@ -1125,9 +1122,7 @@ var Icons = require('react-uikit-icons').default`}
     </section>
 
 
-
-
-    <section>
+   <section>
       <h2>Icons Props</h2>
 
       <Table caption='Icons props' head={['Prop', 'Type']} body={[
