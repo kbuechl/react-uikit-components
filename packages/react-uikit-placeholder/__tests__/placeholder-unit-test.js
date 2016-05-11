@@ -4,6 +4,7 @@ import Placeholder from '../lib/placeholder';
 import React from 'react';
 import {
   htmlToString,
+  reactToDom,
   reactToString
 } from './helpers/renderElement';
 
@@ -23,4 +24,15 @@ test('placeholder Component', nested => {
 
       assert.end();
     });
+
+    nested.test('Renders placeholder component.',
+      assert => {
+        const actual = reactToDom(<Placeholder kitid='p1' />).dom('div');
+
+        assert.ok(actual, 'uk-placeholder-large',
+          'Correctly renders placeholder element');
+
+
+        assert.end();
+      });
 });

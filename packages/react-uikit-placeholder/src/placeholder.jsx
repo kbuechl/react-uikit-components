@@ -9,8 +9,8 @@ const Placeholder = (props) => {
   // CSS classes
   const cssClassNames = uikit.helpers.cleanClasses([
     'uk-placeholder',
+    props.large ? 'uk-placeholder-large' : null,
     props.classes,
-    props.lang,
     props.className
   ]);
 
@@ -32,7 +32,7 @@ Placeholder.propTypes = {
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
   kitid     : React.PropTypes.string,
-  lang      : React.PropTypes.string
+  large     : React.PropTypes.string
 };
 
 
