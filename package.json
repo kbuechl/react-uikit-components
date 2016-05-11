@@ -80,6 +80,7 @@
     "react-uikit-dropdown": "latest",
     "react-uikit-flex": "latest",
     "react-uikit-grid": "latest",
+    "react-uikit-icons": "^1.0.0",
     "react-uikit-img": "latest",
     "react-uikit-img-gallery": "latest",
     "react-uikit-list": "latest",
