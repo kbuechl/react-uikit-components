@@ -73,10 +73,10 @@ const Layout = (props) => (
     </div>
     <Grid >
       <Nav col='1-6' type='side'>
-        <NavItem type='header' label='DEFAULTS'/>
+        <NavItem type='header' body='DEFAULTS'/>
         <NavItem type='item'><Link to='/base'>UIkit Base</Link></NavItem>
 
-        <NavItem type='header' label='LAYOUT'/>
+        <NavItem type='header' body='LAYOUT'/>
         <NavItem type='item'><Link to='/grid'>Grid</Link></NavItem>
         <NavItem type='item'><Link to='/panel'>Panel</Link></NavItem>
         <NavItem type='item'><Link to='/block'>Block</Link></NavItem>
@@ -87,15 +87,15 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/codeblock'>Codeblock</Link></NavItem>
         <NavItem type='item'><Link to='/img-gallery'>Img gallery</Link></NavItem>
 
-        <NavItem type='header' label='NAVIGATIONS'/>
+        <NavItem type='header' body='NAVIGATIONS'/>
         <NavItem type='item'><Link to='/nav'>Nav</Link></NavItem>
         <NavItem type='item'><Link to='/breadcrumb'>Breadcrumb</Link></NavItem>
 
-        <NavItem type='header' label='ELEMENTS'/>
+        <NavItem type='header' body='ELEMENTS'/>
         <NavItem type='item'><Link to='/list'>List</Link></NavItem>
         <NavItem type='item'><Link to='/table'>Table</Link></NavItem>
 
-        <NavItem type='header' label='COMMON'/>
+        <NavItem type='header' body='COMMON'/>
         <NavItem type='item'><Link to='/button'>Button</Link></NavItem>
         <NavItem type='item'><Link to='/button-group'>Button group</Link></NavItem>
         <NavItem type='item'><Link to='/icons'>Icons</Link></NavItem>
@@ -107,11 +107,11 @@ const Layout = (props) => (
         <NavItem type='item'><Link to='/note'>Note</Link></NavItem>
         <NavItem type='item'><Link to='/img'>Img</Link></NavItem>
 
-        <NavItem type='header' label='OTHER'/>
+        <NavItem type='header' body='OTHER'/>
         <NavItem type='item'><Link to='/dropdown'>Dropdown</Link></NavItem>
         <NavItem type='item'><Link to='/modal'>Modal</Link></NavItem>
 
-        <NavItem type='header' label='COMPONENTS'/>
+        <NavItem type='header' body='COMPONENTS'/>
         <NavItem type='item'><Link to='/placeholder'>Placeholder</Link></NavItem>
 
       </Nav>
