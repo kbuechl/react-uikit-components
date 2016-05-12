@@ -5,21 +5,43 @@ import React from 'react';
 import velocity from 'velocity-animate';
 import Codeblock from 'react-uikit-codeblock';
 import Grid from 'react-uikit-grid';
-import Nav from 'react-uikit-nav';
-import NavItem from 'react-uikit-nav/lib/nav-item';
+import Nav from '../components/react-uikit-nav';
+import NavItem from '../components/react-uikit-nav/lib/nav-item';
 import Table from 'react-uikit-table';
-
+import uikit from 'react-uikit-base';
 import Droppdown from 'react-uikit-dropdown';
 
 export default class NavDoc extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handelParentClick = this.handelParentClick.bind(this);
+  }
+
   animateIn (element) {
-    velocity(element, {opacity: 1}, {visibility: 'visible'}, 200);
+    velocity(element, { opacity: 1 }, {visibility: 'visible'}, 200);
   }
 
 
   animateOut (element) {
-    velocity(element, {opacity: 0}, { visibility: 'hidden' }, 200);
+
   }
+
+
+  handelParentClick(e) {
+    e.preventDefault();
+    const element = uikit.helpers.getElement('sub');
+
+    velocity(
+      element, { height: '100%' },
+      {
+        // display: 'none',
+        visibility: 'visible'
+      },
+      200
+    );
+  }
+
 
   render () {
     return <div>
@@ -77,9 +99,9 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
 
         <Grid indent>
           <Nav type='side' cols='1-4' >
-            <NavItem label='Active' href='#' active />
-            <NavItem label='Item' href='#' />
-            <NavItem label='Item' href='#' />
+            <NavItem body='Active' href='#' active />
+            <NavItem body='Item' href='#' />
+            <NavItem body='Item' href='#' />
           </Nav>
         </Grid>
 
@@ -88,9 +110,9 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
         {
 `<Grid indent>
   <Nav type='side' cols='1-4'>
-    <NavItem label='Active' href='#' active />
-    <NavItem label='Item' href='#' />
-    <NavItem label='Item' href='#' />
+    <NavItem body='Active' href='#' active />
+    <NavItem body='Item' href='#' />
+    <NavItem body='Item' href='#' />
   </Nav>
 </Grid>
 `}
@@ -109,14 +131,14 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
         <h3 className='example'>Example</h3>
         <Grid indent>
           <Nav parent type='side' cols='1-4'>
-            <NavItem label='Active' href='#' active />
-            <NavItem parent label='Item' href='#' >
-              <Nav type='sub'>
-                <NavItem label='Sub item' href='#' />
-                <NavItem label='Sub item' href='#' />
+            <NavItem body='Active' href='#' active />
+            <NavItem parent body='Item' href='#' onClick={this.handelParentClick}>
+              <Nav type='sub' kitid='sub'>
+                <NavItem body='Sub item' href='#' />
+                <NavItem body='Sub item' href='#' />
               </Nav>
             </NavItem>
-            <NavItem label='Item' href='#' />
+            <NavItem body='Item' href='#' />
           </Nav>
         </Grid>
 
@@ -125,14 +147,14 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
         {
 `<Grid indent>
   <Nav parent type='side' cols='1-4'>
-    <NavItem label='Active' href='#' active />
-    <NavItem parent label='Item' href='#' >
+    <NavItem body='Active' href='#' active />
+    <NavItem parent body='Item' href='#' onClick={}>
       <Nav type='sub'>
-        <NavItem label='Sub item' href='#' />
-        <NavItem label='Sub item' href='#' />
+        <NavItem body='Sub item' href='#' />
+        <NavItem body='Sub item' href='#' />
       </Nav>
     </NavItem>
-    <NavItem label='Item' href='#' />
+    <NavItem body='Item' href='#' />
   </Nav>
 </Grid>
 `}
@@ -160,11 +182,11 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
           }
         }}>
           <Nav parent type='dropdown' cols='1-4'>
-            <NavItem label='Item' href='#' />
-            <NavItem label='Another item' href='#' />
-            <NavItem type='header' label='Header'/>
-            <NavItem label='Item' href='#' />
-            <NavItem label='Another item' href='#' />
+            <NavItem body='Item' href='#' />
+            <NavItem body='Another item' href='#' />
+            <NavItem type='header' body='Header'/>
+            <NavItem body='Item' href='#' />
+            <NavItem body='Another item' href='#' />
           </Nav>
         </Droppdown>
 
@@ -178,11 +200,11 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
   }
 }}>
 <Nav parent type='dropdown' cols='1-4'>
-  <NavItem label='Item' href='#' />
-  <NavItem label='Another item' href='#' />
-  <NavItem type='header' label='Header'/>
-  <NavItem label='Item' href='#' />
-  <NavItem label='Another item' href='#' />
+  <NavItem body='Item' href='#' />
+  <NavItem body='Another item' href='#' />
+  <NavItem type='header' body='Header'/>
+  <NavItem body='Item' href='#' />
+  <NavItem body='Another item' href='#' />
   </Nav>
 </Droppdown>
   `}
@@ -206,9 +228,9 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
               </thead>
               <tbody>
               <tr>
-                <td><code>label</code></td>
+                <td><code>body</code></td>
                 <td>
-                  Provides a label for a link.<br />
+                  Provides a body for a link.<br />
                 </td>
               </tr>
               <tr>
@@ -238,9 +260,9 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
                   </td>
                 </tr>
                 <tr>
-                  <td className='uk-text-left'><code>type='label'</code></td>
+                  <td className='uk-text-left'><code>type='body'</code></td>
                   <td className='uk-text-left'>
-                    Creates a label a link.
+                    Creates a body a link.
                   </td>
                 </tr>
                 <tr>
@@ -254,13 +276,13 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
 
             <Grid indent>
               <Nav type='side' cols='1-4'>
-                <NavItem type='header' label='Header'/>
-                <NavItem label='Active' href='#' active />
-                <NavItem label='Item' href='#' />
-                <NavItem label='Item' href='#' subtitle='Subtitle'/>
-                <NavItem label='Item' href='#' />
+                <NavItem type='header' body='Header'/>
+                <NavItem body='Active' href='#' active />
+                <NavItem body='Item' href='#' />
+                <NavItem body='Item' href='#' subtitle='Subtitle'/>
+                <NavItem body='Item' href='#' />
                 <NavItem type='divider' />
-                <NavItem label='Item' href='#' />
+                <NavItem body='Item' href='#' />
               </Nav>
             </Grid>
 
@@ -269,13 +291,13 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
 {
 `<Grid indent>
   <Nav type='side' cols='1-4'>
-    <NavItem type='header' label='Header'/>
-    <NavItem label='Active' href='#' active />
-    <NavItem label='Item' href='#' />
-    <NavItem label='Item' href='#' subtitle='Subtitle'/>
-    <NavItem label='Item' href='#' />
+    <NavItem type='header' body='Header'/>
+    <NavItem body='Active' href='#' active />
+    <NavItem body='Item' href='#' />
+    <NavItem body='Item' href='#' subtitle='Subtitle'/>
+    <NavItem body='Item' href='#' />
     <NavItem type='divider' />
-    <NavItem label='Item' href='#' />
+    <NavItem body='Item' href='#' />
   </Nav>
 </Grid>
 `}
@@ -293,12 +315,12 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
           <Grid indent>
             <Nav cols='1-4' type='side' items={[
               {
-                label: 'Home',
+                body: 'Home',
                 href: '#',
                 active: true
               },
               {
-                label: 'About',
+                body: 'About',
                 href: '#'
               }
             ]} />
@@ -310,12 +332,12 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
 `<Grid indent>
   <Nav cols='1-4' type='side' items={[
     {
-      label: 'Home',
+      body: 'Home',
       href: '#',
       active: true
     },
     {
-      label: 'About',
+      body: 'About',
       href: '#'
     }
   ]} />
@@ -378,7 +400,7 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
 
         <Table head={['Prop', 'Type']} body={[
           {
-            prop: 'label',
+            prop: 'body',
             type: 'string'
           },
           {
@@ -395,7 +417,7 @@ var NavItem = require('react-uikit-nav/lib/nav-item').default;
           },
           {
             prop: 'type',
-            type: 'oneOf link, header, label or divider'
+            type: 'oneOf link, header, body or divider'
           }
         ]}>
 
