@@ -11,7 +11,7 @@ const NavItem = (props) => {
     header: 'uk-nav-header'
   };
 
-  const ignoreProps = ['href', 'label', 'type'];
+  const ignoreProps = ['href', 'type'];
   const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
   const cssClassNames = uikit.helpers.cleanClasses([
@@ -28,8 +28,9 @@ const NavItem = (props) => {
 
   const link = <a
     href={props.href}
+    data-kitid={props.kitid}
   >
-    {props.label}
+    {props.body}
     {subtitle}
   </a>;
 
@@ -47,7 +48,7 @@ const NavItem = (props) => {
       className={cssClassNames}
       data-kitid={props.kitid}
     >
-      {props.label}
+      {props.body}
     </li>,
 
     link: <li
@@ -64,6 +65,7 @@ const NavItem = (props) => {
       className={cssClassNames}
       data-kitid={props.kitid}
     >
+      {props.body}
       {props.children}
     </li>
   };
@@ -77,6 +79,7 @@ const NavItem = (props) => {
 
 NavItem.propTypes = {
   active    : React.PropTypes.bool,
+  body      : React.PropTypes.string,
   children  : React.PropTypes.any,
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
@@ -84,7 +87,6 @@ NavItem.propTypes = {
   header    : React.PropTypes.bool,
   href      : React.PropTypes.string,
   kitid     : React.PropTypes.string,
-  label     : React.PropTypes.string,
   parent    : React.PropTypes.bool,
   type      : React.PropTypes.oneOf(['divider', 'link', 'header', 'item'])
 };

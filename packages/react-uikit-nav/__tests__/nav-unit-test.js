@@ -15,14 +15,14 @@ test('nav Component', nested => {
     assert => {
       const actual = reactToString(
         <Nav kitid='nav' type='side' cols='1-4'>
-          <NavItem kitid='n1' type='header' label='Header'/>
-          <NavItem kitid='n2' label='Active' href='#' active />
-          <NavItem kitid='n3' label='Item' href='#' />
-          <NavItem kitid='n4' label='Item' href='#' subtitle='Subtitle'/>
-          <NavItem kitid='n5' label='Item' href='#' />
+          <NavItem kitid='n1' type='header' body='Header'/>
+          <NavItem kitid='n2' body='Active' href='#' active />
+          <NavItem kitid='n3' body='Item' href='#' />
+          <NavItem kitid='n4' body='Item' href='#' subtitle='Subtitle'/>
+          <NavItem kitid='n5' body='Item' href='#' />
           <NavItem kitid='n6' type='divider' />
-          <NavItem kitid='n7' label='Item' href='#' />
-          <NavItem kitid='n8' type='link' label='Item' href='#' />
+          <NavItem kitid='n7' body='Item' href='#' />
+          <NavItem kitid='n8' type='link' body='Item' href='#' />
         </Nav>
       );
 
@@ -62,14 +62,14 @@ test('nav Component', nested => {
 
       const actual = reactToString(
         <Nav kitid='nav' parent type='side' cols='1-4'>
-          <NavItem kitid='n1' label='Active' href='#' active />
-          <NavItem kitid='n2' parent label='Item' href='#' >
+          <NavItem kitid='n1' body='Active' href='#' active />
+          <NavItem kitid='n2' parent body='Item' href='#' >
             <Nav type='sub' kitid='sub'>
-              <NavItem kitid='n2a' label='Sub item' href='#' />
-              <NavItem kitid='n2b' label='Sub item' href='#' />
+              <NavItem kitid='n2a' body='Sub item' href='#' />
+              <NavItem kitid='n2b' body='Sub item' href='#' />
             </Nav>
           </NavItem>
-          <NavItem kitid='n3' label='Item' href='#' />
+          <NavItem kitid='n3' body='Item' href='#' />
         </Nav>
       );
 
@@ -99,7 +99,7 @@ test('nav Component', nested => {
       const actual = reactToString(
         <Nav kitid='nav' type='side' items={[
           {
-            label: 'Home',
+            body: 'Home',
             href: '#',
             active: true,
             kitid: 'n1'
@@ -110,7 +110,7 @@ test('nav Component', nested => {
             subtitle:'Subtitle'
           },
           {
-            label: 'About',
+            body: 'About',
             href: '#',
             kitid: 'n3'
           }
@@ -138,14 +138,14 @@ test('nav Component', nested => {
       assert => {
         const actual = reactToString(
           <Nav kitid='nav' parent type='side' cols='1-4'>
-          <NavItem kitid='p1' label='Active' href='#' active />
-            <NavItem kitid='p22'  parent label='Item' href='#' >
+          <NavItem kitid='p1' body='Active' href='#' active />
+            <NavItem kitid='p22'  parent body='Item' href='#' >
               <Nav kitid='sub' type='sub'>
-                <NavItem kitid='s1' label='Sub item' href='#' />
-                <NavItem kitid='s2' label='Sub item' href='#' />
+                <NavItem kitid='s1' body='Sub item' href='#' />
+                <NavItem kitid='s2' body='Sub item' href='#' />
               </Nav>
             </NavItem>
-            <NavItem kitid='p3' label='Item' href='#' />
+            <NavItem kitid='p3' body='Item' href='#' />
           </Nav>
         );
 
