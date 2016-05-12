@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-components",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React UIkit components for UIkit CSS framework.",
   "keywords": [
     "javascript",
@@ -86,12 +86,12 @@
     "react-uikit-img": "latest",
     "react-uikit-img-gallery": "latest",
     "react-uikit-list": "latest",
-    "react-uikit-modal": "~1.0.0",
-    "react-uikit-nav": "~1.0.0",
+    "react-uikit-modal": "latest",
+    "react-uikit-nav": "latest",
     "react-uikit-note": "latest",
     "react-uikit-overlay": "latest",
     "react-uikit-panel": "latest",
-    "react-uikit-placeholder": "~1.0.0",
+    "react-uikit-placeholder": "latest",
     "react-uikit-table": "latest",
     "react-uikit-text": "latest",
     "react-uikit-thumbnail": "latest",
