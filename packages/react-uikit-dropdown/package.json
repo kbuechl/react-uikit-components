@@ -18,8 +18,6 @@
   "license": "MIT",
   "main": "./lib/dropdown.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/dropdown-doc > README.md && date",
-    "docs:watch": "watch 'npm run docs' ./docs",
     "build": "babel -d lib/ src/ && date",
     "build:watch": "watch 'npm run build' ./src && date",
     "lint": "eslint --quiet ./src/**   && date || true  && date",
