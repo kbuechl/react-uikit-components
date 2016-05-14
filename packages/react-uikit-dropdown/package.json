@@ -58,7 +58,7 @@
     "react": "~15.0.2",
     "react-uikit-base": "~1.0.0",
     "react-uikit-trigger": "~0.1.3",
-    "react-uikit-button": "~0.2.2",
+    "react-uikit-button": "~1.0.0",
     "ufunc": "~0.2.1"
   },
   "babel": {
