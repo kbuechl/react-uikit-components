@@ -4,19 +4,60 @@
 import React from 'react';
 import velocity from 'velocity-animate';
 import Codeblock from 'react-uikit-codeblock';
-import Dropdown from 'react-uikit-dropdown';
+import Dropdown from '../components/react-uikit-dropdown';
 import Table from 'react-uikit-table';
 import Grid from 'react-uikit-grid';
 import List from 'react-uikit-list';
 
 
 export default class dropdownDoc extends React.Component {
-  animateIn (element) {
+  constructor(props) {
+      super(props);
+
+      this.state = {
+        hoverDemo       : false,
+        clickDemo       : false,
+        topLeftDemo     : false,
+        bottomCenterDemo: false,
+        bottomRightDemo : false,
+        topCenterDemo   : false,
+        topRightDemo    : false,
+        leftTopDemo     : false,
+        leftCenterDemo  : false,
+        leftBottomDemo  : false,
+        rightTopDemo    : false,
+        rightCenterDemo : false,
+        rightBottomDemo : false,
+        justifiedDemo   : false,
+        smallDemo       : false,
+        blankDemo       : false,
+        scrollableDemo  : false,
+        groupDemo       : false,
+        gridDemo        : false
+      };
+
+      this.animateIn = this.animateIn.bind(this);
+      this.animateOut = this.animateOut.bind(this);
+      this.updateState = this.updateState.bind(this);
+  }
+
+  updateState (element, bool) {
+    const state = element.dataset.kitid.split('-')[1];
+    const obj = {};
+
+    obj[state] = bool;
+    this.setState(obj);
+  }
+
+
+  animateIn (element, bool) {
+    this.updateState(element, bool);
     velocity(element, {opacity: 1}, {visibility: 'visible'}, 200);
   }
 
 
-  animateOut (element) {
+  animateOut (element, bool) {
+    this.updateState(element, bool);
     velocity(element, {opacity: 0}, { visibility: 'hidden' }, 200);
   }
 
@@ -61,27 +102,32 @@ var Dropdown = require('react-uikit-dropdown').default;
         <h4 className='example'>Example</h4>
         <Grid small='1-3'>
           <Dropdown
+            kitid='hoverDemo'
+            opened={this.state.hoverDemo}
             noflip
             hover
             margin='bottom'
             trigger={{
               body:'Hover',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             This is a hover dropdown
           </Dropdown>
 
-          <Dropdown noflip
+          <Dropdown
+            kitid='clickDemo'
+            noflip
             margin='bottom'
+            opened={this.state.clickDemo}
             trigger={{
               body:'Click',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
@@ -93,14 +139,15 @@ var Dropdown = require('react-uikit-dropdown').default;
         <h4 className='code'>Code</h4>
         <Codeblock scroll='text'>
 {`<Dropdown
+  opened={this.state.hoverOpened}
   noflip
   hover
   margin='bottom'
   trigger={{
     body:'Hover',
     animate: {
-      in: (element) => this.animateIn(element),
-      out: (element) => this.animateOut(element)
+      in: this.animateIn,
+      out: this.animateOut
     }
   }}
 >
@@ -110,11 +157,12 @@ var Dropdown = require('react-uikit-dropdown').default;
 <Dropdown
   noflip
   margin='bottom'
+  opened={this.state.clickOpened}
   trigger={{
     body:'Click',
     animate: {
-      in: (element) => this.animateIn(element),
-      out: (element) => this.animateOut(element)
+      in: this.animateIn,
+      out: this.animateOut
     }
   }}
 >
@@ -141,23 +189,26 @@ var Dropdown = require('react-uikit-dropdown').default;
         </p>
 
         <Codeblock scroll='text'>
-{`const animateIn = (element) {
+{`const animateIn = (element, bool) {
+  this.setState({ opened : bool});
   velocity(element, {opacity: 1}, {visibility: 'visible'}, 200);
 }
 
 
-const animateOut = (element) {
+const animateOut = (element, bool) {
+  this.setState({ opened : bool});
   velocity(element, {opacity: 0}, { visibility: 'hidden' }, 200);
 }
 
 <Dropdown
   noflip
+  opened={this.state.opened}
   margin='bottom'
   trigger={{
     body:'Click',
     animate: {
-      in: (element) => this.animateIn(element),
-      out: (element) => this.animateOut(element)
+      in: (element, bool) => this.animateIn(element, bool),
+      out: (element, bool) => this.animateOut(element, bool)
     }
   }}
 >
@@ -232,40 +283,49 @@ const animateOut = (element) {
 
         <h4 className='example'>Example</h4>
         <Grid small='1-3'>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='bottomLeftDemo'
+            opened={this.state.bottomLeftDemo}
             margin='bottom'
             pos='bottom-left'
             trigger={{
               body:'Bottom left',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             Bottom left dropdown
           </Dropdown>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='bottomCenterDemo'
+            opened={this.state.bottomCenterDemo}
             margin='bottom'
             pos='bottom-center'
             trigger={{
               body:'Bottom center',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             Bottom center dropdown
           </Dropdown>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='bottomRightDemo'
+            opened={this.state.bottomRightDemo}
             margin='bottom'
             pos='bottom-right'
             trigger={{
               body:'Bottom right',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
@@ -274,40 +334,49 @@ const animateOut = (element) {
         </Grid>
 
         <Grid small='1-3'>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='topLeftDemo'
+            opened={this.state.topLeftDemo}
             margin='bottom'
             pos='top-left'
             trigger={{
               body:'Top left',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             Top left dropdown
           </Dropdown>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='topCenterDemo'
+            opened={this.state.topCenterDemo}
             margin='bottom'
             pos='top-center'
             trigger={{
               body:'Top center',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             Top center dropdown
           </Dropdown>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='topRightDemo'
+            opened={this.state.topRightDemo}
             margin='bottom'
             pos='top-right'
             trigger={{
               body:'Top right',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
@@ -316,40 +385,49 @@ const animateOut = (element) {
         </Grid>
 
         <Grid small='1-3'>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='leftTopDemo'
+            opened={this.state.leftTopDemo}
             margin='bottom'
             pos='left-top'
             trigger={{
               body:'Left top',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             Left top dropdown
           </Dropdown>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='leftCenterDemo'
+            opened={this.state.leftCenterDemo}
             margin='bottom'
             pos='left-center'
             trigger={{
               body:'Left center',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             Left center dropdown
           </Dropdown>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='leftBottomDemo'
+            opened={this.state.leftBottomDemo}
             margin='bottom'
             pos='left-bottom'
             trigger={{
               body:'Left bottom',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
@@ -358,40 +436,49 @@ const animateOut = (element) {
         </Grid>
 
         <Grid small='1-3'>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='rightTopDemo'
+            opened={this.state.rightTopDemo}
             margin='bottom'
             pos='right-top'
             trigger={{
               body:'Right top',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             Right top dropdown
           </Dropdown>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='rightCenterDemo'
+            opened={this.state.rightCenterDemo}
             margin='bottom'
             pos='right-center'
             trigger={{
               body:'Right center',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
             Right center dropdown
           </Dropdown>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='rightBottomDemo'
+            opened={this.state.rightBottomDemo}
             margin='bottom'
             pos='right-bottom'
             trigger={{
               body:'Right bottom',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
@@ -405,13 +492,14 @@ const animateOut = (element) {
 {`<Grid small='1-3'>
   <Dropdown
     noflip
+    opened={this.state.bottomLeftOpened
     margin='bottom'
     pos='bottom-left'
     trigger={{
       body:'Bottom left',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -419,13 +507,14 @@ const animateOut = (element) {
   </Dropdown>
   <Dropdown
     noflip
+    opened={this.state.bottomCenterOpened}
     margin='bottom'
     pos='bottom-center'
     trigger={{
       body:'Bottom center',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -433,13 +522,14 @@ const animateOut = (element) {
   </Dropdown>
   <Dropdown
     noflip
+    opened={this.state.bottomRightOpened}
     margin='bottom'
     pos='bottom-right'
     trigger={{
       body:'Bottom right',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -450,13 +540,14 @@ const animateOut = (element) {
 <Grid small='1-3'>
   <Dropdown
     noflip
+    opened={this.state.topLeftOpened}
     margin='bottom'
     pos='top-left'
     trigger={{
       body:'Top left',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -464,13 +555,14 @@ const animateOut = (element) {
   </Dropdown>
   <Dropdown
     noflip
+    opened={this.state.topCenterOpened}
     margin='bottom'
     pos='top-center'
     trigger={{
       body:'Top center',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -478,13 +570,14 @@ const animateOut = (element) {
   </Dropdown>
   <Dropdown
     noflip
+    opened={this.state.topRightOpened}
     margin='bottom'
     pos='top-right'
     trigger={{
       body:'Top right',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -495,13 +588,14 @@ const animateOut = (element) {
 <Grid small='1-3'>
   <Dropdown
     noflip
+    opened={this.state.leftTopOpened}
     margin='bottom'
     pos='left-top'
     trigger={{
       body:'Left top',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -509,13 +603,14 @@ const animateOut = (element) {
   </Dropdown>
   <Dropdown
     noflip
+    opened={this.state.leftCenterOpened}
     margin='bottom'
     pos='left-center'
     trigger={{
       body:'Left center',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -523,13 +618,14 @@ const animateOut = (element) {
   </Dropdown>
   <Dropdown
     noflip
+    opened={this.state.leftBottomOpened}
     margin='bottom'
     pos='left-bottom'
     trigger={{
       body:'Left bottom',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -540,13 +636,14 @@ const animateOut = (element) {
 <Grid small='1-3'>
   <Dropdown
     noflip
+    opened={this.state.rightTopOpened}
     margin='bottom'
     pos='right-top'
     trigger={{
       body:'Right top',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -554,13 +651,14 @@ const animateOut = (element) {
   </Dropdown>
   <Dropdown
     noflip
+    opened={this.state.rightCenterOpened}
     margin='bottom'
     pos='right-center'
     trigger={{
       body:'Right center',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -568,13 +666,14 @@ const animateOut = (element) {
   </Dropdown>
   <Dropdown
     noflip
+    opened={this.state.rightBottomOpened}
     margin='bottom'
     pos='right-bottom'
     trigger={{
       body:'Right bottom',
       animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
+        in: this.animateIn,
+        out: this.animateOut
       }
     }}
   >
@@ -597,12 +696,14 @@ const animateOut = (element) {
         <h4 className='example'>Example</h4>
         <Grid kitid='justify1'>
           <Dropdown noflip
+            kitid='justifiedDemo'
+            opened={this.state.justifiedDemo}
             justify='justify1'
             trigger={{
               body:'Justified dropdown',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
@@ -613,20 +714,19 @@ const animateOut = (element) {
 
         <h4 className='code'>Code</h4>
         <Codeblock>
-{`<Grid kitid='justify1'>
-  <Dropdown
-    noflip
-    justify='justify1'
-    trigger={{
-      body:'Justified dropdown',
-      animate: {
-        in: (element) => this.animateIn(element),
-        out: (element) => this.animateOut(element)
-      }
-    }}
-  >
-    Justified dropdown
-  </Dropdown>
+{`<Dropdown noflip
+  opened={this.state.justifiedOpened}
+  justify='justify1'
+  trigger={{
+    body:'Justified dropdown',
+    animate: {
+      in: this.animateIn,
+      out: this.animateOut
+    }
+  }}
+>
+  Justified dropdown
+</Dropdown>wn>
 </Grid>
 `}
         </Codeblock>
@@ -642,14 +742,17 @@ const animateOut = (element) {
 
         <h4 className='example'>Example</h4>
         <Grid>
-          <Dropdown noflip
-           small
-           trigger={{body:'dropdown',
+          <Dropdown
+            noflip
+            kitid='smallDemo'
+            opened={this.state.smallDemo}
+            small
+            trigger={{body:'dropdown',
                animate: {
-                 in: (element) => this.animateIn(element),
-                 out: (element) => this.animateOut(element)
+                 in: this.animateIn,
+                 out: this.animateOut
                }}}>
-           this is a drop down
+            this is a drop down
          </Dropdown>
         </Grid>
 
@@ -658,17 +761,15 @@ const animateOut = (element) {
         <Codeblock>
 {`<Dropdown
   noflip
+  opened={this.state.smallOpened}
   small
-  trigger={{
-    body:'dropdown',
-    animate: {
-     in: (element) => this.animateIn(element),
-     out: (element) => this.animateOut(element)
-    }
-  }}
->
+  trigger={{body:'dropdown',
+     animate: {
+       in: this.animateIn,
+       out: this.animateOut
+     }}}>
   this is a drop down
- </Dropdown>
+</Dropdown>
 `}
         </Codeblock>
       </section>
@@ -683,15 +784,20 @@ const animateOut = (element) {
 
         <h4 className='example'>Example</h4>
         <Grid>
-          <Dropdown noflip
-           blank
-           trigger={{body:'dropdown',
+          <Dropdown
+            noflip
+            kitid='blankDemo'
+            opened={this.state.blankDemo}
+            blank
+            trigger={{body:'dropdown',
              animate: {
-               in: (element) => this.animateIn(element),
-               out: (element) => this.animateOut(element)
-             }}}>
-           this is a drop down
-         </Dropdown>
+                in: this.animateIn,
+                out: this.animateOut
+              }
+            }}
+          >
+            this is a drop down
+          </Dropdown>
         </Grid>
 
 
@@ -699,18 +805,17 @@ const animateOut = (element) {
         <Codeblock>
 {`<Dropdown
   noflip
+  opened={this.state.blankOpened}
   blank
-  trigger={{
-    body:'dropdown',
-    animate: {
-     in: (element) => this.animateIn(element),
-     out: (element) => this.animateOut(element)
+  trigger={{body:'dropdown',
+   animate: {
+      in: this.animateIn,
+      out: this.animateOut
     }
   }}
 >
   this is a drop down
 </Dropdown>
-
 `}
         </Codeblock>
       </section>
@@ -725,13 +830,16 @@ const animateOut = (element) {
 
         <h4 className='example'>Example</h4>
         <Grid>
-          <Dropdown noflip
+          <Dropdown
+            noflip
+            kitid='scrollableDemo'
+            opened={this.state.scrollableDemo}
             dropbody={{style: {height:'150px'}}}
             scrollable
             trigger={{body:'dropdown',
              animate: {
-               in: (element) => this.animateIn(element),
-               out: (element) => this.animateOut(element)
+               in: this.animateIn,
+               out: this.animateOut
              }}}>
            <ul>
              <li>item</li>
@@ -751,26 +859,24 @@ const animateOut = (element) {
         <Codeblock scroll='text'>
 {`<Dropdown
   noflip
+  opened={this.state.scrollableOpened}
   dropbody={{style: {height:'150px'}}}
   scrollable
-  trigger={{
-    body:'dropdown',
-    animate: {
-     in: (element) => this.animateIn(element),
-     out: (element) => this.animateOut(element)
-    }
-  }}
->
-  <ul>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-  </ul>
+  trigger={{body:'dropdown',
+   animate: {
+     in: this.animateIn,
+     out: this.animateOut
+   }}}>
+ <ul>
+   <li>item</li>
+   <li>item</li>
+   <li>item</li>
+   <li>item</li>
+   <li>item</li>
+   <li>item</li>
+   <li>item</li>
+   <li>item</li>
+</ul>
 </Dropdown>
 `}
         </Codeblock>
@@ -787,14 +893,19 @@ const animateOut = (element) {
 
         <h4 className='example'>Example</h4>
         <Grid>
-          <Dropdown noflip
-           standard={{onClick: () => alert('Standard action')}}
-           type='button-group'
-           trigger={{body:'dropdown',
-               animate: {
-                 in: (element) => this.animateIn(element),
-                 out: (element) => this.animateOut(element)
-               }}}>
+          <Dropdown
+            noflip
+            kitid='groupDemo'
+            opened={this.state.groupDemo}
+            standard={{onClick: () => alert('Standard action')}}
+            type='button-group'
+            trigger={{body:'dropdown',
+              animate: {
+                in: this.animateIn,
+                out: this.animateOut
+              }
+            }}
+          >
            this is a drop down
          </Dropdown>
         </Grid>
@@ -804,18 +915,17 @@ const animateOut = (element) {
         <Codeblock>
 {`<Dropdown
   noflip
+  opened={this.state.groupOpened}
   standard={{onClick: () => alert('Standard action')}}
   type='button-group'
-  icon='caret-down'
-  trigger={{
-    body:'dropdown',
+  trigger={{body:'dropdown',
     animate: {
-       in: (element) => this.animateIn(element),
-       out: (element) => this.animateOut(element)
+      in: this.animateIn,
+      out: this.animateOut
     }
   }}
 >
-  this is a drop down
+ this is a drop down
 </Dropdown>
 `}
         </Codeblock>
@@ -833,13 +943,15 @@ const animateOut = (element) {
         <h4 className='example'>Example</h4>
         <Grid>
           <Dropdown
+            kitid='gridDemo'
+            opened={this.state.gridDemo}
             grid='2'
             type='button'
             trigger={{
               body:'Multiple columns',
               animate: {
-                in: (element) => this.animateIn(element),
-                out: (element) => this.animateOut(element)
+                in: this.animateIn,
+                out: this.animateOut
               }
             }}
           >
@@ -860,13 +972,14 @@ const animateOut = (element) {
         <h4 className='code'>Code</h4>
         <Codeblock scroll='text'>
 {`<Dropdown
+  opened={this.state.gridOpened}
   grid='2'
   type='button'
   trigger={{
     body:'Multiple columns',
     animate: {
-      in: (element) => this.animateIn(element),
-      out: (element) => this.animateOut(element)
+      in: this.animateIn,
+      out: this.animateOut
     }
   }}
 >
@@ -886,6 +999,31 @@ const animateOut = (element) {
       </section>
 
 
+      <section>
+        <h2>Dropdown Props</h2>
+        <p>
+          See base component for additional utility props.
+        </p>
+
+        <Table head={['Prop', 'Type']} body={[
+          { prop: 'blank', type: 'bool' },
+          { prop: 'boundary', type: 'string' },
+          { prop: 'dropbody', type: 'object' },
+          { prop: 'grid', type: 'string' },
+          { prop: 'hover', type: 'bool' },
+          { prop: 'justify', type: 'string' },
+          { prop: 'navbar', type: 'bool' },
+          { prop: 'noflip', type: 'bool' },
+          { prop: 'opened', type: 'bool' },
+          { prop: 'parent', type: 'bool' },
+          { prop: 'pos', type: 'string' },
+          { prop: 'scrollable', type: 'bool' },
+          { prop: 'small', type: 'bool' },
+          { prop: 'standard', type: 'object' },
+          { prop: 'trigger', type: 'object' },
+          { prop: 'type', type: 'oneOf button, button-group, dropdown, grid, navbar' }
+        ]} />
+      </section>
     </div>;
   }
 }
