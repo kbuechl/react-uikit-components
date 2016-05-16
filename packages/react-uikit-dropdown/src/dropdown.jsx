@@ -11,16 +11,6 @@ import Button from 'react-uikit-button';
 
 
 class Dropdown extends React.Component {
-  constructor (props) {
-    super(props);
-
-    this.state = {
-      opened : false,
-      hovered: false
-    };
-  }
-
-
   componentDidMount () {
     if (!this.props.hover) {
       window.addEventListener('click', (e) => this.handleClickListener(e), false);
@@ -36,25 +26,16 @@ class Dropdown extends React.Component {
 
 
   animate (state, trigger) {
-    const obj = {};
-    const key = Object.keys(state)[0];
-
     return (element) => {
-      obj[key] = true;
       const animateIn = () => {
-        this.setState(obj);
-        trigger.animate.in(element);
+        trigger.animate.in(element, state);
       };
-
 
       const animateOut = () => {
-        obj[key] = false;
-        this.setState(obj);
-        trigger.animate.out(element);
+        trigger.animate.out(element, state);
       };
 
-
-      ufunc.either(animateIn, animateOut)(state[key]);
+      ufunc.either(animateIn, animateOut)(state);
     };
   }
 
@@ -62,6 +43,7 @@ class Dropdown extends React.Component {
   getDropbody (dataId) {
     return this.getElement(`dropbody-${dataId}`);
   }
+
 
   getElement (dataId) {
     return uikit.helpers.getElement(dataId);
@@ -88,8 +70,8 @@ class Dropdown extends React.Component {
     const callback = (targetId, parentId, kitid, dropbody) => {
       if ((targetId !== kitid) && (parentId !== kitid)) {
 
-        if (this.state.opened) {
-          this.animate({opened: false}, this.props.trigger)(dropbody);
+        if (this.props.opened) {
+          this.animate(false, this.props.trigger)(dropbody);
         }
       }
     };
@@ -107,7 +89,7 @@ class Dropdown extends React.Component {
         dropbody.style.display = 'block';
         dropbody.style.visibility = 'hidden';
 
-        this.animate({hovered: !this.state.hovered}, this.props.trigger)(dropbody);
+        this.animate(!this.props.opened, this.props.trigger)(dropbody);
       };
 
       this.listener(target, this.props.kitid)(callback);
@@ -162,8 +144,7 @@ class Dropdown extends React.Component {
       return element;
     };
 
-
-    R.pipe(toHidden, justify, getPosition, this.animate({opened: !this.state.opened}, props.trigger))(dropbody);
+    R.pipe(toHidden, justify, getPosition, this.animate(!this.props.opened, props.trigger))(dropbody);
 
   }
 
@@ -208,7 +189,7 @@ class Dropdown extends React.Component {
 
     const attr = {
       'aria-haspopup': 'true',
-      'aria-expanded': this.state.opened || this.state.hovered ? 'true' : 'false',
+      'aria-expanded': this.props.opened ? 'true' : 'false',
       'data-kitid': `dropContainer-${kitid}`,
       className: cssClassNames,
       kitid: props.kitid,
@@ -300,6 +281,7 @@ Dropdown.propTypes = {
   kitid      : React.PropTypes.string,
   navbar     : React.PropTypes.bool,
   noflip     : React.PropTypes.bool,
+  opened     : React.PropTypes.bool,
   parent     : React.PropTypes.bool,
   pos        : React.PropTypes.string,
   scrollable : React.PropTypes.bool,
