@@ -55,6 +55,7 @@
   "dependencies": {
     "react": "~15.0.2",
     "react-uikit-base": "~1.0.0",
+    "react-uikit-icons": "^1.0.0",
     "ufunc": "latest"
   },
   "babel": {

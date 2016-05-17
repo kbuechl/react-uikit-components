@@ -9,17 +9,28 @@ const Form = (props) => {
   // CSS classes
   const cssClassNames = uikit.helpers.cleanClasses([
     'uk-form',
+    props.layout ? `uk-form-${props.layout}` : null,
     props.classes,
-    props.context ? `$uk-form-{props.context}` : null,
-    props.size ? `$uk-form-{props.size}` : null,
-    props.width ? `$uk-form-width-{props.width}` : null,
-    props.blank ? 'uk-form-blank' : null,
     props.className
   ]);
 
 
   // Elements
   const csrfToken = ufunc.maybeIf(<input type='hidden' id='_csrf' value={props.csrf} />);
+
+  let children;
+
+  if (props.children) {
+     children = {
+      ...props.children,
+      props: {
+        ...props.children.props,
+        row: props.layout ? true : null,
+        control: props.layout ? true : null
+      }
+    };
+  }
+
 
   // Return Component
   return <form
@@ -28,22 +39,19 @@ const Form = (props) => {
     data-kitid={props.kitid}
   >
     {csrfToken(props.csrf)}
-    {props.children}
+    {children}
   </form>;
 };
 
 
 Form.propTypes = {
-  blank     : React.PropTypes.bool,
   children  : React.PropTypes.any,
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
+  layout    : React.PropTypes.oneOf(['stacked', 'horizontal']),
   kitid     : React.PropTypes.string,
   items     : React.PropTypes.object,
-  context   : React.PropTypes.oneOf(['danger', 'success']),
-  csrf      : React.PropTypes.string,
-  size      : React.PropTypes.oneOf(['large', 'small']),
-  width     : React.PropTypes.oneOf(['large', 'medium', 'small', 'mini'])
+  csrf      : React.PropTypes.bool
 };
 
 
