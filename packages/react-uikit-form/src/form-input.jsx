@@ -1,37 +1,10 @@
-'use strict';
-
 import React from 'react';
 import uikit from '../../react-uikit-base';
 import ufunc from 'ufunc';
 import FormInputHelp from './form-input-help';
 import FormInputControl from './form-input-control';
+import FormLabel from './form-label';
 import Icons from 'react-uikit-icons';
-
-const getlabel = (props) => {
-  if (props.label) {
-    const body = props.label.body || props.label;
-    let labelBody;
-    if (props.label.pos == 'right') {
-      labelBody = '\u00A0' + body;
-      
-    } else {
-      labelBody = body + '\u00A0';
-    }
-
-    return ufunc.either(
-      ufunc.maybeIf(
-        <label
-          className={props.display != null ? `uk-display-${props.display} uk-form-label` : 'uk-form-label'}
-          {...props.label}
-          htmlFor={props.kitid}
-          data-kitid={`label-${props.kitid}`}
-        >
-          {labelBody}
-        </label>)(props.label),
-      null
-    )(props.label);
-  }
-};
 
 
 const getLabelPosistion = (label) => {
@@ -94,9 +67,9 @@ const FormInput = (props) => {
   const row = <div
     className={props.display != null ? `uk-display-${props.display} uk-form-row` : 'uk-form-row'}
   >
-    {getLabelPosistion(props.label) === 'left' ? getlabel(props) : null}
+    {getLabelPosistion(props.label) === 'left' ? <FormLabel {...props} /> : null}
     {ufunc.either(formInputControl, input)(props.control)}
-    {getLabelPosistion(props.label) === 'right' ? getlabel(props) : null}
+    {getLabelPosistion(props.label) === 'right' ? <FormLabel {...props} /> : null}
     {help}
   </div>;
 
