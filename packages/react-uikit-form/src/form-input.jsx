@@ -7,6 +7,42 @@ import FormInputHelp from './form-input-help';
 import FormInputControl from './form-input-control';
 import Icons from 'react-uikit-icons';
 
+const getlabel = (props) => {
+  if (props.label) {
+    const body = props.label.body || props.label;
+    let labelBody;
+    if (props.label.pos == 'right') {
+      labelBody = '\u00A0' + body;
+      
+    } else {
+      labelBody = body + '\u00A0';
+    }
+
+    return ufunc.either(
+      ufunc.maybeIf(
+        <label
+          className={props.display != null ? `uk-display-${props.display} uk-form-label` : 'uk-form-label'}
+          {...props.label}
+          htmlFor={props.kitid}
+          data-kitid={`label-${props.kitid}`}
+        >
+          {labelBody}
+        </label>)(props.label),
+      null
+    )(props.label);
+  }
+};
+
+
+const getLabelPosistion = (label) => {
+  if (label) {
+    return ufunc.either(
+      'left',
+      label.pos
+    )(label.pos === undefined);
+  }
+};
+
 
 const FormInput = (props) => {
   // CSS classes
@@ -20,22 +56,14 @@ const FormInput = (props) => {
   ]);
 
 
-  const ignoreProps = ['width', 'label', 'type'];
+  const ignoreProps = ['display', 'label', 'type', 'width'];
   const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
 
   // Elements
-  const label = ufunc.maybeIf(
-    <label
-      className='uk-form-label'
-      {...props.label}
-      data-kitid={`label-${props.kitid}`}
-    >
-      {props.label}
-    </label>)(props.label);
-
-
   const input = <input
+    id={props.kitid}
+    name={props.name}
     {...cleanProps}
     className={cssClassNames}
     data-kitid={props.kitid}
@@ -52,7 +80,7 @@ const FormInput = (props) => {
   )(props.help);
 
 
-  const formInputControl = <FormInputControl {...props.control} input={input} />;
+  const formInputControl = <FormInputControl {...props.control} display={props.display} input={input} />;
 
 
   const icon = <div className='uk-form-icon'>
@@ -63,12 +91,12 @@ const FormInput = (props) => {
     {input}
   </div>;
 
-
   const row = <div
-    className='uk-form-row'
+    className={props.display != null ? `uk-display-${props.display} uk-form-row` : 'uk-form-row'}
   >
-    {label}
-    {ufunc.either(formInputControl,input)(props.control)}
+    {getLabelPosistion(props.label) === 'left' ? getlabel(props) : null}
+    {ufunc.either(formInputControl, input)(props.control)}
+    {getLabelPosistion(props.label) === 'right' ? getlabel(props) : null}
     {help}
   </div>;
 
@@ -78,7 +106,6 @@ const FormInput = (props) => {
     component = row;
 
   } else if (props.control) {
-
     component = formInputControl;
 
   } else if (props.icon) {
@@ -87,7 +114,6 @@ const FormInput = (props) => {
   } else {
     component = input;
   }
-
 
   // Return Component
   return component;
@@ -106,9 +132,15 @@ FormInput.propTypes = {
                  React.PropTypes.string,
                  React.PropTypes.object
                ]),
+  label      : React.PropTypes.oneOfType([
+                 React.PropTypes.string,
+                 React.PropTypes.object
+               ]),
   kitid      : React.PropTypes.string,
+  name       : React.PropTypes.string,
   onChange   : React.PropTypes.func,
   placeholder: React.PropTypes.string,
+  required   : React.PropTypes.bool,
   row        : React.PropTypes.bool,
   size       : React.PropTypes.oneOf(['large', 'small']),
   value      : React.PropTypes.string,

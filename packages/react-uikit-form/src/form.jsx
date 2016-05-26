@@ -3,6 +3,36 @@
 import React from 'react';
 import uikit from '../../react-uikit-base';
 import ufunc from 'ufunc';
+// import createFragment from 'react-addons-create-fragment';
+
+
+function getChildren (props) {
+  if (props.children && props.layout) {
+    if (Array.isArray(props.children)) {
+      return  React.Children.map(props.children, child => {
+        return {
+         ...child,
+         props: {
+           ...child.props,
+           row    : props.layout ? true : null,
+           control: props.layout ? true : null
+         }
+       };
+      });
+    } else {
+      return {
+       ...props.children,
+       props: {
+         ...props.children.props,
+         row    : props.layout ? true : null,
+         control: props.layout ? true : null
+       }
+     };
+    }
+  } else {
+    return props.children;
+  }
+}
 
 
 const Form = (props) => {
@@ -18,19 +48,7 @@ const Form = (props) => {
   // Elements
   const csrfToken = ufunc.maybeIf(<input type='hidden' id='_csrf' value={props.csrf} />);
 
-  let children;
-
-  if (props.children) {
-     children = {
-      ...props.children,
-      props: {
-        ...props.children.props,
-        row: props.layout ? true : null,
-        control: props.layout ? true : null
-      }
-    };
-  }
-
+// console.log(getChildren(props));
 
   // Return Component
   return <form
@@ -39,7 +57,7 @@ const Form = (props) => {
     data-kitid={props.kitid}
   >
     {csrfToken(props.csrf)}
-    {children}
+    {getChildren(props)}
   </form>;
 };
 

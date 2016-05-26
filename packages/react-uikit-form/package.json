@@ -14,7 +14,7 @@
   "repository": "git@github.com:otissv/react-uikit-form.git",
   "author": "Otis Virginie",
   "license": "MIT",
-  "main": "./lib/form.js",
+  "main": "lib/form.js",
   "scripts": {
     "build": "babel -d lib/ src/",
     "build:watch": "watch 'npm run build' ./src",
@@ -55,7 +55,7 @@
   "dependencies": {
     "react": "~15.0.2",
     "react-uikit-base": "~1.0.0",
-    "react-uikit-icons": "^1.0.0",
+    "react-uikit-icons": "~1.0.0",
     "ufunc": "latest"
   },
   "babel": {

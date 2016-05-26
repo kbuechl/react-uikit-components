@@ -260,7 +260,7 @@ test('form input Component.', nested => {
     });
 
 
-  nested.test('label prop:',
+  nested.test('label=string prop:',
     assert => {
 
       const actual = reactToString(
@@ -274,6 +274,78 @@ test('form input Component.', nested => {
         <div class="uk-form-row">
           <label class="uk-form-label" data-kitid="label-f1">This a label</label>
           <input type="text" data-kitid="f1">
+        </div>
+      `);
+
+      assert.equals(actual, expect,
+        'Adds a label a to form input component.');
+
+      assert.end();
+    });
+
+
+  nested.test('label:body prop:',
+    assert => {
+
+      const actual = reactToString(
+        <FormInput
+          label={{ body: 'This a label' }}
+          kitid='f1'
+        />
+      );
+
+      const expect = htmlToString(`
+        <div class="uk-form-row">
+          <label class="uk-form-label" data-kitid="label-f1">This a label</label>
+          <input type="text" data-kitid="f1">
+        </div>
+      `);
+
+      assert.equals(actual, expect,
+        'Adds a label a to form input component.');
+
+      assert.end();
+    });
+
+
+  nested.test('label:pos=left prop:',
+    assert => {
+
+      const actual = reactToString(
+        <FormInput
+          label={{ pos: 'left', body: 'This a label' }}
+          kitid='f1'
+        />
+      );
+
+      const expect = htmlToString(`
+        <div class="uk-form-row">
+          <label class="uk-form-label" data-kitid="label-f1">This a label</label>
+          <input type="text" data-kitid="f1">
+        </div>
+      `);
+
+      assert.equals(actual, expect,
+        'Adds a label a to form input component.');
+
+      assert.end();
+    });
+
+
+  nested.test('label:pos=right prop:',
+    assert => {
+
+      const actual = reactToString(
+        <FormInput
+          label={{ pos: 'right', body: 'This a label' }}
+          kitid='f1'
+        />
+      );
+
+      const expect = htmlToString(`
+        <div class="uk-form-row">
+          <input type="text" data-kitid="f1">
+          <label class="uk-form-label" data-kitid="label-f1">This a label</label>
         </div>
       `);
 
@@ -435,5 +507,29 @@ test('form input Component.', nested => {
 
       assert.end();
     });
+
+
+    nested.test('required prop:',
+      assert => {
+
+        const actual = reactToString(
+          <FormInput
+            required
+            kitid='f1'
+          />
+        );
+
+        const expect = htmlToString(`
+          <input type="text" required data-kitid="f1">
+        `);
+
+        assert.equals(actual, expect,
+          'Input is a required a form input.');
+
+        assert.end();
+      });
+
+
+
 
 });

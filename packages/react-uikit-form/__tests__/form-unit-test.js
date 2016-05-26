@@ -6,7 +6,7 @@ import React from 'react';
 import { htmlToString, reactToString } from './helpers/renderElement';
 
 
-test.skip('form Component.', nested => {
+test('form Component.', nested => {
   nested.test('Renders form component:',
     assert => {
 
@@ -55,6 +55,10 @@ test.skip('form Component.', nested => {
             label='This a label'
             kitid='f1'
           />
+          <FormInput
+            label='This a label'
+            kitid='f2'
+          />
         </Form>
       );
 
@@ -64,6 +68,12 @@ test.skip('form Component.', nested => {
             <label class="uk-form-label" data-kitid="label-f1">This a label</label>
             <div class="uk-form-controls">
               <input type="text" data-kitid="f1">
+            </div>
+          </div>
+          <div class="uk-form-row">
+            <label class="uk-form-label" data-kitid="label-f2">This a label</label>
+            <div class="uk-form-controls">
+              <input type="text" data-kitid="f2">
             </div>
           </div>
         </form>
