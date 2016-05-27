@@ -17,7 +17,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-          <input type="text"  data-kitid="f1">
+          <input type="text" id="f1"  data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -39,7 +39,7 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-row">
-          <input type="text"  data-kitid="f1">
+          <input type="text" id="f1"  data-kitid="f1">
         </div>
       `);
 
@@ -61,7 +61,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" placeholder="this is a placeholder" data-kitid="f1">
+        <input type="text" id="f1" placeholder="this is a placeholder" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -82,7 +82,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" disabled data-kitid="f1">
+        <input type="text" id="f1" disabled data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -103,7 +103,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" class="uk-form-danger" data-kitid="f1">
+        <input type="text" id="f1" class="uk-form-danger" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -124,7 +124,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" class="uk-form-small" data-kitid="f1">
+        <input type="text" id="f1" class="uk-form-small" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -145,7 +145,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" class="uk-form-large" data-kitid="f1">
+        <input type="text" id="f1" class="uk-form-large" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -166,7 +166,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" class="uk-form-width-large" data-kitid="f1">
+        <input type="text" id="f1" class="uk-form-width-large" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -187,7 +187,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" class="uk-form-width-medium" data-kitid="f1">
+        <input type="text" id="f1" class="uk-form-width-medium" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -208,7 +208,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" class="uk-form-width-small" data-kitid="f1">
+        <input type="text" id="f1" class="uk-form-width-small" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -229,7 +229,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" class="uk-form-width-mini" data-kitid="f1">
+        <input type="text" id="f1" class="uk-form-width-mini" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -250,7 +250,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <input type="text" class="uk-form-blank" data-kitid="f1">
+        <input type="text" id="f1" class="uk-form-blank" data-kitid="f1">
       `);
 
       assert.equals(actual, expect,
@@ -272,8 +272,8 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-row">
-          <label class="uk-form-label" data-kitid="label-f1">This a label</label>
-          <input type="text" data-kitid="f1">
+          <label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label>
+          <input type="text" id="f1" data-kitid="f1">
         </div>
       `);
 
@@ -296,8 +296,8 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-row">
-          <label class="uk-form-label" data-kitid="label-f1">This a label</label>
-          <input type="text" data-kitid="f1">
+          <label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label>
+          <input type="text" id="f1" data-kitid="f1">
         </div>
       `);
 
@@ -320,8 +320,8 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-row">
-          <label class="uk-form-label" data-kitid="label-f1">This a label</label>
-          <input type="text" data-kitid="f1">
+          <label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label>
+          <input type="text" id="f1" data-kitid="f1">
         </div>
       `);
 
@@ -344,8 +344,8 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-row">
-          <input type="text" data-kitid="f1">
-          <label class="uk-form-label" data-kitid="label-f1">This a label</label>
+          <input type="text" id="f1" data-kitid="f1">
+          <label class="uk-form-label" for="f1" data-kitid="label-f1">&#xA0;This a label</label>
         </div>
       `);
 
@@ -371,7 +371,7 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-row">
-          <input type="text" data-kitid="f1">
+          <input type="text" id="f1" data-kitid="f1">
           <p class="uk-form-help-block" data-kitid="help-f1">This is help text</p>
         </div>
       `);
@@ -398,7 +398,7 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-row">
-          <input type="text" data-kitid="f1">
+          <input type="text" id="f1" data-kitid="f1">
           <span class="uk-form-help-inline">This is help text</span>
         </div>
       `);
@@ -425,7 +425,7 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-row">
-          <input type="text" data-kitid="f1">
+          <input type="text" id="f1" data-kitid="f1">
           <span class="uk-form-help-inline">This is help text</span>
         </div>
       `);
@@ -449,7 +449,7 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-controls">
-          <input type="text" data-kitid="f1">
+          <input type="text" id="f1" data-kitid="f1">
         </div>
       `);
 
@@ -474,7 +474,7 @@ test('form input Component.', nested => {
 
       const expect = htmlToString(`
         <div class="uk-form-controls uk-form-controls-text">
-          <input type="text" data-kitid="f1">
+          <input type="text" id="f1" data-kitid="f1">
         </div>
       `);
 
@@ -498,7 +498,7 @@ test('form input Component.', nested => {
       const expect = htmlToString(`
         <div class="uk-form-icon">
           <i class="uk-icon-calendar" data-kitid="icon-f1"></i>
-          <input type="text" icon="calendar" data-kitid="f1">
+          <input type="text" id="f1" icon="calendar" data-kitid="f1">
         </div>
       `);
 
@@ -520,7 +520,7 @@ test('form input Component.', nested => {
         );
 
         const expect = htmlToString(`
-          <input type="text" required data-kitid="f1">
+          <input type="text" id="f1" required data-kitid="f1">
         `);
 
         assert.equals(actual, expect,

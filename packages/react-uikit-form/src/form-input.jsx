@@ -43,6 +43,17 @@ const FormInput = (props) => {
     type={props.type || 'text'}
     onChange={(e) => props.onChange(e)}
   />;
+  const type = {
+    input: 
+    file: ,
+
+    passwordToggle: ,
+
+    select:
+  };
+
+
+
 
 
   const help = ufunc.maybeIf(
@@ -105,11 +116,12 @@ FormInput.propTypes = {
                  React.PropTypes.string,
                  React.PropTypes.object
                ]),
+  icon       : React.PropTypes.string,
+  kitid      : React.PropTypes.string,
   label      : React.PropTypes.oneOfType([
                  React.PropTypes.string,
                  React.PropTypes.object
                ]),
-  kitid      : React.PropTypes.string,
   name       : React.PropTypes.string,
   onChange   : React.PropTypes.func,
   placeholder: React.PropTypes.string,

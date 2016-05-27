@@ -65,15 +65,15 @@ test('form Component.', nested => {
       const expect = htmlToString(`
         <form class="uk-form uk-form-stacked" data-kitid="f1">
           <div class="uk-form-row">
-            <label class="uk-form-label" data-kitid="label-f1">This a label</label>
+            <label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label>
             <div class="uk-form-controls">
-              <input type="text" data-kitid="f1">
+              <input type="text" id="f1" data-kitid="f1">
             </div>
           </div>
           <div class="uk-form-row">
-            <label class="uk-form-label" data-kitid="label-f2">This a label</label>
+            <label class="uk-form-label" for="f2" data-kitid="label-f2">This a label&#xA0;</label>
             <div class="uk-form-controls">
-              <input type="text" data-kitid="f2">
+              <input type="text" id="f2" data-kitid="f2">
             </div>
           </div>
         </form>
@@ -101,9 +101,9 @@ test('form Component.', nested => {
       const expect = htmlToString(`
         <form class="uk-form uk-form-horizontal" data-kitid="f1">
           <div class="uk-form-row">
-            <label class="uk-form-label" data-kitid="label-f1">This a label</label>
+            <label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label>
             <div class="uk-form-controls">
-              <input type="text" data-kitid="f1">
+              <input type="text" id="f1" data-kitid="f1">
             </div>
           </div>
         </form>
