@@ -530,6 +530,30 @@ test('form input Component.', nested => {
       });
 
 
+    nested.test('type=select:',
+      assert => {
+
+        const actual = reactToString(
+          <FormInput
+          type='select'
+          options={[
+            { value: 1, body: 'Option 1' },
+            { value: 2, body: 'Option 2' },
+            { value: 3, body: 'Option 3' }
+          ]}
+          onChange={(e) => handleChange(e)}
+        />
+        );
+
+        const expect = htmlToString(`
+          <input type="text" id="f1" required data-kitid="f1">
+        `);
+
+        assert.equals(actual, expect,
+          'Input is a required a form input.');
+
+        assert.end();
+      });
 
 
 });
