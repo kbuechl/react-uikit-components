@@ -4,7 +4,7 @@ import ufunc from 'ufunc';
 import FormInputHelp from './form-input-help';
 import FormInputControl from './form-input-control';
 import FormLabel from './form-label';
-import Icons from 'react-uikit-icons';
+import FormIcons from './form-input-icon.js';
 
 
 const getLabelPosistion = (label) => {
@@ -43,17 +43,6 @@ const FormInput = (props) => {
     type={props.type || 'text'}
     onChange={(e) => props.onChange(e)}
   />;
-  const type = {
-    input: 
-    file: ,
-
-    passwordToggle: ,
-
-    select:
-  };
-
-
-
 
 
   const help = ufunc.maybeIf(
@@ -64,16 +53,21 @@ const FormInput = (props) => {
   )(props.help);
 
 
-  const formInputControl = <FormInputControl {...props.control} display={props.display} input={input} />;
+  const formInputControl = <FormInputControl
+    {...props.control}
+    display={props.display}
+    input={input}
+  />;
 
 
-  const icon = <div className='uk-form-icon'>
-    <Icons
-      icon={props.icon}
-      kitid={`icon-${props.kitid}`}
-    />
+  const formInputIcon = <FormIcons
+    icon={props.icon}
+    display={props.display }
+    kitid={props.kitid}
+  >
     {input}
-  </div>;
+  </FormIcons>;
+
 
   const row = <div
     className={props.display != null ? `uk-display-${props.display} uk-form-row` : 'uk-form-row'}
@@ -93,7 +87,7 @@ const FormInput = (props) => {
     component = formInputControl;
 
   } else if (props.icon) {
-    component = icon;
+    component = formInputIcon;
 
   } else {
     component = input;
@@ -112,6 +106,7 @@ FormInput.propTypes = {
                  React.PropTypes.object
                ]),
   disabled   : React.PropTypes.bool,
+  display    : React.PropTypes.string,
   help       : React.PropTypes.oneOfType([
                  React.PropTypes.string,
                  React.PropTypes.object
