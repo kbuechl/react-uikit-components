@@ -17,32 +17,12 @@ const getLabelPosistion = (label) => {
 };
 
 
-const FormInput = (props) => {
-  // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
-    props.context ? `uk-form-${props.context}` : null,
-    props.size ? `uk-form-${props.size}` : null,
-    props.width ? `uk-form-width-${props.width}` : null,
-    props.blank ? 'uk-form-blank' : null,
-    props.classes,
-    props.className
-  ]);
+const FormInputBase = (props) => {
 
-
-  const ignoreProps = ['display', 'label', 'type', 'width'];
-  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
 
   // Elements
-  const input = <input
-    id={props.kitid}
-    name={props.name}
-    {...cleanProps}
-    className={cssClassNames}
-    data-kitid={props.kitid}
-    type={props.type || 'text'}
-    onChange={(e) => props.onChange(e)}
-  />;
+
 
 
   const help = ufunc.maybeIf(
@@ -56,7 +36,7 @@ const FormInput = (props) => {
   const formInputControl = <FormInputControl
     {...props.control}
     display={props.display}
-    input={input}
+    input={props.input}
   />;
 
 
@@ -65,7 +45,7 @@ const FormInput = (props) => {
     display={props.display }
     kitid={props.kitid}
   >
-    {input}
+    {props.input}
   </FormIcons>;
 
 
@@ -73,7 +53,7 @@ const FormInput = (props) => {
     className={props.display != null ? `uk-display-${props.display} uk-form-row` : 'uk-form-row'}
   >
     {getLabelPosistion(props.label) === 'left' ? <FormLabel {...props} /> : null}
-    {ufunc.either(formInputControl, input)(props.control)}
+    {ufunc.either(formInputControl, props.input)(props.control)}
     {getLabelPosistion(props.label) === 'right' ? <FormLabel {...props} /> : null}
     {help}
   </div>;
@@ -90,7 +70,7 @@ const FormInput = (props) => {
     component = formInputIcon;
 
   } else {
-    component = input;
+    component = props.input;
   }
 
   // Return Component
@@ -98,7 +78,7 @@ const FormInput = (props) => {
 };
 
 
-FormInput.propTypes = {
+FormInputBase.propTypes = {
   blank      : React.PropTypes.bool,
   context    : React.PropTypes.oneOf(['danger', 'success']),
   control    : React.PropTypes.oneOfType([
@@ -112,21 +92,18 @@ FormInput.propTypes = {
                  React.PropTypes.object
                ]),
   icon       : React.PropTypes.string,
+  input      : React.PropTypes.node,
   kitid      : React.PropTypes.string,
   label      : React.PropTypes.oneOfType([
                  React.PropTypes.string,
                  React.PropTypes.object
                ]),
-  name       : React.PropTypes.string,
-  onChange   : React.PropTypes.func,
   placeholder: React.PropTypes.string,
-  required   : React.PropTypes.bool,
   row        : React.PropTypes.bool,
   size       : React.PropTypes.oneOf(['large', 'small']),
   value      : React.PropTypes.string,
-  width      : React.PropTypes.oneOf(['large', 'medium', 'small', 'mini']),
-  type       : React.PropTypes.string
+  width      : React.PropTypes.oneOf(['large', 'medium', 'small', 'mini'])
 };
 
 
-export default uikit.base(FormInput);
+export default FormInputBase;

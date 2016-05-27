@@ -28,4 +28,14 @@ const FormLabel = (props) => {
   }
 };
 
+
+FormLabel.propTypes = {
+  display    : React.PropTypes.string,
+  label      : React.PropTypes.oneOfType([
+                 React.PropTypes.string,
+                 React.PropTypes.object
+               ]),
+  kitid      : React.PropTypes.string
+};
+
 export default FormLabel;

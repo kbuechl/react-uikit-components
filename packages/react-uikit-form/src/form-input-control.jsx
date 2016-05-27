@@ -14,6 +14,7 @@ const FormInputControl = (props) => {
 };
 
 FormInputControl.propTypes = {
+  className: React.PropTypes.string,
   text     : React.PropTypes.bool,
   input    : React.PropTypes.any,
   display  : React.PropTypes.string
