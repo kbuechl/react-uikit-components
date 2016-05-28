@@ -1,17 +1,23 @@
 import React from 'react';
+import uikit from '../../react-uikit-base';
 
 
 const FormHelp = (props) => {
+  const cssClassNames = uikit.helpers.cleanClasses([
+    props.help.type === 'block' ? 'uk-form-help-block' : 'uk-form-help-inline',
+    props.help.context ? `uk-form-${props.help.context}` : null
+  ]);
+
   const component = {
     block: <p
-       className='uk-form-help-block'
+       className={cssClassNames}
        data-kitid={props.kitid}
      >
        {props.help.text || props.help}
      </p>,
 
     inline: <span
-      className="uk-form-help-inline"
+      className={cssClassNames}
     >
      {props.help.text}
     </span>
