@@ -5,6 +5,7 @@ import FormInputBase from './form-input-base';
 import FormInputSelect from './form-input-select';
 import FormInputMain from './form-input-main';
 import FormInputFile from './form-input-file';
+import FormInputPassword from './form-input-password';
 
 
 const FormInput = (props) => {
@@ -22,21 +23,25 @@ const FormInput = (props) => {
 
   const type = {
     icon: <FormIcons
-      icon={props.icon}
-      display={props.display }
-      kitid={props.kitid}
-    >
-      <FormInputMain {...cleanProps} />
-    </FormIcons>,
+            icon={props.icon}
+            display={props.display }
+            kitid={props.kitid}
+          >
+            <FormInputMain {...cleanProps} />
+          </FormIcons>,
 
-    input: <FormInputMain {...cleanProps} className={cssClassNames} />,
+    input: <FormInputMain
+             {...cleanProps}
+             className={cssClassNames}
+           />,
 
     file: <FormInputFile {...props.file} />,
 
-    passwordToggle: <div className='uk-form-password'>
-                      <FormInputMain {...cleanProps} />
-                      <a href='#' className='uk-form-password-toggle' data-uk-form-password>...</a>
-                    </div>,
+    passwordToggle: <FormInputPassword
+                      input={cleanProps}
+                      {...props.password}
+                      kitid={props.kitid}
+                    />,
 
     select: <FormInputSelect
               {...props.select}
@@ -64,6 +69,7 @@ FormInput.propTypes = {
   kitid     : React.PropTypes.string,
   onChange  : React.PropTypes.func,
   options   : React.PropTypes.array,
+  password  : React.PropTypes.object,
   select    : React.PropTypes.object,
   size      : React.PropTypes.oneOf(['large', 'small']),
   type      : React.PropTypes.string,
