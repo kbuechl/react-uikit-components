@@ -1,7 +1,7 @@
 {
   "name": "react-uikit-form",
   "version": "1.0.0",
-  "description": "React uikit form component.",
+  "description": "React uikit form components.",
   "keywords": [
     "javascript",
     "react",
@@ -9,7 +9,7 @@
     "react-component",
     "react-uikit",
     "uikit-react",
-    "form"
+    "rect-form"
   ],
   "repository": "git@github.com:otissv/react-uikit-form.git",
   "author": "Otis Virginie",

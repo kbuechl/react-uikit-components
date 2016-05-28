@@ -18,13 +18,20 @@ const FormInput = (props) => {
     props.className
   ]);
 
+  const display = props.display === 'inlineBlock' ? 'inline-block' : props.display;
+
+
   const ignoreProps = ['display', 'label', 'width', 'classes'];
-  const cleanProps = { ...uikit.helpers.cleanProps(ignoreProps)(props), className: cssClassNames };
+  const cleanProps = {
+    ...uikit.helpers.cleanProps(ignoreProps)(props),
+    className: cssClassNames,
+    display: display
+   };
 
   const type = {
     icon: <FormIcons
             icon={props.icon}
-            display={props.display }
+            display={display}
             kitid={props.kitid}
           >
             <FormInputMain {...cleanProps} />
@@ -53,6 +60,7 @@ const FormInput = (props) => {
 
   return <FormInputBase
     {...props}
+    display={display}
     input={type[props.type] || (props.icon ? type.icon : type.input)}
   />;
 };
