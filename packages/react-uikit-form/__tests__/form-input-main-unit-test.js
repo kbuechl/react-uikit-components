@@ -460,31 +460,6 @@ test('form input Component.', nested => {
     });
 
 
-  nested.test('control=text prop:',
-    assert => {
-
-      const actual = reactToString(
-        <FormInput
-          control={{
-            text: true
-          }}
-          kitid='f1'
-        />
-      );
-
-      const expect = htmlToString(`
-        <div class="uk-form-controls uk-form-controls-text">
-          <input type="text" id="f1" data-kitid="f1">
-        </div>
-      `);
-
-      assert.equals(actual, expect,
-        'Places input inside a form control text.');
-
-      assert.end();
-    });
-
-
   nested.test('icon prop:',
     assert => {
 
