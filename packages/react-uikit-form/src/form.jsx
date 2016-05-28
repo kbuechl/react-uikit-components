@@ -3,7 +3,7 @@
 import React from 'react';
 import uikit from '../../react-uikit-base';
 import ufunc from 'ufunc';
-// import createFragment from 'react-addons-create-fragment';
+import FormInput from './form-input';
 
 
 function getChildren (props) {
@@ -46,9 +46,13 @@ const Form = (props) => {
 
 
   // Elements
-  const csrfToken = ufunc.maybeIf(<input type='hidden' id='_csrf' value={props.csrf} />);
 
-// console.log(getChildren(props));
+  let items;
+  if (props.items) {
+    items = props.items.map((item, index) => {
+      return <FormInput {...item} key={item.kitid}/>;
+    });
+  }
 
   // Return Component
   return <form
@@ -56,8 +60,7 @@ const Form = (props) => {
     className={cssClassNames}
     data-kitid={props.kitid}
   >
-    {csrfToken(props.csrf)}
-    {getChildren(props)}
+    {items || getChildren(props)}
   </form>;
 };
 
@@ -68,8 +71,7 @@ Form.propTypes = {
   classes   : React.PropTypes.array,
   layout    : React.PropTypes.oneOf(['stacked', 'horizontal']),
   kitid     : React.PropTypes.string,
-  items     : React.PropTypes.object,
-  csrf      : React.PropTypes.bool
+  items     : React.PropTypes.array
 };
 
 
