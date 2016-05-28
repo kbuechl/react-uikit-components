@@ -4,7 +4,7 @@ import Icons from 'react-uikit-icons';
 const FormInputSelect = (props) => {
   const body = props.select ?  props.select.body : null;
 
-  const selectType = props.select && props.select.type ? props.select.type : 'link';
+  const selectType = props.select && props.select.type ? props.select.type : 'button';
 
   const icon = <Icons
     icon={props.icon || 'caret-down'}
@@ -33,7 +33,7 @@ const FormInputSelect = (props) => {
   };
 
   return <div
-    className={props.select && props.select.type === 'button' ? 'uk-button uk-form-select' : 'uk-form-select'}
+    className={selectType === 'button' ? 'uk-button uk-form-select' : 'uk-form-select'}
     data-kitid={props.kitid}
   >
     {type[selectType]}
