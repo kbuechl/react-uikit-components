@@ -2,10 +2,6 @@ import React from 'react';
 import Icons from 'react-uikit-icons';
 
 const FormInputSelect = (props) => {
-  const body = props.select ?  props.select.body : null;
-
-  const selectType = props.select && props.select.type ? props.select.type : 'button';
-
   const icon = <Icons
     icon={props.icon || 'caret-down'}
     kitid={`icon-${props.kitid}`}
@@ -25,19 +21,19 @@ const FormInputSelect = (props) => {
   }
 
   const type = {
-    button: <span>{body} {icon}</span>,
+    button: <span>{props.body} {icon}</span>,
 
-    link: <a>{body} {icon}</a>,
+    link: <a>{props.body} {icon}</a>,
 
-    span: <span>{body} {icon}</span>
+    span: <span>{props.body} {icon}</span>
   };
 
   return <div
-    className={selectType === 'button' ? 'uk-button uk-form-select' : 'uk-form-select'}
+    className={props.type === 'button' ? 'uk-button uk-form-select' : 'uk-form-select'}
     data-kitid={props.kitid}
   >
-    {type[selectType]}
-    <select {...props} icon={null}>
+    {type[props.type] || type.button}
+    <select {...props} icon={null} type='select'>
       {options}
     </select>
   </div>;
@@ -45,10 +41,12 @@ const FormInputSelect = (props) => {
 
 
 FormInputSelect.propTypes = {
+  body      : React.PropTypes.string,
   icon      : React.PropTypes.string,
   kitid     : React.PropTypes.string,
+  options   : React.PropTypes.array,
   select    : React.PropTypes.object,
-  options   : React.PropTypes.array
+  type      : React.PropTypes.string
 };
 
 export default FormInputSelect;

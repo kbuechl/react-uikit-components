@@ -3,22 +3,23 @@ import React from 'react';
 const FormInputFile = (props) => {
 
   const type = {
-    button: <button className='uk-button'>{props.file.body}</button>,
+    button: <button className='uk-button'>{props.body}</button>,
 
-    link: <a>{props.file.body}</a>,
+    link: <a>{props.body}</a>,
 
-    span: <span>{props.file.body}</span>
+    span: <span>{props.body}</span>
   };
 
   return <div className='uk-form-file'>
-    {type[props.file.type] || type.button}
+    {type[props.type] || type.button}
     <input type='file' />
   </div>;
 };
 
 
 FormInputFile.propTypes = {
-  file     : React.PropTypes.object
+  body     : React.PropTypes.string,
+  type : React.PropTypes.oneOf(['button', 'link', 'span'])
 };
 
 export default FormInputFile;

@@ -31,7 +31,7 @@ const FormInput = (props) => {
 
     input: <FormInputMain {...cleanProps} className={cssClassNames} />,
 
-    file: <FormInputFile {...cleanProps} />,
+    file: <FormInputFile {...props.file} />,
 
     passwordToggle: <div className='uk-form-password'>
                       <FormInputMain {...cleanProps} />
@@ -39,7 +39,10 @@ const FormInput = (props) => {
                     </div>,
 
     select: <FormInputSelect
-              {...cleanProps}
+              {...props.select}
+              icon={props.icon}
+              options={props.options}
+              kitid={props.kitid}
             />
   };
 
@@ -56,10 +59,12 @@ FormInput.propTypes = {
   classes   : React.PropTypes.array,
   context   : React.PropTypes.oneOf(['danger', 'success']),
   display   : React.PropTypes.string,
+  file      : React.PropTypes.object,
   icon      : React.PropTypes.string,
   kitid     : React.PropTypes.string,
   onChange  : React.PropTypes.func,
   options   : React.PropTypes.array,
+  select    : React.PropTypes.object,
   size      : React.PropTypes.oneOf(['large', 'small']),
   type      : React.PropTypes.string,
   width     : React.PropTypes.oneOf(['large', 'medium', 'small', 'mini'])
