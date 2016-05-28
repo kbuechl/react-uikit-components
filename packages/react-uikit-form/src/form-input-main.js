@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const FormInputComponent = (props) => (
+const FormInputMain = (props) => (
   <input
     id={props.kitid}
     name={props.name}
@@ -12,7 +12,7 @@ const FormInputComponent = (props) => (
   />
 );
 
-FormInputComponent.propTypes = {
+FormInputMain.propTypes = {
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
   disabled  : React.PropTypes.bool,
@@ -26,4 +26,4 @@ FormInputComponent.propTypes = {
   value     : React.PropTypes.string
 };
 
-export default FormInputComponent;
+export default FormInputMain;

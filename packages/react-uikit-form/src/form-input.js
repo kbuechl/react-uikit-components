@@ -3,7 +3,7 @@ import uikit from '../../react-uikit-base';
 import FormIcons from './form-input-icon.js';
 import FormInputBase from './form-input-base';
 import FormInputSelect from './form-input-select';
-import FormInputComponent from './form-input-component';
+import FormInputMain from './form-input-main';
 
 
 const FormInput = (props) => {
@@ -25,10 +25,10 @@ const FormInput = (props) => {
       display={props.display }
       kitid={props.kitid}
     >
-      <FormInputComponent {...cleanProps} />
+      <FormInputMain {...cleanProps} />
     </FormIcons>,
 
-    input: <FormInputComponent {...cleanProps} className={cssClassNames} />,
+    input: <FormInputMain {...cleanProps} className={cssClassNames} />,
 
     file: <div className='uk-form-file'>
             <button className='uk-button'>...</button>
@@ -36,7 +36,7 @@ const FormInput = (props) => {
           </div>,
 
     passwordToggle: <div className='uk-form-password'>
-                      <FormInputComponent {...cleanProps} />
+                      <FormInputMain {...cleanProps} />
                       <a href='#' className='uk-form-password-toggle' data-uk-form-password>...</a>
                     </div>,
 
