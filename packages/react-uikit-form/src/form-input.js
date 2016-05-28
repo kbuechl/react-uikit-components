@@ -4,6 +4,7 @@ import FormIcons from './form-input-icon.js';
 import FormInputBase from './form-input-base';
 import FormInputSelect from './form-input-select';
 import FormInputMain from './form-input-main';
+import FormInputFile from './form-input-file';
 
 
 const FormInput = (props) => {
@@ -30,10 +31,7 @@ const FormInput = (props) => {
 
     input: <FormInputMain {...cleanProps} className={cssClassNames} />,
 
-    file: <div className='uk-form-file'>
-            <button className='uk-button'>...</button>
-            <input type='file' />
-          </div>,
+    file: <FormInputFile {...cleanProps} />,
 
     passwordToggle: <div className='uk-form-password'>
                       <FormInputMain {...cleanProps} />
