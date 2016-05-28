@@ -17,10 +17,9 @@ const FormInputSelect = (props) => {
     options = props.options.map(item =>
       <option
         key={item.value}
-        onChange={item.onChange || props.onChange}
         value={item.value}
       >
-        item.body
+        {item.body}
       </option>
     );
   }
@@ -36,7 +35,7 @@ const FormInputSelect = (props) => {
     data-kitid={props.kitid}
   >
     {type[selectType]}
-    <select {...props}>
+    <select {...props} icon={null}>
       {options}
     </select>
   </div>;
@@ -47,7 +46,6 @@ FormInputSelect.propTypes = {
   icon      : React.PropTypes.string,
   kitid     : React.PropTypes.string,
   select    : React.PropTypes.object,
-  onChange  : React.PropTypes.func,
   options   : React.PropTypes.array
 };
 

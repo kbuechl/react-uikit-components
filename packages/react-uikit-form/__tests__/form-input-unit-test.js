@@ -509,51 +509,24 @@ test('form input Component.', nested => {
     });
 
 
-    nested.test('required prop:',
-      assert => {
+  nested.test('required prop:',
+    assert => {
 
-        const actual = reactToString(
-          <FormInput
-            required
-            kitid='f1'
-          />
-        );
-
-        const expect = htmlToString(`
-          <input type="text" id="f1" required data-kitid="f1">
-        `);
-
-        assert.equals(actual, expect,
-          'Input is a required a form input.');
-
-        assert.end();
-      });
-
-
-    nested.test('type=select:',
-      assert => {
-
-        const actual = reactToString(
-          <FormInput
-          type='select'
-          options={[
-            { value: 1, body: 'Option 1' },
-            { value: 2, body: 'Option 2' },
-            { value: 3, body: 'Option 3' }
-          ]}
-          onChange={(e) => handleChange(e)}
+      const actual = reactToString(
+        <FormInput
+          required
+          kitid='f1'
         />
-        );
+      );
 
-        const expect = htmlToString(`
-          <input type="text" id="f1" required data-kitid="f1">
-        `);
+      const expect = htmlToString(`
+        <input type="text" id="f1" required data-kitid="f1">
+      `);
 
-        assert.equals(actual, expect,
-          'Input is a required a form input.');
+      assert.equals(actual, expect,
+        'Input is a required a form input.');
 
-        assert.end();
-      });
-
+      assert.end();
+    });
 
 });
