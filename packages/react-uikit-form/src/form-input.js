@@ -39,7 +39,7 @@ const FormInput = (props) => {
 
     passwordToggle: <FormInputPassword
                       input={cleanProps}
-                      {...props.password}
+                      {...props.toggle}
                       kitid={props.kitid}
                     />,
 
@@ -69,9 +69,9 @@ FormInput.propTypes = {
   kitid     : React.PropTypes.string,
   onChange  : React.PropTypes.func,
   options   : React.PropTypes.array,
-  password  : React.PropTypes.object,
   select    : React.PropTypes.object,
   size      : React.PropTypes.oneOf(['large', 'small']),
+  toggle    : React.PropTypes.object,
   type      : React.PropTypes.string,
   width     : React.PropTypes.oneOf(['large', 'medium', 'small', 'mini'])
 };
