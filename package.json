@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-components",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "React UIkit components for UIkit CSS framework.",
   "keywords": [
     "javascript",
@@ -18,8 +18,8 @@
     "build": "webpack --config ./webpack.config-build.js --progress",
     "lint": "eslint --quiet ./src/**  && date || true && date",
     "lint:watch": "watch 'npm run lint' ./",
-    "uikit": "node node_modules/postcss-build --config postcssbuild.json --d src/styles/uikit -o docs/styles/uikit.min.css",
-    "css": "node node_modules/postcss-build --config postcssbuild.json --s src/styles/main.css -o docs/styles/main.min.css",
+    "uikit": "postcssbuild --config postcssbuild.json --d src/styles/uikit -o docs/styles/uikit.min.css",
+    "css": "postcssbuild --config postcssbuild.json --s src/styles/main.css -o docs/styles/main.min.css",
     "css:build": "npm run uikit && npm run css",
     "prepublish": "npm run build && npm run css:build",
     "start": "node ./server.js",
@@ -50,7 +50,7 @@
     "faucet": "~0.0.1",
     "history": "~2.1.1",
     "json-loader": "~0.5.4",
-    "postcss-build": "~1.0.0",
+    "postcss-build": "^1.0.6",
     "react-addons-test-utils": "~15.0.2",
     "react-dom": "~15.0.2",
     "react-transform-catch-errors": "~1.0.2",

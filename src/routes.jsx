@@ -20,6 +20,7 @@ import CodeblockDoc from './codeblock-doc.jsx';
 import CommentDoc from './comment-doc.jsx';
 import CommentListDoc from './comment-list-doc.jsx';
 import DropdownDoc from './dropdown-doc.jsx';
+import FormDoc from './form-doc.jsx';
 import FlexDoc from './flex-doc.jsx';
 import GridDoc from './grid-doc.jsx';
 import IconsDoc from './icons-doc.jsx';
@@ -94,6 +95,7 @@ const Layout = (props) => (
         <NavItem type='header' body='ELEMENTS'/>
         <NavItem type='item'><Link to='/list'>List</Link></NavItem>
         <NavItem type='item'><Link to='/table'>Table</Link></NavItem>
+        <NavItem type='item'><Link to='/form'>Form</Link></NavItem>
 
         <NavItem type='header' body='COMMON'/>
         <NavItem type='item'><Link to='/button'>Button</Link></NavItem>
@@ -144,6 +146,7 @@ const routes = {
     { path: '/comment-list', component : CommentListDoc },
     { path: '/dropdown', component     : DropdownDoc },
     { path: '/flex', component         : FlexDoc },
+    { path: '/form', component         : FormDoc },
     { path: '/grid', component         : GridDoc },
     { path: '/icons', component        : IconsDoc },
     { path: '/img',  component         : ImgDoc },
