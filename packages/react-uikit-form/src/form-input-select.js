@@ -27,7 +27,9 @@ const FormInputSelect = (props) => {
   const type = {
     button: <span>{body} {icon}</span>,
 
-    link: <a href=''>{body} {icon}</a>
+    link: <a>{body} {icon}</a>,
+
+    span: <span>{body} {icon}</span>
   };
 
   return <div
