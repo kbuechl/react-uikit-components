@@ -33,6 +33,7 @@ The master branch for each component has been updated to React 15. To use with R
   <li><a href='https://github.com/otissv/react-uikit-comment-list'>Comment List</a></li>
   <li><a href='https://github.com/otissv/react-uikit-dropdown'>Dropdown</a></li>
   <li><a href='https://github.com/otissv/react-uikit-flex'>Flex</a></li>
+  <li><a href='https://github.com/otissv/react-uikit-form'>Form</a></li>
   <li><a href='https://github.com/otissv/react-uikit-grid'>Grid</a></li>
   <li><a href='https://github.com/otissv/react-uikit-icons'>Icons</a></li>
   <li><a href='https://github.com/otissv/react-uikit-img'>Img</a></li>
