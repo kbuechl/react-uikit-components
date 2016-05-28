@@ -23,29 +23,6 @@ test('form Component.', nested => {
     });
 
 
-  nested.test('csrf prop:',
-    assert => {
-
-      const actual = reactToString(
-        <Form
-          csrf
-          kitid='f1'
-        />
-      );
-
-      const expect = htmlToString(`
-        <form class="uk-form" data-kitid="f1">
-          <input type="hidden" id="_csrf" value="true">
-        </form>
-      `);
-
-      assert.equals(actual, expect,
-        'Correctly renders form component');
-
-      assert.end();
-    });
-
-
   nested.test('layout=stacked prop:',
     assert => {
 
