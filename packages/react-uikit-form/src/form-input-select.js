@@ -45,7 +45,6 @@ FormInputSelect.propTypes = {
   icon      : React.PropTypes.string,
   kitid     : React.PropTypes.string,
   options   : React.PropTypes.array,
-  select    : React.PropTypes.object,
   type      : React.PropTypes.string
 };
 

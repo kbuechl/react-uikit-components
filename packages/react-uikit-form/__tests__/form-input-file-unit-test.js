@@ -13,7 +13,7 @@ test('Form input file component.', nested => {
     assert => {
 
       const actual = reactToString(
-        <FormInput row type='file' file={{ body: 'Select' }} />
+        <FormInput row type='file' button={{ body: 'Select' }} />
       );
 
       const expect = htmlToString(`
@@ -26,7 +26,7 @@ test('Form input file component.', nested => {
       `);
 
       assert.equals(actual, expect,
-        'Correctly renders form select file.');
+        'Correctly renders form input file.');
 
       assert.end();
     });
@@ -36,7 +36,7 @@ test('Form input file component.', nested => {
     assert => {
 
       const actual = reactToString(
-        <FormInput row type='file' file={{ body: 'Select' }} />
+        <FormInput row type='file' button={{ body: 'Select' }} />
       );
 
       const expect = htmlToString(`
@@ -58,7 +58,7 @@ test('Form input file component.', nested => {
     assert => {
 
       const actual = reactToString(
-        <FormInput row type='file' file={{ body: 'Select', type: 'link' }} />
+        <FormInput row type='file' button={{ body: 'Select', type: 'link' }} />
       );
 
       const expect = htmlToString(`
@@ -81,7 +81,7 @@ test('Form input file component.', nested => {
     assert => {
 
       const actual = reactToString(
-        <FormInput row type='file' file={{ body: 'Select', type: 'span' }} />
+        <FormInput row type='file' button={{ body: 'Select', type: 'span' }} />
       );
 
       const expect = htmlToString(`

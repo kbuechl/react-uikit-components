@@ -16,7 +16,7 @@ test('Form input select component.', nested => {
         <FormInput
           kitid='f1'
           label='Select'
-          select={{ body: 'Option 1', type: 'button' }}
+          button={{ body: 'Option 1', type: 'button' }}
           type='select'
           options={[
             { value: 1, body: 'Option 1' },
@@ -54,7 +54,7 @@ test('Form input select component.', nested => {
         <FormInput
           kitid='f1'
           label='Select'
-          select={{ body: 'Option 1', type: 'link' }}
+          button={{ body: 'Option 1', type: 'link' }}
           type='select'
           options={[
             { value: 1, body: 'Option 1' },
@@ -91,7 +91,7 @@ test('Form input select component.', nested => {
         <FormInput
           kitid='f1'
           label='Select'
-          select={{ body: 'Option 1', type: 'button' }}
+          button={{ body: 'Option 1', type: 'button' }}
           type='select'
           icon='cog'
           options={[
@@ -130,7 +130,7 @@ test('Form input select component.', nested => {
         <FormInput
           kitid='f1'
           label='Select'
-          select={{ body: 'Option 1', type: 'span' }}
+          button={{ body: 'Option 1', type: 'span' }}
           type='select'
           icon='cog'
           options={[
