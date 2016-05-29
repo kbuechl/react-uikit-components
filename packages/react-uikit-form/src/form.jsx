@@ -2,7 +2,6 @@
 
 import React from 'react';
 import uikit from '../../react-uikit-base';
-import ufunc from 'ufunc';
 import FormInput from './form-input';
 
 
