@@ -64,7 +64,7 @@ class FormDoc extends React.Component {
 
 
         <h3 className='example'>Example</h3>
-        <Form>
+        <Form title='Form title'>
           <FormInput
             placeholder='Text Input'
             margin='right bottom'
@@ -899,36 +899,44 @@ class FormDoc extends React.Component {
 {`const AuthForm = (props) => {
   const {
     fields: { username, password },
+    heading,
     onSubmit
   } = props;
 
-  return <Form layout='stacked' onSubmit={onSubmit}>
-    <FormInput
-      label='Username'
-      {...username}
-      context={ username.invalid ? 'danger' :  null}
-      help={
-        username.invalid && username.touched
-        ? { type: 'block', text: username.error, context: 'danger' }
-        :  null
+  return <Form
+    title={heading}
+    layout='stacked'
+    onSubmit={onSubmit}
+    items={[
+      {
+        ...username,
+        kitid: 'username',
+        label: 'Username',
+        context: username.invalid && username.touched ? 'danger' :  null,
+        help={
+          password.invalid && password.touched
+          ? { type: 'block', text: password.error, context: 'danger' }
+          :  null
+        }
+      },
+      {
+
+        ...password,
+        kitid: 'label',
+        label: 'password',
+        context: password.invalid && password.touched ? 'danger' :  null,
+        help: {
+          password.invalid && password.touched
+          ? { type: 'block', text: password.error, context: 'danger' }
+          :  null
+        }
       }
-    />
+    ]}
+  >
 
-    <FormInput
-      label='Password'
-      type='password'
-      {...password}
-      context={ password.invalid ? 'danger' :  null}
-      help={
-        password.invalid && password.touched
-        ? { type: 'block', text: password.error, context: 'danger' }
-        :  null
-      }
-    />
+    <button type='submit' className='uk-button uk-button-primary uk-margin-right uk-margin-top'>Sign in</button>
 
-    <button type='submit' className='uk-button uk-button-primary'>Sign in</button>
-
-    <a href={ROOT_ROUTE} className='uk-button uk-button-danger'>Cancel</a>
+    <a href={ROOT_ROUTE} className='uk-button uk-button-danger uk-margin-top'>Cancel</a>
   </Form>;
 };
 `}
