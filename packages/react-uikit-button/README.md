@@ -22,9 +22,9 @@ UIkit css is not included. You can get it from [getuikit.com](http://getuikit.co
 
 
 ###Example
-
-    <Button body='Link' type='link' margin='bottom right'/>
     <Button body='Button' margin='bottom right'/>
+    <Button body='Link' type='link' margin='bottom right'/>
+    <Button body='submit' type='submit' disabled margin='bottom right'/>
     <Button body='Disabled' disabled margin='bottom right'/>
     <Button type='close'/>
 

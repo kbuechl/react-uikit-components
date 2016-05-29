@@ -46,7 +46,7 @@ const Button = (props) => {
       {...cleanProps}
       {...attr}
       className={cssClassNames}
-      type='button'
+      type={props.type || 'button'}
       disabled={props.disabled}
     >
      {props.body}{props.children}
@@ -72,7 +72,7 @@ const Button = (props) => {
 
 
   // Return Component
-  return type[props.type] || type['button'];
+  return type.submit ? type['button'] : type[props.type] || type['button'];
 };
 
 
@@ -82,7 +82,7 @@ Button.propTypes = {
   context  : React.PropTypes.oneOf(['primary', 'success', 'danger', 'link']),
   disabled : React.PropTypes.bool,
   size     : React.PropTypes.oneOf(['mini', 'small', 'large']),
-  type     : React.PropTypes.oneOf(['button', 'close', 'link'])
+  type     : React.PropTypes.oneOf(['button', 'close', 'link', 'submit'])
 };
 
 
