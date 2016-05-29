@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-components",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "React UIkit components for UIkit CSS framework.",
   "keywords": [
     "javascript",
@@ -77,7 +77,7 @@
     "react-uikit-base": "latest",
     "react-uikit-block": "latest",
     "react-uikit-breadcrumb": "latest",
-    "react-uikit-button": "latest",
+    "react-uikit-button": "^1.1.0",
     "react-uikit-button-group": "latest",
     "react-uikit-codeblock": "latest",
     "react-uikit-comment": "latest",

@@ -36,7 +36,7 @@ var Button = require('react-uikit-button').default;`}
 
       <p>
         The Button component creates either a button,
-        a link or a close button by setting the <code>type</code>.
+        link, submit or a close button by setting the <code>type</code>.
       </p>
 
       <p>
@@ -44,8 +44,9 @@ var Button = require('react-uikit-button').default;`}
       </p>
 
       <h3 className='example'>Example</h3>
-      <Button body='Link' type='link' margin='bottom right'/>
       <Button body='Button' margin='bottom right'/>
+      <Button body='Link' type='link' margin='bottom right'/>
+      <Button body='Submit' type='submit' margin='bottom right'/>
       <Button body='Disabled' disabled margin='bottom right'/>
       <Button type='close'/>
 
