@@ -60,7 +60,9 @@ const Form = (props) => {
     className={cssClassNames}
     data-kitid={props.kitid}
   >
-    {items || getChildren(props)}
+    <h3>{props.title}</h3>
+    {items}
+    {getChildren(props)}
   </form>;
 };
 
@@ -71,7 +73,8 @@ Form.propTypes = {
   classes   : React.PropTypes.array,
   layout    : React.PropTypes.oneOf(['stacked', 'horizontal']),
   kitid     : React.PropTypes.string,
-  items     : React.PropTypes.array
+  items     : React.PropTypes.array,
+  title     : React.PropTypes.string
 };
 
 
