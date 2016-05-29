@@ -55,34 +55,54 @@ UIkit css is not included. You can get it from [getuikit.com](http://getuikit.co
 </Form>
 ```
 
-### Example 2
+### Redux Form expamle
 ```
-<Form layout='stacked' items={[
-  { kitid: 'input1', label: 'Text', placeholder: 'Text Input', margin: 'right', onChange: this.handleChange },
-  { kitid: 'input2', label: 'Checkbox', type: 'checkbox', display: 'inlineBlock', margin: 'right', onChange: this.handleChange },
-  { kitid: 'input3', label: 'Radio', type: 'radio', name: 'radio', display: 'inlineBlock', onChange: this.handleChange },
-  { kitid: 'input4', type: 'file', button: { body: 'Default file' } },
-  { kitid: 'input5', label: 'Select', button: { body: 'Option 1', type: 'button' }, type: 'select',
-    options: [
-      { value: 1, body: 'Option 1' },
-      { value: 2, body: 'Option 2' },
-      { value: 3, body: 'Option 3' }
-    ]
-  },
-  {
-    kitid: 'input5',
-    type: 'passwordToggle',
-    placeholder: 'Password input',
-    onChange: this.handleChange,
-    toggle: {
-      body   : this.state.showPassword ? 'Hide' : 'Show',
-      icon   : this.state.showPassword ? 'eye' : 'eye-slash',
-      onClick: this.handlePasswordClick,
-      type   : this.state.showPassword ? 'text' : 'password'
-    }
-  }
-]}/>
+const AuthForm = (props) => {
+  const {
+    fields: { username, password },
+    heading,
+    onSubmit
+  } = props;
+
+  return <Form
+    title={heading}
+    layout='stacked'
+    onSubmit={onSubmit}
+    items={[
+      {
+        ...username,
+        kitid: 'username',
+        label: 'Username',
+        context: username.invalid && username.touched ? 'danger' :  null,
+        help={
+          password.invalid && password.touched
+          ? { type: 'block', text: password.error, context: 'danger' }
+          :  null
+        }
+      },
+      {
+
+        ...password,
+        kitid: 'label',
+        label: 'password',
+        context: password.invalid && password.touched ? 'danger' :  null,
+        help: {
+          password.invalid && password.touched
+          ? { type: 'block', text: password.error, context: 'danger' }
+          :  null
+        }
+      }
+    ]}
+  >
+
+    <button type='submit' className='uk-button uk-button-primary uk-margin-right uk-margin-top'>Sign in</button>
+
+    <a href={ROOT_ROUTE} className='uk-button uk-button-danger uk-margin-top'>Cancel</a>
+  </Form>;
+};
 ```
+
+
 ##Tests
 
 `npm run test`to run tests with minimal output.  
