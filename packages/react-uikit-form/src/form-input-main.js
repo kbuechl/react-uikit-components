@@ -23,7 +23,7 @@ FormInputMain.propTypes = {
   onChange  : React.PropTypes.func,
   required  : React.PropTypes.bool,
   type      : React.PropTypes.string,
-  value     : React.PropTypes.string
+  value     : React.PropTypes.any
 };
 
 export default FormInputMain;
