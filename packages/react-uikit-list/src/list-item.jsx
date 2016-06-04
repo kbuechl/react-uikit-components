@@ -117,7 +117,7 @@ class ListItem extends React.Component {
 ListItem.propTypes = {
   active      : React.PropTypes.bool,
   badge       : React.PropTypes.object,
-  body        : React.PropTypes.string,
+  body        : React.PropTypes.any,
   children    : React.PropTypes.any,
   className   : React.PropTypes.string,
   classes     : React.PropTypes.array,
