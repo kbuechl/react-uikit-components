@@ -15,9 +15,8 @@ class ListItem extends React.Component {
 
 
   getItemDetails (element) {
-
     const kitid = element.dataset.kitid;
-    const index = kitid.match(/-(.*?)-/)[1];
+    const index = kitid.match(/\.(.*)/)[1];
 
     return {
       component: this,
