@@ -40,7 +40,6 @@
     "eslint-plugin-smells": "~1.0.1",
     "faucet": "~0.0.1",
     "glob": "~7.0.3",
-    "history": "~3.0.0",
     "react": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
     "react-dom": "^15.0.0",
