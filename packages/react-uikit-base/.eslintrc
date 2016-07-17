@@ -1,5 +1,9 @@
 {
-  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
 
   "env": {
     "browser": true,
@@ -16,10 +20,14 @@
   },
 
   "plugins": [
+    "react",
     "smells"
   ],
 
-  "extends": "standard",
+  "extends": [
+    "standard",
+    "plugin:react/recommended"
+  ],
 
   "rules": {
     "key-spacing": 0,
@@ -33,6 +41,6 @@
     "smells/no-setinterval": 1,
     "smells/no-this-assign": 1,
     "smells/no-complex-string-concat": 1,
-    "smells/no-complex-chaining": 0
+    "smells/no-complex-chaining": 0,
   }
 }
