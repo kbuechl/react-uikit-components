@@ -41,6 +41,6 @@
     "smells/no-setinterval": 1,
     "smells/no-this-assign": 1,
     "smells/no-complex-string-concat": 1,
-    "smells/no-complex-chaining": 0,
+    "smells/no-complex-chaining": 0
   }
 }
