@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-base",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React UIkit base HOC with uikit utility classes",
   "keywords": [
     "javascript",
