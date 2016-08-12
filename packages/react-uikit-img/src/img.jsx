@@ -76,8 +76,28 @@ class Img extends React.Component {
     ]);
 
 
+    // Remove non valid html attributes
+    const ignoreProps = [
+      'children',
+      'className',
+      'classes',
+      'cover',
+      'kitid',
+      'large',
+      'medium',
+      'small',
+      'xlarg'
+    ];
+
+    const ignoreImgProps = [
+      ...ignoreProps,
+      'alt',
+      'height',
+      'src',
+      'width'
+    ];
+
     // Elements
-    const ignoreProps = ['alt', 'src'];
     const attr = {
       ...uikit.events(props),
       className   : cssClassNames,
@@ -85,13 +105,13 @@ class Img extends React.Component {
     };
 
     const img = <img
-      {...props}
+      {...uikit.helpers.cleanProps(ignoreProps)(props)}
       {...attr}
     />;
 
 
     const cover = <div
-      {...uikit.helpers.cleanProps(ignoreProps)(props)}
+      {...uikit.helpers.cleanProps(ignoreImgProps)(props)}
       {...attr}
     >
         {props.children}
