@@ -11,7 +11,7 @@ test('button Component', nested => {
       const button = renderElement(<Button kitid='butt' type='button'>This is a button</Button>).dom();
 
       const actualText = button.html();
-      const expectedText = '<button type="button" data-kitid="butt" class="uk-button">This is a button</button>';
+      const expectedText = '<button data-kitid="butt" class="uk-button" type="button">This is a button</button>';
       assert.equals(actualText, expectedText,
         'Correctly renders button element as button');
 

@@ -30,12 +30,24 @@ const Button = (props) => {
   ]);
 
 
-  // Elements
-  const ignoreProps = ['type'];
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'body',
+    'block',
+    'children',
+    'classes',
+    'context',
+    'kitid',
+    'size',
+    'type'
+  ];
+
   const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
 
+  // Elements
   const attr = {
+    ...cleanProps,
     ...uikit.events(props),
     'data-kitid': props.kitid
   };
@@ -43,7 +55,6 @@ const Button = (props) => {
 
   const type = {
     button: <button
-      {...cleanProps}
       {...attr}
       className={cssClassNames}
       type={props.type || 'button'}
@@ -53,14 +64,12 @@ const Button = (props) => {
    </button>,
 
     close: <a
-      {...cleanProps}
       {...attr}
       className={`uk-close ${cssClassNames}`}
       href='#'
     />,
 
     link: <a
-      {...cleanProps}
       {...attr}
       className={cssClassNames}
       href='#'
@@ -79,8 +88,11 @@ const Button = (props) => {
 Button.propTypes = {
   body     : React.PropTypes.string,
   block    : React.PropTypes.bool,
+  children : React.PropTypes.any,
+  classes  : React.PropTypes.array,
   context  : React.PropTypes.oneOf(['primary', 'success', 'danger', 'link']),
   disabled : React.PropTypes.bool,
+  kitid    : React.PropTypes.string,
   size     : React.PropTypes.oneOf(['mini', 'small', 'large']),
   type     : React.PropTypes.oneOf(['button', 'close', 'link', 'submit'])
 };
