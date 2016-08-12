@@ -3,15 +3,15 @@
 const events = (props) => {
   return {
     // Mouse
-    onClick     : props.onClick,
-    onDblclick  : props.onDblclick,
-    onMouseDown : props.onMouseDown,
-    onMouseEnter: props.onMouseEnter,
-    onMouseLeave: props.onMouseLeave,
-    onMouseMove : props.onMouseMove,
-    onMouseOver : props.onMouseOver,
-    onMouseOut  : props.onMouseOut,
-    onMouseUP   : props.onMouseUP,
+    onClick       : props.onClick,
+    onDoubleClick : props.onDoubleClick,
+    onMouseDown   : props.onMouseDown,
+    onMouseEnter  : props.onMouseEnter,
+    onMouseLeave  : props.onMouseLeave,
+    onMouseMove   : props.onMouseMove,
+    onMouseOut    : props.onMouseOut,
+    onMouseOver   : props.onMouseOver,
+    onMouseUp     : props.onMouseUp,
 
     // Keyboard
     onKeyDown  : props.onKeyDown,
@@ -24,27 +24,20 @@ const events = (props) => {
     onFocus   : props.onFocus,
     onFocusIn : props.onFocusIn,
     onInput   : props.onInput,
-    onInvaid  : props.onInvaid,
     onReset   : props.onReset,
-    onSearch  : props.onSearch,
     onSelect  : props.onSelect,
     onSubmit  : props.onSubmit,
 
     // Frame/Object
-    onBeforeUnload: props.onBeforeUnload,
-    onHashChange  : props.onHashChange,
-    onLoad        : props.onLoad,
-    onPageShow    : props.onPageShow,
-    onPageHide    : props.onPageHide,
-    onResize      : props.onResize,
-    onScroll      : props.onScroll,
-    onUload       : props.onUload,
+    onLoad   : props.onLoad,
+    onScroll : props.onScroll,
 
     // Drag
     onDrag      : props.onDrag,
-    onDraged    : props.onDraged,
+    onDragEnd   : props.onDragEnd,
     onDragEnter : props.onDragEnter,
     onDragLeave : props.onDragLeave,
+    onDragExit  : props.onDragExit,
     onDragOver  : props.onDragOver,
     onDragStart : props.onDragStart,
     onDrop      : props.onDrop,
@@ -55,60 +48,36 @@ const events = (props) => {
     onCut  : props.onCut,
     onPaste: props.onPaste,
 
-    // Print
-    onAfterPrint : props.onAfterPrint,
-    onBeforePrint: props.onBeforePrint,
-
     // Media
-    onCanPlay: props.onCanPlay,
+    onCanPlay       : props.onCanPlay,
     onCanPlayThrough: props.onCanPlayThrough,
     onDurationChange: props.onDurationChange,
-    onEmptied: props.onEmptied,
-    onEnded: props.onEnded,
-    onLoadedData: props.onLoadedData,
-    onLoadedMetaData: props.onLoadedMetaData,
-    onLoadStart: props.onLoadStart,
-    onPause: props.oPausenPause,
-    onPlay: props.onPlay,
-    onPlaying: props.onPlaying,
-    onProgress: props.onProgress,
-    onRateChange: props.onRateChange,
-    onSeeked: props.onSeeked,
-    onSeeking: props.onSeeking,
-    onStalled: props.onStalled,
-    onSuspend: props.onSuspend,
-    ontimeUpdate: props.ontimeUpdate,
-    onVolumeChange: props.onVolumeChange,
-    onWaiting: props.onWaiting,
-
-    // Animation
-    animationend       : props.animationend,
-    animationIteration : props.animationIteration,
-    animationStart     : props.animationStart,
-
-    // Transition
-    transitionend: props.transitionend,
-
-    // Server-Sent
-    onOpen: props.onOpen,
-
+    onEmptied       : props.onEmptied,
+    onEnded         : props.onEnded,
+    onLoadedData    : props.onLoadedData,
+    onLoadedMetadata: props.onLoadedMetadata,
+    onLoadStart     : props.onLoadStart,
+    onPause         : props.oPausenPause,
+    onPlay          : props.onPlay,
+    onPlaying       : props.onPlaying,
+    onProgress      : props.onProgress,
+    onRateChange    : props.onRateChange,
+    onSeeked        : props.onSeeked,
+    onSeeking       : props.onSeeking,
+    onStalled       : props.onStalled,
+    onSuspend       : props.onSuspend,
+    onTimeUpdate    : props.onTimeUpdate,
+    onVolumeChange  : props.onVolumeChange,
+    onWaiting       : props.onWaiting,
 
     // Misc
-    onAbort       : props.onAbort,
-    onError       : props.onError,
-    onMessage: props.onMessage,
-    onMouseWheel: props.onMouseWheel,
-    onOnline: props.onOnline,
-    onOffline: props.onOffline,
-    onPopState: props.onPopState,
-    onShow: props.onShow,
-    onStorage: props.onStorage,
-    onToggle: props.onToggle,
-    onWheel: props.onWheel,
+    onAbort : props.onAbort,
+    onError : props.onError,
+    onWheel : props.onWheel,
 
     // Touch
     onTouchCancel: props.onTouchCancel,
-    onTouched: props.onTouched,
+    onTouchEnd: props.onTouchend,
     onTouchMove: props.onTouchMove,
     onTouchStart: props.onTouchStart
   };

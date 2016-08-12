@@ -1,5 +1,7 @@
 'use strict';
 import ufunc from 'ufunc';
+import utility from './utility';
+
 
 const breakpoints = () => {
   const media = {
@@ -31,16 +33,18 @@ const cleanClasses = (c) => {
 
 
 const cleanProps = (ignoreKeys) => {
+  const ignore = [...ignoreKeys, ...Object.keys(utility.utilityCss)];
+
   return (obj) => {
     const newObj = {...obj};
 
-    for (let i = 0; i < ignoreKeys.length; i++) {
-      if (obj[ignoreKeys[i]]) {
-        newObj[ignoreKeys[i]] = null;
+    for (let i = 0; i < ignore.length; i++) {
+      if (obj[ignore[i]]) {
+        newObj[ignore[i]] = null;
       }
     }
 
-    return newObj;
+    return ufunc.cleanObj(newObj);
   };
 };
 
