@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import uikit from '../../../base';
 import ufunc from 'ufunc';
 
 
@@ -23,9 +23,23 @@ const Badge = (props) => {
   ]);
 
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'children',
+    'className',
+    'classes',
+    'context',
+    'block',
+    'body',
+    'kitid',
+    'notification'
+  ];
+  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+
+
   // Elements
   const block = <div
-    {...props}
+    {...cleanProps}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
@@ -35,7 +49,8 @@ const Badge = (props) => {
 
 
   const inline = <span
-    {...{...props, ...uikit.events(props)}}
+    {...cleanProps}
+    {...uikit.events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
