@@ -15,7 +15,23 @@ class List extends React.Component {
 
   render () {
     const props = this.props;
-    const ignoreProps = ['type', 'onClick'];
+
+    // Remove non valid html attributes
+    const ignoreProps = [
+      'children',
+      'className',
+      'classes',
+      'description',
+      'items',
+      'horizontal',
+      'kitid',
+      'line',
+      'striped',
+      'selectable',
+      'space',
+      'type'
+    ];
+
     const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
     // CSS classes

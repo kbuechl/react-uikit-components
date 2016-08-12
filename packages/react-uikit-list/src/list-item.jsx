@@ -43,6 +43,7 @@ class ListItem extends React.Component {
   render () {
     const props = this.props;
 
+
     // CSS classes
     const cssClassNames = uikit.helpers.cleanClasses([
       props.active ? 'uk-active' : null,
@@ -51,11 +52,29 @@ class ListItem extends React.Component {
     ]);
 
 
+    // Remove non valid html attributes
+    const ignoreProps = [
+      'active',
+      'badge',
+      'body',
+      'children',
+      'className',
+      'classes',
+      'description',
+      'kitid',
+      'onClick',
+      'onSelect',
+      'selectable'
+    ];
+
+    const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+
+
     // Elements
     const badge = ufunc.maybeIf(
       <Badge
         kitid={`badge-${props.kitid}`}
-        floats='right'
+        float='right'
         body={props.badge ? props.badge.body : null}
         context={props.badge ? props.badge.context : null}
         notification={props.badge ? props.badge.notification : null}
@@ -64,8 +83,8 @@ class ListItem extends React.Component {
 
 
     const selectable = (index) => {
-      if (this.props.selectable && this.props.selectable.checked) {
-        const { checked } = this.props.selectable;
+      if (props.selectable && props.selectable.checked) {
+        const { checked } = props.selectable;
 
         return ufunc.maybeIf(
           ufunc.either(
@@ -78,7 +97,7 @@ class ListItem extends React.Component {
 
 
     const attr = {
-      ...props,
+      ...cleanProps,
       ...uikit.events(props),
       'data-kitid': props.kitid,
       className   : cssClassNames,
