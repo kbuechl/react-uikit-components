@@ -20,9 +20,27 @@ const Grid = (props) => {
     props.className
   ]);
 
-  // elements
-  const ignoreProps = ['type', 'width'];
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'children',
+    'className',
+    'classes',
+    'divider',
+    'gutter',
+    'indent',
+    'kitid',
+    'large',
+    'match',
+    'medium',
+    'small',
+    'type',
+    'widths',
+    'xlarge'
+  ];
+
   const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+
+  // Elements
   const events = uikit.events(props);
 
   const type = {
@@ -38,7 +56,7 @@ const Grid = (props) => {
 
     list: <ul
       {...cleanProps}
-      {...events}
+      {...uikit.events(props)}
       className={cssClassNames}
       data-kitid={props.kitid}
     >
