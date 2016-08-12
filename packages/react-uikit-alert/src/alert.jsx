@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import uikit from '../../../base';
 import ufunc from 'ufunc';
 
 
@@ -44,6 +44,20 @@ class Alert extends React.Component {
       props.className
     ]);
 
+    // Remove non valid html attributes
+    const ignoreProps = [
+      'children',
+      'className',
+      'classes',
+      'close',
+      'context',
+      'kitid',
+      'large',
+      'show'
+    ];
+
+    const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+
 
     // Elements
     const close = ufunc.maybeIf(<a
@@ -56,7 +70,8 @@ class Alert extends React.Component {
 
     // Return Component
     return <div
-      {...{...props, ...uikit.events(props)}}
+      {...cleanProps}
+      {...uikit.events(props)}
       data-kitid={props.kitid}
       className={cssClassNames}
     >
