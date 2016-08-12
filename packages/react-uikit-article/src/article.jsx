@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import uikit from '../../../base';
 
 
 const Article = (props) => {
@@ -12,6 +12,18 @@ const Article = (props) => {
     props.className
   ]);
 
+  const ignoreProps = [
+    'children',
+    'className',
+    'classes',
+    'kitid',
+    'lead',
+    'meta',
+    'title'
+  ];
+
+  // Remove non valid html attributes
+  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
   // Elements
   const title = props.title ? <h1 className='uk-article-title'>{props.title}</h1> : null;
@@ -21,10 +33,8 @@ const Article = (props) => {
 
   // Return Component
   return <article
-    {...{
-      ...uikit.helpers.cleanProps(['title'])(props),
-      ...uikit.events(props)
-    }}
+    {...cleanProps}
+    {...uikit.events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
