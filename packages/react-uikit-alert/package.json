@@ -21,6 +21,7 @@
     "lint": "eslint --quiet ./src/**  && date || true && date",
     "lint:watch": "watch 'npm run lint' ./",
     "prepublish": "babel -d lib/ src/  && date",
+    "peer": "npm install cuid ufunc react react-dom react-uikit-base",
     "test": "babel-node test-runner.js | tap-min  && date|| true && date",
     "test:spec": "babel-node test-runner.js | tap-difflet || true && date",
     "test:watch": "watch 'npm run test' ./"
