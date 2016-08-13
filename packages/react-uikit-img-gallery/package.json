@@ -16,8 +16,6 @@
   "license": "MIT",
   "main": "./lib/img-gallery.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/img-gallery-doc > README.md && date",
-    "docs:watch": "watch 'npm run docs' ./docs",
     "build": "babel -d lib/ src/ && date",
     "build:watch": "watch 'npm run build' ./src",
     "lint": "eslint --quiet ./src/** && date  || true && date",
