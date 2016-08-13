@@ -16,8 +16,6 @@
   "license": "MIT",
   "main": "./lib/list.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/list-doc > README.md && date",
-    "docs:watch": "watch 'npm run docs' ./docs",
     "build": "babel -d lib/ src/ && date",
     "build:watch": "watch 'npm run build' ./src",
     "lint": "eslint --quiet ./src/**   && date || true  && date",
