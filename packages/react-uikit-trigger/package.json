@@ -18,11 +18,10 @@
   "license": "MIT",
   "main": "./lib/trigger.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/trigger-doc > README.md && date",
-    "docs:watch": "watch 'npm run docs' ./docs",
     "build": "babel -d lib/ src/ && date",
     "build:watch": "watch 'npm run build' ./src && date",
     "lint": "eslint --quiet ./src/**   && date || true  && date",
+    "peer": "npm install cuid ufunc react react-dom react-uikit-base react-uikit-button",
     "lint:watch": "watch 'npm run lint' ./",
     "prepublish": "babel -d lib/ src/",
     "test": "babel-node test-runner.js | tap-min  && date || true  && date",
