@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-list",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React uikit list component.",
   "keywords": [
     "javascript",
@@ -22,6 +22,7 @@
     "build:watch": "watch 'npm run build' ./src",
     "lint": "eslint --quiet ./src/**   && date || true  && date",
     "lint:watch": "watch 'npm run lint' ./",
+    "peer": "npm install cuid ufunc react react-dom react-uikit-base react-uikit-badge",
     "prepublish": "babel -d lib/ src/ && date",
     "test": "babel-node test-runner.js | tap-min && date || true  && date",
     "test:spec": "babel-node test-runner.js | tap-difflet && date || true  && date",
@@ -58,6 +59,7 @@
     "react": "~15.3.0",
     "react-dom": "~15.3.0",
     "react-uikit-base": "~1.0.5",
+    "react-uikit-badge": "~1.0.1",
     "ufunc": "~1.0.1"
   },
   "babel": {
