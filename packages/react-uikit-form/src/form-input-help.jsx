@@ -1,5 +1,5 @@
 import React from 'react';
-import uikit from 'react-uikit-base';
+import uikit from '../../../base';
 
 
 const FormHelp = (props) => {

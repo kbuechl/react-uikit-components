@@ -1,5 +1,5 @@
 import React from 'react';
-import uikit from 'react-uikit-base';
+import uikit from '../../../base';
 import FormIcons from './form-input-icon.js';
 import FormInputBase from './form-input-base';
 import FormInputSelect from './form-input-select';
@@ -30,11 +30,15 @@ const FormInput = (props) => {
    // Elements
   const type = {
     icon: <FormIcons
+            {...props}
+            className={cssClassNames}
             icon={props.icon}
             display={display}
             kitid={props.kitid}
           >
-            <FormInputMain {...props} />
+            <FormInputMain {...props}
+              className={cssClassNames}
+            />
           </FormIcons>,
 
     input: <FormInputMain
@@ -45,12 +49,14 @@ const FormInput = (props) => {
     file: <FormInputFile {...props.button} />,
 
     passwordToggle: <FormInputPassword
+                      className={cssClassNames}
                       input={cleanProps}
                       {...props.toggle}
                       kitid={props.kitid}
                     />,
 
     select: <FormInputSelect
+              className={cssClassNames}
               {...props.button}
               icon={props.icon}
               options={props.options}
@@ -71,6 +77,7 @@ FormInput.propTypes = {
   button    : React.PropTypes.object,
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
+  container : React.PropTypes.object,
   context   : React.PropTypes.oneOf(['danger', 'success']),
   display   : React.PropTypes.string,
   icon      : React.PropTypes.string,

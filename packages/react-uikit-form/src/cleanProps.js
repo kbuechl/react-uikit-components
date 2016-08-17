@@ -1,4 +1,4 @@
-import uikit from 'react-uikit-base';
+import { helpers } from '../../../base';
 
 const ignoreProps = [
   'blank',
@@ -6,6 +6,7 @@ const ignoreProps = [
   'button',
   'children',
   'classes',
+  'container',
   'context',
   'control',
   'display',
@@ -31,4 +32,8 @@ const ignoreProps = [
   'width'
 ];
 
-export default uikit.helpers.cleanProps(ignoreProps);
+export const cleanProps = helpers.cleanProps(ignoreProps);
+
+export const cleanContainerProps = helpers.cleanProps([]);
+
+export default cleanProps;

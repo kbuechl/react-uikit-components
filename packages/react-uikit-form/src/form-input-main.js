@@ -2,16 +2,16 @@ import React from 'react';
 import cleanProps from './cleanProps';
 
 
-const FormInputMain = (props) => {
-  return <input
+const FormInputMain = (props) => (
+  <input
     id={props.kitid}
     name={props.name}
     {...cleanProps(props)}
     data-kitid={props.kitid}
     type={props.type || 'text'}
     onChange={props.onChange}
-  />;
-};
+  />
+);
 
 FormInputMain.propTypes = {
   className : React.PropTypes.string,
