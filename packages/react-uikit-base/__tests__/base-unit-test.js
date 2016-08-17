@@ -415,7 +415,7 @@ test('UIkit Component', nested => {
       const element = renderElement(<TestComponent list col='1-6'/>).dom();
 
       const actual = element.html();
-      const expect = '<li class="uk-width-1-6"><div></div></li>';
+      const expect = '<li class="uk-width-1-6"><div class="uk-width-1-1"></div></li>';
 
       assert.equals(actual, expect,
         'Wraps element in a li element');
