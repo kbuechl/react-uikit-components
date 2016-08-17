@@ -130,9 +130,10 @@ const utilityCss = {
 
 
   scroll: {
-    auto: 'uk-overflow-container',
-    box : 'uk-scrollable-box',
-    text: 'uk-scrollable-text'
+    auto   : 'uk-overflow-container',
+    box    : 'uk-scrollable-box',
+    hidden : 'uk-nbfc',
+    text   : 'uk-scrollable-text'
   },
 
 
