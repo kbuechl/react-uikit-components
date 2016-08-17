@@ -1,12 +1,8 @@
 'use strict';
-import tape from 'tape';
-import addAssertions from 'extend-tape';
-import jsxEquals from 'tape-jsx-equals';
+import test from 'tape';
 import Overlay from '../lib/overlay';
 import React from 'react';
 import { htmlToString, reactToString } from './helpers/renderElement';
-
-const test = addAssertions(tape, { jsxEquals });
 
 
 test('Overlay Component', nested => {
