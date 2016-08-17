@@ -33,7 +33,17 @@ const cleanClasses = (c) => {
 
 
 const cleanProps = (ignoreKeys) => {
-  const ignore = [...ignoreKeys, ...Object.keys(utility.utilityCss)];
+  const ignore = [
+    ...ignoreKeys,
+    ...Object.keys(utility.utilityCss),
+    'children',
+    'classes',
+    'col',
+    'colLarge',
+    'colMedium',
+    'colSmall',
+    'kitid'
+  ];
 
   return (obj) => {
     const newObj = {...obj};
