@@ -18,11 +18,22 @@ const icon = (props) => {
     props.className
   ]);
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'children',
+    'className',
+    'classes',
+    'icon',
+    'link',
+    'justify',
+    'kitid',
+    'spin',
+    'size'
+  ];
 
-  const cleanProps = uikit.helpers.cleanProps(['icon', 'type'])(props);
+  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
-  const cleanLinkProps = () => uikit.helpers.cleanProps(['type'])(props.link);
-
+  const cleanLinkProps = ()  => props.link ? uikit.helpers.cleanProps(ignoreProps)(props.link) : null;
 
   const component = {
     icon: <i
@@ -32,15 +43,15 @@ const icon = (props) => {
       data-kitid={props.kitid}
      />,
 
-    link: <a 
-      {...props.link ? cleanLinkProps() :  null}
+    link: <a
+      {...cleanLinkProps()}
       data-kitid={props.kitid}
     >
       <i
         {...cleanProps}
         {...uikit.events(props)}
         className={cssClassNames}
-        
+
        />
      </a>
   };
