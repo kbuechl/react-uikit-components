@@ -1,16 +1,20 @@
 'use strict';
 
 import React from 'react';
-import helpers from './helpers';
+import Helpers from './helpers';
 import Element from './element';
-import base from './base';
-import events from './events';
+import Base from './base';
+import Events from './events';
 
 
+export const helpers = Helpers;
+export const element = Element;
+export const base = Base;
+export const events = Events;
 
 export default {
-  base,
-  element: <Element />,
-  events,
-  helpers
+  helpers: Helpers,
+  element: Element,
+  base: Base,
+  events: Events
 };
