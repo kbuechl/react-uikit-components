@@ -36,8 +36,10 @@ const cleanProps = (ignoreKeys) => {
   const ignore = [
     ...ignoreKeys,
     ...Object.keys(utility.utilityCss),
+    'center',
     'children',
     'classes',
+    'contrast',
     'col',
     'colLarge',
     'colMedium',
@@ -70,8 +72,8 @@ const colSpan = [
   '1-2',
   '1-3', '2-3',
   '1-4', '2-4', '3-4',
-  '1-5', '2-5', ' 3-5', '4-5',
-  '1-6', '2-6', ' 3-6', '4-6', '5-6',
+  '1-5', '2-5', '3-5', '4-5',
+  '1-6', '2-6', '3-6', '4-6', '5-6',
   '1-10', '2-10', '3-10', '4-10', '5-10', '6-10', '7-10', '8-10', '9-10'
 ];
 
