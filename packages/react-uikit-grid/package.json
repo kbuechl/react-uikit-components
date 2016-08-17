@@ -16,15 +16,13 @@
   "license": "MIT",
   "main": "./lib/grid.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/grid-doc > README.md && date",
-    "docs:watch": "watch 'npm run docs' ./docs",
-    "build": "babel -d lib/ src/ && date",
+    "build": "babel -d lib/ src/  && date",
     "build:watch": "watch 'npm run build' ./src",
-    "lint": "eslint --quiet ./src/** && date || true && date",
+    "lint": "eslint --quiet ./src/**  && date  || true  && date",
     "lint:watch": "watch 'npm run lint' ./",
     "peer": "npm install cuid ufunc react react-dom react-uikit-base",
-    "prepublish": "babel -d lib/ src/ && date",
-    "test": "babel-node test-runner.js | tap-min  && date || true && date",
+    "prepublish": "babel -d lib/ src/  && date",
+    "test": "babel-node test-runner.js | tap-min  && date || true  && date",
     "test:spec": "babel-node test-runner.js | tap-difflet  && date || true && date",
     "test:watch": "watch 'npm run test' ./"
   },
@@ -38,9 +36,9 @@
     "babel-preset-stage-2": "~6.13.0",
     "babel-runtime": "~6.11.6",
     "cheerio": "~0.20.0",
-    "eslint": "~3.2.2",
+    "eslint": "~3.3.1",
     "eslint-config-standard": "~5.3.5",
-    "eslint-plugin-react": "~6.0.0",
+    "eslint-plugin-react": "~6.1.1",
     "eslint-plugin-smells": "~1.0.1",
     "eslint-plugin-standard": "~2.0.0",
     "eslint-plugin-promise": "~2.0.1",
@@ -52,7 +50,7 @@
     "tap-difflet": "~0.6.0",
     "tap-min": "~1.1.0",
     "tape": "~4.6.0",
-    "watch": "~0.19.1"
+    "watch": "~0.19.2"
   },
   "peerDependencies": {
     "cuid": "~1.3.8",
@@ -69,6 +67,6 @@
     ]
   },
   "engines": {
-    "node": "~4.4.3"
+    "node": "~4.4.5"
   }
 }
