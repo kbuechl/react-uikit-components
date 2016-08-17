@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-base",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React UIkit base HOC with uikit utility classes",
   "keywords": [
     "javascript",
@@ -15,12 +15,11 @@
   "license": "MIT",
   "main": "./lib/uikit.js",
   "scripts": {
-    "docs": "babel-node ./reactToHtml.js ./docs/base-doc > README.md && date || true",
-    "docs:watch": "watch 'npm run docs' ./docs",
     "build": "babel -d lib/ src/ && date",
     "build:watch": "watch 'npm run build' ./src",
     "lint": "eslint --quiet ./src/**  || true && date",
     "lint:watch": "watch 'npm run lint' ./",
+    "peer": "npm install cuid ufunc react react-dom",
     "prepublish": "babel -d lib/ src/ && date",
     "test": "babel-node test-runner.js | tap-min && date || true ",
     "test:spec": "babel-node test-runner.js | tap-difflet && date || true",
@@ -34,11 +33,12 @@
     "babel-preset-react": "~6.11.1",
     "babel-runtime": "~6.11.6",
     "cheerio": "~0.20.0",
-    "eslint": "~3.2.2",
+    "eslint": "~3.3.1",
     "eslint-config-standard": "~5.3.5",
-    "eslint-plugin-react": "~6.0.0",
+    "eslint-plugin-react": "~6.1.1",
     "eslint-plugin-smells": "~1.0.1",
     "eslint-plugin-promise": "~2.0.1",
+    "eslint-plugin-standard": "~2.0.0",
     "faucet": "~0.0.1",
     "react-addons-test-utils": "~15.3.0",
     "tap-difflet": "~0.6.0",
@@ -63,6 +63,6 @@
     ]
   },
   "engines": {
-    "node": "~4.4.3"
+    "node": "~4.4.5"
   }
 }
