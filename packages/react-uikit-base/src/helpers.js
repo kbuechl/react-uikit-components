@@ -3,7 +3,7 @@ import ufunc from 'ufunc';
 import utility from './utility';
 
 
-const breakpoints = () => {
+export const breakpoints = () => {
   const media = {
     small : 767,
     medium: 768,
@@ -26,13 +26,13 @@ const breakpoints = () => {
 };
 
 
-const cleanClasses = (c) => {
+export const cleanClasses = (c) => {
   const str = ufunc.cleanAll(c).join(' ').trim().replace(/,/gi, ' ');
   return ufunc.maybeIf(str)(str !== '');
 };
 
 
-const cleanProps = (ignoreKeys) => {
+export const cleanProps = (ignoreKeys) => {
   const ignore = [
     ...ignoreKeys,
     ...Object.keys(utility.utilityCss),
@@ -44,7 +44,8 @@ const cleanProps = (ignoreKeys) => {
     'colLarge',
     'colMedium',
     'colSmall',
-    'kitid'
+    'kitid',
+    'list'
   ];
 
   return (obj) => {
@@ -63,11 +64,12 @@ const cleanProps = (ignoreKeys) => {
 };
 
 
-const closeClass = (alt) => {
+export const closeClass = (alt) => {
   return alt ? 'uk-close-alt' : ' uk-close';
 };
 
-const colSpan = [
+
+export const colSpan = [
   '1-1',
   '1-2',
   '1-3', '2-3',
@@ -78,7 +80,7 @@ const colSpan = [
 ];
 
 
-const stringToClasses = (str, cssClasses) => {
+export const stringToClasses = (str, cssClasses) => {
   let classes = str.split(' ').map(item => {
     return cssClasses[item];
   });
@@ -87,26 +89,26 @@ const stringToClasses = (str, cssClasses) => {
 };
 
 
-const getClasses = (str, cssClasses) => {
+export const getClasses = (str, cssClasses) => {
   return typeof str === 'string' ? stringToClasses(str, cssClasses) : '';
 };
 
 
-const getClass = (str, cssClasses) => {
+export const getClass = (str, cssClasses) => {
   return cssClasses[str] ? cssClasses[str] : '';
 };
 
 
-const queryData = (value) => {
+export const queryData = (value) => {
   return document.querySelector(`[data-${value}]`);
 };
 
 
-const queryDataAll = (value) => {
+export const queryDataAll = (value) => {
   return document.querySelectorAll(`[data-${value}]`);
 };
 
-const getElement = (dataId) => {
+export const getElement = (dataId) => {
   return queryData(`kitid="${dataId}"`);
 };
 
