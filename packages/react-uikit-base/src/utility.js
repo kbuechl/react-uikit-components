@@ -137,6 +137,9 @@ const utilityCss = {
   },
 
 
+  tall: 'uk-height-1-1',
+
+
   textAlign: {
     center      : 'uk-text-center',
     centerSmall : 'uk-text-center-small',
@@ -177,7 +180,9 @@ const utilityCss = {
     medium     : 'uk-visible-medium',
     small      : 'uk-visible-small',
     touch      : 'uk-visible-touch'
-  }
+  },
+
+  wide: 'uk-width-1-1'
 };
 
 export default {

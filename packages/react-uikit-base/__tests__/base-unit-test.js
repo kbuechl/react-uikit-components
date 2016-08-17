@@ -1,24 +1,32 @@
 'use strict';
 import test from 'tape';
 import React from 'react';
-import uikit from '../lib/uikit';
-import ufunc from 'ufunc';
+import uikit, { helpers } from '../lib/uikit';
 import renderElement from './helpers/renderElement';
 
 
-class Component extends React.Component {
-  render () {
-    const props = this.props;
+const Component = (props) => {
+  const cssClassNames = helpers.cleanClasses([
+    props.classes,
+    props.className
+  ]);
 
-    const cssClassNames = uikit.helpers.cleanClasses([
-      props.classes
-    ]);
 
-    return <div className={ufunc.maybe(null)(cssClassNames)}>
-      {props.children}
-    </div>;
-  }
-}
+  const cleanProps = helpers.cleanProps([])(props);
+
+  return <div
+    className={cssClassNames}
+    {...cleanProps}
+  >
+    {props.children}
+  </div>;
+};
+
+Component.propTypes = {
+  children  : React.PropTypes.any,
+  className : React.PropTypes.string,
+  classes   : React.PropTypes.array
+};
 
 
 test('UIkit Component', nested => {
@@ -173,11 +181,12 @@ test('UIkit Component', nested => {
   nested.test('center prop.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent center/>).dom('div');
+      const element = renderElement(<TestComponent center/>).dom();
 
-      const actual = element.hasClass('uk-container-center');
+      const actual = element.html();
+      const expect = '<div class="uk-container-center"><div></div></div>';
 
-      assert.ok(actual, 'Adds center container class.');
+      assert.equals(actual, expect, 'Adds center container class.');
 
       assert.end();
     });
@@ -1192,9 +1201,10 @@ test('UIkit Component', nested => {
       const TestComponent = uikit.base(Component);
       const element = renderElement(<TestComponent vertical='parent'/>).dom('div');
 
-      const actual = element.hasClass('uk-vertical-align');
+      const actual = element.html();
+      const expect = '<div class="uk-vertical-align"></div>';
 
-      assert.ok(actual, 'Adds align vertical to parent class to base component.');
+      assert.equals(actual, expect, 'Adds align vertical to parent class to base component.');
 
       assert.end();
     });
@@ -1203,11 +1213,12 @@ test('UIkit Component', nested => {
   nested.test('vertical prop = break.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent vertical='middle'/>).dom('div');
+      const element = renderElement(<TestComponent vertical='middle'/>).dom();
 
-      const actual = element.hasClass('uk-vertical-align-middle');
+      const actual = element.html();
+      const expect = '<div class="uk-vertical-align"><div class="uk-vertical-align-middle"></div></div>';
 
-      assert.ok(actual, 'Adds middle vertical class to base component.');
+      assert.equals(actual, expect, 'Adds middle vertical class to base component.');
 
       assert.end();
     });
@@ -1216,11 +1227,12 @@ test('UIkit Component', nested => {
   nested.test('vertical prop = bottom.',
     assert => {
       const TestComponent = uikit.base(Component);
-      const element = renderElement(<TestComponent vertical='bottom'/>).dom('div');
+      const element = renderElement(<TestComponent vertical='bottom'/>).dom();
 
-      const actual = element.hasClass('uk-vertical-align-bottom');
+      const actual = element.html();
+      const expect = '<div class="uk-vertical-align"><div class="uk-vertical-align-bottom"></div></div>';
 
-      assert.ok(actual, 'Adds bottom vertical class to base component.');
+      assert.equals(actual, expect, 'Adds bottom vertical class to base component.');
 
       assert.end();
     });
