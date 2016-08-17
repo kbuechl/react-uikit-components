@@ -103,12 +103,20 @@ const base = (Cmpt) => {
     position    : React.PropTypes.oneOf(util.utilityKeys('position')),
     responsive  : React.PropTypes.string,
     scroll      : React.PropTypes.oneOf(util.utilityKeys('scroll')),
+    tall        : React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.string
+    ]),
     textAlign   : React.PropTypes.oneOf(util.utilityKeys('textAlign')),
     textVertical: React.PropTypes.oneOf(util.utilityKeys('textVertical')),
     textWrap    : React.PropTypes.oneOf(util.utilityKeys('textWrap')),
     vertical    : React.PropTypes.oneOf(util.utilityKeys('vertical')),
     viewport    : React.PropTypes.bool,
-    visible     : React.PropTypes.string
+    visible     : React.PropTypes.string,
+    wide        : React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.string
+    ])
   };
 
   return UIKitBase;
