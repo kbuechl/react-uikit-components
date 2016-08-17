@@ -27,4 +27,7 @@ Element.propTypes = {
   children  : React.PropTypes.any
 };
 
-export default base(Element);
+function createElement () {
+  return base(Element);
+}
+export default createElement;

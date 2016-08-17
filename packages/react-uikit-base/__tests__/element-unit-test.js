@@ -5,10 +5,8 @@ import { element } from '../lib/uikit';
 import renderElement from './helpers/renderElement';
 
 
-
-
 test('UIkit Element', assert => {
-  const TestComponent = element;
+  const TestComponent = element();
   const component = renderElement(<TestComponent visible='touch small' margin='top left' padding='bottom right'/>).dom();
 
   const actual = component.html();
