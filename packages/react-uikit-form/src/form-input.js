@@ -1,5 +1,5 @@
 import React from 'react';
-import uikit from '../../react-uikit-base';
+import uikit from 'react-uikit-base';
 import FormIcons from './form-input-icon.js';
 import FormInputBase from './form-input-base';
 import FormInputSelect from './form-input-select';
@@ -20,7 +20,6 @@ const FormInput = (props) => {
 
   const display = props.display === 'inlineBlock' ? 'inline-block' : props.display;
 
-
   const ignoreProps = ['display', 'label', 'width', 'classes'];
   const cleanProps = {
     ...uikit.helpers.cleanProps(ignoreProps)(props),
@@ -28,17 +27,18 @@ const FormInput = (props) => {
     display: display
    };
 
+   // Elements
   const type = {
     icon: <FormIcons
             icon={props.icon}
             display={display}
             kitid={props.kitid}
           >
-            <FormInputMain {...cleanProps} />
+            <FormInputMain {...props} />
           </FormIcons>,
 
     input: <FormInputMain
-             {...cleanProps}
+             {...props}
              className={cssClassNames}
            />,
 

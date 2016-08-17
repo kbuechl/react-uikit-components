@@ -1,8 +1,9 @@
 'use strict';
 
 import React from 'react';
-import uikit from '../../react-uikit-base';
+import uikit from 'react-uikit-base';
 import FormInput from './form-input';
+import cleanProps from './cleanProps';
 
 
 function getChildren (props) {
@@ -45,7 +46,6 @@ const Form = (props) => {
 
 
   // Elements
-
   let items;
   if (props.items) {
     items = props.items.map((item, index) => {
@@ -55,7 +55,7 @@ const Form = (props) => {
 
   // Return Component
   return <form
-    {...props}
+    {...cleanProps(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >

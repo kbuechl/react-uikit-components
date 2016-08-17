@@ -1,5 +1,6 @@
 import React from 'react';
 import Icons from 'react-uikit-icons';
+import cleanProps from './cleanProps';
 
 const FormInputSelect = (props) => {
   const icon = <Icons
@@ -33,7 +34,7 @@ const FormInputSelect = (props) => {
     data-kitid={props.kitid}
   >
     {type[props.type] || type.button}
-    <select {...props} icon={null} type='select'>
+    <select {...cleanProps(props)} icon={null} type='select'>
       {options}
     </select>
   </div>;

@@ -31,14 +31,11 @@ test('Form input password component.', nested => {
       );
 
       const expectShow = htmlToString(`
-        <div class="uk-form-password">
-          <input type="text" id="p1" placeholder="Password input" data-kitid="p1">
-          <a class="uk-form-password-toggle" data-kitid="toggle-p1">Hide <i class="uk-icon-eye" data-kitid="icon-p1"></i></a>
-        </div>
+        <div class="uk-form-password"><input type="text" placeholder="Password input"><a class="uk-form-password-toggle" data-kitid="toggle-p1">Hide <i class="uk-icon-eye" data-kitid="icon-p1"></i></a></div>
       `);
 
       assert.equals(actualShow, expectShow,
-        'Correctly renders form input password.');
+        'Correctly renders form input password show.');
 
 
       const actualHide = reactToString(
@@ -55,14 +52,11 @@ test('Form input password component.', nested => {
       );
 
       const expectHide = htmlToString(`
-        <div class="uk-form-password">
-          <input type="password" id="p1" placeholder="Password input" data-kitid="p1">
-          <a class="uk-form-password-toggle" data-kitid="toggle-p1">Show <i class="uk-icon-eye-slash" data-kitid="icon-p1"></i></a>
-        </div>
+        <div class="uk-form-password"><input type="password" placeholder="Password input"><a class="uk-form-password-toggle" data-kitid="toggle-p1">Show <i class="uk-icon-eye-slash" data-kitid="icon-p1"></i></a></div>
       `);
 
       assert.equals(actualHide, expectHide,
-        'Correctly renders form input password.');
+        'Correctly renders form input password hide.');
 
       assert.end();
     });

@@ -471,10 +471,7 @@ test('form input Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <div class="uk-form-icon">
-          <i class="uk-icon-calendar" data-kitid="icon-f1"></i>
-          <input type="text" id="f1" icon="calendar" data-kitid="f1">
-        </div>
+        <div class="uk-form-icon"><i class="uk-icon-calendar" data-kitid="icon-f1"></i><input type="text" id="f1" data-kitid="f1"></div>
       `);
 
       assert.equals(actual, expect,

@@ -1,12 +1,15 @@
 import React from 'react';
-import ufunc from 'ufunc';
+import {
+  either,
+  maybeIf
+} from 'ufunc';
 import FormInputHelp from './form-input-help';
 import FormInputControl from './form-input-control';
 import FormLabel from './form-label';
 
 const getLabelPosistion = (label) => {
   if (label) {
-    return ufunc.either(
+    return either(
       'left',
       label.pos
     )(label.pos === undefined);
@@ -16,7 +19,7 @@ const getLabelPosistion = (label) => {
 
 const FormInputBase = (props) => {
 
-  const help = ufunc.maybeIf(
+  const help = maybeIf(
     <FormInputHelp
       help={props.help}
       kitid={`help-${props.kitid}`}
@@ -35,7 +38,7 @@ const FormInputBase = (props) => {
     className={props.display != null ? `uk-display-${props.display} uk-form-row` : 'uk-form-row'}
   >
     {getLabelPosistion(props.label) === 'left' ? <FormLabel {...props} /> : null}
-    {ufunc.either(formInputControl, props.input)(props.control)}
+    {either(formInputControl, props.input)(props.control)}
     {getLabelPosistion(props.label) === 'right' ? <FormLabel {...props} /> : null}
     {help}
   </div>;

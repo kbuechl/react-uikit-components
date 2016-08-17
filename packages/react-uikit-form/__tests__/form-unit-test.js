@@ -14,7 +14,7 @@ test('form Component.', nested => {
         <Form kitid='f1'/>
       );
 
-      const expect = '<form class="uk-form" data-kitid="f1"></form>';
+      const expect = '<form class="uk-form" data-kitid="f1"><h3></h3></form>';
 
       assert.equals(actual, expect,
         'Correctly renders form component');
@@ -40,20 +40,7 @@ test('form Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <form class="uk-form uk-form-stacked" data-kitid="f1">
-          <div class="uk-form-row">
-            <label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label>
-            <div class="uk-form-controls">
-              <input type="text" id="f1" data-kitid="f1">
-            </div>
-          </div>
-          <div class="uk-form-row">
-            <label class="uk-form-label" for="f2" data-kitid="label-f2">This a label&#xA0;</label>
-            <div class="uk-form-controls">
-              <input type="text" id="f2" data-kitid="f2">
-            </div>
-          </div>
-        </form>
+        <form class="uk-form uk-form-stacked" data-kitid="f1"><h3></h3><div class="uk-form-row"><label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label><div class="uk-form-controls"><input type="text" id="f1" data-kitid="f1"></div></div><div class="uk-form-row"><label class="uk-form-label" for="f2" data-kitid="label-f2">This a label&#xA0;</label><div class="uk-form-controls"><input type="text" id="f2" data-kitid="f2"></div></div></form>
       `);
 
       assert.equals(actual, expect,
@@ -76,14 +63,7 @@ test('form Component.', nested => {
       );
 
       const expect = htmlToString(`
-        <form class="uk-form uk-form-horizontal" data-kitid="f1">
-          <div class="uk-form-row">
-            <label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label>
-            <div class="uk-form-controls">
-              <input type="text" id="f1" data-kitid="f1">
-            </div>
-          </div>
-        </form>
+        <form class="uk-form uk-form-horizontal" data-kitid="f1"><h3></h3><div class="uk-form-row"><label class="uk-form-label" for="f1" data-kitid="label-f1">This a label&#xA0;</label><div class="uk-form-controls"><input type="text" id="f1" data-kitid="f1"></div></div></form>
       `);
 
       assert.equals(actual, expect,
