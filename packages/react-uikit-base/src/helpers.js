@@ -46,6 +46,8 @@ const cleanProps = (ignoreKeys) => {
   ];
 
   return (obj) => {
+    if (typeof obj !== 'object' || Array.isArray(obj)) return null;
+
     const newObj = {...obj};
 
     for (let i = 0; i < ignore.length; i++) {
