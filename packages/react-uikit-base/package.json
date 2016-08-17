@@ -44,7 +44,7 @@
     "tap-difflet": "~0.6.0",
     "tap-min": "~1.1.0",
     "tape": "~4.6.0",
-    "watch": "~0.19.1"
+    "watch": "~0.19.2"
   },
   "dependencies": {},
   "peerDependencies": {
