@@ -38,9 +38,9 @@
     "babel-preset-stage-2": "~6.13.0",
     "babel-runtime": "~6.11.6",
     "cheerio": "~0.20.0",
-    "eslint": "~3.2.2",
+    "eslint": "~3.3.1",
     "eslint-config-standard": "~5.3.5",
-    "eslint-plugin-react": "~6.0.0",
+    "eslint-plugin-react": "~6.1.1",
     "eslint-plugin-smells": "~1.0.1",
     "eslint-plugin-standard": "~2.0.0",
     "eslint-plugin-promise": "~2.0.1",
@@ -69,6 +69,6 @@
     ]
   },
   "engines": {
-    "node": "~4.4.3"
+    "node": "~4.4.5"
   }
 }
