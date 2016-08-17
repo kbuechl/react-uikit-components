@@ -18,11 +18,12 @@ const Element = (props) => {
     {...cleanProps}
   >
     {props.children}
-  </div>
+  </div>;
 };
 
 Element.propTypes = {
   classes   : React.PropTypes.array,
+  className : React.PropTypes.string,
   children  : React.PropTypes.any
 };
 
