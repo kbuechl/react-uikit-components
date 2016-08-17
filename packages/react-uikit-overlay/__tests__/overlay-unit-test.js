@@ -21,11 +21,7 @@ test('Overlay Component', nested => {
 
 
       const expect = htmlToString(
-        `<figure class="uk-overlay" width="100px" height="100px" src="docs/images/placeholder_600x400.svg" data-data-kitid="overlay-o1">
-          <img height="100px" src="docs/images/placeholder_600x400.svg" width="100px" data-kitid="overlay-image-o1">
-          <figcaption class="uk-overlay-panel" width="100px" height="100px" src="docs/images/placeholder_600x400.svg" data-kitid="overlay-caption-o1">
-          <h3>Title</h3><p>Lorem <a href="#">ipsum dolor</a> sit amet, consetetur sadipscing elitr.</p>
-        </figcaption></figure>`
+        `<figure class="uk-overlay" data-data-kitid="overlay-o1"><img height="100px" src="docs/images/placeholder_600x400.svg" width="100px" data-kitid="overlay-image-o1"><figcaption class="uk-overlay-panel" data-kitid="overlay-caption-o1"><h3>Title</h3><p>Lorem <a href="#">ipsum dolor</a> sit amet, consetetur sadipscing elitr.</p></figcaption></figure>`
       );
 
 
@@ -53,13 +49,7 @@ test('Overlay Component', nested => {
 
 
         const expect = htmlToString(
-          `<figure class="uk-overlay" width="300px" height="250px" src="docs/images/placeholder_600x400.svg" data-data-kitid="overlay-o1">
-            <img height="250px" src="docs/images/placeholder_600x400.svg" width="300px" data-kitid="overlay-image-o1">
-            <figcaption class="uk-overlay-panel uk-overlay-background" width="300px" height="250px" src="docs/images/placeholder_600x400.svg" data-kitid="overlay-caption-o1">
-            <h3>Title</h3>
-            <p>Lorem <a href="#">ipsum dolor</a> sit amet, consetetur sadipscing elitr.</p>
-            </figcaption>
-          </figure>`
+          `<figure class="uk-overlay" data-data-kitid="overlay-o1"><img height="250px" src="docs/images/placeholder_600x400.svg" width="300px" data-kitid="overlay-image-o1"><figcaption class="uk-overlay-panel uk-overlay-background" data-kitid="overlay-caption-o1"><h3>Title</h3><p>Lorem <a href="#">ipsum dolor</a> sit amet, consetetur sadipscing elitr.</p></figcaption></figure>`
         );
 
 
@@ -85,10 +75,7 @@ test('Overlay Component', nested => {
 
 
         const expect = htmlToString(
-          `<figure class="uk-overlay" icon="true" width="300px" height="250px" src="docs/images/placeholder_600x400.svg" data-data-kitid="overlay-o1">
-            <img height="250px" src="docs/images/placeholder_600x400.svg" width="300px" data-kitid="overlay-image-o1">
-            <figcaption class="uk-overlay-panel uk-overlay-background uk-overlay-icon" icon="true" width="300px" height="250px" src="docs/images/placeholder_600x400.svg" data-kitid="overlay-caption-o1"></figcaption>
-          </figure>`
+          `<figure class="uk-overlay" data-data-kitid="overlay-o1"><img height="250px" src="docs/images/placeholder_600x400.svg" width="300px" data-kitid="overlay-image-o1"><figcaption class="uk-overlay-panel uk-overlay-background uk-overlay-icon" data-kitid="overlay-caption-o1"></figcaption></figure>`
         );
 
 
@@ -113,10 +100,7 @@ test('Overlay Component', nested => {
 
 
         const expect = htmlToString(
-          `<figure width="300px" height="250px" src="docs/images/placeholder_600x400.svg" class="uk-overlay uk-overlay-hover" data-kitid="overlay-o1">
-            <img height="250px" src="docs/images/placeholder_600x400_2.svg" width="300px" data-kitid="overlay-background-image-o1">
-            <img height="250px" src="docs/images/placeholder_600x400.svg" width="300px" class="uk-overlay-panel uk-overlay-image" data-kitid="overlay-image-o1">
-          </figure>`
+          `<figure class="uk-overlay uk-overlay-hover" data-kitid="overlay-o1"><img height="250px" src="docs/images/placeholder_600x400_2.svg" width="300px" data-kitid="overlay-background-image-o1"><img height="250px" src="docs/images/placeholder_600x400.svg" width="300px" class="uk-overlay-panel uk-overlay-image" data-kitid="overlay-image-o1"></figure>`
         );
 
 

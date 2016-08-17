@@ -1,9 +1,9 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import { base, helpers } from 'react-uikit-base';
 import ufunc from 'ufunc';
-import Img from '../../react-uikit-img';
+import Img from 'react-uikit-img';
 
 
 const Overlay = (props) => {
@@ -16,18 +16,37 @@ const Overlay = (props) => {
   };
 
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-overlay',
     props.image ? 'uk-overlay-hover' : null,
     props.classes
   ]);
 
-  const captionClassNames = uikit.helpers.cleanClasses([
+  const captionClassNames = helpers.cleanClasses([
     'uk-overlay-panel',
     props.background ? 'uk-overlay-background' : null,
     props.icon ? 'uk-overlay-icon' : null,
     props.caption ? captionCSS[props.caption] : null
   ]);
+
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'alt',
+    'background',
+    'flex',
+    'height',
+    'icon',
+    'image',
+    'large',
+    'medium',
+    'caption',
+    'small',
+    'src',
+    'width',
+    'xlarge'
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
   // Elements
   const link = ufunc.maybeIf(<a className='uk-position-cover' href='#'></a>, props.link);
@@ -47,7 +66,7 @@ const Overlay = (props) => {
     className={props.image ? 'uk-overlay-panel uk-overlay-image' : null}
   />;
 
-  const figure = <figure {...props}
+  const figure = <figure {...cleanProps}
     className={cssClassNames}
     data-kitid={`overlay-${props.kitid}`}
   >
@@ -70,7 +89,7 @@ const Overlay = (props) => {
 
   const caption = <figcaption
     className={captionClassNames}
-    {...props}
+    {...cleanProps}
     data-kitid={`overlay-caption-${props.kitid}`}
   >
     {props.children}
@@ -79,7 +98,7 @@ const Overlay = (props) => {
 
   const linkCaption = <div
     className={cssClassNames}
-    {...props}
+    {...cleanProps}
     data-kitid={`overlay-link-${props.kitid}`}
   >
     {props.children}
@@ -88,7 +107,7 @@ const Overlay = (props) => {
 
   const figureCaption = <figure
     className={cssClassNames}
-    {...props}
+    {...cleanProps}
     data-data-kitid={`overlay-${props.kitid}`}
   >
     {img}
@@ -112,7 +131,6 @@ Overlay.propTypes = {
   image      : React.PropTypes.string,
   large      : React.PropTypes.object,
   medium     : React.PropTypes.object,
-  // does not render Correctly
   caption    : React.PropTypes.string,
   small      : React.PropTypes.object,
   src        : React.PropTypes.string,
@@ -121,4 +139,4 @@ Overlay.propTypes = {
 };
 
 
-export default uikit.base(Overlay);
+export default base(Overlay);
