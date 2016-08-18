@@ -5,7 +5,7 @@ import {
   base,
   events,
   helpers
-} from '../../../base';
+} from 'react-uikit-base';
 
 
 const Article = (props) => {
@@ -18,7 +18,6 @@ const Article = (props) => {
 
   const ignoreProps = [
     'children',
-    'className',
     'classes',
     'kitid',
     'lead',
