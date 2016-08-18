@@ -5,7 +5,7 @@ import {
   base,
   events,
   helpers
-} from '../../../base';
+} from 'react-uikit-base';
 import { either } from 'ufunc';
 
 
@@ -30,7 +30,6 @@ const Badge = (props) => {
   // Remove non valid html attributes
   const ignoreProps = [
     'children',
-    'className',
     'classes',
     'context',
     'block',
