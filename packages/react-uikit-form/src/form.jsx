@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import uikit from '../../../base';
+import uikit from 'react-uikit-base';
 import FormInput from './form-input';
 import cleanProps from './cleanProps';
 

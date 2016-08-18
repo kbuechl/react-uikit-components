@@ -1,10 +1,10 @@
 import React from 'react';
-import Icons from '../../icons';
+import Icons from 'react-uikit-icons';
 import { cleanContainerProps } from './cleanProps';
 
-const FormIcon = (props) => (
-  <div {...cleanContainerProps(props.container)}
-    className={props.display != null ? `uk-display-${props.display} uk-form-icon ${props.className}` : `uk-form-icon ${props.className}`}
+const FormIcon = (props) => {
+  return <div {...cleanContainerProps(props.container)}
+    className={props.display != null ? `uk-display-${props.display} uk-form-icon` : `uk-form-icon`}
   >
     <Icons
       icon={props.icon}
@@ -12,7 +12,7 @@ const FormIcon = (props) => (
     />
     {props.children}
   </div>
-);
+};
 
 export default FormIcon;
 

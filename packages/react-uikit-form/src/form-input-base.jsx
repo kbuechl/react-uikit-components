@@ -2,7 +2,7 @@ import React from 'react';
 import {
   either,
   maybeIf
-} from '../../../../ufunc';
+} from 'ufunc';
 import FormInputHelp from './form-input-help';
 import FormInputControl from './form-input-control';
 import FormLabel from './form-label';

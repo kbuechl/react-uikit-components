@@ -2,7 +2,7 @@ import React from 'react';
 import {
   either,
   maybeIf
-} from '../../../../ufunc';
+} from 'ufunc';
 
 import cleanProps from './cleanProps';
 

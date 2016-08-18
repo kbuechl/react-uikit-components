@@ -1,5 +1,5 @@
 import React from 'react';
-import Icons from '../../icons';
+import Icons from 'react-uikit-icons';
 import cleanProps from './cleanProps';
 
 const FormInputSelect = (props) => {

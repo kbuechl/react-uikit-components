@@ -1,5 +1,5 @@
 import React from 'react';
-import uikit from '../../../base';
+import uikit from 'react-uikit-base';
 import FormIcons from './form-input-icon.js';
 import FormInputBase from './form-input-base';
 import FormInputSelect from './form-input-select';

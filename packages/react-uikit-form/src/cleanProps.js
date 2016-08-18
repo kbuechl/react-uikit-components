@@ -1,4 +1,4 @@
-import { helpers } from '../../../base';
+import { helpers } from 'react-uikit-base';
 
 const ignoreProps = [
   'blank',

@@ -1,6 +1,6 @@
 import React from 'react';
 import FormInputMain from './form-input-main';
-import Icons from '../../icons';
+import Icons from 'react-uikit-icons';
 
 
 const FormInputPassword = (props) => {
