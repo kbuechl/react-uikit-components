@@ -1,8 +1,14 @@
 'use strict';
 
 import React from 'react';
-import { base, helpers } from 'react-uikit-base';
-import ufunc from 'ufunc';
+import {
+  base,
+  helpers
+} from 'react-uikit-base';
+import {
+  either,
+  maybeIf,
+} from 'ufunc';
 import Img from 'react-uikit-img';
 
 
@@ -49,7 +55,7 @@ const Overlay = (props) => {
   const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
   // Elements
-  const link = ufunc.maybeIf(<a className='uk-position-cover' href='#'></a>, props.link);
+  const link = maybeIf(<a className='uk-position-cover' href='#'></a>, props.link);
 
 
   const img = <Img
@@ -111,13 +117,13 @@ const Overlay = (props) => {
     data-data-kitid={`overlay-${props.kitid}`}
   >
     {img}
-    {ufunc.either(linkCaption, caption)(props.link)}
+    {either(linkCaption, caption)(props.link)}
     {link}
   </figure>;
 
 
   // Return Component
-  const component = ufunc.either(figure, figureCaption);
+  const component = either(figure, figureCaption);
   return component(props.image);
 };
 
