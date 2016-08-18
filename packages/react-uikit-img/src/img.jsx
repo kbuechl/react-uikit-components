@@ -2,8 +2,14 @@
 
 import React from 'react';
 
-import uikit from 'react-uikit-base';
-import ufunc from 'ufunc';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
+import {
+  either
+} from 'ufunc';
 
 
 class Img extends React.Component {
@@ -15,7 +21,7 @@ class Img extends React.Component {
 
 
   componentDidMount () {
-    this.element = uikit.helpers.getElement(this.props.kitid);
+    this.element = helpers.getElement(this.props.kitid);
     this.updateImg(this.element);
     window.addEventListener('resize', this.updateImg);
   }
@@ -30,7 +36,7 @@ class Img extends React.Component {
     const props = this.props;
     const element = this.element;
 
-    let screen = uikit.helpers.breakpoints().screen;
+    let screen = helpers.breakpoints().screen;
     let locked = false;
 
     if (!locked) {
@@ -69,7 +75,7 @@ class Img extends React.Component {
     const props = this.props;
 
     // CSS classes
-    const cssClassNames = uikit.helpers.cleanClasses([
+    const cssClassNames = helpers.cleanClasses([
       props.cover ? 'uk-cover-background' : null,
       props.classes,
       props.className
@@ -99,19 +105,19 @@ class Img extends React.Component {
 
     // Elements
     const attr = {
-      ...uikit.events(props),
+      ...events(props),
       className   : cssClassNames,
       'data-kitid': props.kitid
     };
 
     const img = <img
-      {...uikit.helpers.cleanProps(ignoreProps)(props)}
+      {...helpers.cleanProps(ignoreProps)(props)}
       {...attr}
     />;
 
 
     const cover = <div
-      {...uikit.helpers.cleanProps(ignoreImgProps)(props)}
+      {...helpers.cleanProps(ignoreImgProps)(props)}
       {...attr}
     >
         {props.children}
@@ -119,7 +125,7 @@ class Img extends React.Component {
 
 
     // Return Component
-    const component = ufunc.either(cover, img);
+    const component = either(cover, img);
     return component(props.cover);
 
   }
@@ -142,4 +148,4 @@ Img.propTypes = {
   xlarge    : React.PropTypes.object
 };
 
-export default uikit.base(Img);
+export default base(Img);
