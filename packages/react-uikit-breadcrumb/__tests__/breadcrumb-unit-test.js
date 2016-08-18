@@ -15,7 +15,7 @@ test('breadcrumb Component', nested => {
       const actual = reactToString(
         <Breadcrumb kitid='bread'>
           <BreadcrumbItem kitid='1' body='Home'/>
-          <BreadcrumbItem kitid='4' type='Blog' body='link'/>
+          <BreadcrumbItem kitid='4' type='link' body='link'/>
           <BreadcrumbItem kitid='3' type='disabled' body='Category'/>
           <BreadcrumbItem kitid='2' type='active' body='Post'/>
         </Breadcrumb>
