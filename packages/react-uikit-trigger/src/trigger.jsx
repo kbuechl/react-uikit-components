@@ -39,7 +39,7 @@ const Trigger = (props) => {
   // Element
   const type = {
     button: <Button
-      {...cleanProps}
+      {...props}
       className={cssClassNames}
       block
       kitid={props.kitid}
@@ -49,7 +49,7 @@ const Trigger = (props) => {
     </Button>,
 
     link: <Button
-      {...cleanProps}
+      {...props}
       className={cssClassNames}
       block
       kitid={props.kitid}
