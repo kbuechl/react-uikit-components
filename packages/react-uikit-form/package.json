@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-form",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "React uikit form components.",
   "keywords": [
     "javascript",
@@ -18,9 +18,20 @@
   "scripts": {
     "build": "babel -d lib/ src/  && date",
     "build:watch": "watch 'npm run build' ./src",
+    "lint": "eslint --quiet ./src/**  && date || true && date",
+    "lint:watch": "watch 'npm run lint' ./",
+    "prepublish": "babel -d lib/ src/  && date",
+    "peer": "npm install cuid ufunc react react-dom react-uikit-base react-uikit-icons",
+    "test": "babel-node test-runner.js | tap-min  && date|| true && date",
+    "test:spec": "babel-node test-runner.js | tap-difflet || true && date",
+    "test:watch": "watch 'npm run test' ./"
+  },
+  "scripts": {
+    "build": "babel -d lib/ src/  && date",
+    "build:watch": "watch 'npm run build' ./src",
     "lint": "eslint --quiet ./src/**  && date  || true  && date",
     "lint:watch": "watch 'npm run lint' ./",
-    "peer": "npm install cuid ufunc react react-dom react-uikit-base react-uikit-icons",
+    "peer": "npm install cuid ufunc react react-dom react-uikit-base",
     "prepublish": "babel -d lib/ src/  && date",
     "test": "babel-node test-runner.js | tap-min  && date || true  && date",
     "test:spec": "babel-node test-runner.js | tap-difflet  && date || true && date",
@@ -56,9 +67,9 @@
     "cuid": "~1.3.8",
     "react": "~15.3.0",
     "react-dom": "~15.3.0",
-    "react-uikit-base": "~1.0.5",
-    "react-uikit-icons": "~1.0.0s",
-    "ufunc": "~1.0.1"
+    "react-uikit-base": "~2.0.0",
+    "react-uikit-icons" : "~2.0.0",
+    "ufunc": "~2.0.0"
   },
   "babel": {
     "presets": [
