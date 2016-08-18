@@ -52,7 +52,7 @@ const base = (Cmpt) => {
       ];
 
       const containerClasses = cleanClasses([
-        props.center ? 'uk-container-center' : null,
+        props.center ? utilityCss.center : null,
         props.col ? `uk-width-${props.col}` : null,
         props.colSmall ? `uk-width-small-${props.colSmall}` : null,
         props.colMedium ? `uk-width-medium-${props.colMedium}` : null,
