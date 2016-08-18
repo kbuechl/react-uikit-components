@@ -1,14 +1,23 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  helpers
+} from 'react-uikit-base';
 
 
 const BreadcrumbItem = (props) => {
-  const ignoreProps = ['href', 'label', 'type'];
-  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+  const ignoreProps = [
+    'body',
+    'children',
+    'classes',
+    'kitid',
+    'type'
+  ];
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     props.classes,
     props.className
   ]);
@@ -70,4 +79,4 @@ BreadcrumbItem.propTypes = {
 };
 
 
-export default uikit.base(BreadcrumbItem);
+export default base(BreadcrumbItem);

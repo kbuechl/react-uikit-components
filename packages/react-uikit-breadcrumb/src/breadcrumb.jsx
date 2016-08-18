@@ -1,17 +1,31 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  helpers
+} from 'react-uikit-base';
 import BreadcrumbItem from './breadcrumb-item';
 import cuid from 'cuid';
 
 const Breadcrumb = (props) => {
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-breadcrumb',
     props.classes,
     props.className
   ]);
+
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'children',
+    'classes',
+    'items',
+    'kitid',
+    'type'
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
 
   // Elements
@@ -21,7 +35,6 @@ const Breadcrumb = (props) => {
       )
     : props.items;
 
-  const cleanProps = uikit.helpers.cleanProps(['type'])(props);
 
   // Return Component
   return <ul
@@ -45,4 +58,4 @@ Breadcrumb.propTypes = {
 };
 
 
-export default uikit.base(Breadcrumb);
+export default base(Breadcrumb);
