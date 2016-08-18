@@ -1,6 +1,5 @@
 'use strict';
 
-import React from 'react';
 import Helpers from './helpers';
 import Element from './element';
 import Base from './base';
