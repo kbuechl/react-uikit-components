@@ -1,9 +1,21 @@
 'use strict';
 
 import React from 'react';
-import ufunc from 'ufunc';
-import helpers from './helpers';
-import util from './utility';
+import {
+  cleanAll,
+  maybeIf,
+  someTrue
+} from 'ufunc';
+import {
+  cleanClasses,
+  colSpan,
+  getClass,
+  getClasses
+} from './helpers';
+import {
+  utilityCss,
+  utilityKeys
+} from './utility';
 import cuid from 'cuid';
 
 
@@ -12,59 +24,54 @@ const base = (Cmpt) => {
     render () {
       const props = this.props;
       const classes = [
-        props.align ? helpers.getClass(props.align, util.utilityCss.align) : null,
-        props.borderRadius ? helpers.getClass(props.borderRadius, util.utilityCss.borderRadius) : null,
-        props.clear ? helpers.getClass(props.clear, util.utilityCss.clear) : null,
+        props.align ? getClass(props.align, utilityCss.align) : null,
+        props.borderRadius ? getClass(props.borderRadius, utilityCss.borderRadius) : null,
+        props.clear ? getClass(props.clear, utilityCss.clear) : null,
         props.contrast ? 'uk-contrast' : null,
         props.col ? 'uk-width-1-1' : null,
         props.colSmall ? 'uk-width-1-1' : null,
         props.colMedium ? 'uk-width-1-1' : null,
         props.colLarge ? 'uk-width-1-1' : null,
-        props.display ? helpers.getClass(props.display, util.utilityCss.display) : null,
-        props.float ? helpers.getClass(props.float, util.utilityCss.float) : null,
-        props.hidden ? helpers.getClasses(props.hidden, util.utilityCss.hidden) : null,
-        props.margin ? helpers.getClasses(props.margin, util.utilityCss.margin) : null,
-        props.order ? helpers.getClass(props.order, util.utilityCss.order) : null,
-        props.padding ? helpers.getClasses(props.padding, util.utilityCss.padding) : null,
-        props.position ? helpers.getClasses(props.position, util.utilityCss.position) : null,
-        props.responsive ? helpers.getClasses(props.responsive, util.utilityCss.responsive) : null,
-        props.scroll ? helpers.getClass(props.scroll, util.utilityCss.scroll) : null,
-        props.tall ? props.tall !== 'parent' ? util.utilityCss.tall : null : null,
-        props.textAlign ? helpers.getClasses(props.textAlign, util.utilityCss.textAlign) : null,
-        props.textVertical ? helpers.getClasses(props.textVertical, util.utilityCss.textVertical) : null,
-        props.textWrap ? helpers.getClasses(props.textWrap, util.utilityCss.textWrap) : null,
-        props.vertical ? helpers.getClass(props.vertical, util.utilityCss.vertical) : null,
+        props.display ? getClass(props.display, utilityCss.display) : null,
+        props.float ? getClass(props.float, utilityCss.float) : null,
+        props.hidden ? getClasses(props.hidden, utilityCss.hidden) : null,
+        props.margin ? getClasses(props.margin, utilityCss.margin) : null,
+        props.order ? getClass(props.order, utilityCss.order) : null,
+        props.padding ? getClasses(props.padding, utilityCss.padding) : null,
+        props.position ? getClasses(props.position, utilityCss.position) : null,
+        props.responsive ? getClasses(props.responsive, utilityCss.responsive) : null,
+        props.scroll ? getClass(props.scroll, utilityCss.scroll) : null,
+        props.tall ? props.tall !== 'parent' ? utilityCss.tall : null : null,
+        props.textAlign ? getClasses(props.textAlign, utilityCss.textAlign) : null,
+        props.textVertical ? getClasses(props.textVertical, utilityCss.textVertical) : null,
+        props.textWrap ? getClasses(props.textWrap, utilityCss.textWrap) : null,
+        props.vertical ? getClass(props.vertical, utilityCss.vertical) : null,
         props.viewport ? 'uk-height-viewport' : null,
-        props.visible ? helpers.getClasses(props.visible, util.utilityCss.visible) : null,
-        props.wide ? props.wide !== 'parent' ? util.utilityCss.tall : null : null
+        props.visible ? getClasses(props.visible, utilityCss.visible) : null,
+        props.wide ? props.wide !== 'parent' ? utilityCss.tall : null : null
       ];
 
-      const containerClasses = helpers.cleanClasses([
+      const containerClasses = cleanClasses([
         props.center ? 'uk-container-center' : null,
         props.col ? `uk-width-${props.col}` : null,
         props.colSmall ? `uk-width-small-${props.colSmall}` : null,
         props.colMedium ? `uk-width-medium-${props.colMedium}` : null,
         props.colLarge ? `uk-width-large-${props.colLarge}` : null,
         props.vertical ? 'uk-vertical-align' : null,
-        props.tall ? props.tall === 'parent' ? util.utilityCss.tall : null : null,
-        props.wide ? props.wide === 'parent' ? util.utilityCss.tall : null : null
+        props.tall ? props.tall === 'parent' ? utilityCss.tall : null : null,
+        props.wide ? props.wide === 'parent' ? utilityCss.tall : null : null
       ]);
 
       const kitid = props.kitid || cuid();
 
       // Elementd
-      const component = <Cmpt {...this.props} kitid={kitid} classes={ufunc.cleanAll(classes)}/>;
+      const component = <Cmpt {...this.props} kitid={kitid} classes={cleanAll(classes)}/>;
 
 
-      const list = ufunc.maybeIf(<li className={containerClasses}>{component}</li>)(props.list);
+      const list = maybeIf(<li className={containerClasses}>{component}</li>)(props.list);
 
 
-      // remove and use unfunc version
-      function someTrue () {
-        return [...arguments].some(e => Boolean(e));
-      }
-
-      const container = ufunc.maybeIf(<div className={containerClasses}>
+      const container = maybeIf(<div className={containerClasses}>
         {component}
       </div>)(someTrue(
         props.center,
@@ -82,35 +89,35 @@ const base = (Cmpt) => {
   }
 
   UIKitBase.propTypes = {
-    align       : React.PropTypes.oneOf(util.utilityKeys('align')),
+    align       : React.PropTypes.oneOf(utilityKeys('align')),
     children    : React.PropTypes.any,
     className   : React.PropTypes.string,
-    borderRadius: React.PropTypes.oneOf(util.utilityKeys('borderRadius')),
-    clear       : React.PropTypes.oneOf(util.utilityKeys('clear')),
+    borderRadius: React.PropTypes.oneOf(utilityKeys('borderRadius')),
+    clear       : React.PropTypes.oneOf(utilityKeys('clear')),
     center      : React.PropTypes.bool,
-    col         : React.PropTypes.oneOf(helpers.colSpan),
-    colSmall    : React.PropTypes.oneOf(helpers.colSpan),
-    colMedium   : React.PropTypes.oneOf(helpers.colSpan),
-    colLarge    : React.PropTypes.oneOf(helpers.colSpan),
+    col         : React.PropTypes.oneOf(colSpan),
+    colSmall    : React.PropTypes.oneOf(colSpan),
+    colMedium   : React.PropTypes.oneOf(colSpan),
+    colLarge    : React.PropTypes.oneOf(colSpan),
     contrast    : React.PropTypes.bool,
-    display     : React.PropTypes.oneOf(util.utilityKeys('display')),
-    float       : React.PropTypes.oneOf(util.utilityKeys('float')),
+    display     : React.PropTypes.oneOf(utilityKeys('display')),
+    float       : React.PropTypes.oneOf(utilityKeys('float')),
     hidden      : React.PropTypes.string,
     kitid       : React.PropTypes.string,
     margin      : React.PropTypes.string,
-    order       : React.PropTypes.oneOf(util.utilityKeys('order')),
+    order       : React.PropTypes.oneOf(utilityKeys('order')),
     padding     : React.PropTypes.string,
-    position    : React.PropTypes.oneOf(util.utilityKeys('position')),
+    position    : React.PropTypes.oneOf(utilityKeys('position')),
     responsive  : React.PropTypes.string,
-    scroll      : React.PropTypes.oneOf(util.utilityKeys('scroll')),
+    scroll      : React.PropTypes.oneOf(utilityKeys('scroll')),
     tall        : React.PropTypes.oneOfType([
       React.PropTypes.bool,
       React.PropTypes.string
     ]),
-    textAlign   : React.PropTypes.oneOf(util.utilityKeys('textAlign')),
-    textVertical: React.PropTypes.oneOf(util.utilityKeys('textVertical')),
-    textWrap    : React.PropTypes.oneOf(util.utilityKeys('textWrap')),
-    vertical    : React.PropTypes.oneOf(util.utilityKeys('vertical')),
+    textAlign   : React.PropTypes.oneOf(utilityKeys('textAlign')),
+    textVertical: React.PropTypes.oneOf(utilityKeys('textVertical')),
+    textWrap    : React.PropTypes.oneOf(utilityKeys('textWrap')),
+    vertical    : React.PropTypes.oneOf(utilityKeys('vertical')),
     viewport    : React.PropTypes.bool,
     visible     : React.PropTypes.string,
     wide        : React.PropTypes.oneOfType([

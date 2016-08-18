@@ -1,7 +1,7 @@
 'use strict';
 
 
-const utilityKeys = (attr) => {
+export const utilityKeys = (attr) => {
   let obj = utilityCss[attr];
 
   return Object.keys(obj).map(key => {
@@ -10,7 +10,7 @@ const utilityKeys = (attr) => {
 };
 
 
-const utilityCss = {
+export const utilityCss = {
   align: {
     left       : 'uk-align-left',
     right      : 'uk-align-right',
