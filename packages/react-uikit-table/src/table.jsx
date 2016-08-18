@@ -20,6 +20,24 @@ const Table = (props) => {
     props.className
   ]);
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'body',
+    'caption',
+    'classes',
+    'condensed',
+    'hover',
+    'head',
+    'kitid',
+    'numbered',
+    'columns',
+    'overflow',
+    'sort',
+    'striped',
+  ];
+
+  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+
 
   // Elements
   let thead;
@@ -38,8 +56,6 @@ const Table = (props) => {
   }
 
   const caption = ufunc.maybeIf(<caption>{props.caption}</caption>)(props.caption);
-
-  const cleanProps = uikit.helpers.cleanProps(['overflow'])(props);
 
   const table = <table
     {...cleanProps}

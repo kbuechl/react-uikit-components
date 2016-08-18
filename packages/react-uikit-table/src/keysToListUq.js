@@ -1,4 +1,8 @@
 'use strict';
-import R from 'ramda';
+import { unique } from 'ufunc'
 
-export default (ary) => R.uniq(R.flatten(ary.map((item, index) => Object.keys(item).map(k => k.toLocaleLowerCase()))));
+export default (arr) => {
+  const objKeysList = arr.map(obj => Object.keys(obj))[0];
+
+  return  unique(objKeysList);
+};

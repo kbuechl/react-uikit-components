@@ -10,7 +10,10 @@ const bodyToArray = (body, columns) => {
 
   return body.map(item => {
     return Object.keys(item).map(k => {
-      const pos = columns.map(i => i.toLowerCase()).indexOf(k.toLowerCase());
+      const pos = columns.map(i =>  {
+
+        return i.toLowerCase();
+      }).indexOf(k.toLowerCase());
 
       return [k, item[k], pos];
     });
