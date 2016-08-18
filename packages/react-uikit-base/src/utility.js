@@ -24,6 +24,9 @@ export const utilityCss = {
     rounded: 'uk-border-rounded',
     circle : 'uk-border-circle'
   },
+  
+
+  center: 'uk-container-center',
 
 
   clear:  {
