@@ -1,18 +1,37 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
 import ufunc from 'ufunc';
 
 
 const Comment = (props) => {
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-comment',
     props.primary ? 'uk-comment-primary' : null,
     props.classes,
     props.className
   ]);
+
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'avatar',
+    'body',
+    'children',
+    'classes',
+    'items',
+    'kitid',
+    'meta',
+    'primary',
+    'title',
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
 
   // Elements
@@ -57,8 +76,8 @@ const Comment = (props) => {
 
   // Return Component
   return <article
-    {...props}
-    {...uikit.events(props)}
+    {...cleanProps}
+    {...events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
@@ -82,4 +101,4 @@ Comment.propTypes = {
 };
 
 
-export default uikit.base(Comment);
+export default base(Comment);
