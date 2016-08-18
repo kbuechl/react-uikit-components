@@ -5,7 +5,7 @@ import {
   base,
   events,
   helpers
-} from '../../../base';
+} from 'react-uikit-base';
 import { maybeIf } from 'ufunc';
 
 
@@ -51,7 +51,6 @@ class Alert extends React.Component {
     // Remove non valid html attributes
     const ignoreProps = [
       'children',
-      'className',
       'classes',
       'close',
       'context',
