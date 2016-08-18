@@ -1,23 +1,36 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
 
 
 const CommentList = (props) => {
 
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-comment-list',
     props.classes,
     props.className
   ]);
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'children',
+    'classes',
+    'kitid' 
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
 
   // Return Component
   return <ul
-    {...props}
-    {...uikit.events(props)}
+    {...cleanProps}
+    {...events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
@@ -33,4 +46,4 @@ CommentList.propTypes = {
   kitid     : React.PropTypes.string
 };
 
-export default uikit.base(CommentList);
+export default base(CommentList);
