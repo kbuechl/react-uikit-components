@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-list",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "React uikit list component.",
   "keywords": [
     "javascript",
@@ -16,14 +16,25 @@
   "license": "MIT",
   "main": "./lib/list.js",
   "scripts": {
-    "build": "babel -d lib/ src/ && date",
+    "build": "babel -d lib/ src/  && date",
     "build:watch": "watch 'npm run build' ./src",
-    "lint": "eslint --quiet ./src/**   && date || true  && date",
+    "lint": "eslint --quiet ./src/**  && date || true && date",
     "lint:watch": "watch 'npm run lint' ./",
+    "prepublish": "babel -d lib/ src/  && date",
     "peer": "npm install cuid ufunc react react-dom react-uikit-base react-uikit-badge",
-    "prepublish": "babel -d lib/ src/ && date",
-    "test": "babel-node test-runner.js | tap-min && date || true  && date",
-    "test:spec": "babel-node test-runner.js | tap-difflet && date || true  && date",
+    "test": "babel-node test-runner.js | tap-min  && date|| true && date",
+    "test:spec": "babel-node test-runner.js | tap-difflet || true && date",
+    "test:watch": "watch 'npm run test' ./"
+  },
+  "scripts": {
+    "build": "babel -d lib/ src/  && date",
+    "build:watch": "watch 'npm run build' ./src",
+    "lint": "eslint --quiet ./src/**  && date  || true  && date",
+    "lint:watch": "watch 'npm run lint' ./",
+    "peer": "npm install cuid ufunc react react-dom react-uikit-base",
+    "prepublish": "babel -d lib/ src/  && date",
+    "test": "babel-node test-runner.js | tap-min  && date || true  && date",
+    "test:spec": "babel-node test-runner.js | tap-difflet  && date || true && date",
     "test:watch": "watch 'npm run test' ./"
   },
   "devDependencies": {
@@ -36,9 +47,9 @@
     "babel-preset-stage-2": "~6.13.0",
     "babel-runtime": "~6.11.6",
     "cheerio": "~0.20.0",
-    "eslint": "~3.2.2",
+    "eslint": "~3.3.1",
     "eslint-config-standard": "~5.3.5",
-    "eslint-plugin-react": "~6.0.0",
+    "eslint-plugin-react": "~6.1.1",
     "eslint-plugin-smells": "~1.0.1",
     "eslint-plugin-standard": "~2.0.0",
     "eslint-plugin-promise": "~2.0.1",
@@ -56,9 +67,9 @@
     "cuid": "~1.3.8",
     "react": "~15.3.0",
     "react-dom": "~15.3.0",
-    "react-uikit-base": "~1.0.5",
-    "react-uikit-badge": "~1.0.1",
-    "ufunc": "~1.0.1"
+    "react-uikit-base": "~2.0.0",
+    "react-uikit-badge": "~2.0.0",
+    "ufunc": "~2.0.0"
   },
   "babel": {
     "presets": [
@@ -68,6 +79,6 @@
     ]
   },
   "engines": {
-    "node": "~4.4.3"
+    "node": "~4.4.5"
   }
 }
