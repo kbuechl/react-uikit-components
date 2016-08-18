@@ -2,13 +2,17 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
 
 
 const icon = (props) => {
 
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     props.link ? props.link.type === 'button' ? 'uk-icon-button' : 'uk-icon-hover' : null,
     props.spin ? 'uk-icon-spin' : null,
     props.justify ? 'uk-icon-justify' : null,
@@ -31,14 +35,14 @@ const icon = (props) => {
     'size'
   ];
 
-  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
-  const cleanLinkProps = ()  => props.link ? uikit.helpers.cleanProps(ignoreProps)(props.link) : null;
+  const cleanLinkProps = ()  => props.link ? helpers.cleanProps(ignoreProps)(props.link) : null;
 
   const component = {
     icon: <i
       {...cleanProps}
-      {...uikit.events(props)}
+      {...events(props)}
       className={cssClassNames}
       data-kitid={props.kitid}
      />,
@@ -49,7 +53,7 @@ const icon = (props) => {
     >
       <i
         {...cleanProps}
-        {...uikit.events(props)}
+        {...events(props)}
         className={cssClassNames}
 
        />
@@ -75,4 +79,4 @@ icon.propTypes = {
 };
 
 
-export default uikit.base(icon);
+export default base(icon);
