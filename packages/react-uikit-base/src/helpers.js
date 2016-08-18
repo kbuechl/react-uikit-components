@@ -36,6 +36,7 @@ export const cleanProps = (ignoreKeys) => {
   const ignore = [
     ...ignoreKeys,
     ...Object.keys(utility.utilityCss),
+    'animate',
     'center',
     'children',
     'classes',
