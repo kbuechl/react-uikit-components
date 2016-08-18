@@ -1,25 +1,44 @@
 'use strict';
 
 import React from 'react';
-import ufunc from 'ufunc';
-import uikit from 'react-uikit-base';
+import {
+  either,
+  maybeIf
+} from 'ufunc';
+import {
+  base,
+  helpers
+} from 'react-uikit-base';
 import Button from 'react-uikit-button';
 
 
 const Trigger = (props) => {
-  const icon = ufunc.maybeIf(<i className={`uk-icon-${props.icon}`}/>)(props.icon);
+  const icon = maybeIf(<i className={`uk-icon-${props.icon}`}/>)(props.icon);
 
-  const cleanProps = uikit.helpers.cleanProps(['icon'])(props);
-  const cleanPropType = uikit.helpers.cleanProps(['type'])(props);
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     props.classes,
     props.className
   ]);
 
+
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'body',
+    'children',
+    'classes',
+    'kitid',
+    'onClick',
+    'opened',
+    'type'
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
+
+  // Element
   const type = {
     button: <Button
-      {...props}
       {...cleanProps}
       className={cssClassNames}
       block
@@ -30,9 +49,7 @@ const Trigger = (props) => {
     </Button>,
 
     link: <Button
-      {...props}
       {...cleanProps}
-      {...cleanPropType}
       className={cssClassNames}
       block
       kitid={props.kitid}
@@ -43,10 +60,8 @@ const Trigger = (props) => {
     </Button>,
 
     span : <span
-      {...props}
       {...cleanProps}
-      {...cleanPropType}
-      {...uikit.helpers.events}
+      {...helpers.events}
       className={cssClassNames}
       data-kitid={props.kitid}
     >
@@ -55,11 +70,9 @@ const Trigger = (props) => {
     </span>,
 
     div: <div
-      {...props}
       {...cleanProps}
-      {...cleanPropType}
       className={cssClassNames}
-      {...uikit.helpers.events}
+      {...helpers.events}
       data-kitid={props.kitid}
     >
       {props.body}
@@ -67,7 +80,7 @@ const Trigger = (props) => {
     </div>
   };
 
-  return ufunc.either(type[props.type], type['button'])(props.type);
+  return either(type[props.type], type['button'])(props.type);
 };
 
 
@@ -82,4 +95,4 @@ Trigger.propTypes = {
   type      : React.PropTypes.oneOf(['button', 'link', 'span', 'div'])
 };
 
-export default uikit.base(Trigger);
+export default base(Trigger);

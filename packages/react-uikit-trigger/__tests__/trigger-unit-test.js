@@ -11,7 +11,7 @@ test('trigger Component', nested => {
       const trigger = renderElement(<Trigger kitid="but" type='button'>Button trigger</Trigger>).dom();
 
       const actualText = trigger.html();
-      const expectedText = '<button type="button" class="uk-button  uk-width-1-1" data-kitid="but">Button trigger </button>';
+      const expectedText = '<button data-kitid="but" class="uk-button  uk-width-1-1" type="button">Button trigger </button>';
       assert.equals(actualText, expectedText,
         'Correctly renders trigger element as button');
 
@@ -24,7 +24,7 @@ test('trigger Component', nested => {
       const trigger = renderElement(<Trigger kitid="link" type='link'>Link trigger</Trigger>).dom();
 
       const actualText = trigger.html();
-      const expectedText = '<a class="uk-button  uk-width-1-1" data-kitid="link" href="#" role="button">Link trigger </a>';
+      const expectedText = '<a data-kitid="link" class="uk-button  uk-width-1-1" href="#" role="button">Link trigger </a>';
       assert.equals(actualText, expectedText,
         'Correctly renders trigger element as link');
 
