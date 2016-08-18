@@ -1,21 +1,32 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
-import ufunc from 'ufunc';
+import {
+  base,
+  helpers,
+  events
+} from 'react-uikit-base';
+import { maybeIf } from 'ufunc';
 import Img from 'react-uikit-img';
 
 
 const ImgGroup = (props) => {
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     props.classes,
     props.className
   ]);
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
 
   // Elements
-  //
+
   // component = props.component
   const mapItems = () => {
     return props.items.map((item, index) => {
@@ -27,12 +38,12 @@ const ImgGroup = (props) => {
   };
 
 
-  const items = ufunc.maybeIf(mapItems())(props.items);
+  const items = maybeIf(mapItems())(props.items);
 
   // Return Component
   return <div
-    {...props}
-    {...uikit.events(props)}
+    {...cleanProps}
+    {...events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
@@ -50,4 +61,4 @@ ImgGroup.propTypes = {
 };
 
 
-export default uikit.base(ImgGroup);
+export default base(ImgGroup);
