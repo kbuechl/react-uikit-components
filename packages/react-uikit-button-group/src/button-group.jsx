@@ -1,21 +1,36 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
 
 
 const ButtonGroup = (props) => {
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-button-group',
     props.classes,
     props.className
   ]);
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'children',
+    'classes',
+    'kitid',
+    'type'
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
 
   // Return Component
   return <div
-    {...{...props, ...uikit.events(props)}}
+    {...cleanProps}
+    {...events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
@@ -33,4 +48,4 @@ ButtonGroup.propTypes = {
   type: React.PropTypes.oneOf(['button', 'dropdown', 'checkbox', 'radio'])
 };
 
-export default uikit.base(ButtonGroup);
+export default base(ButtonGroup);
