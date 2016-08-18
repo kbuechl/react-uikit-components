@@ -42,9 +42,30 @@ const Flex = (props) => {
   ]);
 
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'around',
+    'children',
+    'className',
+    'classes',
+    'center',
+    'bottom',
+    'between',
+    'direction',
+    'grid',
+    'kitid',
+    'middle',
+    'right',
+    'row',
+    'top'
+  ];
+
+  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+
+
   // Return Component
   return <div
-     {...props}
+     {...cleanProps}
      {...uikit.events(props)}
      className={cssClassNames}
      data-kitid={props.kitid}
