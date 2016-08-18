@@ -1,7 +1,10 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  helpers
+} from 'react-uikit-base';
 
 
 const NavItem = (props) => {
@@ -11,10 +14,26 @@ const NavItem = (props) => {
     header: 'uk-nav-header'
   };
 
-  const ignoreProps = ['href', 'type'];
-  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'active',
+    'body',
+    'children',
+    'classes',
+    'divder',
+    'header',
+    'href',
+    'kitid',
+    'parent',
+    'subtitle',
+    'type'
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
+
+  const cssClassNames = helpers.cleanClasses([
     props.classes,
     props.active ? 'uk-active' : null,
     type[props.type] ? type[props.type] : null,
@@ -88,8 +107,9 @@ NavItem.propTypes = {
   href      : React.PropTypes.string,
   kitid     : React.PropTypes.string,
   parent    : React.PropTypes.bool,
+  subtitle  : React.PropTypes.string,
   type      : React.PropTypes.oneOf(['divider', 'link', 'header', 'item'])
 };
 
 
-export default uikit.base(NavItem);
+export default base(NavItem);

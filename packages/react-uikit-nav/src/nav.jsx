@@ -1,7 +1,10 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  helpers
+} from 'react-uikit-base';
 import NavItem from './nav-item';
 import cuid from 'cuid';
 
@@ -16,7 +19,7 @@ const Nav = (props) => {
     thumbnail: 'uk-thumbnav'
   };
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-nav',
     props.classes,
     type[props.type] || type['side'],
@@ -25,14 +28,25 @@ const Nav = (props) => {
   ]);
 
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'children',
+    'classes',
+    'items',
+    'kitid',
+    'parent',
+    'type'
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
+
   // Elements
   const items = props.items
     ? props.items.map((item) => <NavItem
       {...item} key={item.kitid || cuid()}/>
       )
     : props.items;
-
-  const cleanProps = uikit.helpers.cleanProps(['type'])(props);
 
   // Return Component
   return <ul
@@ -57,4 +71,4 @@ Nav.propTypes = {
 };
 
 
-export default uikit.base(Nav);
+export default base(Nav);
