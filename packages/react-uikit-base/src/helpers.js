@@ -1,6 +1,10 @@
 'use strict';
-import ufunc from 'ufunc';
-import utility from './utility';
+import {
+  cleanAll,
+  maybeIf,
+  cleanObj
+} from 'ufunc';
+import { utilityCss } from './utility';
 
 
 export const breakpoints = () => {
@@ -27,15 +31,15 @@ export const breakpoints = () => {
 
 
 export const cleanClasses = (c) => {
-  const str = ufunc.cleanAll(c).join(' ').trim().replace(/,/gi, ' ');
-  return ufunc.maybeIf(str)(str !== '');
+  const str = cleanAll(c).join(' ').trim().replace(/,/gi, ' ');
+  return maybeIf(str)(str !== '');
 };
 
 
 export const cleanProps = (ignoreKeys) => {
   const ignore = [
     ...ignoreKeys,
-    ...Object.keys(utility.utilityCss),
+    ...Object.keys(utilityCss),
     'animate',
     'center',
     'children',
@@ -60,7 +64,7 @@ export const cleanProps = (ignoreKeys) => {
       }
     }
 
-    return ufunc.cleanObj(newObj);
+    return cleanObj(newObj);
   };
 };
 
