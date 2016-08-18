@@ -1,8 +1,12 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
-import ufunc from 'ufunc';
+import {
+  base,
+  events,
+  helpers
+} from '../../../base';
+import { maybeIf } from 'ufunc';
 
 
 class Alert extends React.Component {
@@ -14,7 +18,7 @@ class Alert extends React.Component {
 
 
   componentDidMount () {
-    const element = uikit.helpers.getElement(this.props.kitid);
+    const element = helpers.getElement(this.props.kitid);
 
     element.style.display = this.props.show ? 'block' : 'none';
   }
@@ -36,7 +40,7 @@ class Alert extends React.Component {
     };
 
 
-    const cssClassNames = uikit.helpers.cleanClasses([
+    const cssClassNames = helpers.cleanClasses([
       'uk-alert',
       props.classes,
       context[props.context] || null,
@@ -56,11 +60,11 @@ class Alert extends React.Component {
       'show'
     ];
 
-    const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+    const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
 
     // Elements
-    const close = ufunc.maybeIf(<a
+    const close = maybeIf(<a
       href='#'
       className='uk-alert-close uk-close'
       data-kitid={props.kitid}
@@ -71,7 +75,7 @@ class Alert extends React.Component {
     // Return Component
     return <div
       {...cleanProps}
-      {...uikit.events(props)}
+      {...events(props)}
       data-kitid={props.kitid}
       className={cssClassNames}
     >
@@ -93,4 +97,4 @@ Alert.propTypes = {
   show      : React.PropTypes.bool
 };
 
-export default uikit.base(Alert);
+export default base(Alert);
