@@ -1,21 +1,36 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
-import Badge from 'react-uikit-badge';
-import ufunc from 'ufunc';
+import {
+  base,
+  events,
+  helpers
+} from '../../../base';
+import Badge from '../../badge';
+import { either } from 'ufunc';
 
 
 const Note = (props) => {
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     props.classes,
     props.className
   ]);
 
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'badge',
+    'body' ,
+    'children',
+    'classes',
+    'kitid' 
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
   // Elements
-  const badge = ufunc.either(
+  const badge = either(
     <Badge>{props.badge}</Badge>,
 
     <Badge kitid={`badge-${props.kitid}`} context={props.badge ? props.badge.context : null}>
@@ -26,8 +41,8 @@ const Note = (props) => {
 
   // Return Component
   return <p
-    {...props}
-    {...uikit.events(props)}
+    {...cleanProps}
+    {...events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
@@ -49,4 +64,4 @@ Note.propTypes = {
 };
 
 
-export default uikit.base(Note);
+export default base(Note);
