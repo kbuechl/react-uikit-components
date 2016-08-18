@@ -2,12 +2,16 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
 
 
 const Placeholder = (props) => {
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-placeholder',
     props.large ? 'uk-placeholder-large' : null,
     props.classes,
@@ -15,10 +19,22 @@ const Placeholder = (props) => {
   ]);
 
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'body',
+    'children',
+    'classes',
+    'kitid',
+    'large'
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
+
   // Return Component
   return <div
-    {...props}
-    {...uikit.events(props)}
+    {...cleanProps}
+    {...events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
@@ -38,4 +54,4 @@ Placeholder.propTypes = {
 };
 
 
-export default uikit.base(Placeholder);
+export default base(Placeholder);
