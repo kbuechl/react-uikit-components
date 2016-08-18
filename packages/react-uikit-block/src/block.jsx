@@ -27,7 +27,6 @@ const Block = (props) => {
   // Remove non valid html attributes
   const ignoreProps = [
     'children',
-    'className',
     'classes',
     'context',
     'container',
