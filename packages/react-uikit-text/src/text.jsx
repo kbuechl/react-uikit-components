@@ -1,7 +1,11 @@
 'use strict';
 
 import React from 'react';
-import uikit from '../../react-uikit-base';
+import {
+  base,
+  events,
+  helpers
+} from '../../../base';
 
 
 const Text = (props) => {
@@ -15,7 +19,7 @@ const Text = (props) => {
     h6: 'uk-h6'
   };
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     props.classes,
     props.bold ? `uk-text-bold` : null,
     props.context ? `uk-text-${props.context}` : null,
@@ -23,11 +27,23 @@ const Text = (props) => {
     props.size ? `uk-text-${props.size}` : null
   ]);
 
-  const cleanProps = uikit.helpers.cleanProps(['type', 'href'])(props);
-  const cleanLinkProps = uikit.helpers.cleanProps(['type'])(props);
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'bold',
+    'classes',
+    'context',
+    'heading',
+    'href',
+    'kitid',
+    'size',
+    'type'
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
   const attr = {
-    ...uikit.events(props),
+    ...cleanProps,
+    ...events(props),
     className   : cssClassNames,
     'data-kitid': props.kitid
   };
@@ -35,81 +51,81 @@ const Text = (props) => {
 
   // Elements
   const type = {
-    a: <a href ='' {...attr} {...cleanLinkProps}>
+    a: <a href ={props.href} {...attr}>
       {props.children}
     </a>,
 
-    abbr: <abbr {...attr} {...cleanProps}>
+    abbr: <abbr {...attr}>
       {props.children}
     </abbr>,
 
-    code  : <code {...attr} {...cleanProps}>
+    code  : <code {...attr}>
       {props.children}
     </code>,
 
-    del: <del {...attr} {...cleanProps}>
+    del: <del {...attr}>
       {props.children}
     </del>,
 
-    dfn: <dfn {...attr} {...cleanProps} title={props.title}>
+    dfn: <dfn {...attr} title={props.title}>
       {props.children}
     </dfn>,
 
-    em: <em {...attr} {...cleanProps}>
+    em: <em {...attr}>
       {props.children}
     </em>,
 
-    h1: <h1 {...attr} {...cleanProps}>
+    h1: <h1 {...attr}>
       {props.children}
     </h1>,
 
-    h2: <h2 {...attr} {...cleanProps}>
+    h2: <h2 {...attr}>
       {props.children}
     </h2>,
 
-    h3: <h3 {...attr} {...cleanProps}>
+    h3: <h3 {...attr}>
       {props.children}
     </h3>,
 
-    h4: <h4 {...attr} {...cleanProps}>
+    h4: <h4 {...attr}>
       {props.children}
     </h4>,
 
-    h5: <h5 {...attr} {...cleanProps}>
+    h5: <h5 {...attr}>
       {props.children}
     </h5>,
 
-    h6: <h6 {...attr} {...cleanProps}>
+    h6: <h6 {...attr}>
       {props.children}
     </h6>,
 
     hr: <hr {...attr} className={`uk-article-divider ${cssClassNames}`} />,
 
-    ins: <ins {...attr} {...cleanProps}>
+    ins: <ins {...attr}>
       {props.children}
     </ins>,
 
-    mark : <mark {...attr} {...cleanProps}>
+    mark : <mark {...attr}>
       {props.children}
     </mark>,
 
-    q: <q {...attr} {...cleanProps}>
+    q: <q {...attr}>
       {props.children}
     </q>,
 
-    p: <p {...attr} {...cleanProps}>
+    p: <p {...attr}>
       {props.children}
       </p>,
 
-    small: <small {...attr} {...cleanProps}>
+    small: <small {...attr}>
       {props.children}
     </small>,
 
-    span: <span {...attr} {...cleanProps}>
+    span: <span {...attr}>
       {props.children}
     </span>,
 
-    strong: <strong {...attr} {...cleanProps}>
+    strong: <strong {...attr}>
       {props.children}
     </strong>
   };
@@ -124,8 +140,11 @@ const Text = (props) => {
 
 Text.propTypes = {
   bold    : React.PropTypes.bool,
+  classes : React.PropTypes.array,
   context : React.PropTypes.oneOf(['muted', 'primary', 'success', 'warning', 'danger', 'contrast']),
   heading : React.PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+  href    : React.PropTypes.string,
+  kitid   : React.PropTypes.string,
   size    : React.PropTypes.oneOf(['small', 'large']),
   type    : React.PropTypes.oneOf([
     'a',
@@ -152,4 +171,4 @@ Text.propTypes = {
 };
 
 
-export default uikit.base(Text);
+export default base(Text);
