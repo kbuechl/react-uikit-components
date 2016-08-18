@@ -5,7 +5,7 @@ import {
   base,
   events,
   helpers
-} from '../../../base';
+} from 'react-uikit-base';
 
 
 const Text = (props) => {
