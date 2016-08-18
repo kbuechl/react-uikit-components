@@ -59,13 +59,7 @@ test('panel Component', nested => {
 
       /* eslint-disable smells/no-complex-string-concat */
       const expect = htmlToString(
-        `<a data-kitid="pan1">
-          <div data-kitid="pan1" class="uk-panel  uk-panel-box uk-panel-header uk-panel-space">
-            <span class="uk-badge  uk-badge-danger uk-panel-badge" data-kitid="pan1">hot</span>
-            <h3 class="uk-panel-title"> Link panel</h3>
-            This is a panel
-          </div>
-        </a>`
+        `<a data-kitid="pan1" href=""><span class="uk-badge  uk-badge-danger uk-panel-badge" data-kitid="pan1">hot</span><h3 class="uk-panel-title"> Link panel</h3>This is a panel</a>`
       );
       /* eslint-enable no-complex-string-concat */
 

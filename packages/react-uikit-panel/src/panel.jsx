@@ -1,14 +1,21 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
-import ufunc from 'ufunc';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
+import {
+  either,
+  maybeIf
+} from 'ufunc';
 import Badge from 'react-uikit-badge';
 
 
 const Panel = (props) => {
   // CSS classes
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-panel',
     props.classes,
     props.box ? 'uk-panel-box' : null,
@@ -21,13 +28,28 @@ const Panel = (props) => {
   ]);
 
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'badge',
+    'box',
+    'classes',
+    'context',
+    'divider',
+    'header',
+    'hover',
+    'icon',
+    'kitid',
+    'link',
+    'space',
+    'teaser',
+    'title',
+    'type'
+  ];
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
   // Elements
-  const ignoreProps = ['type', 'title'];
-  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
-
-
-  const badge = ufunc.maybeIf(
-    ufunc.either(
+  const badge = maybeIf(
+    either(
       <Badge className='uk-panel-badge' kitid={props.kitid}>{props.badge}</Badge>,
 
       <Badge className='uk-panel-badge' kitid={props.kitid} context={props.badge ? props.badge.context : null}>
@@ -38,42 +60,40 @@ const Panel = (props) => {
   )(props.badge);
 
 
-  const icon = ufunc.maybeIf(
+  const icon = maybeIf(
     <i className={`uk-icon-${props.icon}`}></i>
   )(props.icon);
 
 
-  const teaser = ufunc.maybeIf(
+  const teaser = maybeIf(
     <div className='uk-panel-teaser'>
      <img src={props.teaser ? props.teaser.src : null } alt={props.teaser ? props.teaser.alt : null} />
     </div>
   )(props.teaser);
 
 
-  const title = ufunc.maybeIf(
+  const title = maybeIf(
    <h3 className='uk-panel-title'>{icon} {props.title}</h3>
   )(props.title);
 
+
   const attr = {
     ...cleanProps,
-    ...{...uikit.events(props)},
+    ...{...events(props)},
     'data-kitid': props.kitid
   };
 
 
-  const block = <div
-    {...attr}
-    className={cssClassNames}
-  >
-    {teaser}
-    {badge}
-    {title}
-    {props.children}
-  </div>;
-
-
   const type = {
-    block: block,
+    block: <div
+      {...attr}
+      className={cssClassNames}
+    >
+      {teaser}
+      {badge}
+      {title}
+      {props.children}
+    </div>,
 
     list: <li
       {...attr}
@@ -85,8 +105,14 @@ const Panel = (props) => {
       {props.children}
     </li>,
 
-    link: <a {...attr}>
-        {block}
+    link: <a
+      data-kitid={props.kitid}
+      href={props.link}
+    >
+      {teaser}
+      {badge}
+      {title}
+      {props.children}
     </a>
   };
 
@@ -97,21 +123,24 @@ const Panel = (props) => {
 
 
 Panel.propTypes = {
-  badge  : React.PropTypes.oneOfType([
+  badge   : React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.object
   ]),
-  box    : React.PropTypes.bool,
-  context: React.PropTypes.oneOf(['primary', 'secondary']),
-  divider: React.PropTypes.bool,
-  header : React.PropTypes.bool,
-  hover  : React.PropTypes.bool,
-  icon   : React.PropTypes.string,
-  link   : React.PropTypes.string,
-  space  : React.PropTypes.bool,
-  teaser : React.PropTypes.object,
-  title  : React.PropTypes.string,
-  type: React.PropTypes.oneOf(['link', 'list', 'block'])
+  box     : React.PropTypes.bool,
+  children: React.PropTypes.any,
+  classes : React.PropTypes.array,
+  context : React.PropTypes.oneOf(['primary', 'secondary']),
+  divider : React.PropTypes.bool,
+  header  : React.PropTypes.bool,
+  hover   : React.PropTypes.bool,
+  icon    : React.PropTypes.string,
+  kitid   : React.PropTypes.string,
+  link    : React.PropTypes.string,
+  space   : React.PropTypes.bool,
+  teaser  : React.PropTypes.object,
+  title   : React.PropTypes.string,
+  type    : React.PropTypes.oneOf(['link', 'list', 'block'])
 };
 
-export default uikit.base(Panel);
+export default base(Panel);
