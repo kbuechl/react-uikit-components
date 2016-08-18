@@ -1,7 +1,10 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
+import {
+  base,
+  events,
+  helpers } from 'react-uikit-base';
 
 
 const Button = (props) => {
@@ -20,7 +23,7 @@ const Button = (props) => {
   };
 
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-button',
     props.classes,
     props.block ? 'uk-width-1-1' : null,
@@ -42,13 +45,13 @@ const Button = (props) => {
     'type'
   ];
 
-  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
 
   // Elements
   const attr = {
     ...cleanProps,
-    ...uikit.events(props),
+    ...events(props),
     'data-kitid': props.kitid
   };
 
@@ -90,6 +93,7 @@ Button.propTypes = {
   block    : React.PropTypes.bool,
   children : React.PropTypes.any,
   classes  : React.PropTypes.array,
+  className : React.PropTypes.string,
   context  : React.PropTypes.oneOf(['primary', 'success', 'danger', 'link']),
   disabled : React.PropTypes.bool,
   kitid    : React.PropTypes.string,
@@ -98,4 +102,4 @@ Button.propTypes = {
 };
 
 
-export default uikit.base(Button);
+export default base(Button);
