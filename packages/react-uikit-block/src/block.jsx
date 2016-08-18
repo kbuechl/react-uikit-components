@@ -1,8 +1,12 @@
 'use strict';
 
 import React from 'react';
-import uikit from 'react-uikit-base';
-import ufunc from 'ufunc';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
+import { either } from 'ufunc';
 
 
 const Block = (props) => {
@@ -10,7 +14,7 @@ const Block = (props) => {
   const contailerCSS = props.container ? 'uk-container' : null;
 
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-block',
     props.classes,
     props.context ? `uk-block-${props.context}` : null,
@@ -20,10 +24,24 @@ const Block = (props) => {
   ]);
 
 
+  // Remove non valid html attributes
+  const ignoreProps = [
+    'children',
+    'className',
+    'classes',
+    'context',
+    'container',
+    'kitid',
+    'large',
+  ];
+
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+
+
   // Elements
   const attr = {
-    ...props,
-    ...uikit.events(props),
+    ...cleanProps,
+    ...events(props),
     className: cssClassNames,
     'data-kitid': props.kitid
   };
@@ -42,7 +60,7 @@ const Block = (props) => {
 
 
   // Return Component
-  const isContainer = ufunc.either(container, block);
+  const isContainer = either(container, block);
   return isContainer(props.container);
 
 
@@ -59,4 +77,4 @@ Block.propTypes = {
 };
 
 
-export default uikit.base(Block);
+export default base(Block);
