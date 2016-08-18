@@ -1,8 +1,12 @@
 'use strict';
 
 import React from 'react';
-import uikit from '../../../base';
-import ufunc from 'ufunc';
+import {
+  base,
+  events,
+  helpers
+} from '../../../base';
+import { either } from 'ufunc';
 
 
 const Badge = (props) => {
@@ -14,7 +18,7 @@ const Badge = (props) => {
   };
 
 
-  const cssClassNames = uikit.helpers.cleanClasses([
+  const cssClassNames = helpers.cleanClasses([
     'uk-badge',
     props.classes,
     context[props.context] || null,
@@ -34,7 +38,7 @@ const Badge = (props) => {
     'kitid',
     'notification'
   ];
-  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
+  const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
 
   // Elements
@@ -50,7 +54,7 @@ const Badge = (props) => {
 
   const inline = <span
     {...cleanProps}
-    {...uikit.events(props)}
+    {...events(props)}
     className={cssClassNames}
     data-kitid={props.kitid}
   >
@@ -60,7 +64,7 @@ const Badge = (props) => {
 
 
   // Return Component
-  const component = ufunc.either(block, inline);
+  const component = either(block, inline);
 
   return component(props.block);
 };
@@ -77,4 +81,4 @@ Badge.propTypes = {
 };
 
 
-export default uikit.base(Badge);
+export default base(Badge);
