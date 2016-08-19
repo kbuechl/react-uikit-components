@@ -5,8 +5,8 @@ import {
   base,
   events,
   helpers
-} from '../../../base';
-import Badge from '../../badge';
+} from 'react-uikit-base';
+import Badge from 'react-uikit-badge';
 import { either } from 'ufunc';
 
 
@@ -24,7 +24,7 @@ const Note = (props) => {
     'body' ,
     'children',
     'classes',
-    'kitid' 
+    'kitid'
   ];
 
   const cleanProps = helpers.cleanProps(ignoreProps)(props);
