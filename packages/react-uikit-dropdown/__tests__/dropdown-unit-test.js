@@ -20,13 +20,7 @@ test('dropdown Component', nested => {
 
 
       const expect = htmlToString(
-        `<div aria-haspopup="true" aria-expanded="false" data-kitid="dropContainer-drop1">
-          <button class="uk-button  uk-width-1-1" data-kitid="dropTrigger-drop1" type="button">
-            dropdown <i class="uk-icon-caret-down"></i>
-            </button>
-          <div data-kitid="dropbody-drop1" class="uk-dropdown">
-          this is a drop down</div>
-        </div>`
+        `<div aria-haspopup="true" aria-expanded="false" data-kitid="dropContainer-drop1"><button icon="caret-down" data-kitid="dropTrigger-drop1" class="uk-button  uk-width-1-1" type="button">dropdown <i class="uk-icon-caret-down"></i></button><div data-kitid="dropbody-drop1" class="uk-dropdown">this is a drop down</div></div>`
       );
 
 

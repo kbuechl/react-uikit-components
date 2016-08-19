@@ -1,11 +1,17 @@
 'use strict';
 
 import React from 'react';
-import ufunc from 'ufunc';
+import {
+  either,
+  pipe
+} from 'ufunc';
 import posOffset from './posOffset';
-import R from 'ramda';
-import uikit from 'react-uikit-base';
-import Trigger from '../../react-uikit-trigger';
+import {
+  base,
+  events,
+  helpers
+} from 'react-uikit-base';
+import Trigger from 'react-uikit-trigger';
 import Dropbody from './dropbody';
 import Button from 'react-uikit-button';
 
@@ -35,7 +41,7 @@ class Dropdown extends React.Component {
         trigger.animate.out(element, state);
       };
 
-      ufunc.either(animateIn, animateOut)(state);
+      either(animateIn, animateOut)(state);
     };
   }
 
@@ -46,7 +52,7 @@ class Dropdown extends React.Component {
 
 
   getElement (dataId) {
-    return uikit.helpers.getElement(dataId);
+    return helpers.getElement(dataId);
   }
 
 
@@ -144,14 +150,14 @@ class Dropdown extends React.Component {
       return element;
     };
 
-    R.pipe(toHidden, justify, getPosition, this.animate(!this.props.opened, props.trigger))(dropbody);
+    pipe(toHidden, justify, getPosition, this.animate(!this.props.opened, props.trigger))(dropbody);
 
   }
 
 
   render () {
     const props = this.props;
-    const kitid = ufunc.either(props.kitid, props.kitid)(props.kitid);
+    const kitid = either(props.kitid, props.kitid)(props.kitid);
 
 
     // CSS classes
@@ -163,14 +169,14 @@ class Dropdown extends React.Component {
     };
 
 
-    const cssClassNames = uikit.helpers.cleanClasses([
+    const cssClassNames = helpers.cleanClasses([
       type[props.type] || type['dropdown'],
       props.classes,
       props.className
     ]);
 
 
-    const cssDropClassNames = uikit.helpers.cleanClasses([
+    const cssDropClassNames = helpers.cleanClasses([
       !props.blank ? 'uk-dropdown' : 'uk-dropdown-blank',
       props.grid ? `uk-dropdown-width-${props.grid}` : null,
       props.scrollable ? 'uk-dropdown-scrollable' : null,
@@ -179,28 +185,47 @@ class Dropdown extends React.Component {
     ]);
 
 
-    // Elements
-    const cleanProps = uikit.helpers.cleanProps(['type'])(props);
-    const cleanTriggerProps = ufunc.either(
-      uikit.helpers.cleanProps(props.trigger, ['body', 'icon']),
-      props.trigger
-    )(props.type === 'button-group');
+    // Remove non valid html attributes
+    const ignoreProps = [
+      'blank',
+      'boundary',
+      'dropbody',
+      'children',
+      'className',
+      'classes',
+      'grid',
+      'hover',
+      'items',
+      'justify',
+      'kitid',
+      'navbar',
+      'noflip',
+      'opened',
+      'parent',
+      'pos',
+      'scrollable',
+      'small',
+      'standard',
+      'trigger',
+      'type'
+    ];
 
+    const cleanProps = helpers.cleanProps(ignoreProps)(props);
 
     const attr = {
       'aria-haspopup': 'true',
       'aria-expanded': this.props.opened ? 'true' : 'false',
       'data-kitid': `dropContainer-${kitid}`,
       className: cssClassNames,
-      kitid: props.kitid,
-      ...uikit.events(props)
+      ...cleanProps,
+      ...events(props)
     };
 
     const dropbodyProps = Object.assign(
       {
         style: props.justify ? {width: posOffset.dim(this)} : null,
         'data-kitid': `dropbody-${kitid}`,
-        ...uikit.events(props),
+        ...events(props),
         className: cssDropClassNames
       },
       props.dropbody ? props.dropbody : {}
@@ -210,7 +235,7 @@ class Dropdown extends React.Component {
 
     const dropbody = <Dropbody {...dropbodyProps}>
       {
-        ufunc.either(
+        either(
         () => grid,
         () => props.children
         )(props.grid)
@@ -219,7 +244,7 @@ class Dropdown extends React.Component {
 
 
     const trigger = (mode) => <Trigger
-      {...cleanTriggerProps}
+      {...props.trigger}
       icon={props.icon || 'caret-down'}
       kitid={`dropTrigger-${kitid}`}
       onClick={(e) => this.handleTriggerClick(e)}
@@ -230,7 +255,6 @@ class Dropdown extends React.Component {
 
     const component = {
       dropdown: <div
-        {...cleanProps}
         {...attr}
       >
         {trigger()}
@@ -238,7 +262,6 @@ class Dropdown extends React.Component {
       </div>,
 
       'button-group': <div
-        {...cleanProps}
         {...attr}
       >
         <Button {...props.standard}>{props.children}</Button>
@@ -249,7 +272,6 @@ class Dropdown extends React.Component {
       </div>,
 
       navbar: <li
-        {...cleanProps}
         {...attr}
       >
         <Button>{props.children}</Button>
@@ -291,4 +313,4 @@ Dropdown.propTypes = {
   type       : React.PropTypes.oneOf(['button', 'button-group', 'dropdown', 'grid', 'navbar'])
 };
 
-export default uikit.base(Dropdown);
+export default base(Dropdown);

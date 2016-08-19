@@ -1,5 +1,5 @@
 'use strict';
-import ufunc from 'ufunc';
+import { either } from 'ufunc';
 
 
 const pos = (element) => {
@@ -48,13 +48,13 @@ const offset = (opts) => {
   };
 
 
-  const horFlip = ufunc.either(
+  const horFlip = either(
     () => targetDetails.pos.top + targetDetails.dim.height,
     () => targetDetails.pos.top - elementDetails.dim.height
   );
 
 
-  const lrVerFlip = ufunc.either(
+  const lrVerFlip = either(
     () => targetDetails.pos.left + targetDetails.dim.width,
     () => targetDetails.pos.left - elementDetails.dim.width
   );
