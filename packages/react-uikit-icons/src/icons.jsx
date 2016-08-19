@@ -25,7 +25,6 @@ const icon = (props) => {
   // Remove non valid html attributes
   const ignoreProps = [
     'children',
-    'className',
     'classes',
     'icon',
     'link',
