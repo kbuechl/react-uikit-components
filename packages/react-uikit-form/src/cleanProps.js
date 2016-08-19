@@ -34,6 +34,6 @@ const ignoreProps = [
 
 export const cleanProps = helpers.cleanProps(ignoreProps);
 
-export const cleanContainerProps = helpers.cleanProps([]);
+export const cleanInputProps = helpers.cleanProps([]);
 
 export default cleanProps;

@@ -20,37 +20,29 @@ const FormInput = (props) => {
 
   const display = props.display === 'inlineBlock' ? 'inline-block' : props.display;
 
-  const ignoreProps = ['display', 'label', 'width', 'classes'];
-  const cleanProps = {
-    ...uikit.helpers.cleanProps(ignoreProps)(props),
-    className: cssClassNames,
-    display: display
-   };
+
+  const input =   <FormInputMain
+      {...props.input}
+      kitid={props.kitid}
+      className={cssClassNames}
+    />;
 
    // Elements
   const type = {
     icon: <FormIcons
             {...props}
             className={cssClassNames}
-            icon={props.icon}
-            display={display}
-            kitid={props.kitid}
           >
-            <FormInputMain {...props}
-              className={cssClassNames}
-            />
+            {input}
           </FormIcons>,
 
-    input: <FormInputMain
-             {...props}
-             className={cssClassNames}
-           />,
+    input: input,
 
     file: <FormInputFile {...props.button} />,
 
     passwordToggle: <FormInputPassword
                       className={cssClassNames}
-                      input={cleanProps}
+                      input={props.input}
                       {...props.toggle}
                       kitid={props.kitid}
                     />,
@@ -77,10 +69,10 @@ FormInput.propTypes = {
   button    : React.PropTypes.object,
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
-  container : React.PropTypes.object,
   context   : React.PropTypes.oneOf(['danger', 'success']),
   display   : React.PropTypes.string,
   icon      : React.PropTypes.string,
+  input     : React.PropTypes.object,
   kitid     : React.PropTypes.string,
   onChange  : React.PropTypes.func,
   options   : React.PropTypes.array,
