@@ -23,7 +23,6 @@ const Grid = (props) => {
   // Remove non valid html attributes
   const ignoreProps = [
     'children',
-    'className',
     'classes',
     'divider',
     'gutter',
