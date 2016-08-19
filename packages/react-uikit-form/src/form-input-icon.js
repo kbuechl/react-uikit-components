@@ -1,18 +1,25 @@
 import React from 'react';
 import Icons from 'react-uikit-icons';
 import { cleanProps } from './cleanProps';
+import { helpers } from 'react-uikit-base';
 
-const FormIcon = (props) => (
-  <div {...cleanProps(props)}
-    className={`uk-form-icon ${props.className}`}
+
+const FormIcon = (props) => {
+  const cssClassNames = helpers.cleanClasses([
+    'uk-form-icon',
+    props.className
+  ]);
+
+  return <div {...cleanProps(props)}
+    className={cssClassNames}
   >
     <Icons
       icon={props.icon}
       kitid={`icon-${props.kitid}`}
     />
     {props.children}
-  </div>
-);
+  </div>;
+};
 
 export default FormIcon;
 

@@ -8,7 +8,7 @@ import {
 } from './helpers/renderElement';
 
 
-test('form input Component.', nested => {
+test.only('form input Component.', nested => {
   nested.test('Renders form input component:',
     assert => {
 

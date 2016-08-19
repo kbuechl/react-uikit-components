@@ -21,22 +21,21 @@ const FormInput = (props) => {
   const display = props.display === 'inlineBlock' ? 'inline-block' : props.display;
 
 
-  const input =   <FormInputMain
-      {...props.input}
-      kitid={props.kitid}
-      className={cssClassNames}
-    />;
-
    // Elements
   const type = {
     icon: <FormIcons
             {...props}
             className={cssClassNames}
           >
-            {input}
+          <FormInputMain
+              {...props}
+            />
           </FormIcons>,
 
-    input: input,
+    input: <FormInputMain
+        {...props}
+        kitid={props.kitid}
+      />,
 
     file: <FormInputFile {...props.button} />,
 
@@ -70,12 +69,15 @@ FormInput.propTypes = {
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
   context   : React.PropTypes.oneOf(['danger', 'success']),
+  disabled  : React.PropTypes.bool,
   display   : React.PropTypes.string,
   icon      : React.PropTypes.string,
   input     : React.PropTypes.object,
   kitid     : React.PropTypes.string,
   onChange  : React.PropTypes.func,
   options   : React.PropTypes.array,
+  placeholder: React.PropTypes.string,
+  required  : React.PropTypes.bool,
   size      : React.PropTypes.oneOf(['large', 'small']),
   toggle    : React.PropTypes.object,
   type      : React.PropTypes.string,
