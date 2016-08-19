@@ -19,7 +19,10 @@ const ImgGroup = (props) => {
 
   // Remove non valid html attributes
   const ignoreProps = [
-
+    'children',
+    'className',
+    'items',
+    'kitid'
   ];
 
   const cleanProps = helpers.cleanProps(ignoreProps)(props);
@@ -56,7 +59,7 @@ ImgGroup.propTypes = {
   children  : React.PropTypes.any,
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
-  items: React.PropTypes.array,
+  items     : React.PropTypes.array,
   kitid     : React.PropTypes.string
 };
 
