@@ -85,7 +85,6 @@ class Img extends React.Component {
     // Remove non valid html attributes
     const ignoreProps = [
       'children',
-      'className',
       'classes',
       'cover',
       'kitid',
