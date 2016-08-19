@@ -58,7 +58,6 @@ class ListItem extends React.Component {
       'badge',
       'body',
       'children',
-      'className',
       'classes',
       'description',
       'kitid',
