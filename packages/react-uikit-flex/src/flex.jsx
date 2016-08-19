@@ -46,7 +46,6 @@ const Flex = (props) => {
   const ignoreProps = [
     'around',
     'children',
-    'className',
     'classes',
     'center',
     'bottom',
