@@ -3,8 +3,8 @@
 
 import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
-import Breadcrumb from '../components/react-uikit-breadcrumb';
-import BreadcrumbItem from '../components/react-uikit-breadcrumb/lib/breadcrumb-item';
+import Breadcrumb from 'react-uikit-breadcrumb';
+import BreadcrumbItem from 'react-uikit-breadcrumb/lib/breadcrumb-item';
 import Table from 'react-uikit-table';
 
 
@@ -61,7 +61,7 @@ var BreadcrumbItem = require('react-uikit-breadcrumb/lib/breadcrumb-item').defau
 
         <Breadcrumb kitid='bread'>
           <BreadcrumbItem kitid='1' body='Home'/>
-          <BreadcrumbItem kitid='4' type='Blog' body='link'/>
+          <BreadcrumbItem kitid='4' type='link' body='link'/>
           <BreadcrumbItem kitid='3' type='disabled' body='Category'/>
           <BreadcrumbItem kitid='2' type='active' body='Post'/>
         </Breadcrumb>
@@ -71,7 +71,7 @@ var BreadcrumbItem = require('react-uikit-breadcrumb/lib/breadcrumb-item').defau
         {
 `<Breadcrumb kitid='bread'>
   <BreadcrumbItem kitid='1' body='Home'/>
-  <BreadcrumbItem kitid='4' type='Blog' body='link'/>
+  <BreadcrumbItem kitid='4' type='link' body='link'/>
   <BreadcrumbItem kitid='3' type='disabled' body='Category'/>
   <BreadcrumbItem kitid='2' type='active' body='Post'/>
 </Breadcrumb>

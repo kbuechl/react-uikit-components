@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
-import Table from '../components/react-uikit-table';
+import Table from 'react-uikit-table';
 import Note from 'react-uikit-note';
 
 const items = [

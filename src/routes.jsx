@@ -38,7 +38,7 @@ import TextDoc from './text-doc.jsx';
 import ThumbnailDoc from './thumbnail-doc.jsx';
 
 const ContentView = (props) => (
-  <div {...props} className={uikit.helpers.cleanClasses(props.classes)}>
+  <div className={uikit.helpers.cleanClasses(props.classes)}>
     {props.children}
   </div>
 );
@@ -49,7 +49,7 @@ ContentView.propTypes = {
 };
 
 const HeaderView = (props) => (
-  <div {...props} className={uikit.helpers.cleanClasses(props.classes)}>
+  <div className={uikit.helpers.cleanClasses(props.classes)}>
     <a className='uk-margin-large-right' href='index.html'>
       <h1 className='uk-display-inline'>React UIkit Components</h1>
     </a>

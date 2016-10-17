@@ -3,7 +3,7 @@
 
 import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
-import Img from '../components/react-uikit-img';
+import Img from 'react-uikit-img';
 import Table from 'react-uikit-table';
 
 

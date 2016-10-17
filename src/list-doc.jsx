@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
-import List from '../components/react-uikit-list';
-import ListItem from '../components/react-uikit-list/lib/list-item';
+import List from 'react-uikit-list';
+import ListItem from 'react-uikit-list/lib/list-item';
 import Table from 'react-uikit-table';
 import Note from 'react-uikit-note';
 
