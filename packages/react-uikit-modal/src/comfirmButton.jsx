@@ -3,8 +3,9 @@ import Button from 'react-uikit-button';
 
 
 const ComfirmButton = (props) => {
-
   if (props.confirm && props.confirm.show) {
+    const cleanComfirmProps = {...props.confirm, show: null, dialog: null};
+
     return <div>
 
       <Button
@@ -14,9 +15,9 @@ const ComfirmButton = (props) => {
         {...props.cancel}
       />
       <Button
+        {...cleanComfirmProps}
         kitid={`confrim-${props.kitid}`}
         body={props.confirm.body || 'Confirm'}
-        {...props.confirm}
       />
     </div>;
   } else {

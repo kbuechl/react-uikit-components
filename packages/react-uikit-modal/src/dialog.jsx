@@ -2,7 +2,10 @@
 
 import React from 'react';
 import uikit from 'react-uikit-base';
-import ufunc from 'ufunc';
+import {
+ maybeIf,
+ either
+} from 'ufunc';
 import Button from 'react-uikit-button';
 import ComfirmButton from './comfirmButton';
 
@@ -23,36 +26,35 @@ const Dialog = (props) => {
 
 
   // Elements
-  const caption = ufunc.maybeIf(
+  const caption = maybeIf(
     <div className='uk-modal-caption'>{props.caption}</div>
   )(props.caption);
 
 
-  const close = ufunc.maybeIf(<a
+  const close = maybeIf(<a
     href='#'
     className={closeCSSClasses}
     data-kitid={props.kitid ? props.kitid : `close-${props.kitid}`}
     onClick={props.onClose}
-    float='right'/>
-  )(props.onClose);
+  />)(props.onClose);
 
 
   const confrim = (confirmObj, children) => {
-    return ufunc.either(
+    return either(
       confirmObj && confirmObj.show ? confirmObj.dialog : children,
       children
     )(confirmObj);
   };
 
 
-  const footer = (children, right) => ufunc.maybeIf(
+  const footer = (children, right) => maybeIf(
     <div className={right ? 'uk-modal-footer uk-text-right' : 'uk-modal-footer'}>
       {children}
     </div>
   )(props.footer || props.type === 'alert' || props.type === 'prompt' || props.type === 'confirm');
 
 
-  const header = ufunc.maybeIf(
+  const header = maybeIf(
     <div className='uk-modal-header'>
       <h2>{props.header}</h2>
     </div>

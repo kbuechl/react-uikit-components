@@ -2,7 +2,7 @@
 
 import React from 'react';
 import uikit from 'react-uikit-base';
-import ufunc from 'ufunc';
+import { either } from 'ufunc';
 import Dialog from './dialog';
 import Trigger from 'react-uikit-trigger';
 
@@ -111,7 +111,7 @@ class Modal extends React.Component {
       }
     };
 
-    ufunc.either(show, hide)(!this.props.show);
+    either(show, hide)(!this.props.show);
   }
 
 
@@ -125,12 +125,42 @@ class Modal extends React.Component {
       props.className
     ]);
 
+    const ignoreProps = [
+      'blank',
+      'cancel',
+      'caption',
+      'children',
+      'className',
+      'classes',
+      'close',
+      'confirm',
+      'dialog',
+      'footer',
+      'header',
+      'kitid',
+      'lightbox',
+      'ok',
+      'large',
+      'show',
+      'trigger',
+      'type'
+    ];
+
+
+    const cleanProps = uikit.helpers.cleanProps(ignoreProps)({
+      ...props,
+      confirm: null,
+      ok: null,
+      show: null,
+      trigger: null,
+    });
+
 
     // Return Component
     return <div>
       <Trigger {...props.trigger} kitid={`trigger-${props.kitid}`} onClick={this.handleToggleClick}/>
 
-      <div {...props}
+      <div {...cleanProps}
         className={cssClassNames}
         data-kitid={`modal-${props.kitid}`}
         onClick={this.handleToggleClick}

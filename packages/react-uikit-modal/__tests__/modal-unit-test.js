@@ -35,15 +35,7 @@ test('Modal Component', nested => {
         </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div class="uk-modal" data-kitid="modal-m1">
-            <div class="uk-modal-dialog" data-kitid="dialog-m1">
-              <h2>Headline</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog" data-kitid="dialog-m1"><h2>Headline</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div></div>
       `);
 
 
@@ -81,16 +73,7 @@ test('Modal Component', nested => {
         </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div class="uk-modal" data-kitid="modal-m1">
-            <div class="uk-modal-dialog" data-kitid="dialog-m1">
-              <a href="#" class="uk-modal-close uk-close" data-kitid="m1"></a>
-              <h2>Headline</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog" data-kitid="dialog-m1"><a href="#" class="uk-modal-close uk-close" data-kitid="m1"></a><h2>Headline</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div></div>
       `);
 
 
@@ -126,17 +109,7 @@ test('Modal Component', nested => {
       </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div class="uk-modal" data-kitid="modal-m1">
-            <div class="uk-modal-dialog" data-kitid="dialog-m1">
-              <div class="uk-modal-header">
-                <h2>Modal with header and footer</h2>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog" data-kitid="dialog-m1"><div class="uk-modal-header"><h2>Modal with header and footer</h2></div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div></div>
       `);
 
 
@@ -172,17 +145,7 @@ test('Modal Component', nested => {
       </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div class="uk-modal" data-kitid="modal-m1">
-            <div class="uk-modal-dialog" data-kitid="dialog-m1">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <div class="uk-modal-footer">
-                <button>Save</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog" data-kitid="dialog-m1"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><div class="uk-modal-footer"><button>Save</button></div></div></div></div>
       `);
 
 
@@ -218,14 +181,7 @@ test('Modal Component', nested => {
       </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog" data-kitid="dialog-m1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div class="uk-modal-caption">This is a caption</div>
-          </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog" data-kitid="dialog-m1"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><div class="uk-modal-caption">This is a caption</div></div></div></div>
       `);
 
 
@@ -255,14 +211,7 @@ test('Modal Component', nested => {
       </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div class="uk-modal" data-kitid="modal-m1">
-            <div class="uk-modal-dialog uk-modal-dialog-lightbox" data-kitid="dialog-m1">
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog uk-modal-dialog-lightbox" data-kitid="dialog-m1"><p>Lorem ipsum dolor sit amet</p></div></div></div>
       `);
 
 
@@ -292,14 +241,7 @@ test('Modal Component', nested => {
       </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div class="uk-modal" data-kitid="modal-m1">
-            <div class="uk-modal-dialog uk-modal-dialog-blank uk-height-viewport" data-kitid="dialog-m1">
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog uk-modal-dialog-blank uk-height-viewport" data-kitid="dialog-m1"><p>Lorem ipsum dolor sit amet</p></div></div></div>
       `);
 
 
@@ -330,17 +272,7 @@ test('Modal Component', nested => {
       </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div type="alert" class="uk-modal" data-kitid="modal-m1">
-            <div class="uk-modal-dialog" data-kitid="dialog-m1">
-              <p>Lorem ipsum dolor sit amet</p>
-              <div class="uk-modal-footer uk-text-right">
-                <button data-kitid="ok-m1" class="uk-button   uk-button-primary" type="button">ok</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog" data-kitid="dialog-m1"><p>Lorem ipsum dolor sit amet</p><div class="uk-modal-footer uk-text-right"><button data-kitid="ok-m1" class="uk-button   uk-button-primary" type="button">ok</button></div></div></div></div>
       `);
 
 
@@ -373,20 +305,7 @@ test('Modal Component', nested => {
       </Modal>);
 
       const expect = htmlToString(`
-        <div>
-          <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-          <div type="prompt" class="uk-modal" data-kitid="modal-m1">
-            <div class="uk-modal-dialog uk-form" data-kitid="dialog-m1">
-              <p>This is an prompt modal</p><input type="text" data-kitid="input-m1" class="uk-width-1-1">
-              <div class="uk-modal-footer uk-text-right">
-                <div>
-                  <button data-kitid="ok-m1" class="uk-button uk-margin-right" type="button">cancel</button>
-                  <button data-kitid="ok-m1" class="uk-button   uk-button-primary" type="button">ok</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog uk-form" data-kitid="dialog-m1"><p>This is an prompt modal</p><input type="text" data-kitid="input-m1" class="uk-width-1-1"><div class="uk-modal-footer uk-text-right"><div><button data-kitid="ok-m1" class="uk-button uk-margin-right" type="button">cancel</button><button data-kitid="ok-m1" class="uk-button   uk-button-primary" type="button">ok</button></div></div></div></div></div>
       `);
 
 
@@ -397,159 +316,127 @@ test('Modal Component', nested => {
     });
 
 
-    nested.test('type=confirm show:false prop:',
-      assert => {
-        const actual = reactToString(<Modal
-          kitid='m1'
-          show={false}
-          type='confirm'
-          confirm={{
-            context: 'danger',
-            show: false,
-            dialog: <div className='confirmDialog'>This is an comfirm modal</div>,
-            body: 'Confirm',
-            onClick: (e) => this.handleConfirmClick(e),
-            animate: {
-              'in': (e) => this.comfirmAnimateIn(e),
-              out: (e) => this.comfirmAnimateOut(e)
-            }
-          }}
-          ok={{
-            context: 'primary',
-            onClick: (e) => this.handleConfirmOkClick (e)
-          }}
+  nested.test('type=confirm show:false prop:',
+    assert => {
+      const actual = reactToString(<Modal
+        kitid='m1'
+        show={false}
+        type='confirm'
+        confirm={{
+          context: 'danger',
+          show: false,
+          dialog: <div className='confirmDialog'>This is an comfirm modal</div>,
+          body: 'Confirm',
+          onClick: (e) => this.handleConfirmClick(e),
+          animate: {
+            'in': (e) => this.comfirmAnimateIn(e),
+            out: (e) => this.comfirmAnimateOut(e)
+          }
+        }}
+        ok={{
+          context: 'primary',
+          onClick: (e) => this.handleConfirmOkClick (e)
+        }}
 
-          trigger={{
-            body: 'Open',
-            animate: {
-              'in': (modal, dialog) => this.animateIn(modal, dialog),
-              out : (modal, dialog) => this.animateOut(modal, dialog)
-            }
-          }}
-        >
-          <p>
-            Are you sure?
-          </p>
-        </Modal>);
+        trigger={{
+          body: 'Open',
+          animate: {
+            'in': (modal, dialog) => this.animateIn(modal, dialog),
+            out : (modal, dialog) => this.animateOut(modal, dialog)
+          }
+        }}
+      >
+        <p>
+          Are you sure?
+        </p>
+      </Modal>);
 
-        const expect = htmlToString(`
-          <div>
-            <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-            <div type="confirm" class="uk-modal" data-kitid="modal-m1">
-              <div class="uk-modal-dialog uk-form" data-kitid="dialog-m1">
-                <p>Are you sure?</p>
-                <div class="uk-modal-footer uk-text-right">
-                  <div>
-                    <button data-kitid="ok-m1" class="uk-button uk-margin-right" type="button">cancel</button>
-                    <button data-kitid="ok-m1" class="uk-button   uk-button-primary" type="button">ok</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        `);
+      const expect = htmlToString(`
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog uk-form" data-kitid="dialog-m1"><p>Are you sure?</p><div class="uk-modal-footer uk-text-right"><div><button data-kitid="ok-m1" class="uk-button uk-margin-right" type="button">cancel</button><button data-kitid="ok-m1" class="uk-button   uk-button-primary" type="button">ok</button></div></div></div></div></div>
+      `);
 
 
-        assert.equals(actual, expect,
-          'Adds ok type confim show:fasle to modal element.');
+      assert.equals(actual, expect,
+        'Adds ok type confim show:fasle to modal element.');
 
-        assert.end();
-      });
-
-
-    nested.test('type=confirm show:true prop:',
-      assert => {
-        const actual = reactToString(<Modal
-          kitid='m1'
-          show={true}
-          type='confirm'
-          confirm={{
-            context: 'danger',
-            show: true,
-            dialog: <p>This is an comfirm modal</p>,
-            body: 'Confirm',
-            onClick: (e) => this.handleConfirmClick(e),
-            animate: {
-              'in': (e) => this.comfirmAnimateIn(e),
-              out: (e) => this.comfirmAnimateOut(e)
-            }
-          }}
-          ok={{
-            context: 'primary',
-            onClick: (e) => this.handleConfirmOkClick (e)
-          }}
-
-          trigger={{
-            body: 'Open',
-            animate: {
-              'in': (modal, dialog) => this.animateIn(modal, dialog),
-              out : (modal, dialog) => this.animateOut(modal, dialog)
-            }
-          }}
-        >
-          <p>
-            Are you sure?
-          </p>
-        </Modal>);
-
-        const expect = htmlToString(`
-          <div>
-            <button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-            <div type="confirm" class="uk-modal" data-kitid="modal-m1">
-              <div class="uk-modal-dialog uk-form" data-kitid="dialog-m1">
-                <p>This is an comfirm modal</p>
-                <div class="uk-modal-footer uk-text-right">
-                  <div>
-                    <button data-kitid="ok-m1" class="uk-button uk-margin-right" type="button">cancel</button>
-                    <button data-kitid="confirm-m1" class="uk-button   uk-button-danger" type="button">Confirm</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        `);
+      assert.end();
+    });
 
 
-        assert.equals(actual, expect,
-          'Adds ok type confim show:fasle to modal element.');
+  nested.test('type=confirm show:true prop:',
+    assert => {
+      const actual = reactToString(<Modal
+        kitid='m1'
+        show={true}
+        type='confirm'
+        confirm={{
+          context: 'danger',
+          show: true,
+          dialog: <p>This is an comfirm modal</p>,
+          body: 'Confirm',
+          onClick: (e) => this.handleConfirmClick(e),
+          animate: {
+            'in': (e) => this.comfirmAnimateIn(e),
+            out: (e) => this.comfirmAnimateOut(e)
+          }
+        }}
+        ok={{
+          context: 'primary',
+          onClick: (e) => this.handleConfirmOkClick (e)
+        }}
 
-        assert.end();
-      });
+        trigger={{
+          body: 'Open',
+          animate: {
+            'in': (modal, dialog) => this.animateIn(modal, dialog),
+            out : (modal, dialog) => this.animateOut(modal, dialog)
+          }
+        }}
+      >
+        <p>
+          Are you sure?
+        </p>
+      </Modal>);
+
+      const expect = htmlToString(`
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog uk-form" data-kitid="dialog-m1"><p>This is an comfirm modal</p><div class="uk-modal-footer uk-text-right"><div><button data-kitid="ok-m1" class="uk-button uk-margin-right" type="button">cancel</button><button data-kitid="confrim-undefined" class="uk-button   uk-button-danger" type="button">Confirm</button></div></div></div></div></div>
+      `);
 
 
-      nested.test('type=large prop:',
-        assert => {
-          const actual = reactToString(<Modal
-            kitid='m1'
-            large
-            trigger={{
-              body: 'Open',
-              animate: {
-                'in': (modal, dialog) => this.animateIn(modal, dialog),
-                out : (modal, dialog) => this.animateOut(modal, dialog)
-              }
-            }}
-          >
-            <p>
-              This is an prompt modal
-            </p>
-          </Modal>);
+      assert.equals(actual, expect,
+        'Adds ok type confim show:fasle to modal element.');
 
-          const expect = htmlToString(`
-            <div><button class="uk-button  uk-width-1-1" data-kitid="trigger-m1" type="button">Open </button>
-              <div class="uk-modal" data-kitid="modal-m1">
-                <div class="uk-modal-dialog uk-modal-dialog-large" data-kitid="dialog-m1">
-                  <p>This is an prompt modal</p>
-                </div>
-              </div>
-            </div>
-          `);
+      assert.end();
+    });
 
 
-          assert.equals(actual, expect,
-            'Adds ok type large to modal element.');
+  nested.test('type=large prop:',
+    assert => {
+      const actual = reactToString(<Modal
+        kitid='m1'
+        large
+        trigger={{
+          body: 'Open',
+          animate: {
+            'in': (modal, dialog) => this.animateIn(modal, dialog),
+            out : (modal, dialog) => this.animateOut(modal, dialog)
+          }
+        }}
+      >
+        <p>
+          This is an prompt modal
+        </p>
+      </Modal>);
 
-          assert.end();
-        });
+      const expect = htmlToString(`
+        <div><button data-kitid="trigger-m1" class="uk-button  uk-width-1-1" type="button">Open </button><div class="uk-modal" data-kitid="modal-m1"><div class="uk-modal-dialog uk-modal-dialog-large" data-kitid="dialog-m1"><p>This is an prompt modal</p></div></div></div>
+      `);
+
+
+      assert.equals(actual, expect,
+        'Adds ok type large to modal element.');
+
+      assert.end();
+    });
 
 });
