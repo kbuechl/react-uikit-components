@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-dropdown",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React uikit dropdown component.",
   "keywords": [
     "javascript",
@@ -59,7 +59,7 @@
     "react": "~15.3.0",
     "react-dom": "~15.3.0",
     "react-uikit-base": "~2.0.0",
-    "react-ukit-button" : "~2.0.0",
+    "react-uikit-button" : "~2.0.0",
     "react-uikit-trigger": "~2.0.0",
     "ufunc": "~2.0.0"
   },
