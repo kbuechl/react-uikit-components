@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-base",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React UIkit base HOC with uikit utility classes",
   "keywords": [
     "javascript",
@@ -60,8 +60,5 @@
     "plugins": [
       "transform-object-rest-spread"
     ]
-  },
-  "engines": {
-    "node": "~4.4.5"
   }
 }
