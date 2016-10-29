@@ -65,8 +65,4 @@
       "react",
       "stage-2"
     ]
-  },
-  "engines": {
-    "node": "~4.4.5"
   }
-}
