@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-codeblock",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React uikit codeblock component.",
   "keywords": [
     "javascript",
@@ -64,8 +64,5 @@
       "react",
       "stage-2"
     ]
-  },
-  "engines": {
-    "node": "~4.4.5"
   }
 }
