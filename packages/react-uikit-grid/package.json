@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-grid",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "description": "React uikit grid component fror  fully responsive, fluid and nestable grid layouts",
   "keywords": [
     "javascript",
@@ -18,20 +18,8 @@
   "scripts": {
     "build": "babel -d lib/ src/  && date",
     "build:watch": "watch 'npm run build' ./src",
-    "lint": "eslint --quiet ./src/**  && date || true && date",
-    "lint:watch": "watch 'npm run lint' ./",
-    "prepublish": "babel -d lib/ src/  && date",
-    "peer": "npm install cuid ufunc react react-dom react-uikit-base",
-    "test": "babel-node test-runner.js | tap-min  && date|| true && date",
-    "test:spec": "babel-node test-runner.js | tap-difflet || true && date",
-    "test:watch": "watch 'npm run test' ./"
-  },
-  "scripts": {
-    "build": "babel -d lib/ src/  && date",
-    "build:watch": "watch 'npm run build' ./src",
     "lint": "eslint --quiet ./src/**  && date  || true  && date",
     "lint:watch": "watch 'npm run lint' ./",
-    "peer": "npm install cuid ufunc react react-dom react-uikit-base",
     "prepublish": "babel -d lib/ src/  && date",
     "test": "babel-node test-runner.js | tap-min  && date || true  && date",
     "test:spec": "babel-node test-runner.js | tap-difflet  && date || true && date",
@@ -63,12 +51,12 @@
     "tape": "~4.6.0",
     "watch": "~0.19.1"
   },
-  "peerDependencies": {
+  "dependencies": {
     "cuid": "~1.3.8",
-    "react": "~15.3.0",
-    "react-dom": "~15.3.0",
-    "react-uikit-base": "~2.0.0",
-    "ufunc": "~2.0.0"
+    "react": "~15.3.2",
+    "react-dom": "~15.3.2",
+    "react-uikit-base": "~2.0.2",
+    "ufunc": "~2.0.1"
   },
   "babel": {
     "presets": [
@@ -76,8 +64,5 @@
       "react",
       "stage-2"
     ]
-  },
-  "engines": {
-    "node": "~4.4.5"
   }
 }
