@@ -1,30 +1,34 @@
-#React UIkit Codeblock
+#React UIkit Progress
 
-Displays code inside of a block.
+Defines different styles for progress bars.
 
 See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
 
 ##Usage
-The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
-
 UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
 
 
 ###Installation
 
-    npm install react-uikit-codeblock --save;
+    npm install react-uikit-progress --save;
 
     // ES6
-    import Codeblock from 'react-uikit-codeblock';
+    import Codeblock from 'react-uikit-progress';
 
     // ES5
-    var Codeblock = require('react-uikit-codeblock')
+    var Codeblock = require('react-uikit-progress').default;
 
 ###Example
 
-    <Codeblock>
-      {`<div>...<div>`};
-    </Codeblock>
+```
+<Progress
+  kitid='p1'
+  bar={30}
+  striped={true}
+  context='success'
+  size='small'
+/>
+```
 
 
 ##Tests
