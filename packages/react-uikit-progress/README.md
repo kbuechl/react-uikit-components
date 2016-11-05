@@ -22,11 +22,10 @@ UIkit css is not included. You can get it from [getuikit.com](http://getuikit.co
 
 ```
 <Progress
-  kitid='p1'
-  bar={30}
-  striped={true}
-  context='success'
+  bar={80}
+  striped active
   size='small'
+  context='danger'
 />
 ```
 
