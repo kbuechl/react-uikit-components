@@ -4,6 +4,7 @@ import React from 'react';
 import Codeblock from 'react-uikit-codeblock';
 import Form from 'react-uikit-form';
 import FormInput from 'react-uikit-form/lib/form-input';
+import Note from 'react-uikit-note';
 
 
 class FormDoc extends React.Component {
@@ -32,10 +33,8 @@ class FormDoc extends React.Component {
     return <div>
       <section>
         <h1>Form</h1>
-        <p>Documentation coming soon.</p>
-
         <p>
-          Full compatible with <a href='http://redux-form.com'>Redux Form</a>.
+          Compatible with <a href='http://redux-form.com'>Redux Form</a> v5 and v6.
         </p>
 
         <p>
@@ -50,11 +49,14 @@ class FormDoc extends React.Component {
 
   // ES6
   import Form from 'react-uikit-form';
-  import FormInput from 'react-uikit-form-input';
+  import FormInput from 'react-uikit-form/lib/form-input';
+  import FormReduxInput from 'react-uikit-form/lib/form-redux-input';
 
   // ES5
   var Form = require('react-uikit-form').default
-  var FormInput = require('react-uikit-form').default`}
+  var FormInput = require('react-uikit-form/lib/form-input').default
+  var FormReduxInput = require('react-uikit-form/lib/formr-redux-input').default
+`}
         </Codeblock>
 
         <hr className="uk-article-divider" />
@@ -893,8 +895,52 @@ class FormDoc extends React.Component {
 
     <section>
       <h2>Redux Form</h2>
+      <p>
+        Form inputs support <a href="http://redux-form.com/">Redux Form</a> with
+        the FormReduxInput located in the 'react-uikit-form/lib/form-redux-input' directory.
+      </p>
 
-      <h3 className='code'>Code</h3>
+      <Note>
+        The Redux Form Fields api in v6 was completely rewitten and therefore has an
+        entiely different implementation. For more details see <a href='http://redux-form.com'>Redux Form</a>
+      </Note>
+
+      <h3 className='code'>Redux form v6</h3>
+      <Codeblock scroll='text'>
+{`const AuthForm = (props) => {
+  const {
+    heading,
+    onSubmit,
+  } = props;
+
+  return <Form
+    title={heading}
+    layout='stacked'
+    onSubmit={onSubmit}
+  >
+    <Field
+      name="username"
+      component={FormReduxInput}
+      label='Username'
+      type="text"
+      help={{type: 'block'}}
+    />
+    <Field
+      name="password"
+      component={FormReduxInput}
+      label='password'
+      type="password"
+      help={{type: 'block'}}
+    />
+    <Button type='submit' context='primary' margin='right top'>
+      Submit
+    </Button>
+  </Form>;
+};
+`}
+      </Codeblock>
+
+      <h3 className='code'>Redux form v5</h3>
       <Codeblock scroll='text'>
 {`const AuthForm = (props) => {
   const {
