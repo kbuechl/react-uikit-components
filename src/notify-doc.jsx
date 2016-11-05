@@ -204,7 +204,7 @@ var Button = require('react-uikit-notify').default;`}
 {`<Notify
   kitid='notify1'
   pos='top-center'
-  messages=[{
+  messages={[{
     message: 'Message...',
     kitid:  'message_0',
     timeout: 3000,
@@ -214,7 +214,7 @@ var Button = require('react-uikit-notify').default;`}
       out: kitid => this.handleNotifyOut(kitid)
     },
     onClick: e => this.handleClose(e),
-  }]
+  }]}
 />
 `}
         </Codeblock>
