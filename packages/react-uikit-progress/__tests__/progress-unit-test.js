@@ -16,6 +16,7 @@ test('Progress Component', nested => {
         <Progress
           kitid='p1'
           bar={0}
+          body='0%'
         />
       );
 
@@ -40,6 +41,7 @@ test('Progress Component', nested => {
         <Progress
           kitid='p1'
           bar={40}
+          body='40%'
         />
       );
 
@@ -64,6 +66,7 @@ test('Progress Component', nested => {
           <Progress
             kitid='p1'
             bar={30}
+            body='30%'
             size='mini'
           />
         );
@@ -89,6 +92,7 @@ test('Progress Component', nested => {
           <Progress
             kitid='p1'
             bar={30}
+            body='30%'
             size='small'
           />
         );
@@ -114,6 +118,7 @@ test('Progress Component', nested => {
         <Progress
           kitid='p1'
           bar={30}
+          body='30%'
           context='success'
         />
       );
@@ -139,6 +144,7 @@ test('Progress Component', nested => {
         <Progress
           kitid='p1'
           bar={30}
+          body='30%'
           context='danger'
         />
       );
@@ -163,6 +169,7 @@ test('Progress Component', nested => {
         <Progress
           kitid='p1'
           bar={30}
+          body='30%'
           context='warning'
         />
       );
@@ -188,6 +195,7 @@ test('Progress Component', nested => {
         <Progress
           kitid='p1'
           bar={30}
+          body='30%'
           striped={true}
         />
       );
