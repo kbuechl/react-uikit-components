@@ -17,12 +17,15 @@ const Progress = (props) => {
     props.context ? `uk-progress-${props.context}` : null,
     props.size ? `uk-progress-${props.size}` : null,
     props.striped ? `uk-progress-striped` : null,
+    props.active ? `uk-active` : null,
     props.className
   ]);
 
   // Remove non valid html attributes
   const ignoreProps = [
+    'active',
     'bar',
+    'body',
     'children',
     'classes',
     'context',
@@ -49,14 +52,16 @@ const Progress = (props) => {
       className="uk-progress-bar"
       style={{...props.style, width: bar}}
     >
-      {bar}
+      {props.body}
     </div>
   </div>;
 };
 
 
 Progress.propTypes = {
+  active    : React.PropTypes.bool,
   bar       : React.PropTypes.number,
+  body      : React.PropTypes.string,
   children  : React.PropTypes.any,
   classes   : React.PropTypes.array,
   className : React.PropTypes.string,
