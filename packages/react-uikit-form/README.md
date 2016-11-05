@@ -16,10 +16,12 @@ UIkit css is not included. You can get it from [getuikit.com](http://getuikit.co
     // ES6
     import Form from 'react-uikit-form';
     import FormInput from 'react-uikit-form/lib/form-input';
+    import FormReduxInput from 'react-uikit-form/lib/form-redux-input';
 
     // ES5
     var Form = require('react-uikit-form').default;
     var FormInput = require('react-uikit-form/lib/form-input').default;
+    var FormReduxInput = require('react-uikit-form/lib/form-redux-input').default;
 
 
 ### Example 1
@@ -59,47 +61,35 @@ UIkit css is not included. You can get it from [getuikit.com](http://getuikit.co
 ```
 const AuthForm = (props) => {
   const {
-    fields: { username, password },
     heading,
-    onSubmit
+    onSubmit,
   } = props;
 
   return <Form
     title={heading}
     layout='stacked'
     onSubmit={onSubmit}
-    items={[
-      {
-        ...username,
-        kitid: 'username',
-        label: 'Username',
-        context: username.invalid && username.touched ? 'danger' :  null,
-        help={
-          password.invalid && password.touched
-          ? { type: 'block', text: password.error, context: 'danger' }
-          :  null
-        }
-      },
-      {
-
-        ...password,
-        kitid: 'label',
-        label: 'password',
-        context: password.invalid && password.touched ? 'danger' :  null,
-        help: {
-          password.invalid && password.touched
-          ? { type: 'block', text: password.error, context: 'danger' }
-          :  null
-        }
-      }
-    ]}
   >
-
-    <button type='submit' className='uk-button uk-button-primary uk-margin-right uk-margin-top'>Sign in</button>
-
-    <a href={ROOT_ROUTE} className='uk-button uk-button-danger uk-margin-top'>Cancel</a>
+    <Field
+      name="username"
+      component={FormReduxInput}
+      label='Username'
+      type="text"
+      help={{type: 'block'}}
+    />
+    <Field
+      name="password"
+      component={FormReduxInput}
+      label='password'
+      type="password"
+      help={{type: 'block'}}
+    />
+    <Button type='submit' context='primary' margin='right top'>
+      Submit
+    </Button>
   </Form>;
 };
+
 ```
 
 
