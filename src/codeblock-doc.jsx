@@ -20,10 +20,8 @@ const CodeblockDoc = (props) => (
         <h2>Usage</h2>
         <Codeblock lang='xml'>
 {`npm install react-uikit-codeblock --save;
-
 // ES6
 import Codeblock from 'react-uikit-codeblock';
-
 // ES5
 var Codeblock = require('react-uikit-codeblock').default`}
         </Codeblock>

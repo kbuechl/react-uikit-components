@@ -44,7 +44,6 @@ class ModalDoc extends React.Component {
   }
 
 
-
   blankAnimateIn (modal, dialog) {
     this.setState({show: true});
     velocity(modal, {opacity: 1}, {display: 'block'}, 300);

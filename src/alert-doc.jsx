@@ -7,7 +7,6 @@ import uikit from 'react-uikit-base';
 import velocity from 'velocity-animate';
 
 
-
 const handleAlertOpen = (e, kitid) => {
   e.preventDefault();
   const element = uikit.helpers.getElement(kitid);

@@ -22,7 +22,7 @@ const ButtonDoc = (props) => {
     <section>
       <h2>Usage</h2>
       <Codeblock>
-{`<code>npm install react-uikit-button --save;
+{`npm install react-uikit-button --save;
 
 // ES6
 <code>import Button from 'react-uikit-button';

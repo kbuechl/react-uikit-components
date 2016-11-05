@@ -7,7 +7,6 @@ import Img from 'react-uikit-img';
 import Table from 'react-uikit-table';
 
 
-
 const ImgDoc = (props) => (
   <div>
     <section>

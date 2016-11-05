@@ -6,7 +6,6 @@ import ButtonGroup from 'react-uikit-button-group';
 import Codeblock from 'react-uikit-codeblock';
 
 
-
 const ButtonGroupDoc = (props) => (
   <div>
     <section>

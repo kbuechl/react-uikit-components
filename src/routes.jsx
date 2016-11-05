@@ -5,7 +5,9 @@ import { Link } from 'react-router';
 import Grid from 'react-uikit-grid';
 import Nav from 'react-uikit-nav';
 import NavItem from 'react-uikit-nav/lib/nav-item';
+import Badge from 'react-uikit-badge';
 import uikit from 'react-uikit-base';
+
 
 // Layout Handlers
 import AlertDoc from './alert-doc.jsx';
@@ -30,9 +32,11 @@ import ListDoc from './list-doc.jsx';
 import ModalDoc from './modal-doc.jsx';
 import NavDoc from './nav-doc.jsx';
 import NoteDoc from './note-doc.jsx';
+import NotifyDoc from './notify-doc.jsx';
 import OverlayDoc from './overlay-doc.jsx';
 import PanelDoc from './panel-doc.jsx';
 import PlaceholderDoc from './placeholder-doc.jsx';
+import ProgressDoc from './progress-doc.jsx';
 import TableDoc from './table-doc.jsx';
 import TextDoc from './text-doc.jsx';
 import ThumbnailDoc from './thumbnail-doc.jsx';
@@ -50,10 +54,10 @@ ContentView.propTypes = {
 
 const HeaderView = (props) => (
   <div className={uikit.helpers.cleanClasses(props.classes)}>
-    <a className='uk-margin-large-right' href='index.html'>
+    <a href='index.html'>
       <h1 className='uk-display-inline'>React UIkit Components</h1>
     </a>
-    <a className='uk-button uk-button-large uk-button-primary uk-float-right' href='https://github.com/otissv/react-uikit-components'>GitHub</a>
+    <a className='uk-button uk-button-primary uk-float-right' href='https://github.com/otissv/react-uikit-components'>GitHub</a>
   </div>
 );
 
@@ -115,6 +119,8 @@ const Layout = (props) => (
 
         <NavItem type='header' body='COMPONENTS'/>
         <NavItem type='item'><Link to='/placeholder'>Placeholder</Link></NavItem>
+        <NavItem type='item'><Link to='/notify'>Notify <Badge notification context='danger'>new</Badge></Link></NavItem>
+        <NavItem type='item'><Link to='/progress'>Progress <Badge notification context='danger'>new</Badge></Link></NavItem>
 
       </Nav>
 
@@ -154,10 +160,12 @@ const routes = {
     { path: '/list', component         : ListDoc },
     { path: '/modal', component        : ModalDoc },
     { path: '/nav', component          : NavDoc },
+    { path: '/notify', component       : NotifyDoc },
     { path: '/note', component         : NoteDoc },
     { path: '/overlay', component      : OverlayDoc },
     { path: '/panel', component        : PanelDoc },
     { path: '/placeholder', component  : PlaceholderDoc },
+    { path: '/progress', component     : ProgressDoc },
     { path: '/table', component        : TableDoc },
     { path: '/text', component         : TextDoc },
     { path: '/thumbnail', component    : ThumbnailDoc }
