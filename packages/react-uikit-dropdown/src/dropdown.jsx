@@ -11,7 +11,7 @@ import {
   events,
   helpers
 } from 'react-uikit-base';
-import Trigger from 'react-uikit-trigger';
+import Trigger from '../../trigger';
 import Dropbody from './dropbody';
 import Button from 'react-uikit-button';
 
