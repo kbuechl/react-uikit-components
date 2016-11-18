@@ -99,7 +99,7 @@ class Modal extends React.Component {
     };
 
     const hide = () => {
-      const kitid = e.target.dataset.kitid;
+      const kitid = (e.target.dataset ? e.target.dataset.kitid : undefined);
 
 
       if (typeof kitid !== 'undefined') {
