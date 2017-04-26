@@ -20,11 +20,12 @@ const Text = (props) => {
   };
 
   const cssClassNames = helpers.cleanClasses([
-    props.classes,
     props.bold ? `uk-text-bold` : null,
     props.context ? `uk-text-${props.context}` : null,
     props.heading ? heading[props.heading] : null,
-    props.size ? `uk-text-${props.size}` : null
+    props.size ? `uk-text-${props.size}` : null,
+    props.classes,
+    props.className
   ]);
 
   // Remove non valid html attributes
@@ -140,6 +141,7 @@ const Text = (props) => {
 
 Text.propTypes = {
   bold    : React.PropTypes.bool,
+  className   : React.PropTypes.string,
   classes : React.PropTypes.array,
   context : React.PropTypes.oneOf(['muted', 'primary', 'success', 'warning', 'danger', 'contrast']),
   heading : React.PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
