@@ -2,7 +2,7 @@
 import test from 'tape';
 import Overlay from '../lib/overlay';
 import React from 'react';
-import { htmlToString, reactToString } from './helpers/renderElement';
+import { htmlToString, reactToString } from '../../../common/helpers/renderElement';
 
 
 test('Overlay Component', nested => {

@@ -2,7 +2,7 @@
 import test from 'tape';
 import Flex from '../lib/flex';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import renderElement from '../../../common/helpers/renderElement';
 
 
 test('flex Component', nested => {

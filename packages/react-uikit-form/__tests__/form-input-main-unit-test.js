@@ -5,7 +5,7 @@ import React from 'react';
 import {
   htmlToString,
   reactToString
-} from './helpers/renderElement';
+} from '../../../common/helpers/renderElement';
 
 
 test.only('form input Component.', nested => {

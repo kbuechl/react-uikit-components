@@ -2,7 +2,7 @@
 import test from 'tape';
 import Note from '../lib/note';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import renderElement from '../../../common/helpers/renderElement';
 
 
 test('note Component', nested => {

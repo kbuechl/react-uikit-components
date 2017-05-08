@@ -2,7 +2,7 @@
 import test from 'tape';
 import Button from '../lib/button';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import renderElement from '../../../common/helpers/renderElement';
 
 
 test('button Component', nested => {

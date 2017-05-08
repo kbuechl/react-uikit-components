@@ -6,7 +6,7 @@ import React from 'react';
 import {
   htmlToString,
   reactToString
-} from './helpers/renderElement';
+} from '../../../common/helpers/renderElement';
 
 
 test('breadcrumb Component', nested => {

@@ -2,7 +2,7 @@
 import test from 'tape';
 import Trigger from '../lib/trigger';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import renderElement from '../../../common/helpers/renderElement';
 
 
 test('trigger Component', nested => {

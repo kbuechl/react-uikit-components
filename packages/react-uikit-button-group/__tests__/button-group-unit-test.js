@@ -2,7 +2,7 @@
 import test from 'tape';
 import ButtonGroup from '../lib/button-group';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import renderElement from '../../../common/helpers/renderElement';
 
 
 test('block Component', nested => {

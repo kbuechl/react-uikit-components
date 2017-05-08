@@ -2,7 +2,7 @@
 import test from 'tape';
 import Comment from '../lib/comment';
 import React from 'react';
-import renderElement from './helpers/renderElement';
+import renderElement from '../../../common/helpers/renderElement';
 
 
 test('block Component', nested => {

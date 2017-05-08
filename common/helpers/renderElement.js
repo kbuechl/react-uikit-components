@@ -1,7 +1,8 @@
+'use strict';
+
 import ReactDOMServer from 'react-dom/server';
 import { createRenderer } from 'react-addons-test-utils';
 import dom from 'cheerio';
-
 
 export function htmlToDom (element) {
   const $ = dom.load(element);
@@ -28,3 +29,5 @@ export function reactToDom (element, tag) {
 export function reactToString (element) {
   return reactToDom(element).dom().html();
 }
+
+export default reactToDom;

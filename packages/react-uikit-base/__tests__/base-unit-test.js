@@ -2,7 +2,7 @@
 import test from 'tape';
 import React from 'react';
 import uikit, { helpers } from '../lib/uikit';
-import renderElement from './helpers/renderElement';
+import renderElement from '../../../common/helpers/renderElement';
 
 
 const Component = (props) => {

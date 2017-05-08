@@ -5,7 +5,7 @@ import React from 'react';
 import {
   htmlToString,
   reactToString
-} from './helpers/renderElement';
+} from '../../../common/helpers/renderElement';
 
 
 test('Form input password component.', nested => {

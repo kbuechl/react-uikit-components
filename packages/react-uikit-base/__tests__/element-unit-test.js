@@ -2,7 +2,7 @@
 import test from 'tape';
 import React from 'react';
 import { element } from '../lib/uikit';
-import renderElement from './helpers/renderElement';
+import renderElement from '../../../common/helpers/renderElement';
 
 
 test('UIkit Element', assert => {
