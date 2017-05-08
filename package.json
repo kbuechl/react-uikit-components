@@ -1,0 +1,12 @@
+{
+  "name": "react-uikit-packages",
+  "private": true,
+  "keywords": [
+    "react",
+    "uikit",
+    "lerna"
+  ],
+  "devDependencies": {
+    "lerna": "2.0.0-beta.38"
+  }
+}
