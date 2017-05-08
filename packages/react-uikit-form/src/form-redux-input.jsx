@@ -13,7 +13,8 @@ const FormReduxInput = field => {
     icon,
     input,
     label,
-    onChange,
+    // unused
+    // onChange,
     options,
     Password,
     placeholder,
@@ -23,7 +24,7 @@ const FormReduxInput = field => {
     type,
     width,
     meta
-  } = field
+  } = field;
 
   return <FormInput
     {...input}
@@ -42,7 +43,7 @@ const FormReduxInput = field => {
     type={type}
     width={width}
     row={row}
-  />
+  />;
 };
 
 export default FormReduxInput;

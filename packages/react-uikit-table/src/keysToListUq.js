@@ -1,5 +1,5 @@
 'use strict';
-import { unique } from 'ufunc'
+import { unique } from 'ufunc';
 
 export default (arr) => {
   const objKeysList = arr.map(obj => Object.keys(obj))[0];

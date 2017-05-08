@@ -78,10 +78,7 @@ const Trigger = (props) => {
       {props.children} {icon}
     </div>
   };
-if(props.type === 'span') {
-
-}
-
+  
   return either(type[props.type], type['button'])(props.type);
 };
 
