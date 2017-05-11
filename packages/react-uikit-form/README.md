@@ -1,31 +1,36 @@
-#React UIkit Form
+# React UIkit Form
 
 Easily create forms.
 
-See [http://otissv.github.io/react-uikit-components/](http://otissv.github.io/react-uikit-components) for docs.
+See [the website](http://otissv.github.io/react-uikit-components) for docs.
 
+## Usage
 
-##Usage
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
 UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
 
+### Installation
 
-###Installation
-
-    npm install react-uikit-form --save;
-
-    // ES6
-    import Form from 'react-uikit-form';
-    import FormInput from 'react-uikit-form/lib/form-input';
-    import FormReduxInput from 'react-uikit-form/lib/form-redux-input';
-
-    // ES5
-    var Form = require('react-uikit-form').default;
-    var FormInput = require('react-uikit-form/lib/form-input').default;
-    var FormReduxInput = require('react-uikit-form/lib/form-redux-input').default;
-
-
-### Example 1
+```bash
+npm install react-uikit-form --save;
 ```
+```js
+// ES6
+import Form from 'react-uikit-form';
+import FormInput from 'react-uikit-form/lib/form-input';
+import FormReduxInput from 'react-uikit-form/lib/form-redux-input';
+
+// ES5
+var Form = require('react-uikit-form').default;
+var FormInput = require('react-uikit-form/lib/form-input').default;
+var FormReduxInput = require('react-uikit-form/lib/form-redux-input').default;
+```
+
+### Examples
+
+#### Simple
+
+```js
 <Form>
   <FormInput placeholder='Text Input' margin='right' onChange={this.handleChange} />
 
@@ -57,8 +62,8 @@ UIkit css is not included. You can get it from [getuikit.com](http://getuikit.co
 </Form>
 ```
 
-### Redux Form expamle
-```
+#### Redux Form expamle
+```js
 const AuthForm = (props) => {
   const {
     heading,
@@ -89,23 +94,21 @@ const AuthForm = (props) => {
     </Button>
   </Form>;
 };
-
 ```
 
+## Tests
 
-##Tests
-
-`npm run test`to run tests with minimal output.  
+`npm run test` to run tests with minimal output.  
 `npm run test:spec` to run tests with detailed output.  
 `npm run test:watch` watches all directories and run tests with minimal output on file changes.
 
-##Build
-`npm run build` to build files fro distribution.  
+## Build
+`npm run build` to build files from distribution.  
 `npm run build:watch` watches src directory and builds files on changes.
 
-##Lint
+## Lint
 `npm run lint` lints scripts in src directory.  
 `npm run lint:watch` watches src directory and lints scripts in src directory.
 
-##License
+## License
 MIT

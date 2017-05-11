@@ -1,10 +1,5 @@
-'use strict';
-
-
 import React from 'react';
 import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
-
-
 
 const CodeblockDoc = (props) => (
   <div>
