@@ -1,0 +1,57 @@
+# React UIkit List
+
+Dynamically create lists.
+
+See [the website](http://otissv.github.io/react-uikit-components) for docs.
+
+## Usage
+
+The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
+UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+
+### Installation
+
+```bash
+npm install react-uikit-list --save;
+```
+```js
+// ES6  
+import List from 'react-uikit-list';  
+import ListItem from 'react-uikit-list/lib/ListItem';
+
+// ES5  
+var List = require('react-uikit-list');  
+var ListItem = require('react-uikit-list/lib/ListItem').default;
+```
+
+### Example
+
+```js
+<List items={['item', 'item', 'item']} />
+
+<List type='description' horizontal>
+  <dt>Description lists</dt>
+  <dd>A description list defines terms and their corresponding descriptions.</dd>
+  <dt>Lorem ipsum</dt>
+  <dd>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+  <dt>A long term is truncated</dt>
+  <dd>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</dd>
+</List>
+```
+
+## Tests
+
+`npm run test` to run tests with minimal output.  
+`npm run test:spec` to run tests with detailed output.  
+`npm run test:watch` watches all directories and run tests with minimal output on file changes.
+
+## Build
+`npm run build` to build files from distribution.  
+`npm run build:watch` watches src directory and builds files on changes.
+
+## Lint
+`npm run lint` lints scripts in src directory.  
+`npm run lint:watch` watches src directory and lints scripts in src directory.
+
+## License
+MIT
