@@ -25,7 +25,7 @@ const ButtonDoc = (props) => {
 {`npm install react-uikit-button --save;
 
 // ES6
-<code>import Button from 'react-uikit-button';
+import Button from 'react-uikit-button';
 
 // ES5
 var Button = require('react-uikit-button').default;`}
