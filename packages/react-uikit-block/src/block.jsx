@@ -1,20 +1,17 @@
 'use strict';
 
 import React from 'react';
-import {
-  base,
-  events,
-  helpers
-} from 'react-uikit-base';
+import uikit from 'react-uikit-base';
 import { either } from 'ufunc';
 
+// TODO: support array usage with the key arg.
 
 const Block = (props) => {
   // CSS classes
   const contailerCSS = props.container ? 'uk-container' : null;
 
 
-  const cssClassNames = helpers.cleanClasses([
+  const cssClassNames = uikit.helpers.cleanClasses([
     'uk-block',
     props.classes,
     props.context ? `uk-block-${props.context}` : null,
@@ -34,13 +31,13 @@ const Block = (props) => {
     'large',
   ];
 
-  const cleanProps = helpers.cleanProps(ignoreProps)(props);
+  const cleanProps = uikit.helpers.cleanProps(ignoreProps)(props);
 
 
   // Elements
   const attr = {
     ...cleanProps,
-    ...events(props),
+    ...uikit.events(props),
     className: cssClassNames,
     'data-kitid': props.kitid
   };
@@ -76,4 +73,4 @@ Block.propTypes = {
 };
 
 
-export default base(Block);
+export default uikit.base(Block);
