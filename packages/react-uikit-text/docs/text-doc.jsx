@@ -1,67 +1,78 @@
-'use strict';
-
-
 import React from 'react';
-import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
+
+import Text from '../lib/text';
+import examples from './text-examples';
+
+import DocHeader from '../../script-utils/lib/DocHeader';
+import DocExample from '../../script-utils/lib/DocExample';
+import DocFooter from '../../script-utils/lib/DocFooter';
 
 
-export default class TextdHandler extends React.Component {
-  render () {
-    return <div>
-      <section>
-        <h1>React UIkit Text</h1>
-        <p>
-          A collection of useful text components to style your content.
-        </p>
-        <p>
-          <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
-        </p>
-      </section>
+const name = 'Text';
+const npmName = 'react-uikit-text';
+const propTuples = [
+  { Prop: "bold", Type: "bool" },
+  { Prop: "context", Type: "oneOf: 'muted' / 'primary' / 'success' / 'warning' / 'danger' / 'contrast'", },
+  { Prop: "heading", Type: "oneOf: 'h1' / 'h2' / 'h3' / 'h4' / 'h5' / 'h6'", },
+  { Prop: "href", Type: "string for a type only.", },
+  { Prop: "size", Type: "oneOf: 'small' / 'large'", },
+  { Prop: "type", Type: "oneOf: 'a' / 'abbr' / 'code' / 'del' / 'dfn' / 'em' / 'h1' / 'h2' / 'h3' / 'h4' / 'h5' / 'h6' / 'hr' / 'ins' / 'mark' / 'q' / 'p' (default) | 'small' / 'span' / 'strong'" }
+];
 
-      <section>
-        <Codeblock>
-{`npm install react-uikit-text --save;
+const TextDoc = (props) => (
+  <div>
+    <DocHeader {... { name, npmName }} />
+    <DocExample
+      name="Text Types"
+      description={<span>The Text component creates a number of various Text components. The default type is <code>p</code> which creates a paragraph.</span>}
+      table={examples.textTypeTable}
+    />
+    <DocExample
+      name="Text headings"
+      description={<span>Use <code>heading</code> prop to alter any of the Text component types to a heading.</span>}
+      table={examples.headingsTable}
+      snippet={`<Text heading='h1'>...</Text>\n<Text heading='h2'>...</Text>\n<Text heading='h3'>...</Text>\n<Text heading='h4'>...</Text>\n<Text heading='h5'>...</Text>\n<Text heading='h6'>...</Text>`}
+    />
+    <DocExample
+      name="Text bold"
+      description={<span>Add the <code>bold</code> prop to create bold text.</span>}
+      jsx={<p>This is <Text bold type='span'>bold text</Text>.</p>}
+      snippet={`<Text bold type='span'>bold text</Text>`}
+    />
+    <DocExample
+      name="Text size"
+      description={<span>Text size can be changed by using one of the <code>size=''</code> props.</span>}
+      table={examples.sizeTable}
+    />
+    <DocExample
+      name="Text context"
+      description={<span>The text context prop can be used to give text context.</span>}
+      table={examples.contextTable}
+      snippet={examples.contextSnippet}
+    />
+    <DocExample
+      name="Text align"
+      description={<span>The textAlign prop horizontally aligns text.</span>}
+      table={examples.alignTable}
+      jsx={examples.alignExample}
+      snippet={examples.alignSnippet}
+    />
+    <DocExample
+      name="Text vertical"
+      description={<span>The textVertical prop vertically aligns text to an object.</span>}
+      table={examples.verticalTable}
+      jsx={examples.verticalExample}
+      snippet={examples.verticalSnippet}
+    />
+    <DocExample
+      name="Text wrap"
+      description={<span>The textWrap prop wraps text.</span>}
+      table={examples.textWrapTable}
+      jsx={examples.textWrapExample}
+      snippet={examples.textWrapSnippet}
+    />
+    <DocFooter { ...{ name, propTuples }} />
+  </div>
+);
 
-ES6
-import Text from 'react-uikit-text';
-
-ES5
-var Text = require(react-uikit-text');`}
-      </Codeblock>
-      </section>
-
-
-      <section>
-        <h2>Tests</h2>
-        <p>
-          <code>npm run test</code> to run tests with minimal output.<br />
-          <code>npm run test:spec</code> to run tests with detailed output.<br />
-          <code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br />
-        </p>
-      </section>
-
-      <section>
-        <h2>Build</h2>
-        <p>
-          <code>npm run build</code> to build files fro distribution.<br />
-          <code>npm run build:watch</code> watches src directory and builds files on changes.<br />
-        </p>
-      </section>
-
-
-      <section>
-        <h2>Lint</h2>
-        <p>
-          <code>npm run lint</code> lints scripts in src directory.<br />
-          <code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br />
-        </p>
-      </section>
-
-      <section>
-        <h2>License</h2>
-          <p>MIT</p>
-      </section>
-
-    </div>;
-  }
-}
+export default TextDoc;
