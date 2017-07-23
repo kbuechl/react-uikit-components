@@ -2,7 +2,7 @@
 import test from 'tape';
 import Article from '../lib/article';
 import React from 'react';
-import renderElement from '../../../common/helpers/renderElement';
+import renderElement from '../../script-utils/helpers/renderElement';
 
 
 const component = <Article
