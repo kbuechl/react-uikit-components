@@ -13,9 +13,9 @@ export const events = Events;
 export const utility = Utility;
 
 export default {
-  helpers: Helpers,
-  element: Element,
-  base: Base,
-  events: Events,
-  utility: Utility
+  helpers,
+  element,
+  base,
+  events,
+  utility
 };
