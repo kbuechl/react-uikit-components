@@ -13,7 +13,6 @@ const Codeblock = (props) => {
   // CSS classes
   const cssClassNames = helpers.cleanClasses([
     props.classes,
-    props.lang,
     props.className
   ]);
 
@@ -27,8 +26,6 @@ const Codeblock = (props) => {
   ];
 
   const cleanProps = helpers.cleanProps(ignoreProps)(props);
-
-
   // Return Component
   return <pre
     {...cleanProps}
@@ -36,8 +33,8 @@ const Codeblock = (props) => {
     className={cssClassNames}
     data-kitid={props.kitid}
   >
-    <code>
-    {props.children}
+    <code lang={props.lang ? props.lang: null}>
+      {props.children}
     </code>
   </pre>;
 };

@@ -2,7 +2,7 @@
 import test from 'tape';
 import Codeblock from '../lib/codeblock';
 import React from 'react';
-import renderElement from '../../../common/helpers/renderElement';
+import renderElement from '../../script-utils/helpers/renderElement';
 
 
 test('codeblock Component', nested => {
