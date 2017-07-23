@@ -10,36 +10,36 @@ import uikit from 'react-uikit-base';
 
 
 // Layout Handlers
-import AlertDoc from './alert-doc.jsx';
-import ArticleDoc from './article-doc.jsx';
-import BadgeDoc from './badge-doc.jsx';
-import BaseDoc from './base-doc.jsx';
-import BlockDoc from './block-doc.jsx';
-import BreadcrumbDoc from './breadcrumb-doc.jsx';
-import ButtonDoc from './button-doc.jsx';
-import ButtonGroupDoc from './button-group-doc.jsx';
-import CodeblockDoc from './codeblock-doc.jsx';
-import CommentDoc from './comment-doc.jsx';
-import CommentListDoc from './comment-list-doc.jsx';
-import DropdownDoc from './dropdown-doc.jsx';
-import FormDoc from './form-doc.jsx';
-import FlexDoc from './flex-doc.jsx';
-import GridDoc from './grid-doc.jsx';
-import IconsDoc from './icons-doc.jsx';
-import ImgDoc from './img-doc.jsx';
-import ImgGalleryDoc from './img-gallery-doc.jsx';
-import ListDoc from './list-doc.jsx';
-import ModalDoc from './modal-doc.jsx';
-import NavDoc from './nav-doc.jsx';
-import NoteDoc from './note-doc.jsx';
-import NotifyDoc from './notify-doc.jsx';
-import OverlayDoc from './overlay-doc.jsx';
-import PanelDoc from './panel-doc.jsx';
-import PlaceholderDoc from './placeholder-doc.jsx';
-import ProgressDoc from './progress-doc.jsx';
-import TableDoc from './table-doc.jsx';
-import TextDoc from './text-doc.jsx';
-import ThumbnailDoc from './thumbnail-doc.jsx';
+import AlertDoc from 'react-uikit-alert/docs-lib/alert-doc';
+import ArticleDoc from 'react-uikit-article/docs-lib/article-doc';
+import BadgeDoc from 'react-uikit-badge/docs-lib/badge-doc';
+import BaseDoc from 'react-uikit-base/docs-lib/base-doc';
+import BlockDoc from 'react-uikit-block/docs-lib/block-doc';
+import BreadcrumbDoc from 'react-uikit-breadcrumb/docs-lib/breadcrumb-doc';
+import ButtonDoc from 'react-uikit-button/docs-lib/button-doc';
+import ButtonGroupDoc from 'react-uikit-button-group/docs-lib/button-group-doc';
+import CodeblockDoc from 'react-uikit-codeblock/docs-lib/codeblock-doc';
+import CommentDoc from 'react-uikit-comment/docs-lib/comment-doc';
+import CommentListDoc from 'react-uikit-comment-list/docs-lib/comment-list-doc';
+import DropdownDoc from 'react-uikit-dropdown/docs-lib/dropdown-doc';
+import FormDoc from 'react-uikit-form/docs-lib/form-doc';
+import FlexDoc from 'react-uikit-flex/docs-lib/flex-doc';
+import GridDoc from 'react-uikit-grid/docs-lib/grid-doc';
+import IconsDoc from 'react-uikit-icons/docs-lib/icons-doc';
+import ImgDoc from 'react-uikit-img/docs-lib/img-doc';
+import ImgGalleryDoc from 'react-uikit-img-gallery/docs-lib/img-gallery-doc';
+import ListDoc from 'react-uikit-list/docs-lib/list-doc';
+import ModalDoc from 'react-uikit-modal/docs-lib/modal-doc';
+import NavDoc from 'react-uikit-nav/docs-lib/nav-doc';
+import NoteDoc from 'react-uikit-note/docs-lib/note-doc';
+import NotifyDoc from 'react-uikit-notify/docs-lib/notify-doc';
+import OverlayDoc from 'react-uikit-overlay/docs-lib/overlay-doc';
+import PanelDoc from 'react-uikit-panel/docs-lib/panel-doc';
+import PlaceholderDoc from 'react-uikit-placeholder/docs-lib/placeholder-doc';
+import ProgressDoc from 'react-uikit-progress/docs-lib/progress-doc';
+import TableDoc from 'react-uikit-table/docs-lib/table-doc';
+import TextDoc from 'react-uikit-text/docs-lib/text-doc';
+import ThumbnailDoc from 'react-uikit-thumbnail/docs-lib/thumbnail-doc';
 
 const ContentView = (props) => (
   <div className={uikit.helpers.cleanClasses(props.classes)}>

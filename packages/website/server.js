@@ -6,6 +6,9 @@ var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 
+// set the node process env to something that isn't mdGenerator
+process.env.NODE_ENV = 'website';
+
 /**
  * Require ./webpack.config.js and make a bundler from it
  */
