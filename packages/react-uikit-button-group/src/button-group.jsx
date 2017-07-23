@@ -45,7 +45,7 @@ ButtonGroup.propTypes = {
   className : React.PropTypes.string,
   classes   : React.PropTypes.array,
   kitid     : React.PropTypes.string,
-  type: React.PropTypes.oneOf(['button', 'dropdown', 'checkbox', 'radio'])
+  type      : React.PropTypes.oneOf(['button', 'dropdown', 'checkbox', 'radio'])
 };
 
 export default base(ButtonGroup);
