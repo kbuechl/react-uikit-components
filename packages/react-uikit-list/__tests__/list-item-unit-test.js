@@ -2,7 +2,7 @@
 import test from 'tape';
 import ListItem from '../lib/list-item';
 import React from 'react';
-import renderElement from '../../../common/helpers/renderElement';
+import renderElement from '../../script-utils/helpers/renderElement';
 
 
 test('list-group Component', nested => {
