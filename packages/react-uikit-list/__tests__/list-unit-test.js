@@ -2,7 +2,7 @@
 import test from 'tape';
 import List from '../lib/list';
 import React from 'react';
-import renderElement from '../../../common/helpers/renderElement';
+import renderElement from '../../script-utils/helpers/renderElement';
 
 
 test('List Component', nested => {

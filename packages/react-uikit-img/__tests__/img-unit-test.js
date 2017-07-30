@@ -2,7 +2,7 @@
 import test from 'tape';
 import Img from '../lib/img';
 import React from 'react';
-import renderElement from '../../../common/helpers/renderElement';
+import renderElement from '../../script-utils/helpers/renderElement';
 
 
 const Component = <Img

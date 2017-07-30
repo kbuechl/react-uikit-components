@@ -5,7 +5,7 @@ import {
   htmlToString,
   reactToDom,
   reactToString
-} from '../../../common/helpers/renderElement';
+} from '../../script-utils/helpers/renderElement';
 
 
 test('thumbnail Component', nested => {

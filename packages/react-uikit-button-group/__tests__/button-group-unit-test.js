@@ -2,8 +2,7 @@
 import test from 'tape';
 import ButtonGroup from '../lib/button-group';
 import React from 'react';
-import renderElement from '../../../common/helpers/renderElement';
-
+import renderElement from '../../script-utils/helpers/renderElement';
 
 test('block Component', nested => {
   nested.test('context prop = primary:',

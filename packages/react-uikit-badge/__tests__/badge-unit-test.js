@@ -2,7 +2,7 @@
 import test from 'tape';
 import Badge from '../lib/badge';
 import React from 'react';
-import renderElement from '../../../common/helpers/renderElement';
+import renderElement from '../../script-utils/helpers/renderElement';
 
 
 test('Badge Component', nested => {

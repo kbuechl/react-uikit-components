@@ -1,67 +1,69 @@
-'use strict';
-
-
 import React from 'react';
-import Codeblock from 'react-uikit-codeblock';
+import Note from '../lib/note';
 
+import DocHeader from '../../script-utils/lib/DocHeader';
+import DocExample from '../../script-utils/lib/DocExample';
+import DocFooter from '../../script-utils/lib/DocFooter';
 
-export default class NoteHandler extends React.Component {
-  render () {
-    return <div>
-      <section>
-        <h1>React UIkit Note</h1>
-        <p>
-          Easily add notes.
-        </p>
-        <p>
-          <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
-        </p>
-      </section>
+const name = 'Note';
+const npmName = 'react-uikit-note';
+const summary = 'Easily add notes to content.';
+const propTuples = [{
+    Prop: "badge",
+    Type: "string or object. See Badge component for props."
+  }, {
+    Prop: "body",
+    Type: "string"
+}];
 
-      <section>
-        <h2>Usage</h2>
-          <Codeblock>
-  {`npm install react-uikit-note --save;
-  // ES6
-  import Note from 'react-uikit-note';
+const loremIpsumString = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
-  // ES5
-  var Note = require&('react-uikit-note')`}
-          </Codeblock>
-      </section>
+const basicExample = (
+  <div>
+    <Note>{loremIpsumString}</Note>
+    <Note badge='EXAMPLE'>{loremIpsumString}</Note>
+  </div>
+);
+const basicSnippet = `
+  <div>
+    <Note>${loremIpsumString}</Note>
+    <Note badge='EXAMPLE'>${loremIpsumString}</Note>
+  </div>`;
 
+const contextExample = (
+  <div>
+    <Note badge={{body: 'Success', context:'success'}}>Lorem ipsum dolor sit amet</Note>
+    <Note badge={{body: 'Warning', context:'warning'}}>Lorem ipsum dolor sit amet</Note>
+    <Note badge={{body: 'Danger', context:'danger'}}>Lorem ipsum dolor sit amet</Note>
+  </div>
+);
+const contextSnippet = `
+  <div>
+    <Note badge={{body: 'Success', context:'success'}}>Lorem ipsum dolor sit amet</Note>
+    <Note badge={{body: 'Warning', context:'warning'}}>Lorem ipsum dolor sit amet</Note>
+    <Note badge={{body: 'Danger', context:'danger'}}>Lorem ipsum dolor sit amet</Note>
+  </div>`;
 
-      <section>
-        <h2>Tests</h2>
-        <p>
-          <code>npm run test</code> to run tests with minimal output.<br />
-          <code>npm run test:spec</code> to run tests with detailed output.<br />
-          <code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br />
-        </p>
-      </section>
+const NoteDoc = (props) => (
+  <div>
+    <DocHeader {... { name, npmName, summary }} />
+    <DocExample
+      description={<span>The Note component consists of a paragraph with a prefixed bagde. To create a Note component add a label for the badge prop <code>badge='NOTE'</code> and either add text as a child or to the <code>body</code> prop. If no bagde is provided the default badge is 'Note'</span>}
+      jsx={basicExample}
+      snippet={basicSnippet}
+    />
+    <DocExample
+      name="Note context"
+      description={<span>Note badges can be given context using the badge prop and setting the context property</span>}
+      jsx={contextExample}
+      snippet={contextSnippet}
+    />
+    <DocExample
+      name="Note Props"
+      description={<span>See Badge component from more information</span>}
+    />
+    <DocFooter { ...{ name, propTuples }} />
+  </div>
+);
 
-      <section>
-        <h2>Build</h2>
-        <p>
-          <code>npm run build</code> to build files fro distribution.<br />
-          <code>npm run build:watch</code> watches src directory and builds files on changes.<br />
-        </p>
-      </section>
-
-
-      <section>
-        <h2>Lint</h2>
-        <p>
-          <code>npm run lint</code> lints scripts in src directory.<br />
-          <code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br />
-        </p>
-      </section>
-
-      <section>
-        <h2>License</h2>
-          <p>MIT</p>
-      </section>
-
-    </div>;
-  }
-}
+export default NoteDoc;

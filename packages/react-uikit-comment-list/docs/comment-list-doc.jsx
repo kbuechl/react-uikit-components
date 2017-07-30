@@ -1,70 +1,66 @@
-'use strict';
-
-
 import React from 'react';
-import Codeblock from '../../react-uikit-codeblock/lib/codeblock';
+import Comment from 'react-uikit-comment';
+import CommentList from '../lib/comment-list';
 
+import DocHeader from '../../script-utils/lib/DocHeader';
+import DocExample from '../../script-utils/lib/DocExample';
+import DocFooter from '../../script-utils/lib/DocFooter';
+
+const name = 'Comment List';
+const npmName = 'react-uikit-comment-list';
+const summary = 'For lists of comments.';
+
+const loremIpsumString = `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+  sunt in culpa qui officia deserunt mollit anim id est laborum.`;
+
+const avatar = { src:'docs/images/placeholder_avatar.svg', alt: 'Avatar placeholder' };
+
+
+const basicSnippet = `<CommentList>
+  <li>
+    <Comment title='Author' meta='12 days ago | Profile | #' avatar={{src: ${avatar.src}, alt: ${avatar.alt}}}>
+      <p>${loremIpsumString}</p>
+    </Comment>
+    <CommentList>
+      <li>
+        <Comment title='Author' meta='12 days ago | Profile | #' avatar={{src: ${avatar.src}, alt: ${avatar.alt}}}>
+          <p>${loremIpsumString}</p>
+        </Comment>
+      </li>
+    </CommentList>
+  </li>
+</CommentList>
+`;
+const basicExample = (
+  <CommentList>
+    <li>
+      <Comment title='Author' meta='12 days ago | Profile | #' avatar={avatar}>
+        <p>{loremIpsumString}</p>
+      </Comment>
+      <CommentList>
+        <li>
+          <Comment title='Author' meta='12 days ago | Profile | #' avatar={avatar}>
+            <p>{loremIpsumString}</p>
+          </Comment>
+        </li>
+      </CommentList>
+    </li>
+  </CommentList>
+);
 
 const CommentListDoc = (props) => (
   <div>
-    <section>
-      <h1>React UIkit Comment List</h1>
-      <p>
-        For lists of comments.
-      </p>
-      <p>
-        <a href='http://otissv.github.io/react-uikit-components/'>http://otissv.github.io/react-uikit-components</a> for docs.
-      </p>
-
-
-      </section>
-
-      <section>
-        <h2>Usage</h2>
-          <Codeblock>
-  {`npm install react-uikit-comment-list --save;
-
-  // ES6
-  import CommentList from 'react-uikit-comment-list';
-
-  // ES5
-  var CommentList = require('react-uikit-comment-list');`}
-          </Codeblock>
-    </section>
-
-
-    <section>
-        <h2>Tests</h2>
-        <p>
-          <code>npm run test</code> to run tests with minimal output.<br />
-          <code>npm run test:spec</code> to run tests with detailed output.<br />
-          <code>npm run test:watch</code>watches all directories and run tests with minimal output on file changes.<br />
-        </p>
-      </section>
-
-      <section>
-        <h2>Build</h2>
-        <p>
-          <code>npm run build</code> to build files fro distribution.<br />
-          <code>npm run build:watch</code> watches src directory and builds files on changes.<br />
-        </p>
-      </section>
-
-
-      <section>
-        <h2>Lint</h2>
-        <p>
-          <code>npm run lint</code> lints scripts in src directory.<br />
-          <code>npm run lint:watch</code> watches src directory and lints scripts in src directory.<br />
-        </p>
-      </section>
-
-
-      <section>
-        <h2>License</h2>
-          <p>MIT</p>
-      </section>
-
+    <DocHeader {... { name, npmName, summary }} />
+    <DocExample
+      name="Basic"
+      description="The CommentList component enables the creation of comment lists. It also supports nested comments."
+      jsx={basicExample}
+      snippet={basicSnippet}
+      scroll
+    />
+    <DocFooter { ...{ name }} />
   </div>
 );
 

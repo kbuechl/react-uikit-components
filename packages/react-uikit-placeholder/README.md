@@ -1,46 +1,77 @@
-# React UIkit Placeholder
+# React Uikit Placeholder
 
-Create a placeholder space that can be used for uploading files via drag and drop.
 
-See [the website](http://otissv.github.io/react-uikit-components) for docs.
 
 ## Usage
 
-The master branch has been updated to React 15. To use with React 0.14 checkout 0.14 branch.
-UIkit css is not included. You can get it from [getuikit.com](http://getuikit.com/)
+    npm install react-uikit-placeholder --save;
 
-### Installation
+    // ES6
+    import Placeholder from 'react-uikit-placeholder';
 
-```bash
-npm install react-uikit-placeholder --save;
-```
-```js
-// ES6
-import Placeholder from 'react-uikit-placeholder';
+    // ES5
+    var Placeholder = require('react-uikit-placeholder');
 
-// ES5
-var Placeholder = require('react-uikit-placeholder')
-```
 
-### Example
 
-```js
-<Placeholder>...</Placeholder>
-```
+
+### Code
+
+    <Placeholder  body='Placeholder' textAlign='center'/>
+
+## Large placeholder
+
+
+
+### Code
+
+    <Placeholder large  body='Large placeholder' textAlign='center'/>
+
+## Placeholder Props
+
+
+
+<table class="uk-table">
+
+<thead>
+
+<tr>
+
+<th>Prop</th>
+
+<th>Type</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td colspan="1">large</td>
+
+<td>bool</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ## Tests
 
-`npm run test` to run tests with minimal output.  
-`npm run test:spec` to run tests with detailed output.  
-`npm run test:watch` watches all directories and run tests with minimal output on file changes.
+`npm run test` to run tests with minimal output.  
+`npm run test:spec` to run tests with detailed output.  
+`npm run test:watch` watches all directories and run tests with minimal output on file changes.  
 
 ## Build
-`npm run build` to build files from distribution.  
-`npm run build:watch` watches src directory and builds files on changes.
+`npm run build` to build files from distribution.  
+`npm run build:watch` watches src directory and builds files on changes.  
 
 ## Lint
-`npm run lint` lints scripts in src directory.  
-`npm run lint:watch` watches src directory and lints scripts in src directory.
+`npm run lint` lints scripts in src directory.  
+`npm run lint:watch` watches src directory and lints scripts in src directory.  
 
 ## License
 MIT

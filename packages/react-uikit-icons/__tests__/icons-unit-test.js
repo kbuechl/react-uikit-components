@@ -2,12 +2,12 @@
 import test from 'tape';
 import Icons from '../lib/icons';
 import React from 'react';
-import renderElement from '../../../common/helpers/renderElement';
+import renderElement from '../../script-utils/helpers/renderElement';
 import {
   htmlToString,
   reactToDom,
   reactToString
-} from '../../../common/helpers/renderElement';
+} from '../../script-utils/helpers/renderElement';
 
 
 test('icon Component:', nested => {
