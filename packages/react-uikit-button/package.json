@@ -1,11 +1,12 @@
 {
   "name": "react-uikit-button",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "React uikit button component with different styles.",
   "keywords": [
     "javascript",
     "react",
     "uikit",
+    "uikit3",
     "react-component",
     "react-uikit",
     "uikit-react",
@@ -13,8 +14,8 @@
     "ui-component",
     "button"
   ],
-  "repository": "https://github.com/otissv/react-uikit-components/tree/master/packages/react-uikit-button",
-  "author": "Otis Virginie",
+  "repository": "https://github.com/kbuechl/react-uikit-components/tree/master/packages/react-uikit-button",
+  "author": "Karl Buechler",
   "license": "MIT",
   "main": "./lib/button.js",
   "scripts": {
